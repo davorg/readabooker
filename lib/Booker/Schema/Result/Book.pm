@@ -46,7 +46,7 @@ __PACKAGE__->table("book");
 =head2 sort_title
 
   data_type: 'text'
-  is_nullable: 1
+  is_nullable: 0
 
 =cut
 
@@ -58,7 +58,7 @@ __PACKAGE__->add_columns(
   "author_id",
   { data_type => "int", is_foreign_key => 1, is_nullable => 0 },
   "sort_title",
-  { data_type => "text", is_nullable => 1 },
+  { data_type => "text", is_nullable => 0 },
 );
 
 =head1 PRIMARY KEY
@@ -106,8 +106,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07049 @ 2021-11-01 17:37:24
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:pqS/CEteMIRdwXtCLXuFnw
+# Created by DBIx::Class::Schema::Loader v0.07049 @ 2021-11-01 19:28:15
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:DQpCIZtGON83dnB6MOgoEw
 
 sub entry {
   my $self = shift;
