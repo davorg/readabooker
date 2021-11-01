@@ -1,6 +1,6 @@
 <h1>Books by title</h1>
 <table class="table">
-[% FOR book IN books.sort('title') -%]
+[% FOR book IN books -%]
   <tr>
     <th colspan="2"><a id="[% book.title %]">[% book.title %]</a></th>
   </tr>
