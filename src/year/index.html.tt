@@ -4,7 +4,7 @@
     <th colspan="2"><a id="[% event.id %]">[% event.year %]</a></th>
   </tr>
 [%   FOR entry IN event.entries -%]
-  <tr[% IF entry.is_winner %] class="winner"[% END %]>
+  <tr[% IF entry.is_winner %] class="table-success"[% END %]>
     <td><a href="/title/#[% entry.book.title %]">[% entry.book.title %]</a></td>
     <td><a href="/author/#[% entry.book.author.name %]">[% entry.book.author.name %]</a></td>
   </tr>
