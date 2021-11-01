@@ -48,6 +48,11 @@ __PACKAGE__->table("book");
   data_type: 'text'
   is_nullable: 0
 
+=head2 asin
+
+  data_type: 'text'
+  is_nullable: 1
+
 =cut
 
 __PACKAGE__->add_columns(
@@ -59,6 +64,8 @@ __PACKAGE__->add_columns(
   { data_type => "int", is_foreign_key => 1, is_nullable => 0 },
   "sort_title",
   { data_type => "text", is_nullable => 0 },
+  "asin",
+  { data_type => "text", is_nullable => 1 },
 );
 
 =head1 PRIMARY KEY
@@ -106,8 +113,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07049 @ 2021-11-01 19:28:15
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:DQpCIZtGON83dnB6MOgoEw
+# Created by DBIx::Class::Schema::Loader v0.07049 @ 2021-11-01 20:01:26
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:TFicZK1XXled75sMcBe4Ag
 
 sub entry {
   my $self = shift;

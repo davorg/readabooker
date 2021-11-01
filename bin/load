@@ -45,9 +45,13 @@ while (<$fh>) {
     sort_name => $data{Author},
   });
 
+  my $sort_title = $data{Title} =~ s/^(An?|The) //;
+
   my $book   = $rs{book}->create({
-    title     => $data{Title},
-    author_id => $author->id,
+    title      => $data{Title},
+    sort_title => $sort_title,
+    author_id  => $author->id,
+    asin       => 'XXXXXX',
   });
 
   $book->add_to_entries({
