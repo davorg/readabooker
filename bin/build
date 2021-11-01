@@ -17,7 +17,9 @@ my %rs = map { lc $_ => $sch->resultset($_) } qw[Person Event Book];
 my $tt = Template->new(
   INCLUDE_PATH => [ "$RealBin/../tt_lib", "$RealBin/../src" ],
   OUTPUT_PATH  => "$RealBin/../docs",
+  PRE_PROCESS  => 'amazon.tt',
   WRAPPER      => 'page.tt',
+  STRICT       => 1,
 );
 
 $tt->process('index.html.tt', {}, 'index.html')

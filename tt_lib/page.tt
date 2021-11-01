@@ -1,3 +1,4 @@
+[% INCLUDE amazon.tt -%]
 <!doctype html>
 <html lang="en">
   <head>

@@ -45,7 +45,7 @@ while (<$fh>) {
     sort_name => $data{Author},
   });
 
-  my $sort_title = $data{Title} =~ s/^(An?|The) //;
+  my $sort_title = $data{Title} =~ s/^(An?|The) //r;
 
   my $book   = $rs{book}->create({
     title      => $data{Title},

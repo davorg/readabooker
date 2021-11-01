@@ -91,3 +91,7 @@ body {
     margin-top: 7rem;
   }
 }
+
+div.amazon a:link {
+  text-decoration: none;
+}

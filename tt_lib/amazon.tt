@@ -1,0 +1,8 @@
+[% MACRO amazon(asin, ass_tag) BLOCK -%]
+<div class="amazon">
+  <a href="https://www.amazon.co.uk/dp/[% asin %]/?tag=[% ass_tag %]">
+    <img src="https://ws-eu.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=GB&ASIN=[% asin %]&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=SL250">
+    <button type="button" class="btn btn-primary">Buy on Amazon</button>
+  </a>
+</div>
+[% END %]
