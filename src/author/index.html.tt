@@ -1,3 +1,4 @@
+<h1>Books by author</h1>
 <table class="table">
 [% FOR author IN authors.sort('sort_name') -%]
   <tr>
