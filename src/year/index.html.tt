@@ -6,7 +6,7 @@
 [%   FOR entry IN event.entries -%]
   <tr[% IF entry.is_winner %] class="winner"[% END %]>
     <td><a href="/title/#[% entry.book.title %]">[% entry.book.title %]</a></td>
-    <td><s href="/author/#[% entry.book.author.name %]">[% entry.book.author.name %]</a></td>
+    <td><a href="/author/#[% entry.book.author.name %]">[% entry.book.author.name %]</a></td>
   </tr>
 [%   END;
    END -%]
