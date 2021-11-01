@@ -1,0 +1,11 @@
+<table class="table">
+[% FOR book IN books.sort('title') -%]
+  <tr>
+    <th colspan="2"><a id="[% book.title %]">[% book.title %]</a></th>
+  </tr>
+  <tr[% IF book.entry.is_winner %] class="winner"[% END %]>
+    <td><a href="/author/#[% book.author.name %]">[% book.author.name %]</a></td>
+    <td><a href="/year/#[% book.entry.event.year %]">[% book.entry.event.year %]</a></td>
+  </tr>
+[% END -%]
+</table>

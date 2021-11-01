@@ -1,0 +1,83 @@
+#!/usr/bin/perl 
+
+use strict;
+use warnings;
+use feature 'say';
+use FindBin '$RealBin';
+use lib "$RealBin/../lib";
+
+use Text::CSV_XS;
+use Data::Dumper;
+
+my $file = shift || die "Give me a filename\n";
+
+use Booker::Schema;
+
+my $sch = Booker::Schema->get_schema;
+
+my %rs = map { lc $_ => $sch->resultset($_) } qw[Person Event Book];
+
+my $csv = Text::CSV_XS->new();
+
+open my $fh, '<:encoding(UTF-8)', $file
+  or die "Cannot open '$file': $!\n";
+
+my @header = split /,/, scalar <$fh>;
+chomp(@header);
+
+while (<$fh>) {
+  chomp;
+  unless ($csv->parse($_)) {
+    warn $csv->error_input;
+    next;
+  }
+
+  my %data;
+  @data{@header} = $csv->fields;
+
+  $data{Judges}  = [ split /,\s*/, $data{Judges} ]
+    if $data{Judges};
+
+  my $event  = $rs{event}->find_or_create({ year => $data{Year} });
+
+  my $author = $rs{person}->find_or_create({
+    name      => $data{Author},
+    sort_name => $data{Author},
+  });
+
+  my $book   = $rs{book}->create({
+    title     => $data{Title},
+    author_id => $author->id,
+  });
+
+  $book->add_to_entries({
+    event_id  => $event->id,
+    is_winner => $data{Winner},
+  });
+
+  if ($data{Chair}) {
+    my $chair = $rs{person}->find_or_create({
+      name      => $data{Chair},
+      sort_name => $data{Chair},
+    });
+
+    $chair->add_to_judges({
+      event_id => $event->id,
+      is_chair => 1,
+    });
+  }
+
+  if ($data{Judges}) {
+    for ($data{Judges}->@*) {
+      my $judge = $rs{person}->find_or_create({
+        name      => $_,
+        sort_name => $_,
+      });
+
+      $judge->add_to_judges({
+        event_id => $event->id,
+        is_chair => 0,
+      });
+    }
+  }
+}
