@@ -2,12 +2,13 @@
 <table class="table">
 [% FOR author IN authors.sort('sort_name') -%]
   <tr>
-    <th colspan="2"><a id="[% author.name %]">[% author.name %]</a></th>
+    <th colspan="3"><a id="[% author.name %]">[% author.name %]</a></th>
   </tr>
 [%   FOR book IN author.books_rs.sorted_books -%]
   <tr[% IF book.entry.is_winner %] class="table-success"[% END %]>
     <td><a href="/title/#[% book.title %]">[% book.title %]</a></td>
     <td><a href="/year/#[% book.entry.event.year %]">[% book.entry.event.year %]</a></td>
+    <td>[% IF (book.asin != 'XXXXXX'); amazon(book.asin, 'davblog-21'); END %]</td>
   </tr>
 [%   END;
    END -%]
