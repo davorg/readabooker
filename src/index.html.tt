@@ -11,9 +11,9 @@
 
             <div class="container">
               <div class="carousel-caption">
-                <img src="/images/2021_shortlist.jpg" class="d-block w-100">
-                <h1>2021 Shortlist.</h1>
-                <p>The winner of the 2021 Booker Prize will be announced on 3<sup>rd</sup> November.</p>
+                <p>[% amazon('1784744069', 'davblog-21') %]</p>
+                <h1>2021 winner</h1>
+                <p>The winner of the 2021 Booker Prize was <i>The Promise</i> by Damon Galgut.</p>
               </div>
             </div>
           </div>
@@ -24,7 +24,7 @@
               <div class="carousel-caption">
                 <p>[% amazon('152901929X', 'davblog-21') %]</p>
                 <h1>2020 winner</h1>
-                <p>The 2021 winner was <i>Shuggie Bain</i> by Douglas Stuart.</p>
+                <p>The 2020 winner was <i>Shuggie Bain</i> by Douglas Stuart.</p>
               </div>
             </div>
           </div>
