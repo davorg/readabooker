@@ -2,6 +2,10 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta property="og:title" content="Read a Booker" />
+    <meta property="og:description" content="Choose a Booker Prize shortlisted novel to read." />
+    <meta property="og:image" content="https://readabooker.com/images/2021_shortlist.jpg" />
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-80NYQ8R8E7"></script>
     <script>
