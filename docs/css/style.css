@@ -95,3 +95,7 @@ body {
 div.amazon a:link {
   text-decoration: none;
 }
+
+.bi {
+  font-size: 8rem;
+}

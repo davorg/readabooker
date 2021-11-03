@@ -37,6 +37,8 @@
       }
     </style>
 
+    <!-- Bootstrap icons web font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     
     <!-- Custom styles for this template -->
     <link href="/css/style.css" rel="stylesheet">
@@ -83,16 +85,17 @@
           <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
             <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
 
             <div class="container">
-              <div class="carousel-caption text-start">
-                <h1>Example headline.</h1>
-                <p>Some representative placeholder content for the first slide of the carousel.</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+              <div class="carousel-caption">
+                <img src="/images/2021_shortlist.jpg" class="d-block w-100">
+                <h1>2021 Shortlist.</h1>
+                <p>The winner of the 2021 Booker Prize will be announced on 3<sup>rd</sup> November.</p>
               </div>
             </div>
           </div>
@@ -101,9 +104,15 @@
 
             <div class="container">
               <div class="carousel-caption">
-                <h1>Another example headline.</h1>
-                <p>Some representative placeholder content for the second slide of the carousel.</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                <p><div class="amazon">
+  <a href="https://www.amazon.co.uk/dp/152901929X/?tag=davblog-21">
+    <img src="https://ws-eu.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=GB&ASIN=152901929X&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=SL250">
+    <button type="button" class="btn btn-primary">Buy on Amazon</button>
+  </a>
+</div>
+</p>
+                <h1>2020 winner</h1>
+                <p>The 2021 winner was <i>Shuggie Bain</i> by Douglas Stuart.</p>
               </div>
             </div>
           </div>
@@ -111,10 +120,35 @@
             <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
 
             <div class="container">
-              <div class="carousel-caption text-end">
-                <h1>One more for good measure.</h1>
-                <p>Some representative placeholder content for the third slide of this carousel.</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+              <div class="carousel-caption">
+                <p><div class="amazon">
+  <a href="https://www.amazon.co.uk/dp/1526605902/?tag=davblog-21">
+    <img src="https://ws-eu.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=GB&ASIN=1526605902&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=SL250">
+    <button type="button" class="btn btn-primary">Buy on Amazon</button>
+  </a>
+</div>
+</p>
+                <h1>The Golden Booker</h1>
+                <p>In 2018, to celebrate 50 years of the award a special "Golden Booker" was awarded to <i>The English Patient</i>
+                  by Michael Ondaatje.</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+            <div class="container">
+              <div class="carousel-caption">
+                <p><div class="amazon">
+  <a href="https://www.amazon.co.uk/dp/0099511894/?tag=davblog-21">
+    <img src="https://ws-eu.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=GB&ASIN=0099511894&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=SL250">
+    <button type="button" class="btn btn-primary">Buy on Amazon</button>
+  </a>
+</div>
+</p>
+                <h1>The Best of the Booker</h1>
+                <p>In 2008, on the 40th anniversary of the award, the "Best of the Booker" was announced as <i>Midnight's Children</i>
+                  by Salman Rushdie.</p>
               </div>
             </div>
           </div>
@@ -139,25 +173,23 @@
         <!-- Three columns of text below the carousel -->
         <div class="row">
           <div class="col-lg-4">
-            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
 
-            <h2>Heading</h2>
-            <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+            <i class="bi bi-calendar3"></i>
+            <h2>Show by year</h2>
+            <p><a class="btn btn-secondary" href="/year">View details &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+
+          <div class="col-lg-4">
+
+            <i class="bi bi-person-circle"></i>
+            <h2>Show by author</h2>
+            <p><a class="btn btn-secondary" href="/author">View details &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
-            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
 
-            <h2>Heading</h2>
-            <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-            <h2>Heading</h2>
-            <p>And lastly this, the third column of representative placeholder content.</p>
-            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+            <i class="bi bi-book"></i>
+            <h2>Show by title</h2>
+            <p><a class="btn btn-secondary" href="/title">View details &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
 
@@ -168,12 +200,15 @@
 
         <div class="row featurette">
           <div class="col-md-7">
-            <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-            <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+            <h2 class="featurette-heading">The Booker Prize.</span></h2>
+            <p>The Booker Prize is one of the richest literary prizes
+              in the English-speaking world.</p>
+            <p>Each year, a prize of £50,000 is awarded to the best novel
+              of the year written in English and published in the UK
+              or Ireland.</p>
           </div>
           <div class="col-md-5">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+            <p><img src="/images/thebookerprizes.png" style="width: 50%"></p>
           </div>
         </div>
 
@@ -181,12 +216,16 @@
 
         <div class="row featurette">
           <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-            <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+            <h2 class="featurette-heading">Name and sponsorship.</span></h2>
+            <p>The Booker Prize was created in 1969. It was named after Booker McConnell Ltd
+              (now just known as <a href="https://www.booker.co.uk/">Booker Group</a>) its
+              original sponsor.</p>
+            <p>From 2002 to 2019, it was known as the "Man Booker Prize" after its new sponsor,
+              <a href="https://www.man.com/">Man Group</a>. In 2019, the current sponsor,
+              <a href="https://crankstart.org/">Crankstart</a> was announced.</p>
           </div>
           <div class="col-md-5 order-md-1">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+            <p><img src="/images/crankstart.jpg" style="width: 50%""></p>
           </div>
         </div>
 
@@ -194,12 +233,17 @@
 
         <div class="row featurette">
           <div class="col-md-7">
-            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-            <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+            <h2 class="featurette-heading">The Lost Booker</h2>
+            <p>In the first two years of the competition, the prize was open to books
+              published the year before the prize was awarded. In 1971, this was
+              changed to the same year as the prize ceremony. This effectively meant
+              that books published in 1970 were not considered for an award.</p>
+            <p>In 2010 a special "Lost Booker" competition was announced for books
+              published in 1970. From a long list of 22 novels, the judges chose
+              <i>Troubles</i> by J. G. Farrell as the winner.</p>
           </div>
           <div class="col-md-5">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+            <p><img src="/images/troubles.jpg" style="width: 50%""></p>
           </div>
         </div>
 
