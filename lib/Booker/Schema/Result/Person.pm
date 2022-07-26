@@ -101,6 +101,15 @@ __PACKAGE__->has_many(
 # Created by DBIx::Class::Schema::Loader v0.07049 @ 2021-11-01 11:07:10
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:xpvq1Cgw1Uk4TXC4HOxrjg
 
+with 'MooX::Role::JSON_LD';
+
+sub json_ld_type { 'Person' }
+
+sub json_ld_fields {
+  [
+    qw/name/,
+  ];
+}
 
 sub is_author {
   my $self = shift;

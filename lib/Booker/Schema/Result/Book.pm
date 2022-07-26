@@ -116,6 +116,17 @@ __PACKAGE__->has_many(
 # Created by DBIx::Class::Schema::Loader v0.07049 @ 2021-11-01 20:01:26
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:TFicZK1XXled75sMcBe4Ag
 
+with 'MooX::Role::JSON_LD';
+
+sub json_ld_type { 'Book' }
+
+sub json_ld_fields {
+  [
+    { name => 'title' },
+    { author => sub { $_[0]->author->json_ld_data } },
+  ];
+}
+
 sub entry {
   my $self = shift;
 
