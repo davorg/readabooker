@@ -6,38 +6,9 @@ use feature 'say';
 use FindBin '$RealBin';
 use lib "$RealBin/../lib";
 
-use Template;
+use Booker::App;
 
-use Booker::Schema;
+my $app = Booker::App->new({ root => "$RealBin/.." });
 
-my $sch = Booker::Schema->get_schema;
+$app->build;
 
-my %rs = map { lc $_ => $sch->resultset($_) } qw[Person Event Book];
-
-my $tt = Template->new(
-  INCLUDE_PATH => [ "$RealBin/../tt_lib", "$RealBin/../src" ],
-  OUTPUT_PATH  => "$RealBin/../docs",
-  PRE_PROCESS  => 'amazon.tt',
-  WRAPPER      => 'page.tt',
-  STRICT       => 1,
-);
-
-$tt->process('index.html.tt', {}, 'index.html')
-  or die $tt->error;
-
-$tt->process('year/index.html.tt', {
-  events => [ $sch->resultset('Event')->all ],
-}, 'year/index.html')
-  or die $tt->error;
-
-my @authors = grep { $_->is_author } $sch->resultset('Person')->all;
-
-$tt->process('author/index.html.tt', {
-  authors => \@authors,
-}, 'author/index.html')
-  or die $tt->error;
-
-$tt->process('title/index.html.tt', {
-  books => [ $sch->resultset('Book')->sorted_books->all ],
-}, 'title/index.html')
-  or die $tt->error;
