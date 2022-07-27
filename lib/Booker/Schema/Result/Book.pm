@@ -124,6 +124,7 @@ sub json_ld_fields {
   [
     { name => 'title' },
     { author => sub { $_[0]->author->json_ld_data } },
+    { isbn => 'asin' },
   ];
 }
 
