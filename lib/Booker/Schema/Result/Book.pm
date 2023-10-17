@@ -51,7 +51,7 @@ __PACKAGE__->table("book");
 =head2 asin
 
   data_type: 'text'
-  is_nullable: 1
+  is_nullable: 0
 
 =cut
 
@@ -65,7 +65,7 @@ __PACKAGE__->add_columns(
   "sort_title",
   { data_type => "text", is_nullable => 0 },
   "asin",
-  { data_type => "text", is_nullable => 1 },
+  { data_type => "text", is_nullable => 0 },
 );
 
 =head1 PRIMARY KEY
@@ -113,8 +113,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07049 @ 2021-11-01 20:01:26
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:TFicZK1XXled75sMcBe4Ag
+# Created by DBIx::Class::Schema::Loader v0.07051 @ 2023-10-17 16:11:29
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:Cd1sCaC/e33saTGRzGRXtA
 
 with 'MooX::Role::JSON_LD';
 

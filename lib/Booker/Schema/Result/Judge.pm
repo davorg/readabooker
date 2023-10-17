@@ -34,7 +34,7 @@ __PACKAGE__->table("judge");
 
 =head2 person_id
 
-  data_type: (empty string)
+  data_type: 'int'
   is_foreign_key: 1
   is_nullable: 0
 
@@ -49,7 +49,7 @@ __PACKAGE__->add_columns(
   "event_id",
   { data_type => "int", is_foreign_key => 1, is_nullable => 0 },
   "person_id",
-  { data_type => "", is_foreign_key => 1, is_nullable => 0 },
+  { data_type => "int", is_foreign_key => 1, is_nullable => 0 },
   "is_chair",
   { data_type => "boolean", is_nullable => 1 },
 );
@@ -101,8 +101,8 @@ __PACKAGE__->belongs_to(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07049 @ 2021-11-01 11:07:10
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:1wqLnAJ66WttHsOaFVYRqQ
+# Created by DBIx::Class::Schema::Loader v0.07051 @ 2023-10-17 16:11:29
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:BsdNkYLuR2TY8Bjc4gDmxA
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

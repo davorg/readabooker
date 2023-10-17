@@ -66,7 +66,7 @@ sub build {
   }, 'year/index.html')
     or die $tt->error;
 
-  my @authors = grep { $_->is_author } $rs->{person}->all;
+  my @authors = grep { $_->is_author } $rs->{person}->sorted_people->all;
 
   $tt->process('author/index.html.tt', {
     authors => \@authors,
