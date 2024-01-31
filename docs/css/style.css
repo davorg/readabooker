@@ -99,3 +99,7 @@ div.amazon a:link {
 .bi {
   font-size: 8rem;
 }
+
+img.img-thumbnail {
+  max-width: 100px;
+}
