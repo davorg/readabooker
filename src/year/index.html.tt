@@ -1,15 +1,6 @@
 <h1>Books by year</h1>
-<table class="table">
+<ul>
 [% FOR event IN events.sort('year').reverse -%]
-  <tr>
-    <th colspan="3"><a id="[% event.year %]">[% event.year %]</a></th>
-  </tr>
-[%   FOR entry IN event.entries -%]
-  <tr[% IF entry.is_winner %] class="table-success"[% END %]>
-    <td><a href="/title/#[% entry.book.title %]">[% entry.book.title %]</a></td>
-    <td><a href="/author/#[% entry.book.author.name %]">[% entry.book.author.name %]</a></td>
-    <td>[% IF (entry.book.asin != 'XXXXXX'); amazon(entry.book.asin, 'davblog-21'); END %]</td>
-  </tr>
-[%   END;
-   END -%]
-</table>
+  <li><a href="/year/[% event.slug %]">[% event.year %]</a></li>
+[% END -%]
+</ul>
