@@ -37,6 +37,12 @@ __PACKAGE__->table("event");
   data_type: 'text'
   is_nullable: 1
 
+=head2 slug
+
+  data_type: 'varchar'
+  is_nullable: 1
+  size: 50
+
 =cut
 
 __PACKAGE__->add_columns(
@@ -44,6 +50,8 @@ __PACKAGE__->add_columns(
   { data_type => "integer", is_auto_increment => 1, is_nullable => 0 },
   "year",
   { data_type => "text", is_nullable => 1 },
+  "slug",
+  { data_type => "varchar", is_nullable => 1, size => 50 },
 );
 
 =head1 PRIMARY KEY
@@ -91,8 +99,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07049 @ 2021-11-01 13:53:54
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:3lcd7kE0NadJRu/75R363g
+# Created by DBIx::Class::Schema::Loader v0.07051 @ 2024-08-19 15:31:46
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:wNvsyN+/miVbOfO7rfzRxQ
 
 sub slug { return shift->year }
 

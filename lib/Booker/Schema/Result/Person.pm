@@ -42,6 +42,12 @@ __PACKAGE__->table("person");
   data_type: 'text'
   is_nullable: 0
 
+=head2 slug
+
+  data_type: 'varchar'
+  is_nullable: 1
+  size: 120
+
 =cut
 
 __PACKAGE__->add_columns(
@@ -51,6 +57,8 @@ __PACKAGE__->add_columns(
   { data_type => "text", is_nullable => 0 },
   "sort_name",
   { data_type => "text", is_nullable => 0 },
+  "slug",
+  { data_type => "varchar", is_nullable => 1, size => 120 },
 );
 
 =head1 PRIMARY KEY
@@ -98,8 +106,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07049 @ 2021-11-01 11:07:10
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:xpvq1Cgw1Uk4TXC4HOxrjg
+# Created by DBIx::Class::Schema::Loader v0.07051 @ 2024-08-19 15:31:46
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:4McmmTszMI+EUIoGu6V3sQ
 
 with 'MooX::Role::JSON_LD';
 
