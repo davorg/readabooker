@@ -1,0 +1,41 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use feature 'signatures';
+
+use FindBin '$RealBin';
+
+use Booker::App;
+
+my $app = Booker::App->new({ root => "$RealBin/.." });
+
+for ($app->rs->{book}->all) {
+  $_->update({
+    slug => make_slug($_->title),
+  });
+}
+
+for ($app->rs->{person}->all) {
+  $_->update({
+    slug => make_slug($_->name),
+  });
+}
+
+for ($app->rs->{event}->all) {
+  $_->update({
+    slug => make_slug($_->year),
+  });
+}
+
+sub make_slug($text) {
+  $text = lc $text;
+  $text =~ s/[^0-9a-z']/-/g;
+  $text =~ s/--+/-/g;
+  $text =~ s/[^-0-9a-z]//g;
+  $text =~ s/^-//;
+  $text =~ s/-$//;
+
+  return $text;
+}
