@@ -63,13 +63,13 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link" href="/year">By year</a>
+                <a class="nav-link" href="/year/">By year</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/author">By author</a>
+                <a class="nav-link" href="/author/">By author</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/title">By title</a>
+                <a class="nav-link" href="/title/">By title</a>
               </li>
             </ul>
             <!-- form class="d-flex">
