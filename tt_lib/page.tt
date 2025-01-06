@@ -1,9 +1,16 @@
+[%- name = template.name.split('[/\.]').0;
+    desc = 'Choose a Booker Prize shortlisted novel to read';
+    IF name != 'index';
+      desc = desc _ ' by ' _ name;
+    END;
+    desc = desc _ '.' -%]
 [% INCLUDE amazon.tt -%]
 <!doctype html>
 <html lang="en">
   <head>
+    <meta name="description" content="[% desc %]">
     <meta property="og:title" content="Read a Booker" />
-    <meta property="og:description" content="Choose a Booker Prize shortlisted novel to read." />
+    <meta property="og:description" content="[% desc %]" />
     <meta property="og:image" content="https://readabooker.com/images/booker2024-short.jpg" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
