@@ -13,7 +13,7 @@
 
             <div class="container">
               <div class="carousel-caption">
-                <p>[% amazon('1529922933', 'davblog-21') %]</p>
+                <p>[% asin = '1529922933'; amazon(carousel_books.$asin, 'davblog-21') %]</p>
                 <h2>2024 winner</h2>
                 <p>The winner of the 2024 Booker Prize was <i>Orbital</i> by Samantha Harvey.</p>
               </div>
@@ -24,7 +24,7 @@
 
             <div class="container">
               <div class="carousel-caption">
-                <p>[% amazon('0861546458', 'davblog-21') %]</p>
+                <p>[% asin = '0861546458'; amazon(carousel_books.$asin, 'davblog-21') %]</p>
                 <h2>2023 winner</h2>
                 <p>The winner of the 2023 Booker Prize was <i>Prophet Song</i> by Paul Lynch.</p>
               </div>
@@ -35,7 +35,7 @@
 
             <div class="container">
               <div class="carousel-caption">
-                <p>[% amazon('1914502078', 'davblog-21') %]</p>
+                <p>[% asin = '1914502078'; amazon(carousel_books.$asin, 'davblog-21') %]</p>
                 <h2>2022 winner</h2>
                 <p>The winner of the 2022 Booker Prize was <i>The Seven Moons of Maali Almeida</i> by Shehan Karunatilaka.</p>
               </div>
@@ -46,7 +46,7 @@
 
             <div class="container">
               <div class="carousel-caption">
-                <p>[% amazon('1784744069', 'davblog-21') %]</p>
+                <p>[% asin = '1784744069'; amazon(carousel_books.$asin, 'davblog-21') %]</p>
                 <h2>2021 winner</h2>
                 <p>The winner of the 2021 Booker Prize was <i>The Promise</i> by Damon Galgut.</p>
               </div>
@@ -57,7 +57,7 @@
 
             <div class="container">
               <div class="carousel-caption">
-                <p>[% amazon('152901929X', 'davblog-21') %]</p>
+                <p>[% asin = '152901929X'; amazon(carousel_books.$asin, 'davblog-21') %]</p>
                 <h2>2020 winner</h2>
                 <p>The 2020 winner was <i>Shuggie Bain</i> by Douglas Stuart.</p>
               </div>
@@ -68,7 +68,7 @@
 
             <div class="container">
               <div class="carousel-caption">
-                <p>[% amazon('1526605902', 'davblog-21') %]</p>
+                <p>[% asin = '1526605902'; amazon(carousel_books.$asin, 'davblog-21') %]</p>
                 <h2>The Golden Booker</h2>
                 <p>In 2018, to celebrate 50 years of the award a special "Golden Booker" was awarded to <i>The English Patient</i>
                   by Michael Ondaatje.</p>
@@ -80,7 +80,7 @@
 
             <div class="container">
               <div class="carousel-caption">
-                <p>[% amazon('0099511894', 'davblog-21') %]</p>
+                <p>[% asin = '0099511894'; amazon(carousel_books.$asin, 'davblog-21') %]</p>
                 <h2>The Best of the Booker</h2>
                 <p>In 2008, on the 40th anniversary of the award, the "Best of the Booker" was announced as <i>Midnight's Children</i>
                   by Salman Rushdie.</p>
