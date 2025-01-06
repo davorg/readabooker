@@ -1,7 +1,7 @@
 package Booker::App;
 
 use Moo;
-use Types::Standard qw[Str HashRef InstanceOf];
+use Types::Standard qw[Str HashRef ArrayRef InstanceOf];
 
 use Template;
 
@@ -52,15 +52,49 @@ sub _build_tt {
   );
 }
 
+has carousel_books => (
+  is => 'lazy',
+  # isa => InstanceOf['HashRef'],
+);
+
+has carousel_asins => (
+  is => 'ro',
+  # isa => InstanceOf['ArrayRef'],
+  default => sub { [ qw(1529922933
+                        0861546458
+                        1914502078
+                        1784744069
+                        152901929X
+                        1526605902
+                        0099511894) ] },
+);
+
+sub _build_carousel_books {
+  my $self = shift;
+
+  my %books;
+  for (@{ $self->carousel_asins }) {
+    $books{$_} = $self->rs->{book}->find({
+      asin => $_,
+    });
+  }
+
+  return \%books;
+}
+
 sub build {
   my $self = shift;
 
   my $tt = $self->tt;
   my $rs = $self->rs;
 
-  $tt->process('index.html.tt', {}, 'index.html')
+  warn "Building index...\n";
+  $tt->process('index.html.tt', {
+    carousel_books => $self->carousel_books,
+  }, 'index.html')
     or die $tt->error;
 
+  warn "Building years...\n";
   $tt->process('year/index.html.tt', {
     events => [ $rs->{event}->all ],
   }, 'year/index.html')
@@ -68,11 +102,13 @@ sub build {
 
   my @authors = grep { $_->is_author } $rs->{person}->sorted_people->all;
 
+  warn "Building authors...\n";
   $tt->process('author/index.html.tt', {
     authors => \@authors,
   }, 'author/index.html')
     or die $tt->error;
 
+  warn "Building titles...\n";
   $tt->process('title/index.html.tt', {
     books => [ $rs->{book}->sorted_books->all ],
   }, 'title/index.html')
