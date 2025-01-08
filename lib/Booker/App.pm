@@ -100,6 +100,13 @@ sub build {
   }, 'year/index.html')
     or die $tt->error;
 
+  for ($rs->{event}->all) {
+    $tt->process('year/year.html.tt', {
+      event => $_,
+    }, 'year/' . $_->slug . '/index.html')
+      or die $tt->error;
+  }
+
   my @authors = grep { $_->is_author } $rs->{person}->sorted_people->all;
 
   warn "Building authors...\n";
@@ -108,11 +115,25 @@ sub build {
   }, 'author/index.html')
     or die $tt->error;
 
+  for (@authors) {
+    $tt->process('author/author.html.tt', {
+      author => $_,
+    }, 'author/' . $_->slug . '/index.html')
+      or die $tt->error;
+  }
+
   warn "Building titles...\n";
   $tt->process('title/index.html.tt', {
     books => [ $rs->{book}->sorted_books->all ],
   }, 'title/index.html')
     or die $tt->error;
+
+  for ($rs->{book}->sorted_books->all) {
+    $tt->process('title/title.html.tt', {
+      book => $_,
+    }, 'title/' . $_->slug . '/index.html')
+      or die $tt->error;
+  }
 }
 
 1;

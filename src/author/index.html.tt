@@ -1,15 +1,5 @@
 <h1>Books by author</h1>
-<table class="table">
+<ul>
 [% FOR author IN authors.sort('sort_name') -%]
-  <tr>
-    <th colspan="3"><a id="[% author.name %]">[% author.name %]</a></th>
-  </tr>
-[%   FOR book IN author.books_rs.sorted_books -%]
-  <tr[% IF book.entry.is_winner %] class="table-success"[% END %]>
-    <td><a href="/title/#[% book.title %]">[% book.title %]</a></td>
-    <td><a href="/year/#[% book.entry.event.year %]">[% book.entry.event.year %]</a></td>
-    <td>[% IF (book.asin != 'XXXXXX'); amazon(book, 'davblog-21'); END %]</td>
-  </tr>
-[%   END;
-   END -%]
-</table>
+    <li><a href="/author/[% author.slug %]/">[% author.name %]</a></li>
+</ul>

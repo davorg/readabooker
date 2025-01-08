@@ -99,8 +99,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07051 @ 2024-08-19 15:31:46
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:wNvsyN+/miVbOfO7rfzRxQ
+# Created by DBIx::Class::Schema::Loader v0.07051 @ 2024-10-17 09:55:17
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:400/TnBAy573EiAvJBiqXw
 
 sub slug { return shift->year }
 

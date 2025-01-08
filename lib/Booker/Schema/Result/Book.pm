@@ -121,8 +121,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07051 @ 2024-08-19 15:31:46
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:y+cppp23gjM4QoFbzCJs6g
+# Created by DBIx::Class::Schema::Loader v0.07051 @ 2024-10-17 09:55:17
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:8oQSzAekmrCjP/kGtGpDxg
 
 with 'MooX::Role::JSON_LD';
 
