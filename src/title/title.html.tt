@@ -3,6 +3,6 @@
   <tr[% IF book.entry.is_winner %] class="table-success"[% END %]>
     <td><a href="/author/[% book.author.slug %]">[% book.author.name %]</a></td>
     <td><a href="/year/[% book.entry.event.slug %]">[% book.entry.event.year %]</a></td>
-    <td>[% IF (book.asin != 'XXXXXX'); amazon(book.asin, 'davblog-21'); END %]</td>
+    <td>[% IF (book.asin != 'XXXXXX'); amazon(book, 'davblog-21'); END %]</td>
   </tr>
 </table>
