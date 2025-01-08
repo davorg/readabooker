@@ -132,7 +132,6 @@ sub json_ld_fields {
   [
     { name => 'title' },
     { author => sub {
-      warn join(' / ', caller(1)), "\n";
       $_[0]->author->json_ld_data }
     },
     { isbn => 'asin' },

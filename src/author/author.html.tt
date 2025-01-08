@@ -1,3 +1,4 @@
+[% author.json_ld_wrapped -%]
 <h1>Author: [% author.name %]</h1>
 <h2>Books</h2>
 <table class="table">
