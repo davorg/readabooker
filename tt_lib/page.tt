@@ -1,13 +1,23 @@
-[%- name = template.name.split('[/\.]').0;
-    desc = 'Choose a Booker Prize shortlisted novel to read';
-    IF name != 'index';
-      desc = desc _ ' by ' _ name;
+[%- bits = template.name.split('[/\.]');
+    entity = bits.0;
+    instance = bits.1;
+    desc = 'ReadABooker: Choose a Booker Prize shortlisted novel to read';
+    IF entity != 'index';
+      desc = desc _ ' by ' _ entity;
+      IF instance == 'title';
+        desc = desc _ ': ' _ book.title;
+      ELSIF instance == 'year';
+        desc = desc _ ': ' _ event.year;
+      ELSIF instance == 'author';
+        desc = desc _ ': ' _ author.name;
+      END;
     END;
     desc = desc _ '.' -%]
 [% INCLUDE amazon.tt -%]
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- [% template.name _ ' / ' _ entity _ ' / ' _ instance %] -->
     <meta name="description" content="[% desc %]">
     <meta property="og:title" content="Read a Booker" />
     <meta property="og:description" content="[% desc %]" />
