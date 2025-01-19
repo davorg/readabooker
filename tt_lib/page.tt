@@ -2,17 +2,18 @@
     entity = bits.0;
     instance = bits.1;
     desc = 'ReadABooker: Choose a Booker Prize shortlisted novel to read';
+    thing = '';
     IF entity != 'index';
       desc = desc _ ' by ' _ entity;
       IF instance == 'title';
-        desc = desc _ ': ' _ book.title;
+       thing = ' - Title: ' _ book.title;
       ELSIF instance == 'year';
-        desc = desc _ ': ' _ event.year;
+        thing = ' - Event: ' _ event.year;
       ELSIF instance == 'author';
-        desc = desc _ ': ' _ author.name;
+        thing = ' - Author: ' _ author.name;
       END;
     END;
-    desc = desc _ '.' -%]
+    desc = desc _ thing _ '.' -%]
 [% INCLUDE amazon.tt -%]
 <!doctype html>
 <html lang="en">
@@ -66,7 +67,7 @@
     <!-- Custom styles for this template -->
     <link href="/css/style.css" rel="stylesheet">
 
-    <title>Read a Booker</title>
+    <title>Read a Booker[% thing %]</title>
   </head>
   <body>
 
