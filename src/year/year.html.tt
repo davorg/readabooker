@@ -2,8 +2,8 @@
 <table class="table">
 [%   FOR entry IN event.entries -%]
   <tr[% IF entry.is_winner %] class="table-success"[% END %]>
-    <td><a href="/title/[% entry.book.slug %]">[% entry.book.title %]</a></td>
-    <td><a href="/author/[% entry.book.author.slug %]">[% entry.book.author.name %]</a></td>
+    <td><a href="/title/[% entry.book.slug %]">[% entry.book.title %]/</a></td>
+    <td><a href="/author/[% entry.book.author.slug %]">[% entry.book.author.name %]/</a></td>
     <td>[% IF (entry.book.asin != 'XXXXXX'); amazon(entry.book, 'davblog-21'); END %]</td>
   </tr>
 [% END -%]

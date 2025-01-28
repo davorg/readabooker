@@ -1,6 +1,6 @@
 <h1>Books by author</h1>
 <ul>
 [% FOR author IN authors.sort('sort_name') -%]
-    <li><a href="/author/[% author.slug %]/">[% author.name %]</a></li>
+    <li><a href="/author/[% author.slug %]/">[% author.name %]/</a></li>
 [% END -%]
 </ul>

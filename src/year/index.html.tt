@@ -1,6 +1,6 @@
 <h1>Books by year</h1>
 <ul>
 [% FOR event IN events.sort('year').reverse -%]
-  <li><a href="/year/[% event.slug %]">[% event.year %]</a></li>
+  <li><a href="/year/[% event.slug %]">[% event.year %]/</a></li>
 [% END -%]
 </ul>
