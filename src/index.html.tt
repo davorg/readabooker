@@ -147,7 +147,7 @@
               UK or Ireland.</p>
           </div>
           <div class="col-md-5">
-            <p><img src="/images/thebookerprizes.png" style="width: 50%"></p>
+            <p><img src="/images/thebookerprizes.png" alt="Booker Prize logo" style="width: 50%"></p>
           </div>
         </div>
 
@@ -164,7 +164,7 @@
               <a href="https://crankstart.org/">Crankstart</a> was announced.</p>
           </div>
           <div class="col-md-5 order-md-1">
-            <p><img src="/images/crankstart.jpg" style="width: 50%""></p>
+            <p><img src="/images/crankstart.jpg" alt="Crankstart logo" style="width: 50%"></p>
           </div>
         </div>
 
@@ -182,7 +182,7 @@
               <i>Troubles</i> by J. G. Farrell as the winner.</p>
           </div>
           <div class="col-md-5">
-            <p><img src="/images/troubles.jpg" style="width: 50%""></p>
+            <p><img src="/images/troubles.jpg" alt="'The Troubles' by J. G. Farrell" style="width: 50%"></p>
           </div>
         </div>
 
