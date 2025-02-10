@@ -1,6 +1,6 @@
 <h1>Books by title</h1>
 <ul>
 [% FOR book IN books -%]
-  <li><a href="/title/[% book.slug %]">[% book.title %]/</a></li>
+  <li><a href="/title/[% book.slug %]/">[% book.title %]</a></li>
 [% END -%]
 </ul>
