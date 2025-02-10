@@ -2,6 +2,7 @@ package Booker::App;
 
 use Moo;
 use Types::Standard qw[Str HashRef ArrayRef InstanceOf];
+use Time::Piece;
 
 use Template;
 
@@ -82,6 +83,11 @@ sub _build_carousel_books {
   return \%books;
 }
 
+has urls => (
+  # isa => InstanceOf['ArrayRef'],
+  is => 'rw',
+  default => sub { [] },  
+);
 sub build {
   my $self = shift;
 
@@ -94,17 +100,23 @@ sub build {
   }, 'index.html')
     or die $tt->error;
 
+  push @{ $self->urls }, '/';
+
   warn "Building years...\n";
   $tt->process('year/index.html.tt', {
     events => [ $rs->{event}->all ],
   }, 'year/index.html')
     or die $tt->error;
 
+  push @{ $self->urls }, '/year/';
+
   for ($rs->{event}->all) {
     $tt->process('year/year.html.tt', {
       event => $_,
     }, 'year/' . $_->slug . '/index.html')
       or die $tt->error;
+
+    push @{ $self->urls }, '/year/' . $_->slug;
   }
 
   my @authors = grep { $_->is_author } $rs->{person}->sorted_people->all;
@@ -115,11 +127,15 @@ sub build {
   }, 'author/index.html')
     or die $tt->error;
 
+  push @{ $self->urls }, '/author/';
+
   for (@authors) {
     $tt->process('author/author.html.tt', {
       author => $_,
     }, 'author/' . $_->slug . '/index.html')
       or die $tt->error;
+
+    push @{ $self->urls }, '/author/' . $_->slug;
   }
 
   warn "Building titles...\n";
@@ -128,12 +144,38 @@ sub build {
   }, 'title/index.html')
     or die $tt->error;
 
+  push @{ $self->urls }, '/title/';
+
   for ($rs->{book}->sorted_books->all) {
     $tt->process('title/title.html.tt', {
       book => $_,
     }, 'title/' . $_->slug . '/index.html')
       or die $tt->error;
+
+    push @{ $self->urls }, '/title/' . $_->slug;
   }
+
+  my $date = localtime->ymd;
+
+  my $sitemap = $self->root . '/docs/sitemap.xml';
+
+  open my $sitemap_fh, '>', $sitemap
+    or die "[$sitemap] $!\n";
+
+  print $sitemap_fh qq[<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n];
+
+  for ( @{ $self->urls } ) {
+    print $sitemap_fh <<EOF_URL;
+  <url>
+    <loc>https://readbooker.com$_</loc>
+    <lastmod>$date</lastmod>
+  </url>
+EOF_URL
+  }
+
+  print $sitemap_fh "</urlset>\n";
+
 }
 
 1;
