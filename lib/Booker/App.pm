@@ -168,7 +168,7 @@ sub build {
   for ( @{ $self->urls } ) {
     print $sitemap_fh <<EOF_URL;
   <url>
-    <loc>https://readbooker.com$_</loc>
+    <loc>https://readabooker.com$_</loc>
     <lastmod>$date</lastmod>
   </url>
 EOF_URL
