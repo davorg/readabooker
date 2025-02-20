@@ -116,7 +116,7 @@ sub build {
     }, 'year/' . $_->slug . '/index.html')
       or die $tt->error;
 
-    push @{ $self->urls }, '/year/' . $_->slug;
+    push @{ $self->urls }, '/year/' . $_->slug . '/';
   }
 
   my @authors = grep { $_->is_author } $rs->{person}->sorted_people->all;
@@ -135,7 +135,7 @@ sub build {
     }, 'author/' . $_->slug . '/index.html')
       or die $tt->error;
 
-    push @{ $self->urls }, '/author/' . $_->slug;
+    push @{ $self->urls }, '/author/' . $_->slug . '/';
   }
 
   warn "Building titles...\n";
@@ -152,7 +152,7 @@ sub build {
     }, 'title/' . $_->slug . '/index.html')
       or die $tt->error;
 
-    push @{ $self->urls }, '/title/' . $_->slug;
+    push @{ $self->urls }, '/title/' . $_->slug . '/';
   }
 
   my $date = localtime->ymd;
