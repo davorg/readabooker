@@ -20,6 +20,7 @@
   <head>
     <!-- [% template.name _ ' / ' _ entity _ ' / ' _ instance %] -->
     <meta name="description" content="[% desc %]">
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="Read a Booker" />
     <meta property="og:description" content="[% desc %]" />
     <meta property="og:image" content="https://readabooker.com/images/booker2024-short.jpg" />
