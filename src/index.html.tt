@@ -14,7 +14,7 @@
 
             <div class="container">
               <div class="carousel-caption">
-                <p>[% asin = '1529922933'; amazon(carousel_books.$asin, 'davblog-21') %]</p>
+                [% asin = '1529922933'; amazon(carousel_books.$asin, 'davblog-21') %]
                 <h2>2024 winner</h2>
                 <p>The winner of the 2024 Booker Prize was <i>Orbital</i> by Samantha Harvey.</p>
               </div>
