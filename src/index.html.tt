@@ -136,7 +136,7 @@
 
         <div class="row featurette">
           <div class="col-md-7">
-            <h2 class="featurette-heading">The Booker Prize.</span></h2>
+            <h2 class="featurette-heading">The Booker Prize</h2>
             <p>The Booker Prize is one of the richest literary prizes
               in the English-speaking world.</p>
             <p>Each year, a prize of £50,000 is awarded to the best novel
@@ -155,7 +155,7 @@
 
         <div class="row featurette">
           <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Name and sponsorship.</span></h2>
+            <h2 class="featurette-heading">Name and sponsorship</h2>
             <p>The Booker Prize was created in 1969. It was named after Booker McConnell Ltd
               (now just known as <a href="https://www.booker.co.uk/">Booker Group</a>) its
               original sponsor.</p>
