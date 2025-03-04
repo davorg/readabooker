@@ -25,7 +25,7 @@ sub _build_schema {
 
 has rs => (
   is => 'lazy',
-  isa => HashRef,
+  isa => HashRef[InstanceOf['DBIx::Class::ResultSet']],
 );
 
 sub _build_rs {
