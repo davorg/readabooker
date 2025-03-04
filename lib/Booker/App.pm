@@ -55,39 +55,25 @@ sub _build_tt {
 
 has carousel_books => (
   is => 'lazy',
-  # isa => InstanceOf['HashRef'],
-);
-
-has carousel_asins => (
-  is => 'ro',
-  # isa => InstanceOf['ArrayRef'],
-  default => sub { [ qw(1529922933
-                        0861546458
-                        1914502078
-                        1784744069
-                        152901929X
-                        1526605902
-                        0099511894) ] },
+  isa => ArrayRef[InstanceOf['Booker::Schema::Result::Book']],
 );
 
 sub _build_carousel_books {
   my $self = shift;
 
-  my %books;
-  for (@{ $self->carousel_asins }) {
-    $books{$_} = $self->rs->{book}->find({
-      asin => $_,
-    });
-  }
+  my @events = $self->rs->{event}->sorted_events;
+  $#events = 4;
+  my @books = map { $_->get_winner } @events;
 
-  return \%books;
+  return \@books;
 }
 
 has urls => (
-  # isa => InstanceOf['ArrayRef'],
+  isa => ArrayRef[Str], # TODO: URI
   is => 'rw',
   default => sub { [] },  
 );
+
 sub build {
   my $self = shift;
 

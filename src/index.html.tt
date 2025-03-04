@@ -1,68 +1,25 @@
       <h1>Read A Booker Prizewinner</h1>
       <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Winner 2024"></button>
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Winner 2023"></button>
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Winner 2022"></button>
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Winner 2021"></button>
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Winner 2020"></button>
+[% i=0;
+   FOR book IN carousel_books -%]
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="[% i; i = i + 1 %]" [% IF loop.first %]class="active" aria-current="true" [% END %]aria-label="Winner [% book.entry.event.year %]"></button>
+[% END -%]
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item active">
+[% FOR book IN carousel_books -%]
+          <div class="carousel-item[% IF loop.first %] active[% END %]">
             <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
 
             <div class="container">
               <div class="carousel-caption">
-                [% asin = '1529922933'; amazon(carousel_books.$asin, 'davblog-21') %]
-                <h2>2024 winner</h2>
-                <p>The winner of the 2024 Booker Prize was <i>Orbital</i> by Samantha Harvey.</p>
+                [% amazon(book, 'davblog-21') %]
+                <h2>[% book.entry.event.year %] winner</h2>
+                <p>The winner of the [% book.entry.event.year %] Booker Prize was <i>[% book.title %]</i> by [% book.author.name %].</p>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
-            <div class="container">
-              <div class="carousel-caption">
-                [% asin = '0861546458'; amazon(carousel_books.$asin, 'davblog-21') %]
-                <h2>2023 winner</h2>
-                <p>The winner of the 2023 Booker Prize was <i>Prophet Song</i> by Paul Lynch.</p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
-            <div class="container">
-              <div class="carousel-caption">
-                [% asin = '1914502078'; amazon(carousel_books.$asin, 'davblog-21') %]
-                <h2>2022 winner</h2>
-                <p>The winner of the 2022 Booker Prize was <i>The Seven Moons of Maali Almeida</i> by Shehan Karunatilaka.</p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
-            <div class="container">
-              <div class="carousel-caption">
-                [% asin = '1784744069'; amazon(carousel_books.$asin, 'davblog-21') %]
-                <h2>2021 winner</h2>
-                <p>The winner of the 2021 Booker Prize was <i>The Promise</i> by Damon Galgut.</p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
-            <div class="container">
-              <div class="carousel-caption">
-                [% asin = '152901929X'; amazon(carousel_books.$asin, 'davblog-21') %]
-                <h2>2020 winner</h2>
-                <p>The 2020 winner was <i>Shuggie Bain</i> by Douglas Stuart.</p>
-              </div>
-            </div>
-          </div>
+[% END -%]
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
