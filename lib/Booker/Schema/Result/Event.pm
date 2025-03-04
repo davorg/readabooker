@@ -104,6 +104,14 @@ __PACKAGE__->has_many(
 
 sub slug { return shift->year }
 
+sub get_winner {
+  my $self = shift;
+
+  my $winner = $self->entries->search({ is_winner => 1 })->first;
+
+  return $winner->book;
+}
+
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
 __PACKAGE__->meta->make_immutable;
 1;
