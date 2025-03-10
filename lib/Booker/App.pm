@@ -81,64 +81,65 @@ sub build {
   my $rs = $self->rs;
 
   warn "Building index...\n";
+  push @{ $self->urls }, '/';
   $tt->process('index.html.tt', {
     carousel_books => $self->carousel_books,
+    url => $self->urls->[-1],
   }, 'index.html')
     or die $tt->error;
 
-  push @{ $self->urls }, '/';
 
   warn "Building years...\n";
+  push @{ $self->urls }, '/year/';
   $tt->process('year/index.html.tt', {
     events => [ $rs->{event}->all ],
+    url => $self->urls->[-1],
   }, 'year/index.html')
     or die $tt->error;
 
-  push @{ $self->urls }, '/year/';
-
   for ($rs->{event}->all) {
+    push @{ $self->urls }, '/year/' . $_->slug . '/';
     $tt->process('year/year.html.tt', {
       event => $_,
+      url => $self->urls->[-1],
     }, 'year/' . $_->slug . '/index.html')
       or die $tt->error;
-
-    push @{ $self->urls }, '/year/' . $_->slug . '/';
   }
 
   my @authors = grep { $_->is_author } $rs->{person}->sorted_people->all;
 
   warn "Building authors...\n";
+  push @{ $self->urls }, '/author/';
   $tt->process('author/index.html.tt', {
     authors => \@authors,
+    url => $self->urls->[-1],
   }, 'author/index.html')
     or die $tt->error;
 
-  push @{ $self->urls }, '/author/';
-
   for (@authors) {
+    push @{ $self->urls }, '/author/' . $_->slug . '/';
     $tt->process('author/author.html.tt', {
       author => $_,
+      url => $self->urls->[-1],
     }, 'author/' . $_->slug . '/index.html')
       or die $tt->error;
-
-    push @{ $self->urls }, '/author/' . $_->slug . '/';
   }
 
   warn "Building titles...\n";
+  push @{ $self->urls }, '/title/';
   $tt->process('title/index.html.tt', {
     books => [ $rs->{book}->sorted_books->all ],
+    url => $self->urls->[-1],
   }, 'title/index.html')
     or die $tt->error;
 
-  push @{ $self->urls }, '/title/';
-
   for ($rs->{book}->sorted_books->all) {
+    push @{ $self->urls }, '/title/' . $_->slug . '/';
     $tt->process('title/title.html.tt', {
       book => $_,
+      url => $self->urls->[-1],
     }, 'title/' . $_->slug . '/index.html')
       or die $tt->error;
-
-    push @{ $self->urls }, '/title/' . $_->slug . '/';
   }
 
   my $date = localtime->ymd;
