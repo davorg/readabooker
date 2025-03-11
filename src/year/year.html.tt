@@ -1,10 +1,10 @@
 <h1>Year: [% event.year %]</h1>
 <table class="table">
-[%   FOR entry IN event.entries -%]
-  <tr[% IF entry.is_winner %] class="table-success"[% END %]>
-    <td><a href="/title/[% entry.book.slug %]/">[% entry.book.title %]</a></td>
-    <td><a href="/author/[% entry.book.author.slug %]/">[% entry.book.author.name %]</a></td>
-    <td>[% IF (entry.book.asin != 'XXXXXX'); amazon(entry.book, 'davblog-21'); END %]</td>
+[%   FOR book IN event.books -%]
+  <tr[% IF book.is_winner %] class="table-success"[% END %]>
+    <td><a href="/title/[% book.slug %]/">[% book.title %]</a></td>
+    <td><a href="/author/[% book.author.slug %]/">[% book.author.name %]</a></td>
+    <td>[% IF (book.asin != 'XXXXXX'); amazon(book, 'davblog-21'); END %]</td>
   </tr>
 [% END -%]
 </table>

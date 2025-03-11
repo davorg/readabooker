@@ -68,17 +68,17 @@ __PACKAGE__->set_primary_key("id");
 
 =head1 RELATIONS
 
-=head2 entries
+=head2 books
 
 Type: has_many
 
-Related object: L<Booker::Schema::Result::Entry>
+Related object: L<Booker::Schema::Result::Book>
 
 =cut
 
 __PACKAGE__->has_many(
-  "entries",
-  "Booker::Schema::Result::Entry",
+  "books",
+  "Booker::Schema::Result::Book",
   { "foreign.event_id" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
@@ -99,17 +99,17 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07051 @ 2024-10-17 09:55:17
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:400/TnBAy573EiAvJBiqXw
+# Created by DBIx::Class::Schema::Loader v0.07052 @ 2025-03-11 12:05:28
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:qfBC+mUJkbOQNP8cPrtBRQ
 
 sub slug { return shift->year }
 
 sub get_winner {
   my $self = shift;
 
-  my $winner = $self->entries->search({ is_winner => 1 })->first;
+  my $winner = $self->books->search({ is_winner => 1 })->first;
 
-  return $winner->book;
+  return $winner;
 }
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

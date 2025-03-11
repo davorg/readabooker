@@ -59,6 +59,19 @@ __PACKAGE__->table("book");
   is_nullable: 1
   size: 120
 
+=head2 event_id
+
+  data_type: 'int'
+  default_value: 1
+  is_foreign_key: 1
+  is_nullable: 0
+
+=head2 is_winner
+
+  data_type: 'boolean'
+  default_value: false
+  is_nullable: 0
+
 =cut
 
 __PACKAGE__->add_columns(
@@ -74,6 +87,15 @@ __PACKAGE__->add_columns(
   { data_type => "text", is_nullable => 0 },
   "slug",
   { data_type => "varchar", is_nullable => 1, size => 120 },
+  "event_id",
+  {
+    data_type      => "int",
+    default_value  => 1,
+    is_foreign_key => 1,
+    is_nullable    => 0,
+  },
+  "is_winner",
+  { data_type => "boolean", default_value => \"false", is_nullable => 0 },
 );
 
 =head1 PRIMARY KEY
@@ -105,24 +127,24 @@ __PACKAGE__->belongs_to(
   { is_deferrable => 0, on_delete => "NO ACTION", on_update => "NO ACTION" },
 );
 
-=head2 entries
+=head2 event
 
-Type: has_many
+Type: belongs_to
 
-Related object: L<Booker::Schema::Result::Entry>
+Related object: L<Booker::Schema::Result::Event>
 
 =cut
 
-__PACKAGE__->has_many(
-  "entries",
-  "Booker::Schema::Result::Entry",
-  { "foreign.book_id" => "self.id" },
-  { cascade_copy => 0, cascade_delete => 0 },
+__PACKAGE__->belongs_to(
+  "event",
+  "Booker::Schema::Result::Event",
+  { id => "event_id" },
+  { is_deferrable => 0, on_delete => "NO ACTION", on_update => "NO ACTION" },
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07051 @ 2024-10-17 09:55:17
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:8oQSzAekmrCjP/kGtGpDxg
+# Created by DBIx::Class::Schema::Loader v0.07052 @ 2025-03-11 12:05:28
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:CKfQqb9UhJfgNsxwQR/Wvg
 
 with 'MooX::Role::JSON_LD';
 
@@ -136,12 +158,6 @@ sub json_ld_fields {
     },
     { isbn => 'asin' },
   ];
-}
-
-sub entry {
-  my $self = shift;
-
-  return +($self->entries)[0];
 }
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
