@@ -7,6 +7,7 @@ use Time::Piece;
 use Template;
 
 use Booker::Schema;
+use Booker::Page;
 
 has root => (
   is => 'ro',
@@ -81,27 +82,42 @@ sub build {
   my $rs = $self->rs;
 
   warn "Building index...\n";
-  push @{ $self->urls }, '/';
+  my $index_page = Booker::Page->new(
+    title => 'Read a Booker',
+    url_path => '/',
+    type => '',
+    slug => '',
+    description => 'ReadABooker: Choose a Booker Prize shortlisted novel to read.',
+  );
+  push @{ $self->urls }, $index_page->url_path;
+
   $tt->process('index.html.tt', {
     carousel_books => $self->carousel_books,
-    url => $self->urls->[-1],
+    object => $index_page,
   }, 'index.html')
     or die $tt->error;
 
-
   warn "Building years...\n";
-  push @{ $self->urls }, '/year/';
+  warn "  index...\n";
+  my $years_page = Booker::Page->new(
+    title => 'ReadABooker by year',
+    url_path => '/year/',
+    type => 'year',
+    slug => '',
+    description => 'ReadABooker: Choose a Booker Prize shortlisted novel to read by year.',
+  );
+  push @{ $self->urls }, $years_page->url_path;
   $tt->process('year/index.html.tt', {
     events => [ $rs->{event}->all ],
-    url => $self->urls->[-1],
+    object => $years_page,
   }, 'year/index.html')
     or die $tt->error;
 
+  warn "  years...\n";
   for ($rs->{event}->all) {
-    push @{ $self->urls }, '/year/' . $_->slug . '/';
+    push @{ $self->urls }, $_->url_path;
     $tt->process('year/year.html.tt', {
-      event => $_,
-      url => $self->urls->[-1],
+      object => $_,
     }, 'year/' . $_->slug . '/index.html')
       or die $tt->error;
   }
@@ -109,35 +125,51 @@ sub build {
   my @authors = grep { $_->is_author } $rs->{person}->sorted_people->all;
 
   warn "Building authors...\n";
-  push @{ $self->urls }, '/author/';
+  warn "  index...\n";
+  my $authors_page = Booker::Page->new(
+    title => 'ReadABooker by author',
+    url_path => '/author/',
+    type => 'author',
+    slug => '',
+    description => 'ReadABooker: Choose a Booker Prize shortlisted novel to read by author.',
+  );
+  push @{ $self->urls }, $authors_page->url_path;
   $tt->process('author/index.html.tt', {
     authors => \@authors,
-    url => $self->urls->[-1],
+    object => $authors_page,
   }, 'author/index.html')
     or die $tt->error;
 
+  warn "  authors...\n";
   for (@authors) {
-    push @{ $self->urls }, '/author/' . $_->slug . '/';
+    push @{ $self->urls }, $_->url_path;
     $tt->process('author/author.html.tt', {
-      author => $_,
-      url => $self->urls->[-1],
+      object => $_,
     }, 'author/' . $_->slug . '/index.html')
       or die $tt->error;
   }
 
   warn "Building titles...\n";
-  push @{ $self->urls }, '/title/';
+  warn "  index...\n";
+  my $titles_page = Booker::Page->new(
+    title => 'ReadABooker by title',
+    url_path => '/title/',
+    type => 'title',
+    slug => '',
+    description => 'ReadABooker: Choose a Booker Prize shortlisted novel to read by title.',
+  );
+  push @{ $self->urls }, $titles_page->url_path;
   $tt->process('title/index.html.tt', {
     books => [ $rs->{book}->sorted_books->all ],
-    url => $self->urls->[-1],
+    object => $titles_page,
   }, 'title/index.html')
     or die $tt->error;
 
+  warn "  titles...\n";
   for ($rs->{book}->sorted_books->all) {
-    push @{ $self->urls }, '/title/' . $_->slug . '/';
+    push @{ $self->urls }, $_->url_path;
     $tt->process('title/title.html.tt', {
-      book => $_,
-      url => $self->urls->[-1],
+      object => $_,
     }, 'title/' . $_->slug . '/index.html')
       or die $tt->error;
   }

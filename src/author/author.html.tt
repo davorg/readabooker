@@ -1,8 +1,8 @@
-[% author.json_ld_wrapped -%]
-<h1>Author: [% author.name %]</h1>
+[% object.json_ld_wrapped -%]
+<h1>Author: [% object.name %]</h1>
 <h2>Books</h2>
 <table class="table">
-[% FOR book IN author.books_rs.sorted_books -%]
+[% FOR book IN object.books_rs.sorted_books -%]
   <tr[% IF book.is_winner %] class="table-success"[% END %]>
     <td><a href="/title/[% book.slug %]/">[% book.title %]</a></td>
     <td><a href="/year/[% book.event.slug %]/">[% book.event.year %]</a></td>

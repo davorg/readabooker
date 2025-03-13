@@ -146,7 +146,7 @@ __PACKAGE__->belongs_to(
 # Created by DBIx::Class::Schema::Loader v0.07052 @ 2025-03-11 12:05:28
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:CKfQqb9UhJfgNsxwQR/Wvg
 
-with 'MooX::Role::JSON_LD';
+with 'MooX::Role::JSON_LD', 'Booker::Role::SEO';
 
 sub json_ld_type { 'Book' }
 
@@ -158,6 +158,26 @@ sub json_ld_fields {
     },
     { isbn => 'asin' },
   ];
+}
+
+sub type { 'title' }
+
+sub slug { return shift->title }
+
+sub seo_title { return 'Read a Booker - Title: ' . shift->title }
+
+sub description {
+  return 'ReadABooker: Choose a Booker Prize shortlisted novel to read by title - Title: ' . shift->title . '.';
+}
+
+sub url_path {
+  my $self = shift;
+
+  my $url = '/';
+  $url .= $self->type . '/' if $self->type;
+  $url .= $self->slug . '/' if $self->slug;
+
+  return $url;
 }
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

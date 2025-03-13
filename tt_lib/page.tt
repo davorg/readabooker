@@ -6,11 +6,11 @@
     IF entity != 'index';
       desc = desc _ ' by ' _ entity;
       IF instance == 'title';
-       thing = ' - Title: ' _ book.title;
+       thing = ' - Title: ' _ object.title;
       ELSIF instance == 'year';
-        thing = ' - Event: ' _ event.year;
+        thing = ' - Event: ' _ object.year;
       ELSIF instance == 'author';
-        thing = ' - Author: ' _ author.name;
+        thing = ' - Author: ' _ object.name;
       END;
     END;
     desc = desc _ thing _ '.' -%]
@@ -19,19 +19,19 @@
 <html lang="en">
   <head>
     <!-- [% template.name _ ' / ' _ entity _ ' / ' _ instance %] -->
-    <meta name="description" content="[% desc %]">
+    <meta name="description" content="[% object.seo_description %]">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Read a Booker[% thing %]">
-    <meta property="og:url" content="https://readabooker.com[% url %]">
-    <meta property="og:description" content="[% desc %]">
-    <meta property="og:image" content="https://readabooker.com/images/booker2024-short.jpg">
+    <meta property="og:title" content="[% object.seo_title %]">
+    <meta property="og:url" content="https://readabooker.com[% object.seo_url %]">
+    <meta property="og:description" content="[% object.seo_description %]">
+    <meta property="og:image" content="https://readabooker.com[% object.seo_image %]">
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Read a Booker[% thing %]">
-    <meta name="twitter:description" content="[% desc %]">
-    <meta name="twitter:image" content="https://readabooker.com/images/booker2024-short.jpg">
+    <meta name="twitter:title" content="[% object.seo_title %]">
+    <meta name="twitter:description" content="[% object.seo_description %]">
+    <meta name="twitter:image" content="https://readabooker.com[% object.seo_image %]">
 
-    <link rel="canonical" href="https://readabooker.com[% url %]">
+    <link rel="canonical" href="https://readabooker.com[% object.seo_url %]">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-80NYQ8R8E7"></script>

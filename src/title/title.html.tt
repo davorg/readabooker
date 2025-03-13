@@ -1,9 +1,9 @@
-[% book.json_ld_wrapped -%]
-<h1>Book: [% book.title %]</h1>
+[% object.json_ld_wrapped -%]
+<h1>Book: [% object.title %]</h1>
 <table class="table">
-  <tr[% IF book.is_winner %] class="table-success"[% END %]>
-    <td><a href="/author/[% book.author.slug %]/">[% book.author.name %]</a></td>
-    <td><a href="/year/[% book.event.slug %]/">[% book.event.year %]</a></td>
-    <td>[% IF (book.asin != 'XXXXXX'); amazon(book, 'davblog-21'); END %]</td>
+  <tr[% IF object.is_winner %] class="table-success"[% END %]>
+    <td><a href="/author/[% object.author.slug %]/">[% object.author.name %]</a></td>
+    <td><a href="/year/[% object.event.slug %]/">[% object.event.year %]</a></td>
+    <td>[% IF (object.asin != 'XXXXXX'); amazon(object, 'davblog-21'); END %]</td>
   </tr>
 </table>

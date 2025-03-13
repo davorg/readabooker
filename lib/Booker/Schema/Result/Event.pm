@@ -102,7 +102,27 @@ __PACKAGE__->has_many(
 # Created by DBIx::Class::Schema::Loader v0.07052 @ 2025-03-11 12:05:28
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:qfBC+mUJkbOQNP8cPrtBRQ
 
+with 'Booker::Role::SEO';
+
+sub type { 'year' }
+
 sub slug { return shift->year }
+
+sub title { return 'Read a Booker - Event: ' . shift->year }
+
+sub description {
+  return 'ReadABooker: Choose a Booker Prize shortlisted novel to read by year - Event: ' . shift->year . '.';
+}
+
+sub url_path {
+  my $self = shift;
+
+  my $url = '/';
+  $url .= $self->type . '/' if $self->type;
+  $url .= $self->slug . '/' if $self->slug;
+
+  return $url;
+}
 
 sub get_winner {
   my $self = shift;

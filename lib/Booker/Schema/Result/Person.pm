@@ -109,7 +109,7 @@ __PACKAGE__->has_many(
 # Created by DBIx::Class::Schema::Loader v0.07051 @ 2024-10-17 09:55:17
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:ZDjoYDPg21ofiyh7GsI4oQ
 
-with 'MooX::Role::JSON_LD';
+with 'MooX::Role::JSON_LD', 'Booker::Role::SEO';
 
 sub json_ld_type { 'Person' }
 
@@ -117,6 +117,28 @@ sub json_ld_fields {
   [
     qw/name/,
   ];
+}
+
+with 'Booker::Role::SEO';
+
+sub type { 'author' }
+
+sub slug { return lc shift->name }
+
+sub title { return 'Read a Booker - Author: ' . shift->name }
+
+sub description {
+  return 'ReadABooker: Choose a Booker Prize shortlisted novel to read by author - Author: ' . shift->name . '.';
+}
+
+sub url_path {
+  my $self = shift;
+
+  my $url = '/';
+  $url .= $self->type . '/' if $self->type;
+  $url .= $self->slug . '/' if $self->slug;
+
+  return $url;
 }
 
 sub is_author {
