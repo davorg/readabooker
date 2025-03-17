@@ -76,7 +76,7 @@
     <!-- Custom styles for this template -->
     <link href="/css/style.css" rel="stylesheet">
 
-    <title>Read a Booker[% thing %]</title>
+    <title>[% object.seo_title %]</title>
   </head>
   <body>
 
