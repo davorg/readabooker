@@ -46,6 +46,7 @@ sub _build_tt {
   my $root = $_[0]->root;
 
   return Template->new(
+    ENCODING     => 'utf8',
     INCLUDE_PATH => [ "$root/tt_lib", "$root/src" ],
     OUTPUT_PATH  => "$root/docs",
     PRE_PROCESS  => 'amazon.tt',
@@ -94,7 +95,7 @@ sub build {
   $tt->process('index.html.tt', {
     carousel_books => $self->carousel_books,
     object => $index_page,
-  }, 'index.html')
+  }, 'index.html', {binmode => ':utf8'})
     or die $tt->error;
 
   warn "Building years...\n";
@@ -110,7 +111,7 @@ sub build {
   $tt->process('year/index.html.tt', {
     events => [ $rs->{event}->all ],
     object => $years_page,
-  }, 'year/index.html')
+  }, 'year/index.html', {binmode => ':utf8'})
     or die $tt->error;
 
   warn "  years...\n";
@@ -118,7 +119,7 @@ sub build {
     push @{ $self->urls }, $_->url_path;
     $tt->process('year/year.html.tt', {
       object => $_,
-    }, 'year/' . $_->slug . '/index.html')
+    }, 'year/' . $_->slug . '/index.html', {binmode => ':utf8'})
       or die $tt->error;
   }
 
@@ -139,7 +140,7 @@ sub build {
     authors => \@authors,
     letters => $author_letters,
     object => $authors_page,
-  }, 'author/index.html')
+  }, 'author/index.html', {binmode => ':utf8'})
     or die $tt->error;
 
   warn "  authors...\n";
@@ -147,7 +148,7 @@ sub build {
     push @{ $self->urls }, $_->url_path;
     $tt->process('author/author.html.tt', {
       object => $_,
-    }, 'author/' . $_->slug . '/index.html')
+    }, 'author/' . $_->slug . '/index.html', {binmode => ':utf8'})
       or die $tt->error;
   }
 
@@ -167,7 +168,7 @@ sub build {
     books => [ $rs->{book}->sorted_books->all ],
     letters => $letters,
     object => $titles_page,
-  }, 'title/index.html')
+  }, 'title/index.html', {binmode => ':utf8'})
     or die $tt->error;
 
   warn "  titles...\n";
@@ -175,7 +176,7 @@ sub build {
     push @{ $self->urls }, $_->url_path;
     $tt->process('title/title.html.tt', {
       object => $_,
-    }, 'title/' . $_->slug . '/index.html')
+    }, 'title/' . $_->slug . '/index.html', {binmode => ':utf8'})
       or die $tt->error;
   }
 

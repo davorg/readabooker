@@ -19,12 +19,20 @@ __PACKAGE__->load_namespaces;
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
 
+use DBD::SQLite::Constants ':dbd_sqlite_string_mode';
+
 sub get_schema {
   my $class = shift;
 
   my $db = shift || 'booker.db';
 
-  return $class->connect("dbi:SQLite:$db");
+  my $schema =  $class->connect("dbi:SQLite:$db");
+
+  my $dbh = $schema->storage->dbh;
+
+  $dbh->{sqlite_string_mode} = DBD_SQLITE_STRING_MODE_UNICODE_FALLBACK;
+
+  return $schema;
 }
 
 __PACKAGE__->meta->make_immutable(inline_constructor => 0);

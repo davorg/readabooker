@@ -6,6 +6,7 @@ use warnings;
 use feature 'signatures';
 
 use FindBin '$RealBin';
+use Text::Unidecode;
 
 use Booker::App;
 
@@ -30,7 +31,7 @@ for ($app->rs->{event}->all) {
 }
 
 sub make_slug($text) {
-  $text = lc $text;
+  $text = lc unidecode $text;
   $text =~ s/[^0-9a-z']/-/g;
   $text =~ s/--+/-/g;
   $text =~ s/[^-0-9a-z]//g;

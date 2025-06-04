@@ -154,6 +154,7 @@ __PACKAGE__->belongs_to(
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:wfdSXHrtCPv/QCwLs0zOkw
 
 with 'MooX::Role::JSON_LD', 'Booker::Role::SEO';
+use Text::Unidecode;
 
 sub json_ld_type { 'Book' }
 
