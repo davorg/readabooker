@@ -10,3 +10,6 @@
   </tr>
 [% END -%]
 </table>
+[% IF object.has_biography;
+     object.biography | html_para;
+   END -%]

@@ -72,6 +72,11 @@ __PACKAGE__->table("book");
   default_value: false
   is_nullable: 0
 
+=head2 blurb
+
+  data_type: 'text'
+  is_nullable: 1
+
 =cut
 
 __PACKAGE__->add_columns(
@@ -96,6 +101,8 @@ __PACKAGE__->add_columns(
   },
   "is_winner",
   { data_type => "boolean", default_value => \"false", is_nullable => 0 },
+  "blurb",
+  { data_type => "text", is_nullable => 1 },
 );
 
 =head1 PRIMARY KEY
@@ -143,8 +150,8 @@ __PACKAGE__->belongs_to(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07052 @ 2025-03-11 12:05:28
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:CKfQqb9UhJfgNsxwQR/Wvg
+# Created by DBIx::Class::Schema::Loader v0.07053 @ 2025-06-04 10:00:47
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:wfdSXHrtCPv/QCwLs0zOkw
 
 with 'MooX::Role::JSON_LD', 'Booker::Role::SEO';
 
@@ -178,6 +185,12 @@ sub url_path {
   $url .= $self->slug . '/' if $self->slug;
 
   return $url;
+}
+
+sub has_blurb {
+  my $self = shift;
+
+  return defined $self->blurb;
 }
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

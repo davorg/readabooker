@@ -1,0 +1,62 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use builtin qw[trim];
+use feature 'say';
+
+use OpenAPI::Client::OpenAI;
+use Time::Piece;
+use Encode qw[encode];
+
+use Booker::Schema;
+
+my $sch = Booker::Schema->get_schema;
+
+my $count = 0;
+my $people = $sch->resultset('Person');
+
+while ($count < 20 and my $person = $people->next) {
+  next if defined $person->biography;
+  ++$count;
+  my $biog = describe_person($person);
+  $person->update({ biography => $biog });
+}
+
+sub describe_person {
+  my ($person) = @_;
+
+  my $name = $person->name;
+
+  my $debug = 1;
+
+  my $api_key = $ENV{"OPENAI_API_KEY"} or die "OPENAI_API_KEY is not set\n";
+
+  my $client = OpenAPI::Client::OpenAI->new;
+
+  my $prompt = join " ",
+    'Produce a 100-200 word biography for the Booker Prize author and/or judge',
+    $name,
+    'Do not mention the fact their association with the Booker Prize';
+
+  my $res = $client->createChatCompletion({
+    body => {
+      model => 'gpt-4o',
+      # model => 'gpt-4.1-nano',
+      messages => [
+          { role => 'system', content => 'You are someone who knows a lot about popular literature.' },
+          { role => 'user', content => $prompt },
+      ],
+      temperature => 1.0,
+    },
+  });
+
+  my $text = $res->res->json->{choices}[0]{message}{content};
+  $text = encode('UTF-8', $text);
+
+  say $text if $debug;
+
+  return $text;
+}
+
