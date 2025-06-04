@@ -122,7 +122,8 @@ sub build {
       or die $tt->error;
   }
 
-  my @authors = grep { $_->is_author } $rs->{person}->sorted_people->all;
+  my @authors = $rs->{person}->authors->sorted_people->all;
+  my $author_letters = $rs->{person}->author_letters;
 
   warn "Building authors...\n";
   warn "  index...\n";
@@ -136,6 +137,7 @@ sub build {
   push @{ $self->urls }, $authors_page->url_path;
   $tt->process('author/index.html.tt', {
     authors => \@authors,
+    letters => $author_letters,
     object => $authors_page,
   }, 'author/index.html')
     or die $tt->error;
@@ -149,6 +151,8 @@ sub build {
       or die $tt->error;
   }
 
+  my $letters = $rs->{book}->letters;
+
   warn "Building titles...\n";
   warn "  index...\n";
   my $titles_page = Booker::Page->new(
@@ -161,6 +165,7 @@ sub build {
   push @{ $self->urls }, $titles_page->url_path;
   $tt->process('title/index.html.tt', {
     books => [ $rs->{book}->sorted_books->all ],
+    letters => $letters,
     object => $titles_page,
   }, 'title/index.html')
     or die $tt->error;

@@ -160,6 +160,12 @@ sub has_biography {
   return defined $self->biography;
 }
 
+sub letter {
+  my $self = shift;
+
+  return uc substr $self->sort_name, 0, 1;
+}
+
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
 __PACKAGE__->meta->make_immutable;
 1;

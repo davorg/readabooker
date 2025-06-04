@@ -193,6 +193,14 @@ sub has_blurb {
   return defined $self->blurb;
 }
 
+sub letter {
+  my $self = shift;
+
+  my $letter = uc substr $self->sort_title, 0, 1;
+
+  return $letter =~ /[A-Z]/ ? $letter : '#';
+}
+
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
 __PACKAGE__->meta->make_immutable;
 1;

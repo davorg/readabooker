@@ -106,3 +106,7 @@ div.amazon a:link {
 img.img-thumbnail {
   max-width: 200px;
 }
+
+h1[id], h2[id] {
+  scroll-margin-top: 70px; /* adjust as needed */
+}
