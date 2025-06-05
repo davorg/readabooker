@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "G.",
+               "url" : "https://readabooker.com/title/g/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "John Berger"
+      "name" : "John Berger",
+      "url" : "https://readabooker.com/author/john-berger/"
    },
    "isbn" : "1408834340",
    "name" : "G."

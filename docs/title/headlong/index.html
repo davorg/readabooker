@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Headlong",
+               "url" : "https://readabooker.com/title/headlong/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Michael Frayn"
+      "name" : "Michael Frayn",
+      "url" : "https://readabooker.com/author/michael-frayn/"
    },
    "isbn" : "0571283489",
    "name" : "Headlong"

@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "English Passengers",
+               "url" : "https://readabooker.com/title/english-passengers/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Matthew Kneale"
+      "name" : "Matthew Kneale",
+      "url" : "https://readabooker.com/author/matthew-kneale/"
    },
    "isbn" : "0140285210",
    "name" : "English Passengers"

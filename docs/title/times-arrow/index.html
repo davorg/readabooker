@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Time's Arrow",
+               "url" : "https://readabooker.com/title/times-arrow/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Martin Amis"
+      "name" : "Martin Amis",
+      "url" : "https://readabooker.com/author/martin-amis/"
    },
    "isbn" : "0099455358",
    "name" : "Time's Arrow"

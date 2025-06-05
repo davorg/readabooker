@@ -104,8 +104,23 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "In a Free State",
+               "url" : "https://readabooker.com/title/in-a-free-state/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "A Bend in the River",
+               "url" : "https://readabooker.com/title/a-bend-in-the-river/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "V. S. Naipaul"
+      "name" : "V. S. Naipaul",
+      "url" : "https://readabooker.com/author/v-s-naipaul/"
    },
    "isbn" : "0330522906",
    "name" : "In a Free State"

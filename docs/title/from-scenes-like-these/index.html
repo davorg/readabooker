@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "From Scenes Like These",
+               "url" : "https://readabooker.com/title/from-scenes-like-these/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Gordon Williams"
+      "name" : "Gordon Williams",
+      "url" : "https://readabooker.com/author/gordon-williams/"
    },
    "isbn" : "1873631677",
    "name" : "From Scenes Like These"

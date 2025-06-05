@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Shadows on our Skin",
+               "url" : "https://readabooker.com/title/shadows-on-our-skin/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Jennifer Johnston"
+      "name" : "Jennifer Johnston",
+      "url" : "https://readabooker.com/author/jennifer-johnston/"
    },
    "isbn" : "074726791X",
    "name" : "Shadows on our Skin"

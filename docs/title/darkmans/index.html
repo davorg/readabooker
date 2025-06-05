@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Darkmans",
+               "url" : "https://readabooker.com/title/darkmans/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Nicola Barker"
+      "name" : "Nicola Barker",
+      "url" : "https://readabooker.com/author/nicola-barker/"
    },
    "isbn" : "0007193637",
    "name" : "Darkmans"

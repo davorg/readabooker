@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Oh William!",
+               "url" : "https://readabooker.com/title/oh-william/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Elizabeth Strout"
+      "name" : "Elizabeth Strout",
+      "url" : "https://readabooker.com/author/elizabeth-strout/"
    },
    "isbn" : "0241992214",
    "name" : "Oh William!"

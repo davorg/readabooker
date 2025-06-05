@@ -104,8 +104,23 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Small World",
+               "url" : "https://readabooker.com/title/small-world/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "Nice Work",
+               "url" : "https://readabooker.com/title/nice-work/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "David Lodge"
+      "name" : "David Lodge",
+      "url" : "https://readabooker.com/author/david-lodge/"
    },
    "isbn" : "0099554186",
    "name" : "Nice Work"

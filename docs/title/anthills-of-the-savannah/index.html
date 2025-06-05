@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Anthills of the Savannah",
+               "url" : "https://readabooker.com/title/anthills-of-the-savannah/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Chinua Achebe"
+      "name" : "Chinua Achebe",
+      "url" : "https://readabooker.com/author/chinua-achebe/"
    },
    "isbn" : "0141186909",
    "name" : "Anthills of the Savannah"

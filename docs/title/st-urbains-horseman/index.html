@@ -104,8 +104,23 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "St. Urbain's Horseman",
+               "url" : "https://readabooker.com/title/st-urbains-horseman/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "Solomon Gursky Was Here",
+               "url" : "https://readabooker.com/title/solomon-gursky-was-here/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Mordecai Richler"
+      "name" : "Mordecai Richler",
+      "url" : "https://readabooker.com/author/mordecai-richler/"
    },
    "isbn" : "0297003631",
    "name" : "St. Urbain's Horseman"

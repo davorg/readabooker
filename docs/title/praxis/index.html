@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Praxis",
+               "url" : "https://readabooker.com/title/praxis/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Fay Weldon"
+      "name" : "Fay Weldon",
+      "url" : "https://readabooker.com/author/fay-weldon/"
    },
    "isbn" : "0140144099",
    "name" : "Praxis"

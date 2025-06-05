@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "I'll Go to Bed at Noon",
+               "url" : "https://readabooker.com/title/ill-go-to-bed-at-noon/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Gerard Woodward"
+      "name" : "Gerard Woodward",
+      "url" : "https://readabooker.com/author/gerard-woodward/"
    },
    "isbn" : "0099286939",
    "name" : "I'll Go to Bed at Noon"

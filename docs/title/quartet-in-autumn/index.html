@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Quartet in Autumn",
+               "url" : "https://readabooker.com/title/quartet-in-autumn/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Barbara Pym"
+      "name" : "Barbara Pym",
+      "url" : "https://readabooker.com/author/barbara-pym/"
    },
    "isbn" : "1447289617",
    "name" : "Quartet in Autumn"

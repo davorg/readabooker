@@ -104,8 +104,23 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Half-Blood Blues",
+               "url" : "https://readabooker.com/title/half-blood-blues/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "Washington Black",
+               "url" : "https://readabooker.com/title/washington-black/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Esi Edugyan"
+      "name" : "Esi Edugyan",
+      "url" : "https://readabooker.com/author/esi-edugyan/"
    },
    "isbn" : "1788161777",
    "name" : "Half-Blood Blues"

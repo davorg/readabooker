@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Ghost Road",
+               "url" : "https://readabooker.com/title/the-ghost-road/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Pat Barker"
+      "name" : "Pat Barker",
+      "url" : "https://readabooker.com/author/pat-barker/"
    },
    "isbn" : "014103095X",
    "name" : "The Ghost Road"

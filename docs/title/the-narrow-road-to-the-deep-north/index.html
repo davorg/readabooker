@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Narrow Road to the Deep North",
+               "url" : "https://readabooker.com/title/the-narrow-road-to-the-deep-north/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Richard Flanagan"
+      "name" : "Richard Flanagan",
+      "url" : "https://readabooker.com/author/richard-flanagan/"
    },
    "isbn" : "0099593580",
    "name" : "The Narrow Road to the Deep North"

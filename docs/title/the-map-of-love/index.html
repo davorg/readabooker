@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Map of Love",
+               "url" : "https://readabooker.com/title/the-map-of-love/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Ahdaf Soueif"
+      "name" : "Ahdaf Soueif",
+      "url" : "https://readabooker.com/author/ahdaf-soueif/"
    },
    "isbn" : "0747545634",
    "name" : "The Map of Love"

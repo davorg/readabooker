@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Deposition of Father McGreevy",
+               "url" : "https://readabooker.com/title/the-deposition-of-father-mcgreevy/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Brian O'Doherty"
+      "name" : "Brian O'Doherty",
+      "url" : "https://readabooker.com/author/brian-odoherty/"
    },
    "isbn" : "1900850486",
    "name" : "The Deposition of Father McGreevy"

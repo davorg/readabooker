@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Stone Yard Devotional",
+               "url" : "https://readabooker.com/title/stone-yard-devotional/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Charlotte Wood"
+      "name" : "Charlotte Wood",
+      "url" : "https://readabooker.com/author/charlotte-wood/"
    },
    "isbn" : "1399724347",
    "name" : "Stone Yard Devotional"

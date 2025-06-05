@@ -104,8 +104,23 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Elected Member",
+               "url" : "https://readabooker.com/title/the-elected-member/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "A Five-Year Sentence",
+               "url" : "https://readabooker.com/title/a-five-year-sentence/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Bernice Rubens"
+      "name" : "Bernice Rubens",
+      "url" : "https://readabooker.com/author/bernice-rubens/"
    },
    "isbn" : "0349130213",
    "name" : "A Five-Year Sentence"

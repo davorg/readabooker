@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Earthly Powers",
+               "url" : "https://readabooker.com/title/earthly-powers/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Anthony Burgess"
+      "name" : "Anthony Burgess",
+      "url" : "https://readabooker.com/author/anthony-burgess/"
    },
    "isbn" : "0099468646",
    "name" : "Earthly Powers"

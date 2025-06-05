@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Small Things Like These",
+               "url" : "https://readabooker.com/title/small-things-like-these/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Claire Keegan"
+      "name" : "Claire Keegan",
+      "url" : "https://readabooker.com/author/claire-keegan/"
    },
    "isbn" : "0571368700",
    "name" : "Small Things Like These"

@@ -104,8 +104,33 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Hotel World",
+               "url" : "https://readabooker.com/title/hotel-world/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "The Accidental",
+               "url" : "https://readabooker.com/title/the-accidental/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "How to Be Both",
+               "url" : "https://readabooker.com/title/how-to-be-both/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "Autumn",
+               "url" : "https://readabooker.com/title/autumn/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Ali Smith"
+      "name" : "Ali Smith",
+      "url" : "https://readabooker.com/author/ali-smith/"
    },
    "isbn" : "0241973317",
    "name" : "Autumn"

@@ -104,8 +104,33 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "An Artist of the Floating World",
+               "url" : "https://readabooker.com/title/an-artist-of-the-floating-world/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "The Remains of the Day",
+               "url" : "https://readabooker.com/title/the-remains-of-the-day/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "When We Were Orphans",
+               "url" : "https://readabooker.com/title/when-we-were-orphans/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "Never Let Me Go",
+               "url" : "https://readabooker.com/title/never-let-me-go/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Kazuo Ishiguro"
+      "name" : "Kazuo Ishiguro",
+      "url" : "https://readabooker.com/author/kazuo-ishiguro/"
    },
    "isbn" : "0571258093",
    "name" : "Never Let Me Go"

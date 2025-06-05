@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Glass Room",
+               "url" : "https://readabooker.com/title/the-glass-room/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Simon Mawer"
+      "name" : "Simon Mawer",
+      "url" : "https://readabooker.com/author/simon-mawer/"
    },
    "isbn" : "034912132X",
    "name" : "The Glass Room"

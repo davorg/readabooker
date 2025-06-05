@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Industry of Souls",
+               "url" : "https://readabooker.com/title/the-industry-of-souls/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Martin Booth"
+      "name" : "Martin Booth",
+      "url" : "https://readabooker.com/author/martin-booth/"
    },
    "isbn" : "1899235515",
    "name" : "The Industry of Souls"

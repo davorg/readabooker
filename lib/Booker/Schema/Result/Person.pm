@@ -121,8 +121,17 @@ with 'MooX::Role::JSON_LD', 'Booker::Role::SEO';
 sub json_ld_type { 'Person' }
 
 sub json_ld_fields {
+  my $url = 'https://readabooker.com';
   [
     qw/name/,
+    { url => sub { $url . $_[0]->url_path } },
+    { '@reverse' => sub {
+        { 'author' => [ map { {
+            '@type' => 'Book',
+            'name'  => $_->title,
+            'url'   => $url . $_->url_path,
+          } } $_[0]->books ] } ,
+      } },
   ];
 }
 

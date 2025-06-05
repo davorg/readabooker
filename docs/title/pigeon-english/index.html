@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Pigeon English",
+               "url" : "https://readabooker.com/title/pigeon-english/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Stephen Kelman"
+      "name" : "Stephen Kelman",
+      "url" : "https://readabooker.com/author/stephen-kelman/"
    },
    "isbn" : "1408866595",
    "name" : "Pigeon English"

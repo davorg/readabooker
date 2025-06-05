@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Long Song",
+               "url" : "https://readabooker.com/title/the-long-song/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Andrea Levy"
+      "name" : "Andrea Levy",
+      "url" : "https://readabooker.com/author/andrea-levy/"
    },
    "isbn" : "0755359429",
    "name" : "The Long Song"

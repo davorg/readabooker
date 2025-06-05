@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Flying to Nowhere",
+               "url" : "https://readabooker.com/title/flying-to-nowhere/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "John Fuller"
+      "name" : "John Fuller",
+      "url" : "https://readabooker.com/author/john-fuller/"
    },
    "isbn" : "0099922606",
    "name" : "Flying to Nowhere"

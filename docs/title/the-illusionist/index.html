@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Illusionist",
+               "url" : "https://readabooker.com/title/the-illusionist/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Anita Mason"
+      "name" : "Anita Mason",
+      "url" : "https://readabooker.com/author/anita-mason/"
    },
    "isbn" : "B00RWM5UGI",
    "name" : "The Illusionist"

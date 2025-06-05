@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "No Country for Young Men",
+               "url" : "https://readabooker.com/title/no-country-for-young-men/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Julia O'Faolain"
+      "name" : "Julia O'Faolain",
+      "url" : "https://readabooker.com/author/julia-ofaolain/"
    },
    "isbn" : "057125506X",
    "name" : "No Country for Young Men"

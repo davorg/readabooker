@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Restoration",
+               "url" : "https://readabooker.com/title/restoration/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Rose Tremain"
+      "name" : "Rose Tremain",
+      "url" : "https://readabooker.com/author/rose-tremain/"
    },
    "isbn" : "0099598426",
    "name" : "Restoration"

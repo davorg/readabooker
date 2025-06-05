@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Scar Tissue",
+               "url" : "https://readabooker.com/title/scar-tissue/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Michael Ignatieff"
+      "name" : "Michael Ignatieff",
+      "url" : "https://readabooker.com/author/michael-ignatieff/"
    },
    "isbn" : "0099308118",
    "name" : "Scar Tissue"

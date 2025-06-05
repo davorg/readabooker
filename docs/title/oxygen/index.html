@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Oxygen",
+               "url" : "https://readabooker.com/title/oxygen/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Andrew Miller"
+      "name" : "Andrew Miller",
+      "url" : "https://readabooker.com/author/andrew-miller/"
    },
    "isbn" : "0340728264",
    "name" : "Oxygen"

@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Narcopolis",
+               "url" : "https://readabooker.com/title/narcopolis/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Jeet Thayil"
+      "name" : "Jeet Thayil",
+      "url" : "https://readabooker.com/author/jeet-thayil/"
    },
    "isbn" : "0571275788",
    "name" : "Narcopolis"

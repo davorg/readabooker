@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "History of Wolves",
+               "url" : "https://readabooker.com/title/history-of-wolves/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Emily Fridlund"
+      "name" : "Emily Fridlund",
+      "url" : "https://readabooker.com/author/emily-fridlund/"
    },
    "isbn" : "1474602967",
    "name" : "History of Wolves"

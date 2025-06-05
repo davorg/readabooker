@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The New Wilderness",
+               "url" : "https://readabooker.com/title/the-new-wilderness/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Diane Cook"
+      "name" : "Diane Cook",
+      "url" : "https://readabooker.com/author/diane-cook/"
    },
    "isbn" : "0861540018",
    "name" : "The New Wilderness"

@@ -104,8 +104,23 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Van",
+               "url" : "https://readabooker.com/title/the-van/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "Paddy Clarke Ha Ha Ha",
+               "url" : "https://readabooker.com/title/paddy-clarke-ha-ha-ha/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Roddy Doyle"
+      "name" : "Roddy Doyle",
+      "url" : "https://readabooker.com/author/roddy-doyle/"
    },
    "isbn" : "0749397357",
    "name" : "Paddy Clarke Ha Ha Ha"

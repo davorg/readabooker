@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Keepers of Truth",
+               "url" : "https://readabooker.com/title/the-keepers-of-truth/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Michael Collins"
+      "name" : "Michael Collins",
+      "url" : "https://readabooker.com/author/michael-collins/"
    },
    "isbn" : "0753811022",
    "name" : "The Keepers of Truth"

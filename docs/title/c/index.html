@@ -104,8 +104,23 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "C",
+               "url" : "https://readabooker.com/title/c/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "Satin Island",
+               "url" : "https://readabooker.com/title/satin-island/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Tom McCarthy"
+      "name" : "Tom McCarthy",
+      "url" : "https://readabooker.com/author/tom-mccarthy/"
    },
    "isbn" : "0099547023",
    "name" : "C"

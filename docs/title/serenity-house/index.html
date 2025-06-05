@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Serenity House",
+               "url" : "https://readabooker.com/title/serenity-house/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Christopher Hope"
+      "name" : "Christopher Hope",
+      "url" : "https://readabooker.com/author/christopher-hope/"
    },
    "isbn" : "0330330284",
    "name" : "Serenity House"

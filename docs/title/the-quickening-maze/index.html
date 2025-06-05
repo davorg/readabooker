@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Quickening Maze",
+               "url" : "https://readabooker.com/title/the-quickening-maze/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Adam Foulds"
+      "name" : "Adam Foulds",
+      "url" : "https://readabooker.com/author/adam-foulds/"
    },
    "isbn" : "0099532441",
    "name" : "The Quickening Maze"

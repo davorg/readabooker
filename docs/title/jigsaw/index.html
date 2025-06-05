@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Jigsaw",
+               "url" : "https://readabooker.com/title/jigsaw/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Sybille Bedford"
+      "name" : "Sybille Bedford",
+      "url" : "https://readabooker.com/author/sybille-bedford/"
    },
    "isbn" : "0907871798",
    "name" : "Jigsaw"

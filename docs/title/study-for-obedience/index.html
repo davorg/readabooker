@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Study for Obedience",
+               "url" : "https://readabooker.com/title/study-for-obedience/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Sarah Bernstein"
+      "name" : "Sarah Bernstein",
+      "url" : "https://readabooker.com/author/sarah-bernstein/"
    },
    "isbn" : "178378993X",
    "name" : "Study for Obedience"

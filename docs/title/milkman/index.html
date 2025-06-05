@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Milkman",
+               "url" : "https://readabooker.com/title/milkman/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Anna Burns"
+      "name" : "Anna Burns",
+      "url" : "https://readabooker.com/author/anna-burns/"
    },
    "isbn" : "0571338755",
    "name" : "Milkman"

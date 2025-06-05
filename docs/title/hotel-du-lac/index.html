@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Hotel du Lac",
+               "url" : "https://readabooker.com/title/hotel-du-lac/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Anita Brookner"
+      "name" : "Anita Brookner",
+      "url" : "https://readabooker.com/author/anita-brookner/"
    },
    "isbn" : "0140147470",
    "name" : "Hotel du Lac"

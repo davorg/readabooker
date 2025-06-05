@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Under the Frog",
+               "url" : "https://readabooker.com/title/under-the-frog/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Tibor Fischer"
+      "name" : "Tibor Fischer",
+      "url" : "https://readabooker.com/author/tibor-fischer/"
    },
    "isbn" : "0099438054",
    "name" : "Under the Frog"

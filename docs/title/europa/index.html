@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Europa",
+               "url" : "https://readabooker.com/title/europa/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Tim Parks"
+      "name" : "Tim Parks",
+      "url" : "https://readabooker.com/author/tim-parks/"
    },
    "isbn" : "0099268094",
    "name" : "Europa"

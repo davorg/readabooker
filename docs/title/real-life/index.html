@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Real Life",
+               "url" : "https://readabooker.com/title/real-life/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Brandon Taylor"
+      "name" : "Brandon Taylor",
+      "url" : "https://readabooker.com/author/brandon-taylor/"
    },
    "isbn" : "1911547747",
    "name" : "Real Life"

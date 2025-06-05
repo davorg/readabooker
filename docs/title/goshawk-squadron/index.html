@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Goshawk Squadron",
+               "url" : "https://readabooker.com/title/goshawk-squadron/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Derek Robinson"
+      "name" : "Derek Robinson",
+      "url" : "https://readabooker.com/author/derek-robinson/"
    },
    "isbn" : "1529417872",
    "name" : "Goshawk Squadron"

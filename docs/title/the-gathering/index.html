@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Gathering",
+               "url" : "https://readabooker.com/title/the-gathering/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Anne Enright"
+      "name" : "Anne Enright",
+      "url" : "https://readabooker.com/author/anne-enright/"
    },
    "isbn" : "0099501635",
    "name" : "The Gathering"

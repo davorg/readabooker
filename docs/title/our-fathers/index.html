@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Our Fathers",
+               "url" : "https://readabooker.com/title/our-fathers/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Andrew O'Hagan"
+      "name" : "Andrew O'Hagan",
+      "url" : "https://readabooker.com/author/andrew-ohagan/"
    },
    "isbn" : "0571201067",
    "name" : "Our Fathers"

@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Silence Among the Weapons",
+               "url" : "https://readabooker.com/title/silence-among-the-weapons/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "John Arden"
+      "name" : "John Arden",
+      "url" : "https://readabooker.com/author/john-arden/"
    },
    "isbn" : "0413523101",
    "name" : "Silence Among the Weapons"

@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The God of Small Things",
+               "url" : "https://readabooker.com/title/the-god-of-small-things/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Arundhati Roy"
+      "name" : "Arundhati Roy",
+      "url" : "https://readabooker.com/author/arundhati-roy/"
    },
    "isbn" : "0006550681",
    "name" : "The God of Small Things"

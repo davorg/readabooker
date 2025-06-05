@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Bone People",
+               "url" : "https://readabooker.com/title/the-bone-people/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Keri Hulme"
+      "name" : "Keri Hulme",
+      "url" : "https://readabooker.com/author/keri-hulme/"
    },
    "isbn" : "0330485415",
    "name" : "The Bone People"

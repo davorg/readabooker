@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "All That Man Is",
+               "url" : "https://readabooker.com/title/all-that-man-is/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "David Szalay"
+      "name" : "David Szalay",
+      "url" : "https://readabooker.com/author/david-szalay/"
    },
    "isbn" : "0099593696",
    "name" : "All That Man Is"

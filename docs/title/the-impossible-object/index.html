@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Impossible Object",
+               "url" : "https://readabooker.com/title/the-impossible-object/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Nicholas Mosley"
+      "name" : "Nicholas Mosley",
+      "url" : "https://readabooker.com/author/nicholas-mosley/"
    },
    "isbn" : "1564784657",
    "name" : "The Impossible Object"

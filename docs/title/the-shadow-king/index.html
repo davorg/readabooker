@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Shadow King",
+               "url" : "https://readabooker.com/title/the-shadow-king/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Maaza Mengiste"
+      "name" : "Maaza Mengiste",
+      "url" : "https://readabooker.com/author/maaza-mengiste/"
    },
    "isbn" : "1838851178",
    "name" : "The Shadow King"

@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Girl, Woman, Other",
+               "url" : "https://readabooker.com/title/girl-woman-other/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Bernardine Evaristo"
+      "name" : "Bernardine Evaristo",
+      "url" : "https://readabooker.com/author/bernardine-evaristo/"
    },
    "isbn" : "0241984998",
    "name" : "Girl, Woman, Other"

@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "4 3 2 1",
+               "url" : "https://readabooker.com/title/4-3-2-1/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Paul Auster"
+      "name" : "Paul Auster",
+      "url" : "https://readabooker.com/author/paul-auster/"
    },
    "isbn" : "0571324657",
    "name" : "4 3 2 1"

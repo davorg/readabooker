@@ -104,8 +104,23 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Mars Room",
+               "url" : "https://readabooker.com/title/the-mars-room/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "Creation Lake",
+               "url" : "https://readabooker.com/title/creation-lake/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Rachel Kushner"
+      "name" : "Rachel Kushner",
+      "url" : "https://readabooker.com/author/rachel-kushner/"
    },
    "isbn" : "1787331741",
    "name" : "Creation Lake"

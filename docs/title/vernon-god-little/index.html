@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Vernon God Little",
+               "url" : "https://readabooker.com/title/vernon-god-little/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "DBC Pierre"
+      "name" : "DBC Pierre",
+      "url" : "https://readabooker.com/author/dbc-pierre/"
    },
    "isbn" : "0571215165",
    "name" : "Vernon God Little"

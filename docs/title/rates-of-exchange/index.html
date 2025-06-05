@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Rates of Exchange",
+               "url" : "https://readabooker.com/title/rates-of-exchange/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Malcolm Bradbury"
+      "name" : "Malcolm Bradbury",
+      "url" : "https://readabooker.com/author/malcolm-bradbury/"
    },
    "isbn" : "1447222717",
    "name" : "Rates of Exchange"

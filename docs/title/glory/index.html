@@ -104,8 +104,23 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "We Need New Names",
+               "url" : "https://readabooker.com/title/we-need-new-names/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "Glory",
+               "url" : "https://readabooker.com/title/glory/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "NoViolet Bulawayo"
+      "name" : "NoViolet Bulawayo",
+      "url" : "https://readabooker.com/author/noviolet-bulawayo/"
    },
    "isbn" : "1784744298",
    "name" : "Glory"

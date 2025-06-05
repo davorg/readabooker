@@ -104,8 +104,23 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Reluctant Fundamentalist",
+               "url" : "https://readabooker.com/title/the-reluctant-fundamentalist/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "Exit West",
+               "url" : "https://readabooker.com/title/exit-west/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Mohsin Hamid"
+      "name" : "Mohsin Hamid",
+      "url" : "https://readabooker.com/author/mohsin-hamid/"
    },
    "isbn" : "0241979064",
    "name" : "Exit West"

@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Paradise",
+               "url" : "https://readabooker.com/title/paradise/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Abdulrazak Gurnah"
+      "name" : "Abdulrazak Gurnah",
+      "url" : "https://readabooker.com/author/abdulrazak-gurnah/"
    },
    "isbn" : "0747573999",
    "name" : "Paradise"

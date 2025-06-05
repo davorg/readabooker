@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Beside the Ocean of Time",
+               "url" : "https://readabooker.com/title/beside-the-ocean-of-time/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "George Mackay Brown"
+      "name" : "George Mackay Brown",
+      "url" : "https://readabooker.com/author/george-mackay-brown/"
    },
    "isbn" : "1846975107",
    "name" : "Beside the Ocean of Time"

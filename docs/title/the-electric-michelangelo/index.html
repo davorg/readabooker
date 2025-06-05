@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Electric Michelangelo",
+               "url" : "https://readabooker.com/title/the-electric-michelangelo/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Sarah Hall"
+      "name" : "Sarah Hall",
+      "url" : "https://readabooker.com/author/sarah-hall/"
    },
    "isbn" : "0571315615",
    "name" : "The Electric Michelangelo"

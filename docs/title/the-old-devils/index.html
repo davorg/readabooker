@@ -104,8 +104,28 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Ending Up",
+               "url" : "https://readabooker.com/title/ending-up/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "Jake's Thing",
+               "url" : "https://readabooker.com/title/jakes-thing/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "The Old Devils",
+               "url" : "https://readabooker.com/title/the-old-devils/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Kingsley Amis"
+      "name" : "Kingsley Amis",
+      "url" : "https://readabooker.com/author/kingsley-amis/"
    },
    "isbn" : "0099461056",
    "name" : "The Old Devils"

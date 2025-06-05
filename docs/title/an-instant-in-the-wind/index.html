@@ -104,8 +104,23 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "An Instant in the Wind",
+               "url" : "https://readabooker.com/title/an-instant-in-the-wind/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "Rumours of Rain",
+               "url" : "https://readabooker.com/title/rumours-of-rain/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "AndrÃ© Brink"
+      "name" : "AndrÃ© Brink",
+      "url" : "https://readabooker.com/author/andre-brink/"
    },
    "isbn" : "1402211090",
    "name" : "An Instant in the Wind"

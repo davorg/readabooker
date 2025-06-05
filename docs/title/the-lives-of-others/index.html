@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Lives of Others",
+               "url" : "https://readabooker.com/title/the-lives-of-others/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Neel Mukherjee"
+      "name" : "Neel Mukherjee",
+      "url" : "https://readabooker.com/author/neel-mukherjee/"
    },
    "isbn" : "0099554488",
    "name" : "The Lives of Others"

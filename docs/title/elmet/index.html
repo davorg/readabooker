@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Elmet",
+               "url" : "https://readabooker.com/title/elmet/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Fiona Mozley"
+      "name" : "Fiona Mozley",
+      "url" : "https://readabooker.com/author/fiona-mozley/"
    },
    "isbn" : "1473676495",
    "name" : "Elmet"

@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Big Chapel",
+               "url" : "https://readabooker.com/title/the-big-chapel/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Thomas Kilroy"
+      "name" : "Thomas Kilroy",
+      "url" : "https://readabooker.com/author/thomas-kilroy/"
    },
    "isbn" : "0571243428",
    "name" : "The Big Chapel"

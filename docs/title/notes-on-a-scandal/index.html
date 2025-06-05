@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Notes on a Scandal",
+               "url" : "https://readabooker.com/title/notes-on-a-scandal/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "ZoÃ« Heller"
+      "name" : "ZoÃ« Heller",
+      "url" : "https://readabooker.com/author/zoe-heller/"
    },
    "isbn" : "0141039957",
    "name" : "Notes on a Scandal"

@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Amongst Women",
+               "url" : "https://readabooker.com/title/amongst-women/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "John McGahern"
+      "name" : "John McGahern",
+      "url" : "https://readabooker.com/author/john-mcgahern/"
    },
    "isbn" : "0571225640",
    "name" : "Amongst Women"

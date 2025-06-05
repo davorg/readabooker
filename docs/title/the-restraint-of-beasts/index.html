@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Restraint of Beasts",
+               "url" : "https://readabooker.com/title/the-restraint-of-beasts/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Magnus Mills"
+      "name" : "Magnus Mills",
+      "url" : "https://readabooker.com/author/magnus-mills/"
    },
    "isbn" : "1408809435",
    "name" : "The Restraint of Beasts"

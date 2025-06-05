@@ -104,8 +104,28 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Doctor's Wife",
+               "url" : "https://readabooker.com/title/the-doctors-wife/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "The Colour of Blood",
+               "url" : "https://readabooker.com/title/the-colour-of-blood/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "Lies of Silence",
+               "url" : "https://readabooker.com/title/lies-of-silence/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Brian Moore"
+      "name" : "Brian Moore",
+      "url" : "https://readabooker.com/author/brian-moore/"
    },
    "isbn" : "0099998106",
    "name" : "Lies of Silence"

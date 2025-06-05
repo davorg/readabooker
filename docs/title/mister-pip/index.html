@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Mister Pip",
+               "url" : "https://readabooker.com/title/mister-pip/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Lloyd Jones"
+      "name" : "Lloyd Jones",
+      "url" : "https://readabooker.com/author/lloyd-jones/"
    },
    "isbn" : "071956994X",
    "name" : "Mister Pip"

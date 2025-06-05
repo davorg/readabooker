@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Sea of Poppies",
+               "url" : "https://readabooker.com/title/sea-of-poppies/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Amitav Ghosh"
+      "name" : "Amitav Ghosh",
+      "url" : "https://readabooker.com/author/amitav-ghosh/"
    },
    "isbn" : "0719568978",
    "name" : "Sea of Poppies"

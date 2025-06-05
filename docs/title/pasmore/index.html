@@ -104,8 +104,23 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Pasmore",
+               "url" : "https://readabooker.com/title/pasmore/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "Saville",
+               "url" : "https://readabooker.com/title/saville/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "David Storey"
+      "name" : "David Storey",
+      "url" : "https://readabooker.com/author/david-storey/"
    },
    "isbn" : "0140040609",
    "name" : "Pasmore"

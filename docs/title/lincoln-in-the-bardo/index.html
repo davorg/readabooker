@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Lincoln in the Bardo",
+               "url" : "https://readabooker.com/title/lincoln-in-the-bardo/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "George Saunders"
+      "name" : "George Saunders",
+      "url" : "https://readabooker.com/author/george-saunders/"
    },
    "isbn" : "1408871777",
    "name" : "Lincoln in the Bardo"

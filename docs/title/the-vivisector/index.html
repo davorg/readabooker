@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Vivisector",
+               "url" : "https://readabooker.com/title/the-vivisector/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Patrick White"
+      "name" : "Patrick White",
+      "url" : "https://readabooker.com/author/patrick-white/"
    },
    "isbn" : "009932461X",
    "name" : "The Vivisector"

@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Utz",
+               "url" : "https://readabooker.com/title/utz/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Bruce Chatwin"
+      "name" : "Bruce Chatwin",
+      "url" : "https://readabooker.com/author/bruce-chatwin/"
    },
    "isbn" : "0099770016",
    "name" : "Utz"

@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "In Every Face I Meet",
+               "url" : "https://readabooker.com/title/in-every-face-i-meet/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Justin Cartwright"
+      "name" : "Justin Cartwright",
+      "url" : "https://readabooker.com/author/justin-cartwright/"
    },
    "isbn" : "0340637838",
    "name" : "In Every Face I Meet"

@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Beggar Maid",
+               "url" : "https://readabooker.com/title/the-beggar-maid/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Alice Munro"
+      "name" : "Alice Munro",
+      "url" : "https://readabooker.com/author/alice-munro/"
    },
    "isbn" : "0099458357",
    "name" : "The Beggar Maid"

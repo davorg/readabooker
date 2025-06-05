@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Underground Man",
+               "url" : "https://readabooker.com/title/the-underground-man/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Mick Jackson"
+      "name" : "Mick Jackson",
+      "url" : "https://readabooker.com/author/mick-jackson/"
    },
    "isbn" : "0571236294",
    "name" : "The Underground Man"

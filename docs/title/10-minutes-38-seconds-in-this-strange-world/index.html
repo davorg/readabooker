@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "10 Minutes 38 Seconds in This Strange World",
+               "url" : "https://readabooker.com/title/10-minutes-38-seconds-in-this-strange-world/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Elif Shafak"
+      "name" : "Elif Shafak",
+      "url" : "https://readabooker.com/author/elif-shafak/"
    },
    "isbn" : "0241979463",
    "name" : "10 Minutes 38 Seconds in This Strange World"

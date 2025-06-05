@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Hiding Place",
+               "url" : "https://readabooker.com/title/the-hiding-place/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Trezza Azzopardi"
+      "name" : "Trezza Azzopardi",
+      "url" : "https://readabooker.com/author/trezza-azzopardi/"
    },
    "isbn" : "1509827552",
    "name" : "The Hiding Place"

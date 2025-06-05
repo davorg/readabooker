@@ -104,8 +104,28 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Such a Long Journey",
+               "url" : "https://readabooker.com/title/such-a-long-journey/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "A Fine Balance",
+               "url" : "https://readabooker.com/title/a-fine-balance/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "Family Matters",
+               "url" : "https://readabooker.com/title/family-matters/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Rohinton Mistry"
+      "name" : "Rohinton Mistry",
+      "url" : "https://readabooker.com/author/rohinton-mistry/"
    },
    "isbn" : "0571230555",
    "name" : "Family Matters"

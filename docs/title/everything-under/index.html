@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Everything Under",
+               "url" : "https://readabooker.com/title/everything-under/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Daisy Johnson"
+      "name" : "Daisy Johnson",
+      "url" : "https://readabooker.com/author/daisy-johnson/"
    },
    "isbn" : "1784702110",
    "name" : "Everything Under"

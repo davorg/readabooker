@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Rites of Passage",
+               "url" : "https://readabooker.com/title/rites-of-passage/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "William Golding"
+      "name" : "William Golding",
+      "url" : "https://readabooker.com/author/william-golding/"
    },
    "isbn" : "0571298540",
    "name" : "Rites of Passage"

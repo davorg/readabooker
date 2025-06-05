@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Clothes on Their Backs",
+               "url" : "https://readabooker.com/title/the-clothes-on-their-backs/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Linda Grant"
+      "name" : "Linda Grant",
+      "url" : "https://readabooker.com/author/linda-grant/"
    },
    "isbn" : "1844085422",
    "name" : "The Clothes on Their Backs"

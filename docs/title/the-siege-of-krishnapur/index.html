@@ -104,8 +104,23 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Troubles",
+               "url" : "https://readabooker.com/title/troubles/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "The Siege of Krishnapur",
+               "url" : "https://readabooker.com/title/the-siege-of-krishnapur/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "J. G. Farrell"
+      "name" : "J. G. Farrell",
+      "url" : "https://readabooker.com/author/j-g-farrell/"
    },
    "isbn" : "1857994914",
    "name" : "The Siege of Krishnapur"

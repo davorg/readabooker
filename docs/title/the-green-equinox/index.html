@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Green Equinox",
+               "url" : "https://readabooker.com/title/the-green-equinox/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Elizabeth Mavor"
+      "name" : "Elizabeth Mavor",
+      "url" : "https://readabooker.com/author/elizabeth-mavor/"
    },
    "isbn" : "0704500469",
    "name" : "The Green Equinox"

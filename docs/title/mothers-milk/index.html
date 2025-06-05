@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Mother's Milk",
+               "url" : "https://readabooker.com/title/mothers-milk/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Edward St Aubyn"
+      "name" : "Edward St Aubyn",
+      "url" : "https://readabooker.com/author/edward-st-aubyn/"
    },
    "isbn" : "144720302X",
    "name" : "Mother's Milk"

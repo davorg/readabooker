@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Great Circle",
+               "url" : "https://readabooker.com/title/great-circle/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Maggie Shipstead"
+      "name" : "Maggie Shipstead",
+      "url" : "https://readabooker.com/author/maggie-shipstead/"
    },
    "isbn" : "0857526804",
    "name" : "Great Circle"

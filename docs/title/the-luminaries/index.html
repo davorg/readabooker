@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Luminaries",
+               "url" : "https://readabooker.com/title/the-luminaries/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Eleanor Catton"
+      "name" : "Eleanor Catton",
+      "url" : "https://readabooker.com/author/eleanor-catton/"
    },
    "isbn" : "184708432X",
    "name" : "The Luminaries"

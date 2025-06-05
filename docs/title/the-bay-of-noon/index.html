@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Bay of Noon",
+               "url" : "https://readabooker.com/title/the-bay-of-noon/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Shirley Hazzard"
+      "name" : "Shirley Hazzard",
+      "url" : "https://readabooker.com/author/shirley-hazzard/"
    },
    "isbn" : "1860494544",
    "name" : "The Bay of Noon"

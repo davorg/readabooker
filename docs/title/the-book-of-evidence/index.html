@@ -104,8 +104,23 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Book of Evidence",
+               "url" : "https://readabooker.com/title/the-book-of-evidence/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "The Sea",
+               "url" : "https://readabooker.com/title/the-sea/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "John Banville"
+      "name" : "John Banville",
+      "url" : "https://readabooker.com/author/john-banville/"
    },
    "isbn" : "1447275365",
    "name" : "The Book of Evidence"

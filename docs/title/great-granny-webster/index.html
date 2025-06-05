@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Great Granny Webster",
+               "url" : "https://readabooker.com/title/great-granny-webster/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Caroline Blackwood"
+      "name" : "Caroline Blackwood",
+      "url" : "https://readabooker.com/author/caroline-blackwood/"
    },
    "isbn" : "1590170075",
    "name" : "Great Granny Webster"

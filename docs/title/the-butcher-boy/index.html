@@ -104,8 +104,23 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Butcher Boy",
+               "url" : "https://readabooker.com/title/the-butcher-boy/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "Breakfast on Pluto",
+               "url" : "https://readabooker.com/title/breakfast-on-pluto/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Patrick McCabe"
+      "name" : "Patrick McCabe",
+      "url" : "https://readabooker.com/author/patrick-mccabe/"
    },
    "isbn" : "1447275160",
    "name" : "The Butcher Boy"

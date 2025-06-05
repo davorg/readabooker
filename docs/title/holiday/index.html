@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Holiday",
+               "url" : "https://readabooker.com/title/holiday/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Stanley Middleton"
+      "name" : "Stanley Middleton",
+      "url" : "https://readabooker.com/author/stanley-middleton/"
    },
    "isbn" : "0099591928",
    "name" : "Holiday"

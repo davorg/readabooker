@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "We Are All Completely Beside Ourselves",
+               "url" : "https://readabooker.com/title/we-are-all-completely-beside-ourselves/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Karen Joy Fowler"
+      "name" : "Karen Joy Fowler",
+      "url" : "https://readabooker.com/author/karen-joy-fowler/"
    },
    "isbn" : "184668966X",
    "name" : "We Are All Completely Beside Ourselves"

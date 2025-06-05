@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Do Not Say We Have Nothing",
+               "url" : "https://readabooker.com/title/do-not-say-we-have-nothing/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Madeleine Thien"
+      "name" : "Madeleine Thien",
+      "url" : "https://readabooker.com/author/madeleine-thien/"
    },
    "isbn" : "1783782676",
    "name" : "Do Not Say We Have Nothing"

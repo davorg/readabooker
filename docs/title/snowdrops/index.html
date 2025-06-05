@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Snowdrops",
+               "url" : "https://readabooker.com/title/snowdrops/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "A D Miller"
+      "name" : "A D Miller",
+      "url" : "https://readabooker.com/author/a-d-miller/"
    },
    "isbn" : "1848874537",
    "name" : "Snowdrops"

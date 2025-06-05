@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The White Tiger",
+               "url" : "https://readabooker.com/title/the-white-tiger/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Aravind Adiga"
+      "name" : "Aravind Adiga",
+      "url" : "https://readabooker.com/author/aravind-adiga/"
    },
    "isbn" : "1848878087",
    "name" : "The White Tiger"

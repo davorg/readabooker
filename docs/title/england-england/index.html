@@ -104,8 +104,33 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Flaubert's Parrot",
+               "url" : "https://readabooker.com/title/flauberts-parrot/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "England, England",
+               "url" : "https://readabooker.com/title/england-england/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "Arthur & George",
+               "url" : "https://readabooker.com/title/arthur-george/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "The Sense of an Ending",
+               "url" : "https://readabooker.com/title/the-sense-of-an-ending/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Julian Barnes"
+      "name" : "Julian Barnes",
+      "url" : "https://readabooker.com/author/julian-barnes/"
    },
    "isbn" : "0099526549",
    "name" : "England, England"

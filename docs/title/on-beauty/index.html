@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "On Beauty",
+               "url" : "https://readabooker.com/title/on-beauty/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Zadie Smith"
+      "name" : "Zadie Smith",
+      "url" : "https://readabooker.com/author/zadie-smith/"
    },
    "isbn" : "014101945X",
    "name" : "On Beauty"

@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Year of the Runaways",
+               "url" : "https://readabooker.com/title/the-year-of-the-runaways/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Sunjeev Sahota"
+      "name" : "Sunjeev Sahota",
+      "url" : "https://readabooker.com/author/sunjeev-sahota/"
    },
    "isbn" : "1447241657",
    "name" : "The Year of the Runaways"

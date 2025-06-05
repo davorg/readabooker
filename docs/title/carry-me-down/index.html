@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Carry Me Down",
+               "url" : "https://readabooker.com/title/carry-me-down/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "M. J. Hyland"
+      "name" : "M. J. Hyland",
+      "url" : "https://readabooker.com/author/m-j-hyland/"
    },
    "isbn" : "1841959065",
    "name" : "Carry Me Down"

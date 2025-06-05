@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "The Conjunction",
+               "url" : "https://readabooker.com/title/the-conjunction/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Terence Wheeler"
+      "name" : "Terence Wheeler",
+      "url" : "https://readabooker.com/author/terence-wheeler/"
    },
    "isbn" : "0207950458",
    "name" : "The Conjunction"

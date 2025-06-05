@@ -104,8 +104,23 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Possession: A Romance",
+               "url" : "https://readabooker.com/title/possession-a-romance/"
+            },
+            {
+               "@type" : "Book",
+               "name" : "The Children's Book",
+               "url" : "https://readabooker.com/title/the-childrens-book/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "A. S. Byatt"
+      "name" : "A. S. Byatt",
+      "url" : "https://readabooker.com/author/a-s-byatt/"
    },
    "isbn" : "0099535459",
    "name" : "The Children's Book"

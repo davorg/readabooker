@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Western Lane",
+               "url" : "https://readabooker.com/title/western-lane/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Chetna Maroo"
+      "name" : "Chetna Maroo",
+      "url" : "https://readabooker.com/author/chetna-maroo/"
    },
    "isbn" : "1529094623",
    "name" : "Western Lane"

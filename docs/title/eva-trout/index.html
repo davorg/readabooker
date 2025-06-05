@@ -104,8 +104,18 @@
    "@type" : "Book",
    "author" : {
       "@context" : "http://schema.org/",
+      "@reverse" : {
+         "author" : [
+            {
+               "@type" : "Book",
+               "name" : "Eva Trout",
+               "url" : "https://readabooker.com/title/eva-trout/"
+            }
+         ]
+      },
       "@type" : "Person",
-      "name" : "Elizabeth Bowen"
+      "name" : "Elizabeth Bowen",
+      "url" : "https://readabooker.com/author/elizabeth-bowen/"
    },
    "isbn" : "0099287749",
    "name" : "Eva Trout"
