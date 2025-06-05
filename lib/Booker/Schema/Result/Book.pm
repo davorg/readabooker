@@ -162,7 +162,13 @@ sub json_ld_fields {
   [
     { name => 'title' },
     { author => sub {
-      $_[0]->author->json_ld_data }
+        my $author = $_[0]->author;
+        {
+          '@type' => 'Person',
+          name    => $author->name,
+          url     => 'https://readabooker.com' . $author->url_path,
+        }
+      }
     },
     { isbn => 'asin' },
   ];
