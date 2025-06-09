@@ -110,3 +110,14 @@ img.img-thumbnail {
 h1[id], h2[id] {
   scroll-margin-top: 70px; /* adjust as needed */
 }
+
+.blurb p:first-of-type::first-letter,
+.biography p:first-of-type::first-letter {
+  float: left;
+  font-size: 3rem;
+  line-height: 1;
+  padding-right: 0.25rem;
+  font-weight: 700;
+  font-family: 'Georgia', serif;
+}
+

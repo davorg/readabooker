@@ -7,6 +7,8 @@
     <td>[% IF (object.asin != 'XXXXXX'); amazon(object, 'davblog-21'); END %]</td>
   </tr>
 </table>
-[% IF object.has_blurb;
-      object.blurb | html_para;
-   END -%]
+[% IF object.has_blurb -%]
+<div class="blurb">
+[%    object.blurb | html_para %]
+</div>
+[% END -%]
