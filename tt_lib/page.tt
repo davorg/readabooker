@@ -26,7 +26,7 @@
     <meta property="og:description" content="[% object.seo_description %]">
     <meta property="og:image" content="https://readabooker.com[% object.seo_image %]">
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="[% object.seo_title %]">
     <meta name="twitter:description" content="[% object.seo_description %]">
     <meta name="twitter:image" content="https://readabooker.com[% object.seo_image %]">
