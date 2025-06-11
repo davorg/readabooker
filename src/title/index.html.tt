@@ -2,7 +2,6 @@
 [% FOREACH letter IN letters -%]
   <a href="#[% letter %]">[% letter %]</a>
 [% END -%]
-<ul>
 [% prev_letter = '';
    FOR book IN books;
      IF book.letter != prev_letter;
