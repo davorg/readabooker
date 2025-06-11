@@ -1,6 +1,6 @@
 <h1 id="top">Books by title</h1>
 [% FOREACH letter IN letters -%]
-  <a href="#[% letter %]">[% letter %]</a>
+  <a href="#[% IF letter == '#'; '0'; ELSE; letter; END %]">[% letter %]</a>
 [% END -%]
 [% prev_letter = '';
    FOR book IN books;
@@ -9,7 +9,7 @@
          '</ul>';
        END -%]
 <div class="d-flex align-items-end gap-2">
-  <h2 id="[% book.letter %]">[% book.letter %]</h2>
+  <h2 id="[% IF book.letter == '#'; '0'; ELSE; book.letter; END %]">[% book.letter %]</h2>
   <p><a href="#top" class="fs-6 fw-light">top</a></p>
 </div>
 <ul>
