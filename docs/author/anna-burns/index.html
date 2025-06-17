@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Milkman",
-            "url" : "https://readabooker.com/title/milkman/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Anna Burns",
-   "url" : "https://readabooker.com/author/anna-burns/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/anna-burns/",
+         "@type" : "Person",
+         "name" : "Anna Burns",
+         "url" : "https://readabooker.com/author/anna-burns/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/anna-burns/"
+         },
+         "name" : "Milkman",
+         "url" : "https://readabooker.com/title/milkman/"
+      }
+   ]
 }
 
 </script>

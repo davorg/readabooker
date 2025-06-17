@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Sellout",
-            "url" : "https://readabooker.com/title/the-sellout/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Paul Beatty",
-   "url" : "https://readabooker.com/author/paul-beatty/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/paul-beatty/",
+         "@type" : "Person",
+         "name" : "Paul Beatty",
+         "url" : "https://readabooker.com/author/paul-beatty/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/paul-beatty/"
+         },
+         "name" : "The Sellout",
+         "url" : "https://readabooker.com/title/the-sellout/"
+      }
+   ]
 }
 
 </script>

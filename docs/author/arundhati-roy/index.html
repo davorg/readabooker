@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The God of Small Things",
-            "url" : "https://readabooker.com/title/the-god-of-small-things/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Arundhati Roy",
-   "url" : "https://readabooker.com/author/arundhati-roy/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/arundhati-roy/",
+         "@type" : "Person",
+         "name" : "Arundhati Roy",
+         "url" : "https://readabooker.com/author/arundhati-roy/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/arundhati-roy/"
+         },
+         "name" : "The God of Small Things",
+         "url" : "https://readabooker.com/title/the-god-of-small-things/"
+      }
+   ]
 }
 
 </script>

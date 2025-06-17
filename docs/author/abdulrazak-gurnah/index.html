@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Paradise",
-            "url" : "https://readabooker.com/title/paradise/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Abdulrazak Gurnah",
-   "url" : "https://readabooker.com/author/abdulrazak-gurnah/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/abdulrazak-gurnah/",
+         "@type" : "Person",
+         "name" : "Abdulrazak Gurnah",
+         "url" : "https://readabooker.com/author/abdulrazak-gurnah/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/abdulrazak-gurnah/"
+         },
+         "name" : "Paradise",
+         "url" : "https://readabooker.com/title/paradise/"
+      }
+   ]
 }
 
 </script>

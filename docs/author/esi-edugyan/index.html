@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Half-Blood Blues",
-            "url" : "https://readabooker.com/title/half-blood-blues/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/esi-edugyan/",
+         "@type" : "Person",
+         "name" : "Esi Edugyan",
+         "url" : "https://readabooker.com/author/esi-edugyan/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/esi-edugyan/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Washington Black",
-            "url" : "https://readabooker.com/title/washington-black/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Esi Edugyan",
-   "url" : "https://readabooker.com/author/esi-edugyan/"
+         "name" : "Half-Blood Blues",
+         "url" : "https://readabooker.com/title/half-blood-blues/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/esi-edugyan/"
+         },
+         "name" : "Washington Black",
+         "url" : "https://readabooker.com/title/washington-black/"
+      }
+   ]
 }
 
 </script>

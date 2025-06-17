@@ -100,39 +100,55 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Comfort of Strangers",
-            "url" : "https://readabooker.com/title/the-comfort-of-strangers/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/ian-mcewan/",
+         "@type" : "Person",
+         "name" : "Ian McEwan",
+         "url" : "https://readabooker.com/author/ian-mcewan/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/ian-mcewan/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Black Dogs",
-            "url" : "https://readabooker.com/title/black-dogs/"
+         "name" : "The Comfort of Strangers",
+         "url" : "https://readabooker.com/title/the-comfort-of-strangers/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/ian-mcewan/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Amsterdam",
-            "url" : "https://readabooker.com/title/amsterdam/"
+         "name" : "Black Dogs",
+         "url" : "https://readabooker.com/title/black-dogs/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/ian-mcewan/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Atonement",
-            "url" : "https://readabooker.com/title/atonement/"
+         "name" : "Amsterdam",
+         "url" : "https://readabooker.com/title/amsterdam/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/ian-mcewan/"
          },
-         {
-            "@type" : "Book",
-            "name" : "On Chesil Beach",
-            "url" : "https://readabooker.com/title/on-chesil-beach/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Ian McEwan",
-   "url" : "https://readabooker.com/author/ian-mcewan/"
+         "name" : "Atonement",
+         "url" : "https://readabooker.com/title/atonement/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/ian-mcewan/"
+         },
+         "name" : "On Chesil Beach",
+         "url" : "https://readabooker.com/title/on-chesil-beach/"
+      }
+   ]
 }
 
 </script>

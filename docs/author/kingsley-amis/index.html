@@ -100,29 +100,39 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Ending Up",
-            "url" : "https://readabooker.com/title/ending-up/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/kingsley-amis/",
+         "@type" : "Person",
+         "name" : "Kingsley Amis",
+         "url" : "https://readabooker.com/author/kingsley-amis/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/kingsley-amis/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Jake's Thing",
-            "url" : "https://readabooker.com/title/jakes-thing/"
+         "name" : "Ending Up",
+         "url" : "https://readabooker.com/title/ending-up/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/kingsley-amis/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Old Devils",
-            "url" : "https://readabooker.com/title/the-old-devils/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Kingsley Amis",
-   "url" : "https://readabooker.com/author/kingsley-amis/"
+         "name" : "Jake's Thing",
+         "url" : "https://readabooker.com/title/jakes-thing/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/kingsley-amis/"
+         },
+         "name" : "The Old Devils",
+         "url" : "https://readabooker.com/title/the-old-devils/"
+      }
+   ]
 }
 
 </script>

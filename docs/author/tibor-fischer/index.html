@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Under the Frog",
-            "url" : "https://readabooker.com/title/under-the-frog/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Tibor Fischer",
-   "url" : "https://readabooker.com/author/tibor-fischer/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/tibor-fischer/",
+         "@type" : "Person",
+         "name" : "Tibor Fischer",
+         "url" : "https://readabooker.com/author/tibor-fischer/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/tibor-fischer/"
+         },
+         "name" : "Under the Frog",
+         "url" : "https://readabooker.com/title/under-the-frog/"
+      }
+   ]
 }
 
 </script>

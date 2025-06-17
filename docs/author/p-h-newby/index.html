@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Something to Answer For",
-            "url" : "https://readabooker.com/title/something-to-answer-for/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "P. H. Newby",
-   "url" : "https://readabooker.com/author/p-h-newby/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/p-h-newby/",
+         "@type" : "Person",
+         "name" : "P. H. Newby",
+         "url" : "https://readabooker.com/author/p-h-newby/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/p-h-newby/"
+         },
+         "name" : "Something to Answer For",
+         "url" : "https://readabooker.com/title/something-to-answer-for/"
+      }
+   ]
 }
 
 </script>

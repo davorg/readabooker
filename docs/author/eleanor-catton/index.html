@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Luminaries",
-            "url" : "https://readabooker.com/title/the-luminaries/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Eleanor Catton",
-   "url" : "https://readabooker.com/author/eleanor-catton/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/eleanor-catton/",
+         "@type" : "Person",
+         "name" : "Eleanor Catton",
+         "url" : "https://readabooker.com/author/eleanor-catton/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/eleanor-catton/"
+         },
+         "name" : "The Luminaries",
+         "url" : "https://readabooker.com/title/the-luminaries/"
+      }
+   ]
 }
 
 </script>

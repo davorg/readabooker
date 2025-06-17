@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "We Need New Names",
-            "url" : "https://readabooker.com/title/we-need-new-names/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/noviolet-bulawayo/",
+         "@type" : "Person",
+         "name" : "NoViolet Bulawayo",
+         "url" : "https://readabooker.com/author/noviolet-bulawayo/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/noviolet-bulawayo/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Glory",
-            "url" : "https://readabooker.com/title/glory/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "NoViolet Bulawayo",
-   "url" : "https://readabooker.com/author/noviolet-bulawayo/"
+         "name" : "We Need New Names",
+         "url" : "https://readabooker.com/title/we-need-new-names/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/noviolet-bulawayo/"
+         },
+         "name" : "Glory",
+         "url" : "https://readabooker.com/title/glory/"
+      }
+   ]
 }
 
 </script>

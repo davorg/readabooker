@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Finkler Question",
-            "url" : "https://readabooker.com/title/the-finkler-question/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/howard-jacobson/",
+         "@type" : "Person",
+         "name" : "Howard Jacobson",
+         "url" : "https://readabooker.com/author/howard-jacobson/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/howard-jacobson/"
          },
-         {
-            "@type" : "Book",
-            "name" : "J",
-            "url" : "https://readabooker.com/title/j/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Howard Jacobson",
-   "url" : "https://readabooker.com/author/howard-jacobson/"
+         "name" : "The Finkler Question",
+         "url" : "https://readabooker.com/title/the-finkler-question/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/howard-jacobson/"
+         },
+         "name" : "J",
+         "url" : "https://readabooker.com/title/j/"
+      }
+   ]
 }
 
 </script>

@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "We Are All Completely Beside Ourselves",
-            "url" : "https://readabooker.com/title/we-are-all-completely-beside-ourselves/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Karen Joy Fowler",
-   "url" : "https://readabooker.com/author/karen-joy-fowler/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/karen-joy-fowler/",
+         "@type" : "Person",
+         "name" : "Karen Joy Fowler",
+         "url" : "https://readabooker.com/author/karen-joy-fowler/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/karen-joy-fowler/"
+         },
+         "name" : "We Are All Completely Beside Ourselves",
+         "url" : "https://readabooker.com/title/we-are-all-completely-beside-ourselves/"
+      }
+   ]
 }
 
 </script>

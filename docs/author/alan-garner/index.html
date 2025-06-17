@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Treacle Walker",
-            "url" : "https://readabooker.com/title/treacle-walker/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Alan Garner",
-   "url" : "https://readabooker.com/author/alan-garner/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/alan-garner/",
+         "@type" : "Person",
+         "name" : "Alan Garner",
+         "url" : "https://readabooker.com/author/alan-garner/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/alan-garner/"
+         },
+         "name" : "Treacle Walker",
+         "url" : "https://readabooker.com/title/treacle-walker/"
+      }
+   ]
 }
 
 </script>

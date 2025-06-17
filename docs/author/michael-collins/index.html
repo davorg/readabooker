@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Keepers of Truth",
-            "url" : "https://readabooker.com/title/the-keepers-of-truth/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Michael Collins",
-   "url" : "https://readabooker.com/author/michael-collins/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/michael-collins/",
+         "@type" : "Person",
+         "name" : "Michael Collins",
+         "url" : "https://readabooker.com/author/michael-collins/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/michael-collins/"
+         },
+         "name" : "The Keepers of Truth",
+         "url" : "https://readabooker.com/title/the-keepers-of-truth/"
+      }
+   ]
 }
 
 </script>

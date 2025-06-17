@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Overstory",
-            "url" : "https://readabooker.com/title/the-overstory/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/richard-powers/",
+         "@type" : "Person",
+         "name" : "Richard Powers",
+         "url" : "https://readabooker.com/author/richard-powers/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/richard-powers/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Bewilderment",
-            "url" : "https://readabooker.com/title/bewilderment/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Richard Powers",
-   "url" : "https://readabooker.com/author/richard-powers/"
+         "name" : "The Overstory",
+         "url" : "https://readabooker.com/title/the-overstory/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/richard-powers/"
+         },
+         "name" : "Bewilderment",
+         "url" : "https://readabooker.com/title/bewilderment/"
+      }
+   ]
 }
 
 </script>

@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Bay of Noon",
-            "url" : "https://readabooker.com/title/the-bay-of-noon/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Shirley Hazzard",
-   "url" : "https://readabooker.com/author/shirley-hazzard/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/shirley-hazzard/",
+         "@type" : "Person",
+         "name" : "Shirley Hazzard",
+         "url" : "https://readabooker.com/author/shirley-hazzard/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/shirley-hazzard/"
+         },
+         "name" : "The Bay of Noon",
+         "url" : "https://readabooker.com/title/the-bay-of-noon/"
+      }
+   ]
 }
 
 </script>

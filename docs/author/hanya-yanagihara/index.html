@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "A Little Life",
-            "url" : "https://readabooker.com/title/a-little-life/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Hanya Yanagihara",
-   "url" : "https://readabooker.com/author/hanya-yanagihara/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/hanya-yanagihara/",
+         "@type" : "Person",
+         "name" : "Hanya Yanagihara",
+         "url" : "https://readabooker.com/author/hanya-yanagihara/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/hanya-yanagihara/"
+         },
+         "name" : "A Little Life",
+         "url" : "https://readabooker.com/title/a-little-life/"
+      }
+   ]
 }
 
 </script>

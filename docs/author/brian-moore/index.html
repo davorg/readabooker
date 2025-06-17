@@ -100,29 +100,39 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Doctor's Wife",
-            "url" : "https://readabooker.com/title/the-doctors-wife/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/brian-moore/",
+         "@type" : "Person",
+         "name" : "Brian Moore",
+         "url" : "https://readabooker.com/author/brian-moore/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/brian-moore/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Colour of Blood",
-            "url" : "https://readabooker.com/title/the-colour-of-blood/"
+         "name" : "The Doctor's Wife",
+         "url" : "https://readabooker.com/title/the-doctors-wife/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/brian-moore/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Lies of Silence",
-            "url" : "https://readabooker.com/title/lies-of-silence/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Brian Moore",
-   "url" : "https://readabooker.com/author/brian-moore/"
+         "name" : "The Colour of Blood",
+         "url" : "https://readabooker.com/title/the-colour-of-blood/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/brian-moore/"
+         },
+         "name" : "Lies of Silence",
+         "url" : "https://readabooker.com/title/lies-of-silence/"
+      }
+   ]
 }
 
 </script>

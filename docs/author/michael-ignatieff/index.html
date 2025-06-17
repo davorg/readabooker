@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Scar Tissue",
-            "url" : "https://readabooker.com/title/scar-tissue/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Michael Ignatieff",
-   "url" : "https://readabooker.com/author/michael-ignatieff/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/michael-ignatieff/",
+         "@type" : "Person",
+         "name" : "Michael Ignatieff",
+         "url" : "https://readabooker.com/author/michael-ignatieff/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/michael-ignatieff/"
+         },
+         "name" : "Scar Tissue",
+         "url" : "https://readabooker.com/title/scar-tissue/"
+      }
+   ]
 }
 
 </script>

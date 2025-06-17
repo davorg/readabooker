@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Brick Lane",
-            "url" : "https://readabooker.com/title/brick-lane/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Monica Ali",
-   "url" : "https://readabooker.com/author/monica-ali/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/monica-ali/",
+         "@type" : "Person",
+         "name" : "Monica Ali",
+         "url" : "https://readabooker.com/author/monica-ali/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/monica-ali/"
+         },
+         "name" : "Brick Lane",
+         "url" : "https://readabooker.com/title/brick-lane/"
+      }
+   ]
 }
 
 </script>

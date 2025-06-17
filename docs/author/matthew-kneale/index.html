@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "English Passengers",
-            "url" : "https://readabooker.com/title/english-passengers/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Matthew Kneale",
-   "url" : "https://readabooker.com/author/matthew-kneale/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/matthew-kneale/",
+         "@type" : "Person",
+         "name" : "Matthew Kneale",
+         "url" : "https://readabooker.com/author/matthew-kneale/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/matthew-kneale/"
+         },
+         "name" : "English Passengers",
+         "url" : "https://readabooker.com/title/english-passengers/"
+      }
+   ]
 }
 
 </script>

@@ -100,34 +100,47 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Flaubert's Parrot",
-            "url" : "https://readabooker.com/title/flauberts-parrot/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/julian-barnes/",
+         "@type" : "Person",
+         "name" : "Julian Barnes",
+         "url" : "https://readabooker.com/author/julian-barnes/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/julian-barnes/"
          },
-         {
-            "@type" : "Book",
-            "name" : "England, England",
-            "url" : "https://readabooker.com/title/england-england/"
+         "name" : "Flaubert's Parrot",
+         "url" : "https://readabooker.com/title/flauberts-parrot/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/julian-barnes/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Arthur & George",
-            "url" : "https://readabooker.com/title/arthur-george/"
+         "name" : "England, England",
+         "url" : "https://readabooker.com/title/england-england/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/julian-barnes/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Sense of an Ending",
-            "url" : "https://readabooker.com/title/the-sense-of-an-ending/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Julian Barnes",
-   "url" : "https://readabooker.com/author/julian-barnes/"
+         "name" : "Arthur & George",
+         "url" : "https://readabooker.com/title/arthur-george/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/julian-barnes/"
+         },
+         "name" : "The Sense of an Ending",
+         "url" : "https://readabooker.com/title/the-sense-of-an-ending/"
+      }
+   ]
 }
 
 </script>

@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Mars Room",
-            "url" : "https://readabooker.com/title/the-mars-room/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/rachel-kushner/",
+         "@type" : "Person",
+         "name" : "Rachel Kushner",
+         "url" : "https://readabooker.com/author/rachel-kushner/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/rachel-kushner/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Creation Lake",
-            "url" : "https://readabooker.com/title/creation-lake/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Rachel Kushner",
-   "url" : "https://readabooker.com/author/rachel-kushner/"
+         "name" : "The Mars Room",
+         "url" : "https://readabooker.com/title/the-mars-room/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/rachel-kushner/"
+         },
+         "name" : "Creation Lake",
+         "url" : "https://readabooker.com/title/creation-lake/"
+      }
+   ]
 }
 
 </script>

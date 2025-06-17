@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Snowdrops",
-            "url" : "https://readabooker.com/title/snowdrops/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "A D Miller",
-   "url" : "https://readabooker.com/author/a-d-miller/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/a-d-miller/",
+         "@type" : "Person",
+         "name" : "A D Miller",
+         "url" : "https://readabooker.com/author/a-d-miller/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/a-d-miller/"
+         },
+         "name" : "Snowdrops",
+         "url" : "https://readabooker.com/title/snowdrops/"
+      }
+   ]
 }
 
 </script>

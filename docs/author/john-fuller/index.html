@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Flying to Nowhere",
-            "url" : "https://readabooker.com/title/flying-to-nowhere/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "John Fuller",
-   "url" : "https://readabooker.com/author/john-fuller/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/john-fuller/",
+         "@type" : "Person",
+         "name" : "John Fuller",
+         "url" : "https://readabooker.com/author/john-fuller/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/john-fuller/"
+         },
+         "name" : "Flying to Nowhere",
+         "url" : "https://readabooker.com/title/flying-to-nowhere/"
+      }
+   ]
 }
 
 </script>

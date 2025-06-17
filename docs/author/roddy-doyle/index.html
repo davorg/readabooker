@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Van",
-            "url" : "https://readabooker.com/title/the-van/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/roddy-doyle/",
+         "@type" : "Person",
+         "name" : "Roddy Doyle",
+         "url" : "https://readabooker.com/author/roddy-doyle/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/roddy-doyle/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Paddy Clarke Ha Ha Ha",
-            "url" : "https://readabooker.com/title/paddy-clarke-ha-ha-ha/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Roddy Doyle",
-   "url" : "https://readabooker.com/author/roddy-doyle/"
+         "name" : "The Van",
+         "url" : "https://readabooker.com/title/the-van/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/roddy-doyle/"
+         },
+         "name" : "Paddy Clarke Ha Ha Ha",
+         "url" : "https://readabooker.com/title/paddy-clarke-ha-ha-ha/"
+      }
+   ]
 }
 
 </script>

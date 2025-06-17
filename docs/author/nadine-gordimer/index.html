@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Conservationist",
-            "url" : "https://readabooker.com/title/the-conservationist/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Nadine Gordimer",
-   "url" : "https://readabooker.com/author/nadine-gordimer/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/nadine-gordimer/",
+         "@type" : "Person",
+         "name" : "Nadine Gordimer",
+         "url" : "https://readabooker.com/author/nadine-gordimer/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/nadine-gordimer/"
+         },
+         "name" : "The Conservationist",
+         "url" : "https://readabooker.com/title/the-conservationist/"
+      }
+   ]
 }
 
 </script>

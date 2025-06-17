@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Lighthouse",
-            "url" : "https://readabooker.com/title/the-lighthouse/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Alison Moore",
-   "url" : "https://readabooker.com/author/alison-moore/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/alison-moore/",
+         "@type" : "Person",
+         "name" : "Alison Moore",
+         "url" : "https://readabooker.com/author/alison-moore/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/alison-moore/"
+         },
+         "name" : "The Lighthouse",
+         "url" : "https://readabooker.com/title/the-lighthouse/"
+      }
+   ]
 }
 
 </script>

@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Darkmans",
-            "url" : "https://readabooker.com/title/darkmans/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Nicola Barker",
-   "url" : "https://readabooker.com/author/nicola-barker/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/nicola-barker/",
+         "@type" : "Person",
+         "name" : "Nicola Barker",
+         "url" : "https://readabooker.com/author/nicola-barker/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/nicola-barker/"
+         },
+         "name" : "Darkmans",
+         "url" : "https://readabooker.com/title/darkmans/"
+      }
+   ]
 }
 
 </script>

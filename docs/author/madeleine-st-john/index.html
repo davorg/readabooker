@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Essence of the Thing",
-            "url" : "https://readabooker.com/title/the-essence-of-the-thing/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Madeleine St John",
-   "url" : "https://readabooker.com/author/madeleine-st-john/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/madeleine-st-john/",
+         "@type" : "Person",
+         "name" : "Madeleine St John",
+         "url" : "https://readabooker.com/author/madeleine-st-john/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/madeleine-st-john/"
+         },
+         "name" : "The Essence of the Thing",
+         "url" : "https://readabooker.com/title/the-essence-of-the-thing/"
+      }
+   ]
 }
 
 </script>

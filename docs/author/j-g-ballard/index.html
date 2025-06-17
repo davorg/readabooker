@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Empire of the Sun",
-            "url" : "https://readabooker.com/title/empire-of-the-sun/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "J. G. Ballard",
-   "url" : "https://readabooker.com/author/j-g-ballard/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/j-g-ballard/",
+         "@type" : "Person",
+         "name" : "J. G. Ballard",
+         "url" : "https://readabooker.com/author/j-g-ballard/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/j-g-ballard/"
+         },
+         "name" : "Empire of the Sun",
+         "url" : "https://readabooker.com/title/empire-of-the-sun/"
+      }
+   ]
 }
 
 </script>

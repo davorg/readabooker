@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Trees",
-            "url" : "https://readabooker.com/title/the-trees/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/percival-everett/",
+         "@type" : "Person",
+         "name" : "Percival Everett",
+         "url" : "https://readabooker.com/author/percival-everett/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/percival-everett/"
          },
-         {
-            "@type" : "Book",
-            "name" : "James",
-            "url" : "https://readabooker.com/title/james/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Percival Everett",
-   "url" : "https://readabooker.com/author/percival-everett/"
+         "name" : "The Trees",
+         "url" : "https://readabooker.com/title/the-trees/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/percival-everett/"
+         },
+         "name" : "James",
+         "url" : "https://readabooker.com/title/james/"
+      }
+   ]
 }
 
 </script>

@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Great Granny Webster",
-            "url" : "https://readabooker.com/title/great-granny-webster/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Caroline Blackwood",
-   "url" : "https://readabooker.com/author/caroline-blackwood/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/caroline-blackwood/",
+         "@type" : "Person",
+         "name" : "Caroline Blackwood",
+         "url" : "https://readabooker.com/author/caroline-blackwood/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/caroline-blackwood/"
+         },
+         "name" : "Great Granny Webster",
+         "url" : "https://readabooker.com/title/great-granny-webster/"
+      }
+   ]
 }
 
 </script>

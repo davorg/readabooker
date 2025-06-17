@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Shadows on our Skin",
-            "url" : "https://readabooker.com/title/shadows-on-our-skin/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Jennifer Johnston",
-   "url" : "https://readabooker.com/author/jennifer-johnston/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/jennifer-johnston/",
+         "@type" : "Person",
+         "name" : "Jennifer Johnston",
+         "url" : "https://readabooker.com/author/jennifer-johnston/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/jennifer-johnston/"
+         },
+         "name" : "Shadows on our Skin",
+         "url" : "https://readabooker.com/title/shadows-on-our-skin/"
+      }
+   ]
 }
 
 </script>

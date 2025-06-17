@@ -100,34 +100,47 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Mrs Eckdorf in O'Neill's Hotel",
-            "url" : "https://readabooker.com/title/mrs-eckdorf-in-oneills-hotel/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/william-trevor/",
+         "@type" : "Person",
+         "name" : "William Trevor",
+         "url" : "https://readabooker.com/author/william-trevor/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/william-trevor/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Children of Dynmouth",
-            "url" : "https://readabooker.com/title/the-children-of-dynmouth/"
+         "name" : "Mrs Eckdorf in O'Neill's Hotel",
+         "url" : "https://readabooker.com/title/mrs-eckdorf-in-oneills-hotel/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/william-trevor/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Reading Turgenev",
-            "url" : "https://readabooker.com/title/reading-turgenev/"
+         "name" : "The Children of Dynmouth",
+         "url" : "https://readabooker.com/title/the-children-of-dynmouth/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/william-trevor/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Story of Lucy Gault",
-            "url" : "https://readabooker.com/title/the-story-of-lucy-gault/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "William Trevor",
-   "url" : "https://readabooker.com/author/william-trevor/"
+         "name" : "Reading Turgenev",
+         "url" : "https://readabooker.com/title/reading-turgenev/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/william-trevor/"
+         },
+         "name" : "The Story of Lucy Gault",
+         "url" : "https://readabooker.com/title/the-story-of-lucy-gault/"
+      }
+   ]
 }
 
 </script>

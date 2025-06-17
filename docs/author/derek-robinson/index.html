@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Goshawk Squadron",
-            "url" : "https://readabooker.com/title/goshawk-squadron/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Derek Robinson",
-   "url" : "https://readabooker.com/author/derek-robinson/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/derek-robinson/",
+         "@type" : "Person",
+         "name" : "Derek Robinson",
+         "url" : "https://readabooker.com/author/derek-robinson/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/derek-robinson/"
+         },
+         "name" : "Goshawk Squadron",
+         "url" : "https://readabooker.com/title/goshawk-squadron/"
+      }
+   ]
 }
 
 </script>

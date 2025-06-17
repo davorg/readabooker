@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Fishermen",
-            "url" : "https://readabooker.com/title/the-fishermen/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/chigozie-obioma/",
+         "@type" : "Person",
+         "name" : "Chigozie Obioma",
+         "url" : "https://readabooker.com/author/chigozie-obioma/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/chigozie-obioma/"
          },
-         {
-            "@type" : "Book",
-            "name" : "An Orchestra of Minorities",
-            "url" : "https://readabooker.com/title/an-orchestra-of-minorities/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Chigozie Obioma",
-   "url" : "https://readabooker.com/author/chigozie-obioma/"
+         "name" : "The Fishermen",
+         "url" : "https://readabooker.com/title/the-fishermen/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/chigozie-obioma/"
+         },
+         "name" : "An Orchestra of Minorities",
+         "url" : "https://readabooker.com/title/an-orchestra-of-minorities/"
+      }
+   ]
 }
 
 </script>

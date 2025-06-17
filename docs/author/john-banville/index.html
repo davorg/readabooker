@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Book of Evidence",
-            "url" : "https://readabooker.com/title/the-book-of-evidence/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/john-banville/",
+         "@type" : "Person",
+         "name" : "John Banville",
+         "url" : "https://readabooker.com/author/john-banville/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/john-banville/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Sea",
-            "url" : "https://readabooker.com/title/the-sea/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "John Banville",
-   "url" : "https://readabooker.com/author/john-banville/"
+         "name" : "The Book of Evidence",
+         "url" : "https://readabooker.com/title/the-book-of-evidence/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/john-banville/"
+         },
+         "name" : "The Sea",
+         "url" : "https://readabooker.com/title/the-sea/"
+      }
+   ]
 }
 
 </script>

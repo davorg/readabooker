@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Reluctant Fundamentalist",
-            "url" : "https://readabooker.com/title/the-reluctant-fundamentalist/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/mohsin-hamid/",
+         "@type" : "Person",
+         "name" : "Mohsin Hamid",
+         "url" : "https://readabooker.com/author/mohsin-hamid/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/mohsin-hamid/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Exit West",
-            "url" : "https://readabooker.com/title/exit-west/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Mohsin Hamid",
-   "url" : "https://readabooker.com/author/mohsin-hamid/"
+         "name" : "The Reluctant Fundamentalist",
+         "url" : "https://readabooker.com/title/the-reluctant-fundamentalist/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/mohsin-hamid/"
+         },
+         "name" : "Exit West",
+         "url" : "https://readabooker.com/title/exit-west/"
+      }
+   ]
 }
 
 </script>

@@ -100,44 +100,63 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Handmaid's Tale",
-            "url" : "https://readabooker.com/title/the-handmaids-tale/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/margaret-atwood/",
+         "@type" : "Person",
+         "name" : "Margaret Atwood",
+         "url" : "https://readabooker.com/author/margaret-atwood/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/margaret-atwood/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Cat's Eye",
-            "url" : "https://readabooker.com/title/cats-eye/"
+         "name" : "The Handmaid's Tale",
+         "url" : "https://readabooker.com/title/the-handmaids-tale/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/margaret-atwood/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Alias Grace",
-            "url" : "https://readabooker.com/title/alias-grace/"
+         "name" : "Cat's Eye",
+         "url" : "https://readabooker.com/title/cats-eye/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/margaret-atwood/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Blind Assassin",
-            "url" : "https://readabooker.com/title/the-blind-assassin/"
+         "name" : "Alias Grace",
+         "url" : "https://readabooker.com/title/alias-grace/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/margaret-atwood/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Oryx and Crake",
-            "url" : "https://readabooker.com/title/oryx-and-crake/"
+         "name" : "The Blind Assassin",
+         "url" : "https://readabooker.com/title/the-blind-assassin/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/margaret-atwood/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Testaments",
-            "url" : "https://readabooker.com/title/the-testaments/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Margaret Atwood",
-   "url" : "https://readabooker.com/author/margaret-atwood/"
+         "name" : "Oryx and Crake",
+         "url" : "https://readabooker.com/title/oryx-and-crake/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/margaret-atwood/"
+         },
+         "name" : "The Testaments",
+         "url" : "https://readabooker.com/title/the-testaments/"
+      }
+   ]
 }
 
 </script>

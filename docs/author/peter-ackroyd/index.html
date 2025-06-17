@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Chatterton",
-            "url" : "https://readabooker.com/title/chatterton/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Peter Ackroyd",
-   "url" : "https://readabooker.com/author/peter-ackroyd/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/peter-ackroyd/",
+         "@type" : "Person",
+         "name" : "Peter Ackroyd",
+         "url" : "https://readabooker.com/author/peter-ackroyd/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/peter-ackroyd/"
+         },
+         "name" : "Chatterton",
+         "url" : "https://readabooker.com/title/chatterton/"
+      }
+   ]
 }
 
 </script>

@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Eva Trout",
-            "url" : "https://readabooker.com/title/eva-trout/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Elizabeth Bowen",
-   "url" : "https://readabooker.com/author/elizabeth-bowen/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/elizabeth-bowen/",
+         "@type" : "Person",
+         "name" : "Elizabeth Bowen",
+         "url" : "https://readabooker.com/author/elizabeth-bowen/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/elizabeth-bowen/"
+         },
+         "name" : "Eva Trout",
+         "url" : "https://readabooker.com/title/eva-trout/"
+      }
+   ]
 }
 
 </script>

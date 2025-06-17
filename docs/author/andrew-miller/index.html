@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Oxygen",
-            "url" : "https://readabooker.com/title/oxygen/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Andrew Miller",
-   "url" : "https://readabooker.com/author/andrew-miller/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/andrew-miller/",
+         "@type" : "Person",
+         "name" : "Andrew Miller",
+         "url" : "https://readabooker.com/author/andrew-miller/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/andrew-miller/"
+         },
+         "name" : "Oxygen",
+         "url" : "https://readabooker.com/title/oxygen/"
+      }
+   ]
 }
 
 </script>

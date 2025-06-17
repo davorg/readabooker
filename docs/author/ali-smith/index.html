@@ -100,34 +100,47 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Hotel World",
-            "url" : "https://readabooker.com/title/hotel-world/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/ali-smith/",
+         "@type" : "Person",
+         "name" : "Ali Smith",
+         "url" : "https://readabooker.com/author/ali-smith/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/ali-smith/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Accidental",
-            "url" : "https://readabooker.com/title/the-accidental/"
+         "name" : "Hotel World",
+         "url" : "https://readabooker.com/title/hotel-world/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/ali-smith/"
          },
-         {
-            "@type" : "Book",
-            "name" : "How to Be Both",
-            "url" : "https://readabooker.com/title/how-to-be-both/"
+         "name" : "The Accidental",
+         "url" : "https://readabooker.com/title/the-accidental/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/ali-smith/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Autumn",
-            "url" : "https://readabooker.com/title/autumn/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Ali Smith",
-   "url" : "https://readabooker.com/author/ali-smith/"
+         "name" : "How to Be Both",
+         "url" : "https://readabooker.com/title/how-to-be-both/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/ali-smith/"
+         },
+         "name" : "Autumn",
+         "url" : "https://readabooker.com/title/autumn/"
+      }
+   ]
 }
 
 </script>

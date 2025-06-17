@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Crossing the River",
-            "url" : "https://readabooker.com/title/crossing-the-river/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Caryl Phillips",
-   "url" : "https://readabooker.com/author/caryl-phillips/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/caryl-phillips/",
+         "@type" : "Person",
+         "name" : "Caryl Phillips",
+         "url" : "https://readabooker.com/author/caryl-phillips/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/caryl-phillips/"
+         },
+         "name" : "Crossing the River",
+         "url" : "https://readabooker.com/title/crossing-the-river/"
+      }
+   ]
 }
 
 </script>

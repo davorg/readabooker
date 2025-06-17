@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Swimming Home",
-            "url" : "https://readabooker.com/title/swimming-home/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/deborah-levy/",
+         "@type" : "Person",
+         "name" : "Deborah Levy",
+         "url" : "https://readabooker.com/author/deborah-levy/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/deborah-levy/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Hot Milk",
-            "url" : "https://readabooker.com/title/hot-milk/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Deborah Levy",
-   "url" : "https://readabooker.com/author/deborah-levy/"
+         "name" : "Swimming Home",
+         "url" : "https://readabooker.com/title/swimming-home/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/deborah-levy/"
+         },
+         "name" : "Hot Milk",
+         "url" : "https://readabooker.com/title/hot-milk/"
+      }
+   ]
 }
 
 </script>

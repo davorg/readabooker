@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "All That Man Is",
-            "url" : "https://readabooker.com/title/all-that-man-is/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "David Szalay",
-   "url" : "https://readabooker.com/author/david-szalay/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/david-szalay/",
+         "@type" : "Person",
+         "name" : "David Szalay",
+         "url" : "https://readabooker.com/author/david-szalay/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/david-szalay/"
+         },
+         "name" : "All That Man Is",
+         "url" : "https://readabooker.com/title/all-that-man-is/"
+      }
+   ]
 }
 
 </script>

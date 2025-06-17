@@ -118,21 +118,35 @@ __PACKAGE__->has_many(
 
 with 'MooX::Role::JSON_LD', 'Booker::Role::SEO';
 
-sub json_ld_type { 'Person' }
+# MooX::Role::JSON_LD requires these two methods, but when using
+# json_ld_date(), they aren't used
+sub json_ld_fields {}
+sub json_ld_type {}
 
-sub json_ld_fields {
+sub json_ld_data {
+  my $self = shift;
   my $url = 'https://readabooker.com';
-  [
-    qw/name/,
-    { url => sub { $url . $_[0]->url_path } },
-    { '@reverse' => sub {
-        { 'author' => [ map { {
-            '@type' => 'Book',
-            'name'  => $_->title,
-            'url'   => $url . $_->url_path,
-          } } $_[0]->books ] } ,
-      } },
-  ];
+  my $author_url = $url . $self->url_path;
+
+  return {
+    '@context' => 'https://schema.org',
+    '@graph'   => [
+      {
+        '@type' => 'Person',
+        '@id'   => $author_url,
+        name    => $self->name,
+        url     => $author_url,
+      },
+      map {
+        {
+          '@type' => 'Book',
+          name    => $_->title,
+          url     => $url . $_->url_path,
+          author  => { '@id' => $author_url },
+        }
+      } $self->books
+    ]
+  };
 }
 
 with 'Booker::Role::SEO';

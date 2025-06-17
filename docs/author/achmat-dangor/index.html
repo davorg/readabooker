@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Bitter Fruit",
-            "url" : "https://readabooker.com/title/bitter-fruit/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Achmat Dangor",
-   "url" : "https://readabooker.com/author/achmat-dangor/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/achmat-dangor/",
+         "@type" : "Person",
+         "name" : "Achmat Dangor",
+         "url" : "https://readabooker.com/author/achmat-dangor/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/achmat-dangor/"
+         },
+         "name" : "Bitter Fruit",
+         "url" : "https://readabooker.com/title/bitter-fruit/"
+      }
+   ]
 }
 
 </script>

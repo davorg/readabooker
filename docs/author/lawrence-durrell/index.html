@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Constance or Solitary Practices",
-            "url" : "https://readabooker.com/title/constance-or-solitary-practices/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Lawrence Durrell",
-   "url" : "https://readabooker.com/author/lawrence-durrell/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/lawrence-durrell/",
+         "@type" : "Person",
+         "name" : "Lawrence Durrell",
+         "url" : "https://readabooker.com/author/lawrence-durrell/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/lawrence-durrell/"
+         },
+         "name" : "Constance or Solitary Practices",
+         "url" : "https://readabooker.com/title/constance-or-solitary-practices/"
+      }
+   ]
 }
 
 </script>

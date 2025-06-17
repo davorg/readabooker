@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Orchard on Fire",
-            "url" : "https://readabooker.com/title/the-orchard-on-fire/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Shena Mackay",
-   "url" : "https://readabooker.com/author/shena-mackay/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/shena-mackay/",
+         "@type" : "Person",
+         "name" : "Shena Mackay",
+         "url" : "https://readabooker.com/author/shena-mackay/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/shena-mackay/"
+         },
+         "name" : "The Orchard on Fire",
+         "url" : "https://readabooker.com/title/the-orchard-on-fire/"
+      }
+   ]
 }
 
 </script>

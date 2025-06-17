@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Rites of Passage",
-            "url" : "https://readabooker.com/title/rites-of-passage/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "William Golding",
-   "url" : "https://readabooker.com/author/william-golding/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/william-golding/",
+         "@type" : "Person",
+         "name" : "William Golding",
+         "url" : "https://readabooker.com/author/william-golding/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/william-golding/"
+         },
+         "name" : "Rites of Passage",
+         "url" : "https://readabooker.com/title/rites-of-passage/"
+      }
+   ]
 }
 
 </script>

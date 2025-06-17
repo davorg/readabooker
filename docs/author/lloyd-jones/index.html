@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Mister Pip",
-            "url" : "https://readabooker.com/title/mister-pip/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Lloyd Jones",
-   "url" : "https://readabooker.com/author/lloyd-jones/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/lloyd-jones/",
+         "@type" : "Person",
+         "name" : "Lloyd Jones",
+         "url" : "https://readabooker.com/author/lloyd-jones/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/lloyd-jones/"
+         },
+         "name" : "Mister Pip",
+         "url" : "https://readabooker.com/title/mister-pip/"
+      }
+   ]
 }
 
 </script>

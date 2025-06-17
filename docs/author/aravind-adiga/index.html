@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The White Tiger",
-            "url" : "https://readabooker.com/title/the-white-tiger/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Aravind Adiga",
-   "url" : "https://readabooker.com/author/aravind-adiga/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/aravind-adiga/",
+         "@type" : "Person",
+         "name" : "Aravind Adiga",
+         "url" : "https://readabooker.com/author/aravind-adiga/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/aravind-adiga/"
+         },
+         "name" : "The White Tiger",
+         "url" : "https://readabooker.com/title/the-white-tiger/"
+      }
+   ]
 }
 
 </script>

@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Industry of Souls",
-            "url" : "https://readabooker.com/title/the-industry-of-souls/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Martin Booth",
-   "url" : "https://readabooker.com/author/martin-booth/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/martin-booth/",
+         "@type" : "Person",
+         "name" : "Martin Booth",
+         "url" : "https://readabooker.com/author/martin-booth/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/martin-booth/"
+         },
+         "name" : "The Industry of Souls",
+         "url" : "https://readabooker.com/title/the-industry-of-souls/"
+      }
+   ]
 }
 
 </script>

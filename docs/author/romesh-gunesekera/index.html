@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Reef",
-            "url" : "https://readabooker.com/title/reef/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Romesh Gunesekera",
-   "url" : "https://readabooker.com/author/romesh-gunesekera/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/romesh-gunesekera/",
+         "@type" : "Person",
+         "name" : "Romesh Gunesekera",
+         "url" : "https://readabooker.com/author/romesh-gunesekera/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/romesh-gunesekera/"
+         },
+         "name" : "Reef",
+         "url" : "https://readabooker.com/title/reef/"
+      }
+   ]
 }
 
 </script>

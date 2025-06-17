@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "A Passage North",
-            "url" : "https://readabooker.com/title/a-passage-north/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Anuk Arudpragasam",
-   "url" : "https://readabooker.com/author/anuk-arudpragasam/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/anuk-arudpragasam/",
+         "@type" : "Person",
+         "name" : "Anuk Arudpragasam",
+         "url" : "https://readabooker.com/author/anuk-arudpragasam/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/anuk-arudpragasam/"
+         },
+         "name" : "A Passage North",
+         "url" : "https://readabooker.com/title/a-passage-north/"
+      }
+   ]
 }
 
 </script>

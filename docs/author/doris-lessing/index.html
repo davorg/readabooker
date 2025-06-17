@@ -100,29 +100,39 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Briefing for a Descent into Hell",
-            "url" : "https://readabooker.com/title/briefing-for-a-descent-into-hell/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/doris-lessing/",
+         "@type" : "Person",
+         "name" : "Doris Lessing",
+         "url" : "https://readabooker.com/author/doris-lessing/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/doris-lessing/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Sirian Experiments",
-            "url" : "https://readabooker.com/title/the-sirian-experiments/"
+         "name" : "Briefing for a Descent into Hell",
+         "url" : "https://readabooker.com/title/briefing-for-a-descent-into-hell/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/doris-lessing/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Good Terrorist",
-            "url" : "https://readabooker.com/title/the-good-terrorist/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Doris Lessing",
-   "url" : "https://readabooker.com/author/doris-lessing/"
+         "name" : "The Sirian Experiments",
+         "url" : "https://readabooker.com/title/the-sirian-experiments/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/doris-lessing/"
+         },
+         "name" : "The Good Terrorist",
+         "url" : "https://readabooker.com/title/the-good-terrorist/"
+      }
+   ]
 }
 
 </script>

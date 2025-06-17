@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Stone Diaries",
-            "url" : "https://readabooker.com/title/the-stone-diaries/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/carol-shields/",
+         "@type" : "Person",
+         "name" : "Carol Shields",
+         "url" : "https://readabooker.com/author/carol-shields/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/carol-shields/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Unless",
-            "url" : "https://readabooker.com/title/unless/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Carol Shields",
-   "url" : "https://readabooker.com/author/carol-shields/"
+         "name" : "The Stone Diaries",
+         "url" : "https://readabooker.com/title/the-stone-diaries/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/carol-shields/"
+         },
+         "name" : "Unless",
+         "url" : "https://readabooker.com/title/unless/"
+      }
+   ]
 }
 
 </script>

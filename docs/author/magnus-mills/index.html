@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Restraint of Beasts",
-            "url" : "https://readabooker.com/title/the-restraint-of-beasts/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Magnus Mills",
-   "url" : "https://readabooker.com/author/magnus-mills/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/magnus-mills/",
+         "@type" : "Person",
+         "name" : "Magnus Mills",
+         "url" : "https://readabooker.com/author/magnus-mills/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/magnus-mills/"
+         },
+         "name" : "The Restraint of Beasts",
+         "url" : "https://readabooker.com/title/the-restraint-of-beasts/"
+      }
+   ]
 }
 
 </script>

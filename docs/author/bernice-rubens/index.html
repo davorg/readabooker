@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Elected Member",
-            "url" : "https://readabooker.com/title/the-elected-member/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/bernice-rubens/",
+         "@type" : "Person",
+         "name" : "Bernice Rubens",
+         "url" : "https://readabooker.com/author/bernice-rubens/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/bernice-rubens/"
          },
-         {
-            "@type" : "Book",
-            "name" : "A Five-Year Sentence",
-            "url" : "https://readabooker.com/title/a-five-year-sentence/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Bernice Rubens",
-   "url" : "https://readabooker.com/author/bernice-rubens/"
+         "name" : "The Elected Member",
+         "url" : "https://readabooker.com/title/the-elected-member/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/bernice-rubens/"
+         },
+         "name" : "A Five-Year Sentence",
+         "url" : "https://readabooker.com/title/a-five-year-sentence/"
+      }
+   ]
 }
 
 </script>

@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Serenity House",
-            "url" : "https://readabooker.com/title/serenity-house/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Christopher Hope",
-   "url" : "https://readabooker.com/author/christopher-hope/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/christopher-hope/",
+         "@type" : "Person",
+         "name" : "Christopher Hope",
+         "url" : "https://readabooker.com/author/christopher-hope/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/christopher-hope/"
+         },
+         "name" : "Serenity House",
+         "url" : "https://readabooker.com/title/serenity-house/"
+      }
+   ]
 }
 
 </script>

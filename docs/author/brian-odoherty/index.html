@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Deposition of Father McGreevy",
-            "url" : "https://readabooker.com/title/the-deposition-of-father-mcgreevy/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Brian O'Doherty",
-   "url" : "https://readabooker.com/author/brian-odoherty/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/brian-odoherty/",
+         "@type" : "Person",
+         "name" : "Brian O'Doherty",
+         "url" : "https://readabooker.com/author/brian-odoherty/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/brian-odoherty/"
+         },
+         "name" : "The Deposition of Father McGreevy",
+         "url" : "https://readabooker.com/title/the-deposition-of-father-mcgreevy/"
+      }
+   ]
 }
 
 </script>

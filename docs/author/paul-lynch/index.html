@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Prophet Song",
-            "url" : "https://readabooker.com/title/prophet-song/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Paul Lynch",
-   "url" : "https://readabooker.com/author/paul-lynch/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/paul-lynch/",
+         "@type" : "Person",
+         "name" : "Paul Lynch",
+         "url" : "https://readabooker.com/author/paul-lynch/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/paul-lynch/"
+         },
+         "name" : "Prophet Song",
+         "url" : "https://readabooker.com/title/prophet-song/"
+      }
+   ]
 }
 
 </script>

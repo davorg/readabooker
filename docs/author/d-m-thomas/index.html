@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The White Hotel",
-            "url" : "https://readabooker.com/title/the-white-hotel/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "D. M. Thomas",
-   "url" : "https://readabooker.com/author/d-m-thomas/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/d-m-thomas/",
+         "@type" : "Person",
+         "name" : "D. M. Thomas",
+         "url" : "https://readabooker.com/author/d-m-thomas/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/d-m-thomas/"
+         },
+         "name" : "The White Hotel",
+         "url" : "https://readabooker.com/title/the-white-hotel/"
+      }
+   ]
 }
 
 </script>

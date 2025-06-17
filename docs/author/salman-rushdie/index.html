@@ -100,39 +100,55 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Midnight's Children",
-            "url" : "https://readabooker.com/title/midnights-children/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/salman-rushdie/",
+         "@type" : "Person",
+         "name" : "Salman Rushdie",
+         "url" : "https://readabooker.com/author/salman-rushdie/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/salman-rushdie/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Shame",
-            "url" : "https://readabooker.com/title/shame/"
+         "name" : "Midnight's Children",
+         "url" : "https://readabooker.com/title/midnights-children/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/salman-rushdie/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Satanic Verses",
-            "url" : "https://readabooker.com/title/the-satanic-verses/"
+         "name" : "Shame",
+         "url" : "https://readabooker.com/title/shame/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/salman-rushdie/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Moor's Last Sigh",
-            "url" : "https://readabooker.com/title/the-moors-last-sigh/"
+         "name" : "The Satanic Verses",
+         "url" : "https://readabooker.com/title/the-satanic-verses/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/salman-rushdie/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Quichotte",
-            "url" : "https://readabooker.com/title/quichotte/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Salman Rushdie",
-   "url" : "https://readabooker.com/author/salman-rushdie/"
+         "name" : "The Moor's Last Sigh",
+         "url" : "https://readabooker.com/title/the-moors-last-sigh/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/salman-rushdie/"
+         },
+         "name" : "Quichotte",
+         "url" : "https://readabooker.com/title/quichotte/"
+      }
+   ]
 }
 
 </script>

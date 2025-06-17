@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Fire From Heaven",
-            "url" : "https://readabooker.com/title/fire-from-heaven/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Mary Renault",
-   "url" : "https://readabooker.com/author/mary-renault/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/mary-renault/",
+         "@type" : "Person",
+         "name" : "Mary Renault",
+         "url" : "https://readabooker.com/author/mary-renault/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/mary-renault/"
+         },
+         "name" : "Fire From Heaven",
+         "url" : "https://readabooker.com/title/fire-from-heaven/"
+      }
+   ]
 }
 
 </script>

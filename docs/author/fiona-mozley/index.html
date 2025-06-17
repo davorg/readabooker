@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Elmet",
-            "url" : "https://readabooker.com/title/elmet/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Fiona Mozley",
-   "url" : "https://readabooker.com/author/fiona-mozley/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/fiona-mozley/",
+         "@type" : "Person",
+         "name" : "Fiona Mozley",
+         "url" : "https://readabooker.com/author/fiona-mozley/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/fiona-mozley/"
+         },
+         "name" : "Elmet",
+         "url" : "https://readabooker.com/title/elmet/"
+      }
+   ]
 }
 
 </script>

@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Rhine Journey",
-            "url" : "https://readabooker.com/title/rhine-journey/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Ann Schlee",
-   "url" : "https://readabooker.com/author/ann-schlee/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/ann-schlee/",
+         "@type" : "Person",
+         "name" : "Ann Schlee",
+         "url" : "https://readabooker.com/author/ann-schlee/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/ann-schlee/"
+         },
+         "name" : "Rhine Journey",
+         "url" : "https://readabooker.com/title/rhine-journey/"
+      }
+   ]
 }
 
 </script>

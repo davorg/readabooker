@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Restoration",
-            "url" : "https://readabooker.com/title/restoration/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Rose Tremain",
-   "url" : "https://readabooker.com/author/rose-tremain/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/rose-tremain/",
+         "@type" : "Person",
+         "name" : "Rose Tremain",
+         "url" : "https://readabooker.com/author/rose-tremain/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/rose-tremain/"
+         },
+         "name" : "Restoration",
+         "url" : "https://readabooker.com/title/restoration/"
+      }
+   ]
 }
 
 </script>

@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Northern Clemency",
-            "url" : "https://readabooker.com/title/the-northern-clemency/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Philip Hensher",
-   "url" : "https://readabooker.com/author/philip-hensher/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/philip-hensher/",
+         "@type" : "Person",
+         "name" : "Philip Hensher",
+         "url" : "https://readabooker.com/author/philip-hensher/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/philip-hensher/"
+         },
+         "name" : "The Northern Clemency",
+         "url" : "https://readabooker.com/title/the-northern-clemency/"
+      }
+   ]
 }
 
 </script>

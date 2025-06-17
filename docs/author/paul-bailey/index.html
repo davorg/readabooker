@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Peter Smart's Confessions",
-            "url" : "https://readabooker.com/title/peter-smarts-confessions/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/paul-bailey/",
+         "@type" : "Person",
+         "name" : "Paul Bailey",
+         "url" : "https://readabooker.com/author/paul-bailey/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/paul-bailey/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Gabriel's Lament",
-            "url" : "https://readabooker.com/title/gabriels-lament/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Paul Bailey",
-   "url" : "https://readabooker.com/author/paul-bailey/"
+         "name" : "Peter Smart's Confessions",
+         "url" : "https://readabooker.com/title/peter-smarts-confessions/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/paul-bailey/"
+         },
+         "name" : "Gabriel's Lament",
+         "url" : "https://readabooker.com/title/gabriels-lament/"
+      }
+   ]
 }
 
 </script>

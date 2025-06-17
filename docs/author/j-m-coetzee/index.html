@@ -100,29 +100,39 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Life & Times of Michael K",
-            "url" : "https://readabooker.com/title/life-times-of-michael-k/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/j-m-coetzee/",
+         "@type" : "Person",
+         "name" : "J. M. Coetzee",
+         "url" : "https://readabooker.com/author/j-m-coetzee/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/j-m-coetzee/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Disgrace",
-            "url" : "https://readabooker.com/title/disgrace/"
+         "name" : "Life & Times of Michael K",
+         "url" : "https://readabooker.com/title/life-times-of-michael-k/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/j-m-coetzee/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Summertime",
-            "url" : "https://readabooker.com/title/summertime/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "J. M. Coetzee",
-   "url" : "https://readabooker.com/author/j-m-coetzee/"
+         "name" : "Disgrace",
+         "url" : "https://readabooker.com/title/disgrace/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/j-m-coetzee/"
+         },
+         "name" : "Summertime",
+         "url" : "https://readabooker.com/title/summertime/"
+      }
+   ]
 }
 
 </script>

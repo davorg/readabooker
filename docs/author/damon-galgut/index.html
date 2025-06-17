@@ -100,29 +100,39 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Good Doctor",
-            "url" : "https://readabooker.com/title/the-good-doctor/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/damon-galgut/",
+         "@type" : "Person",
+         "name" : "Damon Galgut",
+         "url" : "https://readabooker.com/author/damon-galgut/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/damon-galgut/"
          },
-         {
-            "@type" : "Book",
-            "name" : "In a Strange Room",
-            "url" : "https://readabooker.com/title/in-a-strange-room/"
+         "name" : "The Good Doctor",
+         "url" : "https://readabooker.com/title/the-good-doctor/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/damon-galgut/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Promise",
-            "url" : "https://readabooker.com/title/the-promise/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Damon Galgut",
-   "url" : "https://readabooker.com/author/damon-galgut/"
+         "name" : "In a Strange Room",
+         "url" : "https://readabooker.com/title/in-a-strange-room/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/damon-galgut/"
+         },
+         "name" : "The Promise",
+         "url" : "https://readabooker.com/title/the-promise/"
+      }
+   ]
 }
 
 </script>

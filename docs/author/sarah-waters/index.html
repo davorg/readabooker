@@ -100,29 +100,39 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Fingersmith",
-            "url" : "https://readabooker.com/title/fingersmith/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/sarah-waters/",
+         "@type" : "Person",
+         "name" : "Sarah Waters",
+         "url" : "https://readabooker.com/author/sarah-waters/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/sarah-waters/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Night Watch",
-            "url" : "https://readabooker.com/title/the-night-watch/"
+         "name" : "Fingersmith",
+         "url" : "https://readabooker.com/title/fingersmith/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/sarah-waters/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Little Stranger",
-            "url" : "https://readabooker.com/title/the-little-stranger/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Sarah Waters",
-   "url" : "https://readabooker.com/author/sarah-waters/"
+         "name" : "The Night Watch",
+         "url" : "https://readabooker.com/title/the-night-watch/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/sarah-waters/"
+         },
+         "name" : "The Little Stranger",
+         "url" : "https://readabooker.com/title/the-little-stranger/"
+      }
+   ]
 }
 
 </script>

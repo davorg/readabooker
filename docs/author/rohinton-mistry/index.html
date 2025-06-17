@@ -100,29 +100,39 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Such a Long Journey",
-            "url" : "https://readabooker.com/title/such-a-long-journey/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/rohinton-mistry/",
+         "@type" : "Person",
+         "name" : "Rohinton Mistry",
+         "url" : "https://readabooker.com/author/rohinton-mistry/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/rohinton-mistry/"
          },
-         {
-            "@type" : "Book",
-            "name" : "A Fine Balance",
-            "url" : "https://readabooker.com/title/a-fine-balance/"
+         "name" : "Such a Long Journey",
+         "url" : "https://readabooker.com/title/such-a-long-journey/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/rohinton-mistry/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Family Matters",
-            "url" : "https://readabooker.com/title/family-matters/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Rohinton Mistry",
-   "url" : "https://readabooker.com/author/rohinton-mistry/"
+         "name" : "A Fine Balance",
+         "url" : "https://readabooker.com/title/a-fine-balance/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/rohinton-mistry/"
+         },
+         "name" : "Family Matters",
+         "url" : "https://readabooker.com/title/family-matters/"
+      }
+   ]
 }
 
 </script>

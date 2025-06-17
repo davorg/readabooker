@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Butcher Boy",
-            "url" : "https://readabooker.com/title/the-butcher-boy/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/patrick-mccabe/",
+         "@type" : "Person",
+         "name" : "Patrick McCabe",
+         "url" : "https://readabooker.com/author/patrick-mccabe/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/patrick-mccabe/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Breakfast on Pluto",
-            "url" : "https://readabooker.com/title/breakfast-on-pluto/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Patrick McCabe",
-   "url" : "https://readabooker.com/author/patrick-mccabe/"
+         "name" : "The Butcher Boy",
+         "url" : "https://readabooker.com/title/the-butcher-boy/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/patrick-mccabe/"
+         },
+         "name" : "Breakfast on Pluto",
+         "url" : "https://readabooker.com/title/breakfast-on-pluto/"
+      }
+   ]
 }
 
 </script>

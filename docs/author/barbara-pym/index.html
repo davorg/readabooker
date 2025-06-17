@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Quartet in Autumn",
-            "url" : "https://readabooker.com/title/quartet-in-autumn/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Barbara Pym",
-   "url" : "https://readabooker.com/author/barbara-pym/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/barbara-pym/",
+         "@type" : "Person",
+         "name" : "Barbara Pym",
+         "url" : "https://readabooker.com/author/barbara-pym/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/barbara-pym/"
+         },
+         "name" : "Quartet in Autumn",
+         "url" : "https://readabooker.com/title/quartet-in-autumn/"
+      }
+   ]
 }
 
 </script>

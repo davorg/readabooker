@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Held",
-            "url" : "https://readabooker.com/title/held/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Anne Michaels",
-   "url" : "https://readabooker.com/author/anne-michaels/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/anne-michaels/",
+         "@type" : "Person",
+         "name" : "Anne Michaels",
+         "url" : "https://readabooker.com/author/anne-michaels/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/anne-michaels/"
+         },
+         "name" : "Held",
+         "url" : "https://readabooker.com/title/held/"
+      }
+   ]
 }
 
 </script>

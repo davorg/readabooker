@@ -100,44 +100,63 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Nice and the Good",
-            "url" : "https://readabooker.com/title/the-nice-and-the-good/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/iris-murdoch/",
+         "@type" : "Person",
+         "name" : "Iris Murdoch",
+         "url" : "https://readabooker.com/author/iris-murdoch/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/iris-murdoch/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Bruno's Dream",
-            "url" : "https://readabooker.com/title/brunos-dream/"
+         "name" : "The Nice and the Good",
+         "url" : "https://readabooker.com/title/the-nice-and-the-good/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/iris-murdoch/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Black Prince",
-            "url" : "https://readabooker.com/title/the-black-prince/"
+         "name" : "Bruno's Dream",
+         "url" : "https://readabooker.com/title/brunos-dream/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/iris-murdoch/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Sea, the Sea",
-            "url" : "https://readabooker.com/title/the-sea-the-sea/"
+         "name" : "The Black Prince",
+         "url" : "https://readabooker.com/title/the-black-prince/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/iris-murdoch/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Good Apprentice",
-            "url" : "https://readabooker.com/title/the-good-apprentice/"
+         "name" : "The Sea, the Sea",
+         "url" : "https://readabooker.com/title/the-sea-the-sea/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/iris-murdoch/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Book and the Brotherhood",
-            "url" : "https://readabooker.com/title/the-book-and-the-brotherhood/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Iris Murdoch",
-   "url" : "https://readabooker.com/author/iris-murdoch/"
+         "name" : "The Good Apprentice",
+         "url" : "https://readabooker.com/title/the-good-apprentice/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/iris-murdoch/"
+         },
+         "name" : "The Book and the Brotherhood",
+         "url" : "https://readabooker.com/title/the-book-and-the-brotherhood/"
+      }
+   ]
 }
 
 </script>

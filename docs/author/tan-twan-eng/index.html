@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Garden of Evening Mists",
-            "url" : "https://readabooker.com/title/the-garden-of-evening-mists/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Tan Twan Eng",
-   "url" : "https://readabooker.com/author/tan-twan-eng/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/tan-twan-eng/",
+         "@type" : "Person",
+         "name" : "Tan Twan Eng",
+         "url" : "https://readabooker.com/author/tan-twan-eng/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/tan-twan-eng/"
+         },
+         "name" : "The Garden of Evening Mists",
+         "url" : "https://readabooker.com/title/the-garden-of-evening-mists/"
+      }
+   ]
 }
 
 </script>

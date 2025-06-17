@@ -29,11 +29,20 @@ sub seo_description {
 sub seo_image {
   my $self = shift;
 
+  my $url = 'https://readabooker.com';
+  my $image;
+
   if ($self->can('image') and $self->image) {
-    return $self->image;
+    $image = $self->image;
   } else {
-    return '/images/booker2024-short.jpg';
+    $image = '/images/booker2024-short.jpg';
   }
+
+  if ($image !~ m|^https?://|) {
+    $image = "$url$image";
+  }
+
+  return $image;
 }
 
 sub og_type {

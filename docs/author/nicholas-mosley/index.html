@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Impossible Object",
-            "url" : "https://readabooker.com/title/the-impossible-object/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Nicholas Mosley",
-   "url" : "https://readabooker.com/author/nicholas-mosley/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/nicholas-mosley/",
+         "@type" : "Person",
+         "name" : "Nicholas Mosley",
+         "url" : "https://readabooker.com/author/nicholas-mosley/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/nicholas-mosley/"
+         },
+         "name" : "The Impossible Object",
+         "url" : "https://readabooker.com/title/the-impossible-object/"
+      }
+   ]
 }
 
 </script>

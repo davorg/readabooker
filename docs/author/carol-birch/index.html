@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Jamrach's Menagerie",
-            "url" : "https://readabooker.com/title/jamrachs-menagerie/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Carol Birch",
-   "url" : "https://readabooker.com/author/carol-birch/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/carol-birch/",
+         "@type" : "Person",
+         "name" : "Carol Birch",
+         "url" : "https://readabooker.com/author/carol-birch/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/carol-birch/"
+         },
+         "name" : "Jamrach's Menagerie",
+         "url" : "https://readabooker.com/title/jamrachs-menagerie/"
+      }
+   ]
 }
 
 </script>

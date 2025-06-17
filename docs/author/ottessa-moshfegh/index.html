@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Eileen",
-            "url" : "https://readabooker.com/title/eileen/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Ottessa Moshfegh",
-   "url" : "https://readabooker.com/author/ottessa-moshfegh/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/ottessa-moshfegh/",
+         "@type" : "Person",
+         "name" : "Ottessa Moshfegh",
+         "url" : "https://readabooker.com/author/ottessa-moshfegh/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/ottessa-moshfegh/"
+         },
+         "name" : "Eileen",
+         "url" : "https://readabooker.com/title/eileen/"
+      }
+   ]
 }
 
 </script>

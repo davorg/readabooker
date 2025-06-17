@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "On Beauty",
-            "url" : "https://readabooker.com/title/on-beauty/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Zadie Smith",
-   "url" : "https://readabooker.com/author/zadie-smith/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/zadie-smith/",
+         "@type" : "Person",
+         "name" : "Zadie Smith",
+         "url" : "https://readabooker.com/author/zadie-smith/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/zadie-smith/"
+         },
+         "name" : "On Beauty",
+         "url" : "https://readabooker.com/title/on-beauty/"
+      }
+   ]
 }
 
 </script>

@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Heat and Dust",
-            "url" : "https://readabooker.com/title/heat-and-dust/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Ruth Prawer Jhabvala",
-   "url" : "https://readabooker.com/author/ruth-prawer-jhabvala/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/ruth-prawer-jhabvala/",
+         "@type" : "Person",
+         "name" : "Ruth Prawer Jhabvala",
+         "url" : "https://readabooker.com/author/ruth-prawer-jhabvala/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/ruth-prawer-jhabvala/"
+         },
+         "name" : "Heat and Dust",
+         "url" : "https://readabooker.com/title/heat-and-dust/"
+      }
+   ]
 }
 
 </script>

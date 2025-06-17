@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Secret River",
-            "url" : "https://readabooker.com/title/the-secret-river/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Kate Grenville",
-   "url" : "https://readabooker.com/author/kate-grenville/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/kate-grenville/",
+         "@type" : "Person",
+         "name" : "Kate Grenville",
+         "url" : "https://readabooker.com/author/kate-grenville/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/kate-grenville/"
+         },
+         "name" : "The Secret River",
+         "url" : "https://readabooker.com/title/the-secret-river/"
+      }
+   ]
 }
 
 </script>

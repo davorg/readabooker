@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "A Tale for the Time Being",
-            "url" : "https://readabooker.com/title/a-tale-for-the-time-being/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Ruth Ozeki",
-   "url" : "https://readabooker.com/author/ruth-ozeki/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/ruth-ozeki/",
+         "@type" : "Person",
+         "name" : "Ruth Ozeki",
+         "url" : "https://readabooker.com/author/ruth-ozeki/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/ruth-ozeki/"
+         },
+         "name" : "A Tale for the Time Being",
+         "url" : "https://readabooker.com/title/a-tale-for-the-time-being/"
+      }
+   ]
 }
 
 </script>

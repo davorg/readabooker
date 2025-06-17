@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "If I Survive You",
-            "url" : "https://readabooker.com/title/if-i-survive-you/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Jonathan Escoffery",
-   "url" : "https://readabooker.com/author/jonathan-escoffery/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/jonathan-escoffery/",
+         "@type" : "Person",
+         "name" : "Jonathan Escoffery",
+         "url" : "https://readabooker.com/author/jonathan-escoffery/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/jonathan-escoffery/"
+         },
+         "name" : "If I Survive You",
+         "url" : "https://readabooker.com/title/if-i-survive-you/"
+      }
+   ]
 }
 
 </script>

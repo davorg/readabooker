@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Beggar Maid",
-            "url" : "https://readabooker.com/title/the-beggar-maid/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Alice Munro",
-   "url" : "https://readabooker.com/author/alice-munro/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/alice-munro/",
+         "@type" : "Person",
+         "name" : "Alice Munro",
+         "url" : "https://readabooker.com/author/alice-munro/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/alice-munro/"
+         },
+         "name" : "The Beggar Maid",
+         "url" : "https://readabooker.com/title/the-beggar-maid/"
+      }
+   ]
 }
 
 </script>

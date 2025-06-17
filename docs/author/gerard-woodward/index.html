@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "I'll Go to Bed at Noon",
-            "url" : "https://readabooker.com/title/ill-go-to-bed-at-noon/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Gerard Woodward",
-   "url" : "https://readabooker.com/author/gerard-woodward/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/gerard-woodward/",
+         "@type" : "Person",
+         "name" : "Gerard Woodward",
+         "url" : "https://readabooker.com/author/gerard-woodward/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/gerard-woodward/"
+         },
+         "name" : "I'll Go to Bed at Noon",
+         "url" : "https://readabooker.com/title/ill-go-to-bed-at-noon/"
+      }
+   ]
 }
 
 </script>

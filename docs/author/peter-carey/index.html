@@ -100,34 +100,47 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Illywhacker",
-            "url" : "https://readabooker.com/title/illywhacker/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/peter-carey/",
+         "@type" : "Person",
+         "name" : "Peter Carey",
+         "url" : "https://readabooker.com/author/peter-carey/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/peter-carey/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Oscar and Lucinda",
-            "url" : "https://readabooker.com/title/oscar-and-lucinda/"
+         "name" : "Illywhacker",
+         "url" : "https://readabooker.com/title/illywhacker/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/peter-carey/"
          },
-         {
-            "@type" : "Book",
-            "name" : "True History of the Kelly Gang",
-            "url" : "https://readabooker.com/title/true-history-of-the-kelly-gang/"
+         "name" : "Oscar and Lucinda",
+         "url" : "https://readabooker.com/title/oscar-and-lucinda/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/peter-carey/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Parrot and Olivier in America",
-            "url" : "https://readabooker.com/title/parrot-and-olivier-in-america/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Peter Carey",
-   "url" : "https://readabooker.com/author/peter-carey/"
+         "name" : "True History of the Kelly Gang",
+         "url" : "https://readabooker.com/title/true-history-of-the-kelly-gang/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/peter-carey/"
+         },
+         "name" : "Parrot and Olivier in America",
+         "url" : "https://readabooker.com/title/parrot-and-olivier-in-america/"
+      }
+   ]
 }
 
 </script>

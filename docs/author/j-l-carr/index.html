@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "A Month in the Country",
-            "url" : "https://readabooker.com/title/a-month-in-the-country/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/j-l-carr/",
+         "@type" : "Person",
+         "name" : "J. L. Carr",
+         "url" : "https://readabooker.com/author/j-l-carr/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/j-l-carr/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Battle of Pollocks Crossing",
-            "url" : "https://readabooker.com/title/the-battle-of-pollocks-crossing/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "J. L. Carr",
-   "url" : "https://readabooker.com/author/j-l-carr/"
+         "name" : "A Month in the Country",
+         "url" : "https://readabooker.com/title/a-month-in-the-country/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/j-l-carr/"
+         },
+         "name" : "The Battle of Pollocks Crossing",
+         "url" : "https://readabooker.com/title/the-battle-of-pollocks-crossing/"
+      }
+   ]
 }
 
 </script>

@@ -100,29 +100,39 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Blackwater Lightship",
-            "url" : "https://readabooker.com/title/the-blackwater-lightship/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/colm-toibin/",
+         "@type" : "Person",
+         "name" : "Colm TÃ³ibÃ­n",
+         "url" : "https://readabooker.com/author/colm-toibin/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/colm-toibin/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Master",
-            "url" : "https://readabooker.com/title/the-master/"
+         "name" : "The Blackwater Lightship",
+         "url" : "https://readabooker.com/title/the-blackwater-lightship/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/colm-toibin/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Testament of Mary",
-            "url" : "https://readabooker.com/title/the-testament-of-mary/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Colm TÃ³ibÃ­n",
-   "url" : "https://readabooker.com/author/colm-toibin/"
+         "name" : "The Master",
+         "url" : "https://readabooker.com/title/the-master/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/colm-toibin/"
+         },
+         "name" : "The Testament of Mary",
+         "url" : "https://readabooker.com/title/the-testament-of-mary/"
+      }
+   ]
 }
 
 </script>

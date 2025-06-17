@@ -100,29 +100,39 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Clear Light of Day",
-            "url" : "https://readabooker.com/title/clear-light-of-day/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/anita-desai/",
+         "@type" : "Person",
+         "name" : "Anita Desai",
+         "url" : "https://readabooker.com/author/anita-desai/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/anita-desai/"
          },
-         {
-            "@type" : "Book",
-            "name" : "In Custody",
-            "url" : "https://readabooker.com/title/in-custody/"
+         "name" : "Clear Light of Day",
+         "url" : "https://readabooker.com/title/clear-light-of-day/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/anita-desai/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Fasting, Feasting",
-            "url" : "https://readabooker.com/title/fasting-feasting/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Anita Desai",
-   "url" : "https://readabooker.com/author/anita-desai/"
+         "name" : "In Custody",
+         "url" : "https://readabooker.com/title/in-custody/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/anita-desai/"
+         },
+         "name" : "Fasting, Feasting",
+         "url" : "https://readabooker.com/title/fasting-feasting/"
+      }
+   ]
 }
 
 </script>

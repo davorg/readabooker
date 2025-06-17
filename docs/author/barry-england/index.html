@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Figures in a Landscape",
-            "url" : "https://readabooker.com/title/figures-in-a-landscape/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Barry England",
-   "url" : "https://readabooker.com/author/barry-england/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/barry-england/",
+         "@type" : "Person",
+         "name" : "Barry England",
+         "url" : "https://readabooker.com/author/barry-england/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/barry-england/"
+         },
+         "name" : "Figures in a Landscape",
+         "url" : "https://readabooker.com/title/figures-in-a-landscape/"
+      }
+   ]
 }
 
 </script>

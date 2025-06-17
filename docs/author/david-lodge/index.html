@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Small World",
-            "url" : "https://readabooker.com/title/small-world/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/david-lodge/",
+         "@type" : "Person",
+         "name" : "David Lodge",
+         "url" : "https://readabooker.com/author/david-lodge/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/david-lodge/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Nice Work",
-            "url" : "https://readabooker.com/title/nice-work/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "David Lodge",
-   "url" : "https://readabooker.com/author/david-lodge/"
+         "name" : "Small World",
+         "url" : "https://readabooker.com/title/small-world/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/david-lodge/"
+         },
+         "name" : "Nice Work",
+         "url" : "https://readabooker.com/title/nice-work/"
+      }
+   ]
 }
 
 </script>

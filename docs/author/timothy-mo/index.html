@@ -100,29 +100,39 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Sour Sweet",
-            "url" : "https://readabooker.com/title/sour-sweet/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/timothy-mo/",
+         "@type" : "Person",
+         "name" : "Timothy Mo",
+         "url" : "https://readabooker.com/author/timothy-mo/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/timothy-mo/"
          },
-         {
-            "@type" : "Book",
-            "name" : "An Insular Possession",
-            "url" : "https://readabooker.com/title/an-insular-possession/"
+         "name" : "Sour Sweet",
+         "url" : "https://readabooker.com/title/sour-sweet/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/timothy-mo/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Redundancy of Courage",
-            "url" : "https://readabooker.com/title/the-redundancy-of-courage/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Timothy Mo",
-   "url" : "https://readabooker.com/author/timothy-mo/"
+         "name" : "An Insular Possession",
+         "url" : "https://readabooker.com/title/an-insular-possession/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/timothy-mo/"
+         },
+         "name" : "The Redundancy of Courage",
+         "url" : "https://readabooker.com/title/the-redundancy-of-courage/"
+      }
+   ]
 }
 
 </script>

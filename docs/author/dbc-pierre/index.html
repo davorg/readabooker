@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Vernon God Little",
-            "url" : "https://readabooker.com/title/vernon-god-little/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "DBC Pierre",
-   "url" : "https://readabooker.com/author/dbc-pierre/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/dbc-pierre/",
+         "@type" : "Person",
+         "name" : "DBC Pierre",
+         "url" : "https://readabooker.com/author/dbc-pierre/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/dbc-pierre/"
+         },
+         "name" : "Vernon God Little",
+         "url" : "https://readabooker.com/title/vernon-god-little/"
+      }
+   ]
 }
 
 </script>

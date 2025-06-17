@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Ducks, Newburyport",
-            "url" : "https://readabooker.com/title/ducks-newburyport/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Lucy Ellmann",
-   "url" : "https://readabooker.com/author/lucy-ellmann/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/lucy-ellmann/",
+         "@type" : "Person",
+         "name" : "Lucy Ellmann",
+         "url" : "https://readabooker.com/author/lucy-ellmann/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/lucy-ellmann/"
+         },
+         "name" : "Ducks, Newburyport",
+         "url" : "https://readabooker.com/title/ducks-newburyport/"
+      }
+   ]
 }
 
 </script>

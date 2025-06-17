@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Knowledge of Angels",
-            "url" : "https://readabooker.com/title/knowledge-of-angels/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Jill Paton Walsh",
-   "url" : "https://readabooker.com/author/jill-paton-walsh/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/jill-paton-walsh/",
+         "@type" : "Person",
+         "name" : "Jill Paton Walsh",
+         "url" : "https://readabooker.com/author/jill-paton-walsh/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/jill-paton-walsh/"
+         },
+         "name" : "Knowledge of Angels",
+         "url" : "https://readabooker.com/title/knowledge-of-angels/"
+      }
+   ]
 }
 
 </script>

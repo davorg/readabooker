@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "This Other Eden",
-            "url" : "https://readabooker.com/title/this-other-eden/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Paul Harding",
-   "url" : "https://readabooker.com/author/paul-harding/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/paul-harding/",
+         "@type" : "Person",
+         "name" : "Paul Harding",
+         "url" : "https://readabooker.com/author/paul-harding/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/paul-harding/"
+         },
+         "name" : "This Other Eden",
+         "url" : "https://readabooker.com/title/this-other-eden/"
+      }
+   ]
 }
 
 </script>

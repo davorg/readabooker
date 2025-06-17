@@ -100,29 +100,39 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Road to Lichfield",
-            "url" : "https://readabooker.com/title/the-road-to-lichfield/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/penelope-lively/",
+         "@type" : "Person",
+         "name" : "Penelope Lively",
+         "url" : "https://readabooker.com/author/penelope-lively/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/penelope-lively/"
          },
-         {
-            "@type" : "Book",
-            "name" : "According to Mark",
-            "url" : "https://readabooker.com/title/according-to-mark/"
+         "name" : "The Road to Lichfield",
+         "url" : "https://readabooker.com/title/the-road-to-lichfield/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/penelope-lively/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Moon Tiger",
-            "url" : "https://readabooker.com/title/moon-tiger/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Penelope Lively",
-   "url" : "https://readabooker.com/author/penelope-lively/"
+         "name" : "According to Mark",
+         "url" : "https://readabooker.com/title/according-to-mark/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/penelope-lively/"
+         },
+         "name" : "Moon Tiger",
+         "url" : "https://readabooker.com/title/moon-tiger/"
+      }
+   ]
 }
 
 </script>

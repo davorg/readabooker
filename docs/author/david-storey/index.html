@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Pasmore",
-            "url" : "https://readabooker.com/title/pasmore/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/david-storey/",
+         "@type" : "Person",
+         "name" : "David Storey",
+         "url" : "https://readabooker.com/author/david-storey/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/david-storey/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Saville",
-            "url" : "https://readabooker.com/title/saville/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "David Storey",
-   "url" : "https://readabooker.com/author/david-storey/"
+         "name" : "Pasmore",
+         "url" : "https://readabooker.com/title/pasmore/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/david-storey/"
+         },
+         "name" : "Saville",
+         "url" : "https://readabooker.com/title/saville/"
+      }
+   ]
 }
 
 </script>

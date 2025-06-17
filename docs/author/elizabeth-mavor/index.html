@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Green Equinox",
-            "url" : "https://readabooker.com/title/the-green-equinox/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Elizabeth Mavor",
-   "url" : "https://readabooker.com/author/elizabeth-mavor/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/elizabeth-mavor/",
+         "@type" : "Person",
+         "name" : "Elizabeth Mavor",
+         "url" : "https://readabooker.com/author/elizabeth-mavor/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/elizabeth-mavor/"
+         },
+         "name" : "The Green Equinox",
+         "url" : "https://readabooker.com/title/the-green-equinox/"
+      }
+   ]
 }
 
 </script>

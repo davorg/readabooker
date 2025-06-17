@@ -100,34 +100,47 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Bookshop",
-            "url" : "https://readabooker.com/title/the-bookshop/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/penelope-fitzgerald/",
+         "@type" : "Person",
+         "name" : "Penelope Fitzgerald",
+         "url" : "https://readabooker.com/author/penelope-fitzgerald/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/penelope-fitzgerald/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Offshore",
-            "url" : "https://readabooker.com/title/offshore/"
+         "name" : "The Bookshop",
+         "url" : "https://readabooker.com/title/the-bookshop/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/penelope-fitzgerald/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Beginning of Spring",
-            "url" : "https://readabooker.com/title/the-beginning-of-spring/"
+         "name" : "Offshore",
+         "url" : "https://readabooker.com/title/offshore/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/penelope-fitzgerald/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Gate of Angels",
-            "url" : "https://readabooker.com/title/the-gate-of-angels/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Penelope Fitzgerald",
-   "url" : "https://readabooker.com/author/penelope-fitzgerald/"
+         "name" : "The Beginning of Spring",
+         "url" : "https://readabooker.com/title/the-beginning-of-spring/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/penelope-fitzgerald/"
+         },
+         "name" : "The Gate of Angels",
+         "url" : "https://readabooker.com/title/the-gate-of-angels/"
+      }
+   ]
 }
 
 </script>

@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Carry Me Down",
-            "url" : "https://readabooker.com/title/carry-me-down/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "M. J. Hyland",
-   "url" : "https://readabooker.com/author/m-j-hyland/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/m-j-hyland/",
+         "@type" : "Person",
+         "name" : "M. J. Hyland",
+         "url" : "https://readabooker.com/author/m-j-hyland/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/m-j-hyland/"
+         },
+         "name" : "Carry Me Down",
+         "url" : "https://readabooker.com/title/carry-me-down/"
+      }
+   ]
 }
 
 </script>

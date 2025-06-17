@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "10 Minutes 38 Seconds in This Strange World",
-            "url" : "https://readabooker.com/title/10-minutes-38-seconds-in-this-strange-world/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Elif Shafak",
-   "url" : "https://readabooker.com/author/elif-shafak/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/elif-shafak/",
+         "@type" : "Person",
+         "name" : "Elif Shafak",
+         "url" : "https://readabooker.com/author/elif-shafak/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/elif-shafak/"
+         },
+         "name" : "10 Minutes 38 Seconds in This Strange World",
+         "url" : "https://readabooker.com/title/10-minutes-38-seconds-in-this-strange-world/"
+      }
+   ]
 }
 
 </script>

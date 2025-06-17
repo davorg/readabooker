@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "In a Free State",
-            "url" : "https://readabooker.com/title/in-a-free-state/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/v-s-naipaul/",
+         "@type" : "Person",
+         "name" : "V. S. Naipaul",
+         "url" : "https://readabooker.com/author/v-s-naipaul/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/v-s-naipaul/"
          },
-         {
-            "@type" : "Book",
-            "name" : "A Bend in the River",
-            "url" : "https://readabooker.com/title/a-bend-in-the-river/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "V. S. Naipaul",
-   "url" : "https://readabooker.com/author/v-s-naipaul/"
+         "name" : "In a Free State",
+         "url" : "https://readabooker.com/title/in-a-free-state/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/v-s-naipaul/"
+         },
+         "name" : "A Bend in the River",
+         "url" : "https://readabooker.com/title/a-bend-in-the-river/"
+      }
+   ]
 }
 
 </script>

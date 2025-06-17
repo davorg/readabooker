@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Everything Under",
-            "url" : "https://readabooker.com/title/everything-under/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Daisy Johnson",
-   "url" : "https://readabooker.com/author/daisy-johnson/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/daisy-johnson/",
+         "@type" : "Person",
+         "name" : "Daisy Johnson",
+         "url" : "https://readabooker.com/author/daisy-johnson/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/daisy-johnson/"
+         },
+         "name" : "Everything Under",
+         "url" : "https://readabooker.com/title/everything-under/"
+      }
+   ]
 }
 
 </script>

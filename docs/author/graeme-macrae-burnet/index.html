@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "His Bloody Project",
-            "url" : "https://readabooker.com/title/his-bloody-project/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Graeme Macrae Burnet",
-   "url" : "https://readabooker.com/author/graeme-macrae-burnet/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/graeme-macrae-burnet/",
+         "@type" : "Person",
+         "name" : "Graeme Macrae Burnet",
+         "url" : "https://readabooker.com/author/graeme-macrae-burnet/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/graeme-macrae-burnet/"
+         },
+         "name" : "His Bloody Project",
+         "url" : "https://readabooker.com/title/his-bloody-project/"
+      }
+   ]
 }
 
 </script>

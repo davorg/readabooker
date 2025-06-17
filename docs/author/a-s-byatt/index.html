@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Possession: A Romance",
-            "url" : "https://readabooker.com/title/possession-a-romance/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/a-s-byatt/",
+         "@type" : "Person",
+         "name" : "A. S. Byatt",
+         "url" : "https://readabooker.com/author/a-s-byatt/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/a-s-byatt/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Children's Book",
-            "url" : "https://readabooker.com/title/the-childrens-book/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "A. S. Byatt",
-   "url" : "https://readabooker.com/author/a-s-byatt/"
+         "name" : "Possession: A Romance",
+         "url" : "https://readabooker.com/title/possession-a-romance/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/a-s-byatt/"
+         },
+         "name" : "The Children's Book",
+         "url" : "https://readabooker.com/title/the-childrens-book/"
+      }
+   ]
 }
 
 </script>

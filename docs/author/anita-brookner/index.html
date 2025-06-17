@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Hotel du Lac",
-            "url" : "https://readabooker.com/title/hotel-du-lac/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Anita Brookner",
-   "url" : "https://readabooker.com/author/anita-brookner/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/anita-brookner/",
+         "@type" : "Person",
+         "name" : "Anita Brookner",
+         "url" : "https://readabooker.com/author/anita-brookner/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/anita-brookner/"
+         },
+         "name" : "Hotel du Lac",
+         "url" : "https://readabooker.com/title/hotel-du-lac/"
+      }
+   ]
 }
 
 </script>

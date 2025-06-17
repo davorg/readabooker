@@ -171,6 +171,7 @@ sub json_ld_fields {
       }
     },
     { isbn => 'asin' },
+    'image',
   ];
 }
 
@@ -206,6 +207,12 @@ sub letter {
   my $letter = uc substr $self->sort_title, 0, 1;
 
   return $letter =~ /[A-Z]/ ? $letter : '#';
+}
+
+sub image {
+  my $self = shift;
+
+  return 'https://images.amazon.com/images/P/' .$self->asin . '.jpg';
 }
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

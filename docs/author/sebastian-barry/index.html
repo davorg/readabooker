@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "A Long Long Way",
-            "url" : "https://readabooker.com/title/a-long-long-way/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/sebastian-barry/",
+         "@type" : "Person",
+         "name" : "Sebastian Barry",
+         "url" : "https://readabooker.com/author/sebastian-barry/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/sebastian-barry/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Secret Scripture",
-            "url" : "https://readabooker.com/title/the-secret-scripture/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Sebastian Barry",
-   "url" : "https://readabooker.com/author/sebastian-barry/"
+         "name" : "A Long Long Way",
+         "url" : "https://readabooker.com/title/a-long-long-way/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/sebastian-barry/"
+         },
+         "name" : "The Secret Scripture",
+         "url" : "https://readabooker.com/title/the-secret-scripture/"
+      }
+   ]
 }
 
 </script>

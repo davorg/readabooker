@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Study for Obedience",
-            "url" : "https://readabooker.com/title/study-for-obedience/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Sarah Bernstein",
-   "url" : "https://readabooker.com/author/sarah-bernstein/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/sarah-bernstein/",
+         "@type" : "Person",
+         "name" : "Sarah Bernstein",
+         "url" : "https://readabooker.com/author/sarah-bernstein/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/sarah-bernstein/"
+         },
+         "name" : "Study for Obedience",
+         "url" : "https://readabooker.com/title/study-for-obedience/"
+      }
+   ]
 }
 
 </script>

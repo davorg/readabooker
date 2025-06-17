@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Lives of Others",
-            "url" : "https://readabooker.com/title/the-lives-of-others/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Neel Mukherjee",
-   "url" : "https://readabooker.com/author/neel-mukherjee/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/neel-mukherjee/",
+         "@type" : "Person",
+         "name" : "Neel Mukherjee",
+         "url" : "https://readabooker.com/author/neel-mukherjee/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/neel-mukherjee/"
+         },
+         "name" : "The Lives of Others",
+         "url" : "https://readabooker.com/title/the-lives-of-others/"
+      }
+   ]
 }
 
 </script>

@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Ghost Road",
-            "url" : "https://readabooker.com/title/the-ghost-road/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Pat Barker",
-   "url" : "https://readabooker.com/author/pat-barker/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/pat-barker/",
+         "@type" : "Person",
+         "name" : "Pat Barker",
+         "url" : "https://readabooker.com/author/pat-barker/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/pat-barker/"
+         },
+         "name" : "The Ghost Road",
+         "url" : "https://readabooker.com/title/the-ghost-road/"
+      }
+   ]
 }
 
 </script>

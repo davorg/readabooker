@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Room",
-            "url" : "https://readabooker.com/title/room/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Emma Donoghue",
-   "url" : "https://readabooker.com/author/emma-donoghue/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/emma-donoghue/",
+         "@type" : "Person",
+         "name" : "Emma Donoghue",
+         "url" : "https://readabooker.com/author/emma-donoghue/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/emma-donoghue/"
+         },
+         "name" : "Room",
+         "url" : "https://readabooker.com/title/room/"
+      }
+   ]
 }
 
 </script>

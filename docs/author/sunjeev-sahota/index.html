@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Year of the Runaways",
-            "url" : "https://readabooker.com/title/the-year-of-the-runaways/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Sunjeev Sahota",
-   "url" : "https://readabooker.com/author/sunjeev-sahota/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/sunjeev-sahota/",
+         "@type" : "Person",
+         "name" : "Sunjeev Sahota",
+         "url" : "https://readabooker.com/author/sunjeev-sahota/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/sunjeev-sahota/"
+         },
+         "name" : "The Year of the Runaways",
+         "url" : "https://readabooker.com/title/the-year-of-the-runaways/"
+      }
+   ]
 }
 
 </script>

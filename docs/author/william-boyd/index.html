@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "An Ice-Cream War",
-            "url" : "https://readabooker.com/title/an-ice-cream-war/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "William Boyd",
-   "url" : "https://readabooker.com/author/william-boyd/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/william-boyd/",
+         "@type" : "Person",
+         "name" : "William Boyd",
+         "url" : "https://readabooker.com/author/william-boyd/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/william-boyd/"
+         },
+         "name" : "An Ice-Cream War",
+         "url" : "https://readabooker.com/title/an-ice-cream-war/"
+      }
+   ]
 }
 
 </script>

@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "4 3 2 1",
-            "url" : "https://readabooker.com/title/4-3-2-1/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Paul Auster",
-   "url" : "https://readabooker.com/author/paul-auster/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/paul-auster/",
+         "@type" : "Person",
+         "name" : "Paul Auster",
+         "url" : "https://readabooker.com/author/paul-auster/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/paul-auster/"
+         },
+         "name" : "4 3 2 1",
+         "url" : "https://readabooker.com/title/4-3-2-1/"
+      }
+   ]
 }
 
 </script>

@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Shuggie Bain",
-            "url" : "https://readabooker.com/title/shuggie-bain/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Douglas Stuart",
-   "url" : "https://readabooker.com/author/douglas-stuart/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/douglas-stuart/",
+         "@type" : "Person",
+         "name" : "Douglas Stuart",
+         "url" : "https://readabooker.com/author/douglas-stuart/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/douglas-stuart/"
+         },
+         "name" : "Shuggie Bain",
+         "url" : "https://readabooker.com/title/shuggie-bain/"
+      }
+   ]
 }
 
 </script>

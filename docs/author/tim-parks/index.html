@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Europa",
-            "url" : "https://readabooker.com/title/europa/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Tim Parks",
-   "url" : "https://readabooker.com/author/tim-parks/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/tim-parks/",
+         "@type" : "Person",
+         "name" : "Tim Parks",
+         "url" : "https://readabooker.com/author/tim-parks/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/tim-parks/"
+         },
+         "name" : "Europa",
+         "url" : "https://readabooker.com/title/europa/"
+      }
+   ]
 }
 
 </script>

@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Shadow King",
-            "url" : "https://readabooker.com/title/the-shadow-king/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Maaza Mengiste",
-   "url" : "https://readabooker.com/author/maaza-mengiste/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/maaza-mengiste/",
+         "@type" : "Person",
+         "name" : "Maaza Mengiste",
+         "url" : "https://readabooker.com/author/maaza-mengiste/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/maaza-mengiste/"
+         },
+         "name" : "The Shadow King",
+         "url" : "https://readabooker.com/title/the-shadow-king/"
+      }
+   ]
 }
 
 </script>

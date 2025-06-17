@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Amongst Women",
-            "url" : "https://readabooker.com/title/amongst-women/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "John McGahern",
-   "url" : "https://readabooker.com/author/john-mcgahern/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/john-mcgahern/",
+         "@type" : "Person",
+         "name" : "John McGahern",
+         "url" : "https://readabooker.com/author/john-mcgahern/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/john-mcgahern/"
+         },
+         "name" : "Amongst Women",
+         "url" : "https://readabooker.com/title/amongst-women/"
+      }
+   ]
 }
 
 </script>

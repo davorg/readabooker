@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Beside the Ocean of Time",
-            "url" : "https://readabooker.com/title/beside-the-ocean-of-time/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "George Mackay Brown",
-   "url" : "https://readabooker.com/author/george-mackay-brown/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/george-mackay-brown/",
+         "@type" : "Person",
+         "name" : "George Mackay Brown",
+         "url" : "https://readabooker.com/author/george-mackay-brown/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/george-mackay-brown/"
+         },
+         "name" : "Beside the Ocean of Time",
+         "url" : "https://readabooker.com/title/beside-the-ocean-of-time/"
+      }
+   ]
 }
 
 </script>

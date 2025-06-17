@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "A Disaffection",
-            "url" : "https://readabooker.com/title/a-disaffection/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/james-kelman/",
+         "@type" : "Person",
+         "name" : "James Kelman",
+         "url" : "https://readabooker.com/author/james-kelman/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/james-kelman/"
          },
-         {
-            "@type" : "Book",
-            "name" : "How late it was, how late",
-            "url" : "https://readabooker.com/title/how-late-it-was-how-late/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "James Kelman",
-   "url" : "https://readabooker.com/author/james-kelman/"
+         "name" : "A Disaffection",
+         "url" : "https://readabooker.com/title/a-disaffection/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/james-kelman/"
+         },
+         "name" : "How late it was, how late",
+         "url" : "https://readabooker.com/title/how-late-it-was-how-late/"
+      }
+   ]
 }
 
 </script>

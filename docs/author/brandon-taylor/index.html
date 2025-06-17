@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Real Life",
-            "url" : "https://readabooker.com/title/real-life/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Brandon Taylor",
-   "url" : "https://readabooker.com/author/brandon-taylor/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/brandon-taylor/",
+         "@type" : "Person",
+         "name" : "Brandon Taylor",
+         "url" : "https://readabooker.com/author/brandon-taylor/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/brandon-taylor/"
+         },
+         "name" : "Real Life",
+         "url" : "https://readabooker.com/title/real-life/"
+      }
+   ]
 }
 
 </script>

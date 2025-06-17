@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Stone Yard Devotional",
-            "url" : "https://readabooker.com/title/stone-yard-devotional/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Charlotte Wood",
-   "url" : "https://readabooker.com/author/charlotte-wood/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/charlotte-wood/",
+         "@type" : "Person",
+         "name" : "Charlotte Wood",
+         "url" : "https://readabooker.com/author/charlotte-wood/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/charlotte-wood/"
+         },
+         "name" : "Stone Yard Devotional",
+         "url" : "https://readabooker.com/title/stone-yard-devotional/"
+      }
+   ]
 }
 
 </script>

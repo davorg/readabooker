@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Do Not Say We Have Nothing",
-            "url" : "https://readabooker.com/title/do-not-say-we-have-nothing/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Madeleine Thien",
-   "url" : "https://readabooker.com/author/madeleine-thien/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/madeleine-thien/",
+         "@type" : "Person",
+         "name" : "Madeleine Thien",
+         "url" : "https://readabooker.com/author/madeleine-thien/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/madeleine-thien/"
+         },
+         "name" : "Do Not Say We Have Nothing",
+         "url" : "https://readabooker.com/title/do-not-say-we-have-nothing/"
+      }
+   ]
 }
 
 </script>

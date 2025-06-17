@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Narcopolis",
-            "url" : "https://readabooker.com/title/narcopolis/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Jeet Thayil",
-   "url" : "https://readabooker.com/author/jeet-thayil/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/jeet-thayil/",
+         "@type" : "Person",
+         "name" : "Jeet Thayil",
+         "url" : "https://readabooker.com/author/jeet-thayil/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/jeet-thayil/"
+         },
+         "name" : "Narcopolis",
+         "url" : "https://readabooker.com/title/narcopolis/"
+      }
+   ]
 }
 
 </script>

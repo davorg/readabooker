@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Notes on a Scandal",
-            "url" : "https://readabooker.com/title/notes-on-a-scandal/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "ZoÃ« Heller",
-   "url" : "https://readabooker.com/author/zoe-heller/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/zoe-heller/",
+         "@type" : "Person",
+         "name" : "ZoÃ« Heller",
+         "url" : "https://readabooker.com/author/zoe-heller/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/zoe-heller/"
+         },
+         "name" : "Notes on a Scandal",
+         "url" : "https://readabooker.com/title/notes-on-a-scandal/"
+      }
+   ]
 }
 
 </script>

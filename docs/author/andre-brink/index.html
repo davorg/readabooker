@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "An Instant in the Wind",
-            "url" : "https://readabooker.com/title/an-instant-in-the-wind/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/andre-brink/",
+         "@type" : "Person",
+         "name" : "AndrÃ© Brink",
+         "url" : "https://readabooker.com/author/andre-brink/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/andre-brink/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Rumours of Rain",
-            "url" : "https://readabooker.com/title/rumours-of-rain/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "AndrÃ© Brink",
-   "url" : "https://readabooker.com/author/andre-brink/"
+         "name" : "An Instant in the Wind",
+         "url" : "https://readabooker.com/title/an-instant-in-the-wind/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/andre-brink/"
+         },
+         "name" : "Rumours of Rain",
+         "url" : "https://readabooker.com/title/rumours-of-rain/"
+      }
+   ]
 }
 
 </script>

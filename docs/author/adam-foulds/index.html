@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Quickening Maze",
-            "url" : "https://readabooker.com/title/the-quickening-maze/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Adam Foulds",
-   "url" : "https://readabooker.com/author/adam-foulds/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/adam-foulds/",
+         "@type" : "Person",
+         "name" : "Adam Foulds",
+         "url" : "https://readabooker.com/author/adam-foulds/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/adam-foulds/"
+         },
+         "name" : "The Quickening Maze",
+         "url" : "https://readabooker.com/title/the-quickening-maze/"
+      }
+   ]
 }
 
 </script>

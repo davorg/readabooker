@@ -100,29 +100,39 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Pascali's Island",
-            "url" : "https://readabooker.com/title/pascalis-island/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/barry-unsworth/",
+         "@type" : "Person",
+         "name" : "Barry Unsworth",
+         "url" : "https://readabooker.com/author/barry-unsworth/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/barry-unsworth/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Sacred Hunger",
-            "url" : "https://readabooker.com/title/sacred-hunger/"
+         "name" : "Pascali's Island",
+         "url" : "https://readabooker.com/title/pascalis-island/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/barry-unsworth/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Morality Play",
-            "url" : "https://readabooker.com/title/morality-play/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Barry Unsworth",
-   "url" : "https://readabooker.com/author/barry-unsworth/"
+         "name" : "Sacred Hunger",
+         "url" : "https://readabooker.com/title/sacred-hunger/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/barry-unsworth/"
+         },
+         "name" : "Morality Play",
+         "url" : "https://readabooker.com/title/morality-play/"
+      }
+   ]
 }
 
 </script>

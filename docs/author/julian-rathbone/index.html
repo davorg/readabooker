@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "King Fisher Lives",
-            "url" : "https://readabooker.com/title/king-fisher-lives/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/julian-rathbone/",
+         "@type" : "Person",
+         "name" : "Julian Rathbone",
+         "url" : "https://readabooker.com/author/julian-rathbone/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/julian-rathbone/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Joseph",
-            "url" : "https://readabooker.com/title/joseph/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Julian Rathbone",
-   "url" : "https://readabooker.com/author/julian-rathbone/"
+         "name" : "King Fisher Lives",
+         "url" : "https://readabooker.com/title/king-fisher-lives/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/julian-rathbone/"
+         },
+         "name" : "Joseph",
+         "url" : "https://readabooker.com/title/joseph/"
+      }
+   ]
 }
 
 </script>

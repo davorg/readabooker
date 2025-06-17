@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Burnt Sugar",
-            "url" : "https://readabooker.com/title/burnt-sugar/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Avni Doshi",
-   "url" : "https://readabooker.com/author/avni-doshi/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/avni-doshi/",
+         "@type" : "Person",
+         "name" : "Avni Doshi",
+         "url" : "https://readabooker.com/author/avni-doshi/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/avni-doshi/"
+         },
+         "name" : "Burnt Sugar",
+         "url" : "https://readabooker.com/title/burnt-sugar/"
+      }
+   ]
 }
 
 </script>

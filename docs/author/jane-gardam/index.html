@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "God on the Rocks",
-            "url" : "https://readabooker.com/title/god-on-the-rocks/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Jane Gardam",
-   "url" : "https://readabooker.com/author/jane-gardam/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/jane-gardam/",
+         "@type" : "Person",
+         "name" : "Jane Gardam",
+         "url" : "https://readabooker.com/author/jane-gardam/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/jane-gardam/"
+         },
+         "name" : "God on the Rocks",
+         "url" : "https://readabooker.com/title/god-on-the-rocks/"
+      }
+   ]
 }
 
 </script>

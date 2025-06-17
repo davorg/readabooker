@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Quarantine",
-            "url" : "https://readabooker.com/title/quarantine/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/jim-crace/",
+         "@type" : "Person",
+         "name" : "Jim Crace",
+         "url" : "https://readabooker.com/author/jim-crace/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/jim-crace/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Harvest",
-            "url" : "https://readabooker.com/title/harvest/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Jim Crace",
-   "url" : "https://readabooker.com/author/jim-crace/"
+         "name" : "Quarantine",
+         "url" : "https://readabooker.com/title/quarantine/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/jim-crace/"
+         },
+         "name" : "Harvest",
+         "url" : "https://readabooker.com/title/harvest/"
+      }
+   ]
 }
 
 </script>

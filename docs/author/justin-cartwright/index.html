@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "In Every Face I Meet",
-            "url" : "https://readabooker.com/title/in-every-face-i-meet/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Justin Cartwright",
-   "url" : "https://readabooker.com/author/justin-cartwright/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/justin-cartwright/",
+         "@type" : "Person",
+         "name" : "Justin Cartwright",
+         "url" : "https://readabooker.com/author/justin-cartwright/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/justin-cartwright/"
+         },
+         "name" : "In Every Face I Meet",
+         "url" : "https://readabooker.com/title/in-every-face-i-meet/"
+      }
+   ]
 }
 
 </script>

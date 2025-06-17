@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "St. Urbain's Horseman",
-            "url" : "https://readabooker.com/title/st-urbains-horseman/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/mordecai-richler/",
+         "@type" : "Person",
+         "name" : "Mordecai Richler",
+         "url" : "https://readabooker.com/author/mordecai-richler/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/mordecai-richler/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Solomon Gursky Was Here",
-            "url" : "https://readabooker.com/title/solomon-gursky-was-here/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Mordecai Richler",
-   "url" : "https://readabooker.com/author/mordecai-richler/"
+         "name" : "St. Urbain's Horseman",
+         "url" : "https://readabooker.com/title/st-urbains-horseman/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/mordecai-richler/"
+         },
+         "name" : "Solomon Gursky Was Here",
+         "url" : "https://readabooker.com/title/solomon-gursky-was-here/"
+      }
+   ]
 }
 
 </script>

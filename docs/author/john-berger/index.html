@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "G.",
-            "url" : "https://readabooker.com/title/g/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "John Berger",
-   "url" : "https://readabooker.com/author/john-berger/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/john-berger/",
+         "@type" : "Person",
+         "name" : "John Berger",
+         "url" : "https://readabooker.com/author/john-berger/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/john-berger/"
+         },
+         "name" : "G.",
+         "url" : "https://readabooker.com/title/g/"
+      }
+   ]
 }
 
 </script>

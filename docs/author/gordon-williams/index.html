@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "From Scenes Like These",
-            "url" : "https://readabooker.com/title/from-scenes-like-these/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Gordon Williams",
-   "url" : "https://readabooker.com/author/gordon-williams/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/gordon-williams/",
+         "@type" : "Person",
+         "name" : "Gordon Williams",
+         "url" : "https://readabooker.com/author/gordon-williams/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/gordon-williams/"
+         },
+         "name" : "From Scenes Like These",
+         "url" : "https://readabooker.com/title/from-scenes-like-these/"
+      }
+   ]
 }
 
 </script>

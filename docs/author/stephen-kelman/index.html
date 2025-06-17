@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Pigeon English",
-            "url" : "https://readabooker.com/title/pigeon-english/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Stephen Kelman",
-   "url" : "https://readabooker.com/author/stephen-kelman/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/stephen-kelman/",
+         "@type" : "Person",
+         "name" : "Stephen Kelman",
+         "url" : "https://readabooker.com/author/stephen-kelman/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/stephen-kelman/"
+         },
+         "name" : "Pigeon English",
+         "url" : "https://readabooker.com/title/pigeon-english/"
+      }
+   ]
 }
 
 </script>

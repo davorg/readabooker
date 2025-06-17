@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Safekeep",
-            "url" : "https://readabooker.com/title/the-safekeep/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Yael van der Wouden",
-   "url" : "https://readabooker.com/author/yael-van-der-wouden/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/yael-van-der-wouden/",
+         "@type" : "Person",
+         "name" : "Yael van der Wouden",
+         "url" : "https://readabooker.com/author/yael-van-der-wouden/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/yael-van-der-wouden/"
+         },
+         "name" : "The Safekeep",
+         "url" : "https://readabooker.com/title/the-safekeep/"
+      }
+   ]
 }
 
 </script>

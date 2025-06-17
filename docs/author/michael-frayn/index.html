@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Headlong",
-            "url" : "https://readabooker.com/title/headlong/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Michael Frayn",
-   "url" : "https://readabooker.com/author/michael-frayn/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/michael-frayn/",
+         "@type" : "Person",
+         "name" : "Michael Frayn",
+         "url" : "https://readabooker.com/author/michael-frayn/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/michael-frayn/"
+         },
+         "name" : "Headlong",
+         "url" : "https://readabooker.com/title/headlong/"
+      }
+   ]
 }
 
 </script>

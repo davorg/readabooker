@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Astonishing Splashes of Colour",
-            "url" : "https://readabooker.com/title/astonishing-splashes-of-colour/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Clare Morrall",
-   "url" : "https://readabooker.com/author/clare-morrall/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/clare-morrall/",
+         "@type" : "Person",
+         "name" : "Clare Morrall",
+         "url" : "https://readabooker.com/author/clare-morrall/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/clare-morrall/"
+         },
+         "name" : "Astonishing Splashes of Colour",
+         "url" : "https://readabooker.com/title/astonishing-splashes-of-colour/"
+      }
+   ]
 }
 
 </script>

@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "A Brief History of Seven Killings",
-            "url" : "https://readabooker.com/title/a-brief-history-of-seven-killings/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Marlon James",
-   "url" : "https://readabooker.com/author/marlon-james/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/marlon-james/",
+         "@type" : "Person",
+         "name" : "Marlon James",
+         "url" : "https://readabooker.com/author/marlon-james/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/marlon-james/"
+         },
+         "name" : "A Brief History of Seven Killings",
+         "url" : "https://readabooker.com/title/a-brief-history-of-seven-killings/"
+      }
+   ]
 }
 
 </script>

@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Famished Road",
-            "url" : "https://readabooker.com/title/the-famished-road/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Ben Okri",
-   "url" : "https://readabooker.com/author/ben-okri/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/ben-okri/",
+         "@type" : "Person",
+         "name" : "Ben Okri",
+         "url" : "https://readabooker.com/author/ben-okri/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/ben-okri/"
+         },
+         "name" : "The Famished Road",
+         "url" : "https://readabooker.com/title/the-famished-road/"
+      }
+   ]
 }
 
 </script>

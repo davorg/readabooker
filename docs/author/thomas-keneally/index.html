@@ -100,34 +100,47 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Chant of Jimmie Blacksmith",
-            "url" : "https://readabooker.com/title/the-chant-of-jimmie-blacksmith/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/thomas-keneally/",
+         "@type" : "Person",
+         "name" : "Thomas Keneally",
+         "url" : "https://readabooker.com/author/thomas-keneally/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/thomas-keneally/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Gossip from the Forest",
-            "url" : "https://readabooker.com/title/gossip-from-the-forest/"
+         "name" : "The Chant of Jimmie Blacksmith",
+         "url" : "https://readabooker.com/title/the-chant-of-jimmie-blacksmith/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/thomas-keneally/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Confederates",
-            "url" : "https://readabooker.com/title/confederates/"
+         "name" : "Gossip from the Forest",
+         "url" : "https://readabooker.com/title/gossip-from-the-forest/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/thomas-keneally/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Schindler's Ark",
-            "url" : "https://readabooker.com/title/schindlers-ark/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Thomas Keneally",
-   "url" : "https://readabooker.com/author/thomas-keneally/"
+         "name" : "Confederates",
+         "url" : "https://readabooker.com/title/confederates/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/thomas-keneally/"
+         },
+         "name" : "Schindler's Ark",
+         "url" : "https://readabooker.com/title/schindlers-ark/"
+      }
+   ]
 }
 
 </script>

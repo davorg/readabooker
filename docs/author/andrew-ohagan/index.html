@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Our Fathers",
-            "url" : "https://readabooker.com/title/our-fathers/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Andrew O'Hagan",
-   "url" : "https://readabooker.com/author/andrew-ohagan/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/andrew-ohagan/",
+         "@type" : "Person",
+         "name" : "Andrew O'Hagan",
+         "url" : "https://readabooker.com/author/andrew-ohagan/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/andrew-ohagan/"
+         },
+         "name" : "Our Fathers",
+         "url" : "https://readabooker.com/title/our-fathers/"
+      }
+   ]
 }
 
 </script>

@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Dark Room",
-            "url" : "https://readabooker.com/title/the-dark-room/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Rachel Seiffert",
-   "url" : "https://readabooker.com/author/rachel-seiffert/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/rachel-seiffert/",
+         "@type" : "Person",
+         "name" : "Rachel Seiffert",
+         "url" : "https://readabooker.com/author/rachel-seiffert/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/rachel-seiffert/"
+         },
+         "name" : "The Dark Room",
+         "url" : "https://readabooker.com/title/the-dark-room/"
+      }
+   ]
 }
 
 </script>

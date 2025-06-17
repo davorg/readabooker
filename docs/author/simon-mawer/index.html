@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Glass Room",
-            "url" : "https://readabooker.com/title/the-glass-room/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Simon Mawer",
-   "url" : "https://readabooker.com/author/simon-mawer/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/simon-mawer/",
+         "@type" : "Person",
+         "name" : "Simon Mawer",
+         "url" : "https://readabooker.com/author/simon-mawer/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/simon-mawer/"
+         },
+         "name" : "The Glass Room",
+         "url" : "https://readabooker.com/title/the-glass-room/"
+      }
+   ]
 }
 
 </script>

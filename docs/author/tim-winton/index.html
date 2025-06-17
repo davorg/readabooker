@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Riders",
-            "url" : "https://readabooker.com/title/the-riders/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/tim-winton/",
+         "@type" : "Person",
+         "name" : "Tim Winton",
+         "url" : "https://readabooker.com/author/tim-winton/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/tim-winton/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Dirt Music",
-            "url" : "https://readabooker.com/title/dirt-music/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Tim Winton",
-   "url" : "https://readabooker.com/author/tim-winton/"
+         "name" : "The Riders",
+         "url" : "https://readabooker.com/title/the-riders/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/tim-winton/"
+         },
+         "name" : "Dirt Music",
+         "url" : "https://readabooker.com/title/dirt-music/"
+      }
+   ]
 }
 
 </script>

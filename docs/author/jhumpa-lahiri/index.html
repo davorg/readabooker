@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Lowland",
-            "url" : "https://readabooker.com/title/the-lowland/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Jhumpa Lahiri",
-   "url" : "https://readabooker.com/author/jhumpa-lahiri/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/jhumpa-lahiri/",
+         "@type" : "Person",
+         "name" : "Jhumpa Lahiri",
+         "url" : "https://readabooker.com/author/jhumpa-lahiri/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/jhumpa-lahiri/"
+         },
+         "name" : "The Lowland",
+         "url" : "https://readabooker.com/title/the-lowland/"
+      }
+   ]
 }
 
 </script>

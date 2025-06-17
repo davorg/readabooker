@@ -100,29 +100,39 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Public Image",
-            "url" : "https://readabooker.com/title/the-public-image/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/muriel-spark/",
+         "@type" : "Person",
+         "name" : "Muriel Spark",
+         "url" : "https://readabooker.com/author/muriel-spark/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/muriel-spark/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Driver's Seat",
-            "url" : "https://readabooker.com/title/the-drivers-seat/"
+         "name" : "The Public Image",
+         "url" : "https://readabooker.com/title/the-public-image/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/muriel-spark/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Loitering with Intent",
-            "url" : "https://readabooker.com/title/loitering-with-intent/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Muriel Spark",
-   "url" : "https://readabooker.com/author/muriel-spark/"
+         "name" : "The Driver's Seat",
+         "url" : "https://readabooker.com/title/the-drivers-seat/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/muriel-spark/"
+         },
+         "name" : "Loitering with Intent",
+         "url" : "https://readabooker.com/title/loitering-with-intent/"
+      }
+   ]
 }
 
 </script>

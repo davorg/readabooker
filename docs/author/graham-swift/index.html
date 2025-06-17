@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Waterland",
-            "url" : "https://readabooker.com/title/waterland/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/graham-swift/",
+         "@type" : "Person",
+         "name" : "Graham Swift",
+         "url" : "https://readabooker.com/author/graham-swift/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/graham-swift/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Last Orders",
-            "url" : "https://readabooker.com/title/last-orders/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Graham Swift",
-   "url" : "https://readabooker.com/author/graham-swift/"
+         "name" : "Waterland",
+         "url" : "https://readabooker.com/title/waterland/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/graham-swift/"
+         },
+         "name" : "Last Orders",
+         "url" : "https://readabooker.com/title/last-orders/"
+      }
+   ]
 }
 
 </script>

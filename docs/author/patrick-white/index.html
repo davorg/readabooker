@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Vivisector",
-            "url" : "https://readabooker.com/title/the-vivisector/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Patrick White",
-   "url" : "https://readabooker.com/author/patrick-white/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/patrick-white/",
+         "@type" : "Person",
+         "name" : "Patrick White",
+         "url" : "https://readabooker.com/author/patrick-white/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/patrick-white/"
+         },
+         "name" : "The Vivisector",
+         "url" : "https://readabooker.com/title/the-vivisector/"
+      }
+   ]
 }
 
 </script>

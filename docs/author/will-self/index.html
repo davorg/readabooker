@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Umbrella",
-            "url" : "https://readabooker.com/title/umbrella/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Will Self",
-   "url" : "https://readabooker.com/author/will-self/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/will-self/",
+         "@type" : "Person",
+         "name" : "Will Self",
+         "url" : "https://readabooker.com/author/will-self/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/will-self/"
+         },
+         "name" : "Umbrella",
+         "url" : "https://readabooker.com/title/umbrella/"
+      }
+   ]
 }
 
 </script>

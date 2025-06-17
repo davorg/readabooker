@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "Rates of Exchange",
-            "url" : "https://readabooker.com/title/rates-of-exchange/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Malcolm Bradbury",
-   "url" : "https://readabooker.com/author/malcolm-bradbury/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/malcolm-bradbury/",
+         "@type" : "Person",
+         "name" : "Malcolm Bradbury",
+         "url" : "https://readabooker.com/author/malcolm-bradbury/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/malcolm-bradbury/"
+         },
+         "name" : "Rates of Exchange",
+         "url" : "https://readabooker.com/title/rates-of-exchange/"
+      }
+   ]
 }
 
 </script>

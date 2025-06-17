@@ -100,24 +100,31 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Folding Star",
-            "url" : "https://readabooker.com/title/the-folding-star/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/alan-hollinghurst/",
+         "@type" : "Person",
+         "name" : "Alan Hollinghurst",
+         "url" : "https://readabooker.com/author/alan-hollinghurst/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/alan-hollinghurst/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Line of Beauty",
-            "url" : "https://readabooker.com/title/the-line-of-beauty/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Alan Hollinghurst",
-   "url" : "https://readabooker.com/author/alan-hollinghurst/"
+         "name" : "The Folding Star",
+         "url" : "https://readabooker.com/title/the-folding-star/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/alan-hollinghurst/"
+         },
+         "name" : "The Line of Beauty",
+         "url" : "https://readabooker.com/title/the-line-of-beauty/"
+      }
+   ]
 }
 
 </script>

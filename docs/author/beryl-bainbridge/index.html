@@ -100,39 +100,55 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Dressmaker",
-            "url" : "https://readabooker.com/title/the-dressmaker/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/beryl-bainbridge/",
+         "@type" : "Person",
+         "name" : "Beryl Bainbridge",
+         "url" : "https://readabooker.com/author/beryl-bainbridge/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/beryl-bainbridge/"
          },
-         {
-            "@type" : "Book",
-            "name" : "The Bottle Factory Outing",
-            "url" : "https://readabooker.com/title/the-bottle-factory-outing/"
+         "name" : "The Dressmaker",
+         "url" : "https://readabooker.com/title/the-dressmaker/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/beryl-bainbridge/"
          },
-         {
-            "@type" : "Book",
-            "name" : "An Awfully Big Adventure",
-            "url" : "https://readabooker.com/title/an-awfully-big-adventure/"
+         "name" : "The Bottle Factory Outing",
+         "url" : "https://readabooker.com/title/the-bottle-factory-outing/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/beryl-bainbridge/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Every Man for Himself",
-            "url" : "https://readabooker.com/title/every-man-for-himself/"
+         "name" : "An Awfully Big Adventure",
+         "url" : "https://readabooker.com/title/an-awfully-big-adventure/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/beryl-bainbridge/"
          },
-         {
-            "@type" : "Book",
-            "name" : "Master Georgie",
-            "url" : "https://readabooker.com/title/master-georgie/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Beryl Bainbridge",
-   "url" : "https://readabooker.com/author/beryl-bainbridge/"
+         "name" : "Every Man for Himself",
+         "url" : "https://readabooker.com/title/every-man-for-himself/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/beryl-bainbridge/"
+         },
+         "name" : "Master Georgie",
+         "url" : "https://readabooker.com/title/master-georgie/"
+      }
+   ]
 }
 
 </script>

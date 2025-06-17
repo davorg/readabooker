@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Illusionist",
-            "url" : "https://readabooker.com/title/the-illusionist/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Anita Mason",
-   "url" : "https://readabooker.com/author/anita-mason/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/anita-mason/",
+         "@type" : "Person",
+         "name" : "Anita Mason",
+         "url" : "https://readabooker.com/author/anita-mason/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/anita-mason/"
+         },
+         "name" : "The Illusionist",
+         "url" : "https://readabooker.com/title/the-illusionist/"
+      }
+   ]
 }
 
 </script>

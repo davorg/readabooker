@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "No Country for Young Men",
-            "url" : "https://readabooker.com/title/no-country-for-young-men/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Julia O'Faolain",
-   "url" : "https://readabooker.com/author/julia-ofaolain/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/julia-ofaolain/",
+         "@type" : "Person",
+         "name" : "Julia O'Faolain",
+         "url" : "https://readabooker.com/author/julia-ofaolain/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/julia-ofaolain/"
+         },
+         "name" : "No Country for Young Men",
+         "url" : "https://readabooker.com/title/no-country-for-young-men/"
+      }
+   ]
 }
 
 </script>

@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Seven Moons of Maali Almeida",
-            "url" : "https://readabooker.com/title/the-seven-moons-of-maali-almeida/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Shehan Karunatilaka",
-   "url" : "https://readabooker.com/author/shehan-karunatilaka/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/shehan-karunatilaka/",
+         "@type" : "Person",
+         "name" : "Shehan Karunatilaka",
+         "url" : "https://readabooker.com/author/shehan-karunatilaka/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/shehan-karunatilaka/"
+         },
+         "name" : "The Seven Moons of Maali Almeida",
+         "url" : "https://readabooker.com/title/the-seven-moons-of-maali-almeida/"
+      }
+   ]
 }
 
 </script>

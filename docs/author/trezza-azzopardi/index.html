@@ -100,19 +100,23 @@
           <div class="col-8">
 <script type="application/ld+json">
 {
-   "@context" : "https://schema.org/",
-   "@reverse" : {
-      "author" : [
-         {
-            "@type" : "Book",
-            "name" : "The Hiding Place",
-            "url" : "https://readabooker.com/title/the-hiding-place/"
-         }
-      ]
-   },
-   "@type" : "Person",
-   "name" : "Trezza Azzopardi",
-   "url" : "https://readabooker.com/author/trezza-azzopardi/"
+   "@context" : "https://schema.org",
+   "@graph" : [
+      {
+         "@id" : "https://readabooker.com/author/trezza-azzopardi/",
+         "@type" : "Person",
+         "name" : "Trezza Azzopardi",
+         "url" : "https://readabooker.com/author/trezza-azzopardi/"
+      },
+      {
+         "@type" : "Book",
+         "author" : {
+            "@id" : "https://readabooker.com/author/trezza-azzopardi/"
+         },
+         "name" : "The Hiding Place",
+         "url" : "https://readabooker.com/title/the-hiding-place/"
+      }
+   ]
 }
 
 </script>
