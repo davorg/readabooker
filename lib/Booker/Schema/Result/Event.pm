@@ -111,7 +111,9 @@ sub slug { return shift->year }
 sub title { return 'Read a Booker - Event: ' . shift->year }
 
 sub description {
-  return 'ReadABooker: Choose a Booker Prize shortlisted novel to read by year - Event: ' . shift->year . '.';
+  return 'Discover all the Booker Prize-shortlisted novels from ' .
+         shift->year . '. Explore the full list and find a standout read ' .
+         'from the year’s selection.';
 }
 
 sub url_path {

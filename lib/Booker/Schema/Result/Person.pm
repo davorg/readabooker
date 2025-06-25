@@ -158,7 +158,9 @@ sub slug { return lc shift->name }
 sub title { return 'Read a Booker - Author: ' . shift->name }
 
 sub description {
-  return 'ReadABooker: Choose a Booker Prize shortlisted novel to read by author - Author: ' . shift->name . '.';
+  return 'Explore Booker Prize-shortlisted novels by ' . shift->name . '. ' .
+         'Learn more about their work and discover which titles earned a ' .
+         'place on the list.';
 }
 
 sub url_path {

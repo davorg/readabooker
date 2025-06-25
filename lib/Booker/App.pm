@@ -88,7 +88,9 @@ sub build {
     url_path => '/',
     type => '',
     slug => '',
-    description => 'ReadABooker: Choose a Booker Prize shortlisted novel to read.',
+    description => 'ReadABooker helps you choose a Booker Prize-shortlisted ' .
+                   'novel to read - filter by year, author, or title and ' .
+                   'start exploring literary excellence.',
   );
   push @{ $self->urls }, $index_page->url_path;
 
@@ -105,7 +107,9 @@ sub build {
     url_path => '/year/',
     type => 'year',
     slug => '',
-    description => 'ReadABooker: Choose a Booker Prize shortlisted novel to read by year.',
+    description => 'Explore Booker Prize-shortlisted novels by year. Trace ' .
+                   'literary trends over time and pick a prize-worthy read ' .
+                   'from any year since 1969.',
   );
   push @{ $self->urls }, $years_page->url_path;
   $tt->process('year/index.html.tt', {
@@ -133,7 +137,9 @@ sub build {
     url_path => '/author/',
     type => 'author',
     slug => '',
-    description => 'ReadABooker: Choose a Booker Prize shortlisted novel to read by author.',
+    description => 'Browse Booker Prize-shortlisted novels by author. ' .
+                   'Discover new voices and established names - every writer ' .
+                   'with a place on the shortlist.',
   );
   push @{ $self->urls }, $authors_page->url_path;
   $tt->process('author/index.html.tt', {
@@ -161,7 +167,9 @@ sub build {
     url_path => '/title/',
     type => 'title',
     slug => '',
-    description => 'ReadABooker: Choose a Booker Prize shortlisted novel to read by title.',
+    description => 'Find Booker Prize-shortlisted novels by title. From ' .
+                   'iconic classics to hidden gems – pick your next read ' .
+                   'from decades of great literature.',
   );
   push @{ $self->urls }, $titles_page->url_path;
   $tt->process('title/index.html.tt', {

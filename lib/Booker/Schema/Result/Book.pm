@@ -182,7 +182,9 @@ sub slug { return shift->title }
 sub seo_title { return 'Read a Booker - Title: ' . shift->title }
 
 sub description {
-  return 'ReadABooker: Choose a Booker Prize shortlisted novel to read by title - Title: ' . shift->title . '.';
+  return 'Learn more about ‘' . shift->title . '’, a Booker ' .
+         'Prize-shortlisted novel. See why it made the list and explore ' .
+         'other titles from the same year or author.';
 }
 
 sub url_path {
