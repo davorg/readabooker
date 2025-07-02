@@ -102,6 +102,7 @@ sub build {
 
   warn "Building years...\n";
   warn "  index...\n";
+
   my $years_page = Booker::Page->new(
     title => 'ReadABooker by year',
     url_path => '/year/',
@@ -113,6 +114,7 @@ sub build {
   );
   push @{ $self->urls }, $years_page->url_path;
   $tt->process('year/index.html.tt', {
+    decades => $rs->{event}->decades,
     events => [ $rs->{event}->all ],
     object => $years_page,
   }, 'year/index.html', {binmode => ':utf8'})

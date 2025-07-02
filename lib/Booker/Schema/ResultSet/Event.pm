@@ -13,6 +13,18 @@ sub sorted_events {
   return $self->search(undef, { order_by => { -desc => 'year' } });
 }
 
+sub decades {
+  my $self = shift;
+
+  my %decades;
+
+  for ($self->all) {
+    $decades{$_->decade}++;
+  }
+
+  return [ sort keys %decades ];
+}
+
 __PACKAGE__->meta->make_immutable;
 
 1;

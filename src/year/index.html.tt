@@ -1,6 +1,23 @@
 <h1>Books by year</h1>
-<ul>
-[% FOR event IN events.sort('year').reverse -%]
-  <li><a href="/year/[% event.slug %]/">[% event.year %]</a></li>
+<p>
+[% FOREACH decade IN decades -%]
+  <a href="#[% decade %]">[% decade %]</a>
 [% END -%]
+</p>
+
+[% prev_decade = '';
+   FOR event IN events.sort('year').reverse;
+     IF event.decade != prev_decade;
+       IF ! loop.first;
+         '</ul>';
+       END -%]
+<div class="d-flex align-items-end gap-2">
+  <h2 id="[% event.decade %]">[% event.decade %]</h2>
+  <p><a href="#top" class="fs-6 fw-light">top</a></p>
+</div>
+<ul>
+[%   END -%]
+    <li><a href="/event/[% event.slug %]/">[% event.year %]</a></li>
+[% prev_decade = event.decade;
+   END -%]
 </ul>

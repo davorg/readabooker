@@ -1,7 +1,10 @@
 <h1 id="top">Books by title</h1>
+<p>
 [% FOREACH letter IN letters -%]
   <a href="#[% IF letter == '#'; '0'; ELSE; letter; END %]">[% letter %]</a>
 [% END -%]
+</p>
+
 [% prev_letter = '';
    FOR book IN books;
      IF book.letter != prev_letter;
