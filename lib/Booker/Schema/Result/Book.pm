@@ -182,9 +182,19 @@ sub slug { return shift->title }
 sub seo_title { return 'Read a Booker - Title: ' . shift->title }
 
 sub description {
-  return 'Learn more about ‘' . shift->title . '’, a Booker ' .
-         'Prize-shortlisted novel. See why it made the list and explore ' .
-         'other titles from the same year or author.';
+  my ($min, $max) = (110, 160);
+
+  my $desc = 'Learn more about ‘' . shift->title . '’, a Booker ' .
+    'Prize-shortlisted novel.';
+
+  my $padding = ' See why it made the list and explore other titles from the ' .
+    'same year or author.';
+
+  if (length($desc) < $min) {
+    $desc .= $padding;
+  }
+
+  return $desc;
 }
 
 sub url_path {
