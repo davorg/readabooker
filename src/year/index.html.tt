@@ -17,7 +17,7 @@
 </div>
 <ul>
 [%   END -%]
-    <li><a href="/event/[% event.slug %]/">[% event.year %]</a></li>
+    <li><a href="/year/[% event.slug %]/">[% event.year %]</a></li>
 [% prev_decade = event.decade;
    END -%]
 </ul>
