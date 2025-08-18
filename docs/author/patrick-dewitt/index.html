@@ -1,5 +1,13 @@
 
 
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -127,12 +135,16 @@
     <td><a href="/title/the-sisters-brothers/">The Sisters Brothers</a></td>
     <td><a href="/year/2011/">2011</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/1847083196/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/1847083196.jpg"
-         alt="'The Sisters Brothers' by Patrick deWitt">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/1847083196.jpg"
+       alt="'The Sisters Brothers' by Patrick deWitt">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/1847083196/?tag=davblog-21"
+   data-amazon-asin="1847083196"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
 </table>
@@ -166,5 +178,11 @@ Following this success, deWitt continued to captivate audiences with novels like
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
             crossorigin="anonymous"></script>
+    <script src="https://cdn.davecross.co.uk/js/amazon-store/v1/amazon-store.min.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        AmazonStore.enhanceAll({ tag: 'davblog-21', region: 'UK' });
+      });
+    </script>
   </body>
 </html>

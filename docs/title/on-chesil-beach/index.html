@@ -1,5 +1,13 @@
 
 
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -119,12 +127,16 @@
     <td><a href="/author/ian-mcewan/">Ian McEwan</a></td>
     <td><a href="/year/2007/">2007</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/178470556X/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/178470556X.jpg"
-         alt="'On Chesil Beach' by Ian McEwan">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/178470556X.jpg"
+       alt="'On Chesil Beach' by Ian McEwan">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/178470556X/?tag=davblog-21"
+   data-amazon-asin="178470556X"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
 </table>
@@ -154,5 +166,11 @@ The narrative captures the tension between societal expectations and personal de
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
             crossorigin="anonymous"></script>
+    <script src="https://cdn.davecross.co.uk/js/amazon-store/v1/amazon-store.min.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        AmazonStore.enhanceAll({ tag: 'davblog-21', region: 'UK' });
+      });
+    </script>
   </body>
 </html>

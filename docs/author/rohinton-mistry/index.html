@@ -1,5 +1,13 @@
 
 
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -143,36 +151,48 @@
     <td><a href="/title/family-matters/">Family Matters</a></td>
     <td><a href="/year/2002/">2002</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0571230555/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0571230555.jpg"
-         alt="'Family Matters' by Rohinton Mistry">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0571230555.jpg"
+       alt="'Family Matters' by Rohinton Mistry">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0571230555/?tag=davblog-21"
+   data-amazon-asin="0571230555"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr>
     <td><a href="/title/a-fine-balance/">A Fine Balance</a></td>
     <td><a href="/year/1996/">1996</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/057123058X/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/057123058X.jpg"
-         alt="'A Fine Balance' by Rohinton Mistry">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/057123058X.jpg"
+       alt="'A Fine Balance' by Rohinton Mistry">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/057123058X/?tag=davblog-21"
+   data-amazon-asin="057123058X"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr>
     <td><a href="/title/such-a-long-journey/">Such a Long Journey</a></td>
     <td><a href="/year/1991/">1991</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/B011T74V3Y/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/B011T74V3Y.jpg"
-         alt="'Such a Long Journey' by Rohinton Mistry">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/B011T74V3Y.jpg"
+       alt="'Such a Long Journey' by Rohinton Mistry">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/B011T74V3Y/?tag=davblog-21"
+   data-amazon-asin="B011T74V3Y"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
 </table>
@@ -202,5 +222,11 @@ His debut novel, "Such a Long Journey" (1991), was met with critical acclaim and
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
             crossorigin="anonymous"></script>
+    <script src="https://cdn.davecross.co.uk/js/amazon-store/v1/amazon-store.min.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        AmazonStore.enhanceAll({ tag: 'davblog-21', region: 'UK' });
+      });
+    </script>
   </body>
 </html>

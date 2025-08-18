@@ -1,5 +1,13 @@
 
 
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -135,24 +143,32 @@
     <td><a href="/title/the-finkler-question/">The Finkler Question</a></td>
     <td><a href="/year/2010/">2010</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/1408809931/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/1408809931.jpg"
-         alt="'The Finkler Question' by Howard Jacobson">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/1408809931.jpg"
+       alt="'The Finkler Question' by Howard Jacobson">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/1408809931/?tag=davblog-21"
+   data-amazon-asin="1408809931"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr>
     <td><a href="/title/j/">J</a></td>
     <td><a href="/year/2014/">2014</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0099598388/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0099598388.jpg"
-         alt="'J' by Howard Jacobson">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0099598388.jpg"
+       alt="'J' by Howard Jacobson">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0099598388/?tag=davblog-21"
+   data-amazon-asin="0099598388"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
 </table>
@@ -186,5 +202,11 @@ Among his well-known works are "The Finkler Question," "The Mighty Walzer," and 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
             crossorigin="anonymous"></script>
+    <script src="https://cdn.davecross.co.uk/js/amazon-store/v1/amazon-store.min.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        AmazonStore.enhanceAll({ tag: 'davblog-21', region: 'UK' });
+      });
+    </script>
   </body>
 </html>

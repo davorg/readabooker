@@ -1,5 +1,13 @@
 
 
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -143,36 +151,48 @@
     <td><a href="/title/fingersmith/">Fingersmith</a></td>
     <td><a href="/year/2002/">2002</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/1860498833/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/1860498833.jpg"
-         alt="'Fingersmith' by Sarah Waters">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/1860498833.jpg"
+       alt="'Fingersmith' by Sarah Waters">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/1860498833/?tag=davblog-21"
+   data-amazon-asin="1860498833"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr>
     <td><a href="/title/the-little-stranger/">The Little Stranger</a></td>
     <td><a href="/year/2009/">2009</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/1844086062/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/1844086062.jpg"
-         alt="'The Little Stranger' by Sarah Waters">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/1844086062.jpg"
+       alt="'The Little Stranger' by Sarah Waters">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/1844086062/?tag=davblog-21"
+   data-amazon-asin="1844086062"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr>
     <td><a href="/title/the-night-watch/">The Night Watch</a></td>
     <td><a href="/year/2006/">2006</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/1844082415/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/1844082415.jpg"
-         alt="'The Night Watch' by Sarah Waters">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/1844082415.jpg"
+       alt="'The Night Watch' by Sarah Waters">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/1844082415/?tag=davblog-21"
+   data-amazon-asin="1844082415"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
 </table>
@@ -202,5 +222,11 @@ Waters gained critical acclaim with her debut novel, *Tipping the Velvet* (1998)
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
             crossorigin="anonymous"></script>
+    <script src="https://cdn.davecross.co.uk/js/amazon-store/v1/amazon-store.min.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        AmazonStore.enhanceAll({ tag: 'davblog-21', region: 'UK' });
+      });
+    </script>
   </body>
 </html>

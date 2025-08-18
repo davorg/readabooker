@@ -1,5 +1,13 @@
 
 
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -135,24 +143,32 @@
     <td><a href="/title/the-elected-member/">The Elected Member</a></td>
     <td><a href="/year/1970/">1970</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0349130221/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0349130221.jpg"
-         alt="'The Elected Member' by Bernice Rubens">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0349130221.jpg"
+       alt="'The Elected Member' by Bernice Rubens">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0349130221/?tag=davblog-21"
+   data-amazon-asin="0349130221"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr>
     <td><a href="/title/a-five-year-sentence/">A Five-Year Sentence</a></td>
     <td><a href="/year/1978/">1978</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0349130213/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0349130213.jpg"
-         alt="'A Five-Year Sentence' by Bernice Rubens">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0349130213.jpg"
+       alt="'A Five-Year Sentence' by Bernice Rubens">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0349130213/?tag=davblog-21"
+   data-amazon-asin="0349130213"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
 </table>
@@ -182,5 +198,11 @@ Rubens established herself as a significant literary figure with her debut novel
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
             crossorigin="anonymous"></script>
+    <script src="https://cdn.davecross.co.uk/js/amazon-store/v1/amazon-store.min.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        AmazonStore.enhanceAll({ tag: 'davblog-21', region: 'UK' });
+      });
+    </script>
   </body>
 </html>

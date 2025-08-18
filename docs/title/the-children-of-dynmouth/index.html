@@ -1,5 +1,13 @@
 
 
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -119,12 +127,16 @@
     <td><a href="/author/william-trevor/">William Trevor</a></td>
     <td><a href="/year/1976/">1976</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0241971837/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0241971837.jpg"
-         alt="'The Children of Dynmouth' by William Trevor">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0241971837.jpg"
+       alt="'The Children of Dynmouth' by William Trevor">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0241971837/?tag=davblog-21"
+   data-amazon-asin="0241971837"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
 </table>
@@ -158,5 +170,11 @@ William Trevor's masterful storytelling captures the claustrophobic atmosphere o
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
             crossorigin="anonymous"></script>
+    <script src="https://cdn.davecross.co.uk/js/amazon-store/v1/amazon-store.min.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        AmazonStore.enhanceAll({ tag: 'davblog-21', region: 'UK' });
+      });
+    </script>
   </body>
 </html>

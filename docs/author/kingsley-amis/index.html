@@ -1,5 +1,13 @@
 
 
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -143,36 +151,48 @@
     <td><a href="/title/ending-up/">Ending Up</a></td>
     <td><a href="/year/1974/">1974</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0141194235/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0141194235.jpg"
-         alt="'Ending Up' by Kingsley Amis">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0141194235.jpg"
+       alt="'Ending Up' by Kingsley Amis">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0141194235/?tag=davblog-21"
+   data-amazon-asin="0141194235"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr>
     <td><a href="/title/jakes-thing/">Jake's Thing</a></td>
     <td><a href="/year/1978/">1978</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0099512173/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0099512173.jpg"
-         alt="'Jake's Thing' by Kingsley Amis">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0099512173.jpg"
+       alt="'Jake's Thing' by Kingsley Amis">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0099512173/?tag=davblog-21"
+   data-amazon-asin="0099512173"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr class="table-success">
     <td><a href="/title/the-old-devils/">The Old Devils</a></td>
     <td><a href="/year/1986/">1986</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0099461056/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0099461056.jpg"
-         alt="'The Old Devils' by Kingsley Amis">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0099461056.jpg"
+       alt="'The Old Devils' by Kingsley Amis">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0099461056/?tag=davblog-21"
+   data-amazon-asin="0099461056"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
 </table>
@@ -206,5 +226,11 @@ Apart from fiction, Amis was a prolific poet, essayist, and critic, with a keen 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
             crossorigin="anonymous"></script>
+    <script src="https://cdn.davecross.co.uk/js/amazon-store/v1/amazon-store.min.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        AmazonStore.enhanceAll({ tag: 'davblog-21', region: 'UK' });
+      });
+    </script>
   </body>
 </html>

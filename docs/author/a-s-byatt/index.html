@@ -1,5 +1,13 @@
 
 
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -135,24 +143,32 @@
     <td><a href="/title/the-childrens-book/">The Children's Book</a></td>
     <td><a href="/year/2009/">2009</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0099535459/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0099535459.jpg"
-         alt="'The Children's Book' by A. S. Byatt">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0099535459.jpg"
+       alt="'The Children's Book' by A. S. Byatt">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0099535459/?tag=davblog-21"
+   data-amazon-asin="0099535459"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr class="table-success">
     <td><a href="/title/possession-a-romance/">Possession: A Romance</a></td>
     <td><a href="/year/1990/">1990</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0099800403/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0099800403.jpg"
-         alt="'Possession: A Romance' by A. S. Byatt">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0099800403.jpg"
+       alt="'Possession: A Romance' by A. S. Byatt">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0099800403/?tag=davblog-21"
+   data-amazon-asin="0099800403"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
 </table>
@@ -178,5 +194,11 @@ A. S. Byatt, born Antonia Susan Drabble on August 24, 1936, in Sheffield, Englan
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
             crossorigin="anonymous"></script>
+    <script src="https://cdn.davecross.co.uk/js/amazon-store/v1/amazon-store.min.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        AmazonStore.enhanceAll({ tag: 'davblog-21', region: 'UK' });
+      });
+    </script>
   </body>
 </html>

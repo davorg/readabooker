@@ -1,5 +1,13 @@
 
 
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -143,36 +151,48 @@
     <td><a href="/title/the-colour-of-blood/">The Colour of Blood</a></td>
     <td><a href="/year/1987/">1987</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0586087370/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0586087370.jpg"
-         alt="'The Colour of Blood' by Brian Moore">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0586087370.jpg"
+       alt="'The Colour of Blood' by Brian Moore">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0586087370/?tag=davblog-21"
+   data-amazon-asin="0586087370"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr>
     <td><a href="/title/the-doctors-wife/">The Doctor's Wife</a></td>
     <td><a href="/year/1976/">1976</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/1408827026/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/1408827026.jpg"
-         alt="'The Doctor's Wife' by Brian Moore">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/1408827026.jpg"
+       alt="'The Doctor's Wife' by Brian Moore">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/1408827026/?tag=davblog-21"
+   data-amazon-asin="1408827026"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr>
     <td><a href="/title/lies-of-silence/">Lies of Silence</a></td>
     <td><a href="/year/1990/">1990</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0099998106/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0099998106.jpg"
-         alt="'Lies of Silence' by Brian Moore">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0099998106.jpg"
+       alt="'Lies of Silence' by Brian Moore">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0099998106/?tag=davblog-21"
+   data-amazon-asin="0099998106"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
 </table>
@@ -206,5 +226,11 @@ Moore's novels frequently examined the conflicts and contradictions inherent in 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
             crossorigin="anonymous"></script>
+    <script src="https://cdn.davecross.co.uk/js/amazon-store/v1/amazon-store.min.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        AmazonStore.enhanceAll({ tag: 'davblog-21', region: 'UK' });
+      });
+    </script>
   </body>
 </html>

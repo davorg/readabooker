@@ -1,9 +1,21 @@
-[% MACRO amazon(book, ass_tag) BLOCK -%]
+[% MACRO amazon(book, ass_tag) BLOCK;
+   amazon_cover(book, ass_tag);
+   amazon_button(book, ass_tag);
+   END %]
+
+[% MACRO amazon_cover(book, ass_tag) BLOCK -%]
 <div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/[% book.asin %]/?tag=[% ass_tag %]">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/[% book.asin %].jpg"
-         alt="'[% book.title %]' by [% book.author.name %]">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/[% book.asin %].jpg"
+       alt="'[% book.title %]' by [% book.author.name %]">
 </div>
+[% END %]
+
+[% MACRO amazon_button(book, ass_tag) BLOCK -%]
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/[% book.asin %]/?tag=[% ass_tag %]"
+   data-amazon-asin="[% book.asin %]"
+   data-amazon-tag="[% ass_tag %]"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 [% END %]

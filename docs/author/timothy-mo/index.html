@@ -1,5 +1,13 @@
 
 
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -143,36 +151,48 @@
     <td><a href="/title/an-insular-possession/">An Insular Possession</a></td>
     <td><a href="/year/1986/">1986</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0952419386/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0952419386.jpg"
-         alt="'An Insular Possession' by Timothy Mo">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0952419386.jpg"
+       alt="'An Insular Possession' by Timothy Mo">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0952419386/?tag=davblog-21"
+   data-amazon-asin="0952419386"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr>
     <td><a href="/title/the-redundancy-of-courage/">The Redundancy of Courage</a></td>
     <td><a href="/year/1991/">1991</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0952419343/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0952419343.jpg"
-         alt="'The Redundancy of Courage' by Timothy Mo">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0952419343.jpg"
+       alt="'The Redundancy of Courage' by Timothy Mo">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0952419343/?tag=davblog-21"
+   data-amazon-asin="0952419343"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr>
     <td><a href="/title/sour-sweet/">Sour Sweet</a></td>
     <td><a href="/year/1982/">1982</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0952419327/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0952419327.jpg"
-         alt="'Sour Sweet' by Timothy Mo">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0952419327.jpg"
+       alt="'Sour Sweet' by Timothy Mo">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0952419327/?tag=davblog-21"
+   data-amazon-asin="0952419327"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
 </table>
@@ -202,5 +222,11 @@ Mo debuted as an author with "The Monkey King" in 1978, a novel that was highly 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
             crossorigin="anonymous"></script>
+    <script src="https://cdn.davecross.co.uk/js/amazon-store/v1/amazon-store.min.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        AmazonStore.enhanceAll({ tag: 'davblog-21', region: 'UK' });
+      });
+    </script>
   </body>
 </html>

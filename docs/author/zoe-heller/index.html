@@ -1,5 +1,13 @@
 
 
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -127,12 +135,16 @@
     <td><a href="/title/notes-on-a-scandal/">Notes on a Scandal</a></td>
     <td><a href="/year/2003/">2003</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0141039957/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0141039957.jpg"
-         alt="'Notes on a Scandal' by Zoë Heller">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0141039957.jpg"
+       alt="'Notes on a Scandal' by Zoë Heller">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0141039957/?tag=davblog-21"
+   data-amazon-asin="0141039957"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
 </table>
@@ -162,5 +174,11 @@ Heller's career in journalism includes notable stints at publications such as Th
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
             crossorigin="anonymous"></script>
+    <script src="https://cdn.davecross.co.uk/js/amazon-store/v1/amazon-store.min.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        AmazonStore.enhanceAll({ tag: 'davblog-21', region: 'UK' });
+      });
+    </script>
   </body>
 </html>

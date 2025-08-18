@@ -1,5 +1,13 @@
 
 
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -104,60 +112,80 @@
     <td><a href="/title/the-conservationist/">The Conservationist</a></td>
     <td><a href="/author/nadine-gordimer/">Nadine Gordimer</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0747578249/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0747578249.jpg"
-         alt="'The Conservationist' by Nadine Gordimer">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0747578249.jpg"
+       alt="'The Conservationist' by Nadine Gordimer">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0747578249/?tag=davblog-21"
+   data-amazon-asin="0747578249"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr class="table-success">
     <td><a href="/title/holiday/">Holiday</a></td>
     <td><a href="/author/stanley-middleton/">Stanley Middleton</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0099591928/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0099591928.jpg"
-         alt="'Holiday' by Stanley Middleton">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0099591928.jpg"
+       alt="'Holiday' by Stanley Middleton">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0099591928/?tag=davblog-21"
+   data-amazon-asin="0099591928"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr>
     <td><a href="/title/ending-up/">Ending Up</a></td>
     <td><a href="/author/kingsley-amis/">Kingsley Amis</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0141194235/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0141194235.jpg"
-         alt="'Ending Up' by Kingsley Amis">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0141194235.jpg"
+       alt="'Ending Up' by Kingsley Amis">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0141194235/?tag=davblog-21"
+   data-amazon-asin="0141194235"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr>
     <td><a href="/title/the-bottle-factory-outing/">The Bottle Factory Outing</a></td>
     <td><a href="/author/beryl-bainbridge/">Beryl Bainbridge</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0349123713/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0349123713.jpg"
-         alt="'The Bottle Factory Outing' by Beryl Bainbridge">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0349123713.jpg"
+       alt="'The Bottle Factory Outing' by Beryl Bainbridge">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0349123713/?tag=davblog-21"
+   data-amazon-asin="0349123713"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr>
     <td><a href="/title/in-their-wisdom/">In Their Wisdom</a></td>
     <td><a href="/author/c-p-snow/">C. P. Snow</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/B01FKRN99G/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/B01FKRN99G.jpg"
-         alt="'In Their Wisdom' by C. P. Snow">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/B01FKRN99G.jpg"
+       alt="'In Their Wisdom' by C. P. Snow">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/B01FKRN99G/?tag=davblog-21"
+   data-amazon-asin="B01FKRN99G"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
 </table>
@@ -178,5 +206,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
             crossorigin="anonymous"></script>
+    <script src="https://cdn.davecross.co.uk/js/amazon-store/v1/amazon-store.min.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        AmazonStore.enhanceAll({ tag: 'davblog-21', region: 'UK' });
+      });
+    </script>
   </body>
 </html>

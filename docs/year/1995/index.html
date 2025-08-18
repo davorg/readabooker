@@ -1,5 +1,13 @@
 
 
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -104,60 +112,80 @@
     <td><a href="/title/the-ghost-road/">The Ghost Road</a></td>
     <td><a href="/author/pat-barker/">Pat Barker</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/014103095X/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/014103095X.jpg"
-         alt="'The Ghost Road' by Pat Barker">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/014103095X.jpg"
+       alt="'The Ghost Road' by Pat Barker">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/014103095X/?tag=davblog-21"
+   data-amazon-asin="014103095X"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr>
     <td><a href="/title/in-every-face-i-meet/">In Every Face I Meet</a></td>
     <td><a href="/author/justin-cartwright/">Justin Cartwright</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0340637838/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0340637838.jpg"
-         alt="'In Every Face I Meet' by Justin Cartwright">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0340637838.jpg"
+       alt="'In Every Face I Meet' by Justin Cartwright">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0340637838/?tag=davblog-21"
+   data-amazon-asin="0340637838"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr>
     <td><a href="/title/the-moors-last-sigh/">The Moor's Last Sigh</a></td>
     <td><a href="/author/salman-rushdie/">Salman Rushdie</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/009959241X/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/009959241X.jpg"
-         alt="'The Moor's Last Sigh' by Salman Rushdie">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/009959241X.jpg"
+       alt="'The Moor's Last Sigh' by Salman Rushdie">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/009959241X/?tag=davblog-21"
+   data-amazon-asin="009959241X"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr>
     <td><a href="/title/morality-play/">Morality Play</a></td>
     <td><a href="/author/barry-unsworth/">Barry Unsworth</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/0525434097/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/0525434097.jpg"
-         alt="'Morality Play' by Barry Unsworth">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/0525434097.jpg"
+       alt="'Morality Play' by Barry Unsworth">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/0525434097/?tag=davblog-21"
+   data-amazon-asin="0525434097"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
   <tr>
     <td><a href="/title/the-riders/">The Riders</a></td>
     <td><a href="/author/tim-winton/">Tim Winton</a></td>
     <td><div class="amazon">
-  <a href="https://www.amazon.co.uk/dp/150987111X/?tag=davblog-21">
-    <img class="img-thumbnail" src="https://images.amazon.com/images/P/150987111X.jpg"
-         alt="'The Riders' by Tim Winton">
-    <span class="btn btn-primary">Buy on Amazon</span>
-  </a>
+  <img class="img-thumbnail"
+       src="https://images.amazon.com/images/P/150987111X.jpg"
+       alt="'The Riders' by Tim Winton">
 </div>
+<a class="btn btn-primary buy-button"
+   href="https://www.amazon.co.uk/dp/150987111X/?tag=davblog-21"
+   data-amazon-asin="150987111X"
+   data-amazon-tag="davblog-21"
+   data-amazon-text="Buy on Amazon"
+   target="_blank" rel="noopener"></a>
 </td>
   </tr>
 </table>
@@ -178,5 +206,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
             crossorigin="anonymous"></script>
+    <script src="https://cdn.davecross.co.uk/js/amazon-store/v1/amazon-store.min.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        AmazonStore.enhanceAll({ tag: 'davblog-21', region: 'UK' });
+      });
+    </script>
   </body>
 </html>
