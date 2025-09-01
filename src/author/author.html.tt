@@ -6,6 +6,7 @@
    END -%]
 [% IF object.has_biography -%]
 <div class="biography">
+<h2 class="section-title mt-5">Biography</h2>
 [%   object.biography | html_para %]
 </div>
 [% END -%]
