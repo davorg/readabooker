@@ -521,67 +521,34 @@ a span.chip:hover {
   margin-top: .5rem;
 }
 
-/* ----- Carousel: mobile layout ----- */
-@media (max-width: 576px){
-  #myCarousel .carousel-item .container{
-    padding: 1rem 1rem;         /* tighter card padding */
-  }
-
-  #myCarousel .carousel-caption{
-    grid-template-columns: 1fr; /* stack */
-    gap: .75rem;
-    text-align: left;
-  }
-
-  /* Cover first, then heading, blurb, button */
-  #myCarousel .carousel-caption > img.img-thumbnail{
-    grid-column: 1;
-    grid-row: 1;
-    width: min(68vw, 280px);
-    height: auto;
-    justify-self: start;
-    box-shadow: 0 6px 16px rgba(0,0,0,.18);
-  }
-
-  #myCarousel .carousel-caption h2{
-    grid-row: 2;
-    margin: .25rem 0 0;
-    font-size: clamp(1.25rem, 5.5vw, 1.5rem);
-    line-height: 1.2;
-  }
-
-  #myCarousel .carousel-caption p{
-    grid-row: 3;
-    font-size: .98rem;
-    margin: 0;
-  }
-
-  #myCarousel .carousel-caption .buy-button{
-    grid-row: 4;
-    justify-self: start;
-    margin-top: .25rem;
-  }
-
-  /* Make controls less intrusive on small screens */
-  #myCarousel .carousel-control-prev,
-  #myCarousel .carousel-control-next{
-    width: 14%;
-  }
-  #myCarousel .carousel-control-prev-icon,
-  #myCarousel .carousel-control-next-icon{
-    transform: scale(.9);
-  }
-
-  /* Keep indicators tight and centered */
-  #myCarousel .carousel-indicators{
-    margin-bottom: .25rem;
-  }
-}
-
-/* Slightly earlier stack for small tablets too */
+/* ----- Carousel: stack on phones & small tablets ----- */
+/* ---- Carousel: force single-column on <=768px ---- */
 @media (max-width: 768px){
   #myCarousel .carousel-caption{
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;   /* one column */
+    gap: .75rem;
+    text-align: left;                         /* left-align text */
+    justify-items: start;
+  }
+
+  /* reset all children to the same column */
+  #myCarousel .carousel-caption > *{
+    grid-column: 1 !important;
+  }
+
+  /* order: cover -> h2 -> blurb -> button */
+  #myCarousel .carousel-caption > img.img-thumbnail{
+    grid-row: 1 !important;
+    width: min(70vw, 260px);
+    height: auto;
+    margin-bottom: .25rem;
+  }
+  #myCarousel .carousel-caption h2{ grid-row: 2 !important; margin: .25rem 0 0; }
+  #myCarousel .carousel-caption p{  grid-row: 3 !important; margin: 0; }
+  #myCarousel .carousel-caption .buy-button{
+    grid-row: 4 !important;
+    justify-self: start;
+    margin-top: .5rem;
   }
 }
 

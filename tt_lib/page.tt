@@ -76,8 +76,9 @@
     <!-- Bootstrap icons web font -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     
+[% USE date -%]
     <!-- Custom styles for this template -->
-    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style.css?v=[% date.format(date.now, '%Y%m%d%H%M%S') %]" rel="stylesheet">
 
     <title>[% object.seo_title %]</title>
   </head>
