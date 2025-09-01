@@ -369,7 +369,7 @@ footer{
 /* turn into multi-columns on desktop */
 @media (min-width: 992px){
   .index-list{
-    columns: 2;          /* authors: maybe 3 if it fits nicely */
+    columns: 3;          /* authors: maybe 3 if it fits nicely */
     column-gap: 2.5rem;
   }
   /* keep items intact across column breaks */
