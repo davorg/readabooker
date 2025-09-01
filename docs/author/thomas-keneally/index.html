@@ -1,6 +1,6 @@
 
 
-
+<!-- author/author.html.tt -->
 
 <!doctype html>
 <html lang="en">
@@ -25,6 +25,7 @@
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
           integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
           crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Literata:opsz,wght@14..72,400;600&display=swap" rel="stylesheet">
 
     <meta name="theme-color" content="#7952b3">
 
@@ -68,7 +69,7 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-light fixed-top bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">Read a Booker</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -147,73 +148,131 @@
 
 </script>
 <h1>Author: Thomas Keneally</h1>
-<h2>Books</h2>
-<table class="table">
-  <tr>
-    <td><a href="/title/the-chant-of-jimmie-blacksmith/">The Chant of Jimmie Blacksmith</a></td>
-    <td><a href="/year/1972/">1972</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/0140036202.jpg"
-       alt="'The Chant of Jimmie Blacksmith' by Thomas Keneally">
+<h2 class="section-title mt-5">Books</h2>
+
+
+<article class="book-row" id="book-27">
+  <div class="book-meta">
+    <h3 class="book-title">
+      <a href="/title/the-chant-of-jimmie-blacksmith">The Chant of Jimmie Blacksmith</a>
+    </h3>
+
+    <p class="byline">
+      <a href="/year/1972">
+      <span class="chip chip-shortlist">Shortlisted 1972</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/0140036202.jpg"
+     alt="'The Chant of Jimmie Blacksmith' by Thomas Keneally">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/0140036202/?tag=davblog-21"
+     data-amazon-asin="0140036202"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/0140036202/?tag=davblog-21"
-   data-amazon-asin="0140036202"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-  <tr>
-    <td><a href="/title/confederates/">Confederates</a></td>
-    <td><a href="/year/1979/">1979</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/0820322636.jpg"
-       alt="'Confederates' by Thomas Keneally">
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/0820322636/?tag=davblog-21"
-   data-amazon-asin="0820322636"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-  <tr>
-    <td><a href="/title/gossip-from-the-forest/">Gossip from the Forest</a></td>
-    <td><a href="/year/1975/">1975</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/0340431040.jpg"
-       alt="'Gossip from the Forest' by Thomas Keneally">
+
+
+</article>
+
+
+<article class="book-row" id="book-59">
+  <div class="book-meta">
+    <h3 class="book-title">
+      <a href="/title/confederates">Confederates</a>
+    </h3>
+
+    <p class="byline">
+      <a href="/year/1979">
+      <span class="chip chip-shortlist">Shortlisted 1979</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/0820322636.jpg"
+     alt="'Confederates' by Thomas Keneally">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/0820322636/?tag=davblog-21"
+     data-amazon-asin="0820322636"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/0340431040/?tag=davblog-21"
-   data-amazon-asin="0340431040"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-  <tr class="table-success">
-    <td><a href="/title/schindlers-ark/">Schindler's Ark</a></td>
-    <td><a href="/year/1982/">1982</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/0340936290.jpg"
-       alt="'Schindler's Ark' by Thomas Keneally">
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/0340936290/?tag=davblog-21"
-   data-amazon-asin="0340936290"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-</table>
+
+
+</article>
+
+
+<article class="book-row" id="book-39">
+  <div class="book-meta">
+    <h3 class="book-title">
+      <a href="/title/gossip-from-the-forest">Gossip from the Forest</a>
+    </h3>
+
+    <p class="byline">
+      <a href="/year/1975">
+      <span class="chip chip-shortlist">Shortlisted 1975</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/0340431040.jpg"
+     alt="'Gossip from the Forest' by Thomas Keneally">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/0340431040/?tag=davblog-21"
+     data-amazon-asin="0340431040"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
+</div>
+</div>
+
+
+</article>
+
+
+<article class="book-row is-winner" id="book-77">
+  <div class="book-meta">
+    <h3 class="book-title">
+      <a href="/title/schindlers-ark">Schindler's Ark</a>
+    </h3>
+
+    <p class="byline">
+      <a href="/year/1982">
+      <span class="chip chip-winner" aria-label="Booker Prize winner">Winner 1982</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/0340936290.jpg"
+     alt="'Schindler's Ark' by Thomas Keneally">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/0340936290/?tag=davblog-21"
+     data-amazon-asin="0340936290"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
+</div>
+</div>
+
+
+</article>
 <div class="biography">
 <p>
 Thomas Keneally is a renowned Australian author, born on October 7, 1935, in Sydney, Australia. Over his expansive career, Keneally has established himself as a master storyteller, celebrated for his ability to weave historical narratives with profound emotional depth. He first gained attention with his early novels in the 1960s, but it was his 1982 novel, "Schindler's Ark," that garnered international acclaim, detailing the true story of Oskar Schindler's efforts to save Jews during the Holocaust. This work was later adapted into the Oscar-winning film "Schindler's List" by Steven Spielberg. Keneally's oeuvre spans a wide range of themes and genres, often exploring historical and political subjects with keen insight and empathy. In addition to his novels, he has authored numerous non-fiction works, showcasing his versatility and breadth of knowledge. Keneally is also a respected academic and public intellectual in Australia, contributing to discussions on literature and history. Throughout his career, he has received numerous accolades, solidifying his status as a luminary in the literary world.</p>
@@ -226,9 +285,12 @@ Thomas Keneally is a renowned Australian author, born on October 7, 1935, in Syd
       </div>
 
       <!-- FOOTER -->
-      <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a></p>
+      <footer class="site-footer">
+        <div class="container py-3">
+          <p class="float-end"><a href="#">Back to top</a></p>
+          <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a> /
+          Books photo by <a href="https://unsplash.com/@brett_jordan?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Brett Jordan</a> on <a href="https://unsplash.com/photos/books-on-brown-wooden-shelf-GqENJb_wtAw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
+        </div>
       </footer>
     </main>
 
@@ -240,6 +302,23 @@ Thomas Keneally is a renowned Australian author, born on October 7, 1935, in Syd
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         AmazonStore.enhanceAll({ tag: 'davblog-21' });
+
+          const chips = [...document.querySelectorAll('.index-toolbar a[href^="#"]')];
+          const sections = chips
+            .map(a => document.getElementById(a.getAttribute('href').slice(1)))
+            .filter(Boolean);
+
+          const onScroll = () => {
+            let current = sections[0];
+            for (const s of sections) {
+              if (s.getBoundingClientRect().top - (window.innerHeight * .25) < 0) current = s;
+              else break;
+            }
+            chips.forEach(a => a.classList.toggle('active', a.getAttribute('href').slice(1) === current.id));
+          };
+
+          onScroll();
+          document.addEventListener('scroll', onScroll, { passive: true });
       });
     </script>
   </body>

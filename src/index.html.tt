@@ -1,4 +1,9 @@
-      <h1>Read A Booker Prizewinner</h1>
+      <header class="site-hero" role="img" aria-label="Close-up of Booker-nominated paperbacks on a shelf">
+        <div class="container">
+          <h1 class="display-5 fw-semibold">Read A Booker Prizewinner</h1>
+          <p class="lead mb-0">Prizewinners, shortlists, and reading paths—beautifully organised.</p>
+        </div>
+      </header>
       <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
 [% i=0;
@@ -39,6 +44,8 @@
 
       <div class="container marketing">
 
+        <h2 class="section-title mt-5">Explore the Booker archive</h2>
+
         <!-- Three columns of text below the carousel -->
         <div class="row">
           <div class="col-lg-4">
@@ -65,11 +72,9 @@
 
         <!-- START THE FEATURETTES -->
 
-        <hr class="featurette-divider">
-
         <div class="row featurette">
+          <h2 class="section-title mt-5">The Booker Prize</h2>
           <div class="col-md-7">
-            <h2 class="featurette-heading">The Booker Prize</h2>
             <p>The Booker Prize is one of the richest literary prizes
               in the English-speaking world.</p>
             <p>Each year, a prize of £50,000 is awarded to the best novel
@@ -84,11 +89,9 @@
           </div>
         </div>
 
-        <hr class="featurette-divider">
-
         <div class="row featurette">
+          <h2 class="section-title mt-5">Name and sponsorship</h2>
           <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Name and sponsorship</h2>
             <p>The Booker Prize was created in 1969. It was named after Booker McConnell Ltd
               (now just known as <a href="https://www.booker.co.uk/">Booker Group</a>) its
               original sponsor.</p>
@@ -101,29 +104,26 @@
           </div>
         </div>
 
-        <hr class="featurette-divider">
-
         <div class="row featurette">
+          <h2 class="section-title mt-5">The Lost Booker</h2>
           <div class="col-md-7">
-            <h2 class="featurette-heading">The Lost Booker</h2>
             <p>In the first two years of the competition, the prize was open to books
               published the year before the prize was awarded. In 1971, this was
               changed to the same year as the prize ceremony. This effectively meant
               that books published in 1970 were not considered for an award.</p>
             <p>In 2010 a special "Lost Booker" competition was announced for books
               published in 1970. From a long list of 22 novels, the judges chose
-              <i>Troubles</i> by J. G. Farrell as the winner.</p>
+              <a href="/title/troubles/"><i>Troubles</i></a> by
+              <a href="/author/j-g-farrell/">J. G. Farrell</a> as the winner.</p>
           </div>
           <div class="col-md-5 order-md-1">
             <p><img src="/images/troubles.jpg" alt="The Troubles by J. G. Farrell" style="width: 50%"></p>
           </div>
         </div>
 
-        <hr class="featurette-divider">
-
         <div class="row featurette">
+          <h2 class="section-title mt-5"><i>Midnight's Children</i></h2>
           <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading"><i>Midnight's Children</i></h2>
             <p>There have been three special Booker Prize competitions over the years.</p>
             <ul>
               <li><b>The Booker of Bookers (1993)</b> – Awarded to the best novel from the first 25 years of the Booker Prize.</li>

@@ -1,15 +1,9 @@
 [% object.json_ld_wrapped -%]
 <h1>Author: [% object.name %]</h1>
-<h2>Books</h2>
-<table class="table">
-[% FOR book IN object.books_rs.sorted_books -%]
-  <tr[% IF book.is_winner %] class="table-success"[% END %]>
-    <td><a href="/title/[% book.slug %]/">[% book.title %]</a></td>
-    <td><a href="/year/[% book.event.slug %]/">[% book.event.year %]</a></td>
-    <td>[% IF (book.asin != 'XXXXXX'); amazon(book, 'davblog-21'); END %]</td>
-  </tr>
-[% END -%]
-</table>
+<h2 class="section-title mt-5">Books</h2>
+[% FOR book IN object.books_rs.sorted_books;
+     display_book(book);
+   END -%]
 [% IF object.has_biography -%]
 <div class="biography">
 [%   object.biography | html_para %]

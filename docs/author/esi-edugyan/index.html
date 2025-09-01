@@ -1,6 +1,6 @@
 
 
-
+<!-- author/author.html.tt -->
 
 <!doctype html>
 <html lang="en">
@@ -25,6 +25,7 @@
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
           integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
           crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Literata:opsz,wght@14..72,400;600&display=swap" rel="stylesheet">
 
     <meta name="theme-color" content="#7952b3">
 
@@ -68,7 +69,7 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-light fixed-top bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">Read a Booker</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -131,41 +132,69 @@
 
 </script>
 <h1>Author: Esi Edugyan</h1>
-<h2>Books</h2>
-<table class="table">
-  <tr>
-    <td><a href="/title/half-blood-blues/">Half-Blood Blues</a></td>
-    <td><a href="/year/2011/">2011</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/1788161777.jpg"
-       alt="'Half-Blood Blues' by Esi Edugyan">
+<h2 class="section-title mt-5">Books</h2>
+
+
+<article class="book-row" id="book-253">
+  <div class="book-meta">
+    <h3 class="book-title">
+      <a href="/title/half-blood-blues">Half-Blood Blues</a>
+    </h3>
+
+    <p class="byline">
+      <a href="/year/2011">
+      <span class="chip chip-shortlist">Shortlisted 2011</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/1788161777.jpg"
+     alt="'Half-Blood Blues' by Esi Edugyan">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/1788161777/?tag=davblog-21"
+     data-amazon-asin="1788161777"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/1788161777/?tag=davblog-21"
-   data-amazon-asin="1788161777"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-  <tr>
-    <td><a href="/title/washington-black/">Washington Black</a></td>
-    <td><a href="/year/2018/">2018</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/1846689600.jpg"
-       alt="'Washington Black' by Esi Edugyan">
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/1846689600/?tag=davblog-21"
-   data-amazon-asin="1846689600"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-</table>
+
+
+</article>
+
+
+<article class="book-row" id="book-293">
+  <div class="book-meta">
+    <h3 class="book-title">
+      <a href="/title/washington-black">Washington Black</a>
+    </h3>
+
+    <p class="byline">
+      <a href="/year/2018">
+      <span class="chip chip-shortlist">Shortlisted 2018</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/1846689600.jpg"
+     alt="'Washington Black' by Esi Edugyan">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/1846689600/?tag=davblog-21"
+     data-amazon-asin="1846689600"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
+</div>
+</div>
+
+
+</article>
 <div class="biography">
 <p>
 Esi Edugyan is a celebrated Canadian novelist known for her intricate narratives that explore themes of identity, history, and the African diaspora. Born in 1978 in Calgary to Ghanaian immigrant parents, she pursued her education in creative writing at the University of Victoria and later at Johns Hopkins University. Her literary journey began with her debut novel, *The Second Life of Samuel Tyne* (2004), which garnered critical acclaim for its rich storytelling and complex characters.
@@ -186,9 +215,12 @@ Edugyan's works are celebrated for their nuanced exploration of cultural and his
       </div>
 
       <!-- FOOTER -->
-      <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a></p>
+      <footer class="site-footer">
+        <div class="container py-3">
+          <p class="float-end"><a href="#">Back to top</a></p>
+          <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a> /
+          Books photo by <a href="https://unsplash.com/@brett_jordan?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Brett Jordan</a> on <a href="https://unsplash.com/photos/books-on-brown-wooden-shelf-GqENJb_wtAw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
+        </div>
       </footer>
     </main>
 
@@ -200,6 +232,23 @@ Edugyan's works are celebrated for their nuanced exploration of cultural and his
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         AmazonStore.enhanceAll({ tag: 'davblog-21' });
+
+          const chips = [...document.querySelectorAll('.index-toolbar a[href^="#"]')];
+          const sections = chips
+            .map(a => document.getElementById(a.getAttribute('href').slice(1)))
+            .filter(Boolean);
+
+          const onScroll = () => {
+            let current = sections[0];
+            for (const s of sections) {
+              if (s.getBoundingClientRect().top - (window.innerHeight * .25) < 0) current = s;
+              else break;
+            }
+            chips.forEach(a => a.classList.toggle('active', a.getAttribute('href').slice(1) === current.id));
+          };
+
+          onScroll();
+          document.addEventListener('scroll', onScroll, { passive: true });
       });
     </script>
   </body>

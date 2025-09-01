@@ -1,9 +1,9 @@
 <h1 id="top">Books by author</h1>
-<p>
+<nav class="index-toolbar" aria-label="Jump to section">
 [% FOREACH letter IN letters -%]
   <a href="#[% letter %]">[% letter %]</a>
 [% END -%]
-</p>
+</nav>
 [% prev_letter = '';
    FOR author IN authors.sort('sort_name');
      IF author.letter != prev_letter;
@@ -11,10 +11,10 @@
          '</ul>';
        END -%]
 <div class="d-flex align-items-end gap-2">
-  <h2 id="[% author.letter %]">[% author.letter %]</h2>
-  <p><a href="#top" class="fs-6 fw-light">top</a></p>
+  <h2 id="[% author.letter %]" class="index-section">[% author.letter %]</h2>
+  <p><a href="#top" class="top-chip fs-6 fw-light">top</a></p>
 </div>
-<ul>
+<ul class="index-list">
 [%   END -%]
     <li><a href="/author/[% author.slug %]/">[% author.name %]</a></li>
 [% prev_letter = author.letter;

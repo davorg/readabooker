@@ -1,6 +1,6 @@
 
 
-
+<!-- author/author.html.tt -->
 
 <!doctype html>
 <html lang="en">
@@ -25,6 +25,7 @@
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
           integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
           crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Literata:opsz,wght@14..72,400;600&display=swap" rel="stylesheet">
 
     <meta name="theme-color" content="#7952b3">
 
@@ -68,7 +69,7 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-light fixed-top bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">Read a Booker</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -123,25 +124,38 @@
 
 </script>
 <h1>Author: John Fuller</h1>
-<h2>Books</h2>
-<table class="table">
-  <tr>
-    <td><a href="/title/flying-to-nowhere/">Flying to Nowhere</a></td>
-    <td><a href="/year/1983/">1983</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/0099922606.jpg"
-       alt="'Flying to Nowhere' by John Fuller">
+<h2 class="section-title mt-5">Books</h2>
+
+
+<article class="book-row" id="book-85">
+  <div class="book-meta">
+    <h3 class="book-title">
+      <a href="/title/flying-to-nowhere">Flying to Nowhere</a>
+    </h3>
+
+    <p class="byline">
+      <a href="/year/1983">
+      <span class="chip chip-shortlist">Shortlisted 1983</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/0099922606.jpg"
+     alt="'Flying to Nowhere' by John Fuller">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/0099922606/?tag=davblog-21"
+     data-amazon-asin="0099922606"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/0099922606/?tag=davblog-21"
-   data-amazon-asin="0099922606"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-</table>
+</div>
+
+
+</article>
 <div class="biography">
 <p>
 John Fuller is a distinguished British poet, novelist, and academic known for his eclectic writing style and contributions to contemporary literature. Born on January 1, 1937, in Ashford, Kent, Fuller grew up surrounded by the literary world, with his father being the celebrated poet Roy Fuller. He pursued his education at St Paul's School and later at New College, Oxford, where he studied English.
@@ -162,9 +176,12 @@ In addition to poetry, Fuller has penned several novels and essays, showcasing h
       </div>
 
       <!-- FOOTER -->
-      <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a></p>
+      <footer class="site-footer">
+        <div class="container py-3">
+          <p class="float-end"><a href="#">Back to top</a></p>
+          <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a> /
+          Books photo by <a href="https://unsplash.com/@brett_jordan?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Brett Jordan</a> on <a href="https://unsplash.com/photos/books-on-brown-wooden-shelf-GqENJb_wtAw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
+        </div>
       </footer>
     </main>
 
@@ -176,6 +193,23 @@ In addition to poetry, Fuller has penned several novels and essays, showcasing h
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         AmazonStore.enhanceAll({ tag: 'davblog-21' });
+
+          const chips = [...document.querySelectorAll('.index-toolbar a[href^="#"]')];
+          const sections = chips
+            .map(a => document.getElementById(a.getAttribute('href').slice(1)))
+            .filter(Boolean);
+
+          const onScroll = () => {
+            let current = sections[0];
+            for (const s of sections) {
+              if (s.getBoundingClientRect().top - (window.innerHeight * .25) < 0) current = s;
+              else break;
+            }
+            chips.forEach(a => a.classList.toggle('active', a.getAttribute('href').slice(1) === current.id));
+          };
+
+          onScroll();
+          document.addEventListener('scroll', onScroll, { passive: true });
       });
     </script>
   </body>

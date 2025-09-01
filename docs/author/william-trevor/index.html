@@ -1,6 +1,6 @@
 
 
-
+<!-- author/author.html.tt -->
 
 <!doctype html>
 <html lang="en">
@@ -25,6 +25,7 @@
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
           integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
           crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Literata:opsz,wght@14..72,400;600&display=swap" rel="stylesheet">
 
     <meta name="theme-color" content="#7952b3">
 
@@ -68,7 +69,7 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-light fixed-top bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">Read a Booker</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -147,73 +148,131 @@
 
 </script>
 <h1>Author: William Trevor</h1>
-<h2>Books</h2>
-<table class="table">
-  <tr>
-    <td><a href="/title/the-children-of-dynmouth/">The Children of Dynmouth</a></td>
-    <td><a href="/year/1976/">1976</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/0241971837.jpg"
-       alt="'The Children of Dynmouth' by William Trevor">
+<h2 class="section-title mt-5">Books</h2>
+
+
+<article class="book-row" id="book-45">
+  <div class="book-meta">
+    <h3 class="book-title">
+      <a href="/title/the-children-of-dynmouth">The Children of Dynmouth</a>
+    </h3>
+
+    <p class="byline">
+      <a href="/year/1976">
+      <span class="chip chip-shortlist">Shortlisted 1976</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/0241971837.jpg"
+     alt="'The Children of Dynmouth' by William Trevor">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/0241971837/?tag=davblog-21"
+     data-amazon-asin="0241971837"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/0241971837/?tag=davblog-21"
-   data-amazon-asin="0241971837"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-  <tr>
-    <td><a href="/title/mrs-eckdorf-in-oneills-hotel/">Mrs Eckdorf in O'Neill's Hotel</a></td>
-    <td><a href="/year/1970/">1970</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/024196931X.jpg"
-       alt="'Mrs Eckdorf in O'Neill's Hotel' by William Trevor">
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/024196931X/?tag=davblog-21"
-   data-amazon-asin="024196931X"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-  <tr>
-    <td><a href="/title/reading-turgenev/">Reading Turgenev</a></td>
-    <td><a href="/year/1991/">1991</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/0141044616.jpg"
-       alt="'Reading Turgenev' by William Trevor">
+
+
+</article>
+
+
+<article class="book-row" id="book-11">
+  <div class="book-meta">
+    <h3 class="book-title">
+      <a href="/title/mrs-eckdorf-in-oneills-hotel">Mrs Eckdorf in O'Neill's Hotel</a>
+    </h3>
+
+    <p class="byline">
+      <a href="/year/1970">
+      <span class="chip chip-shortlist">Shortlisted 1970</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/024196931X.jpg"
+     alt="'Mrs Eckdorf in O'Neill's Hotel' by William Trevor">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/024196931X/?tag=davblog-21"
+     data-amazon-asin="024196931X"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/0141044616/?tag=davblog-21"
-   data-amazon-asin="0141044616"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-  <tr>
-    <td><a href="/title/the-story-of-lucy-gault/">The Story of Lucy Gault</a></td>
-    <td><a href="/year/2002/">2002</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/0141044608.jpg"
-       alt="'The Story of Lucy Gault' by William Trevor">
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/0141044608/?tag=davblog-21"
-   data-amazon-asin="0141044608"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-</table>
+
+
+</article>
+
+
+<article class="book-row" id="book-136">
+  <div class="book-meta">
+    <h3 class="book-title">
+      <a href="/title/reading-turgenev">Reading Turgenev</a>
+    </h3>
+
+    <p class="byline">
+      <a href="/year/1991">
+      <span class="chip chip-shortlist">Shortlisted 1991</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/0141044616.jpg"
+     alt="'Reading Turgenev' by William Trevor">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/0141044616/?tag=davblog-21"
+     data-amazon-asin="0141044616"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
+</div>
+</div>
+
+
+</article>
+
+
+<article class="book-row" id="book-199">
+  <div class="book-meta">
+    <h3 class="book-title">
+      <a href="/title/the-story-of-lucy-gault">The Story of Lucy Gault</a>
+    </h3>
+
+    <p class="byline">
+      <a href="/year/2002">
+      <span class="chip chip-shortlist">Shortlisted 2002</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/0141044608.jpg"
+     alt="'The Story of Lucy Gault' by William Trevor">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/0141044608/?tag=davblog-21"
+     data-amazon-asin="0141044608"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
+</div>
+</div>
+
+
+</article>
 <div class="biography">
 <p>
 William Trevor, born William Trevor Cox on May 24, 1928, in Mitchelstown, County Cork, Ireland, was an esteemed novelist, playwright, and short story writer. Renowned for his poignant literary style, Trevor's works often explore themes of marginalized lives, unrequited love, and the quiet struggles of everyday existence. Educated at Trinity College Dublin, he initially pursued a career in sculpture before turning to writing, which would lead to a prolific career spanning over five decades.
@@ -234,9 +293,12 @@ Residing in Devon, England, for much of his life, Trevor was a private individua
       </div>
 
       <!-- FOOTER -->
-      <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a></p>
+      <footer class="site-footer">
+        <div class="container py-3">
+          <p class="float-end"><a href="#">Back to top</a></p>
+          <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a> /
+          Books photo by <a href="https://unsplash.com/@brett_jordan?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Brett Jordan</a> on <a href="https://unsplash.com/photos/books-on-brown-wooden-shelf-GqENJb_wtAw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
+        </div>
       </footer>
     </main>
 
@@ -248,6 +310,23 @@ Residing in Devon, England, for much of his life, Trevor was a private individua
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         AmazonStore.enhanceAll({ tag: 'davblog-21' });
+
+          const chips = [...document.querySelectorAll('.index-toolbar a[href^="#"]')];
+          const sections = chips
+            .map(a => document.getElementById(a.getAttribute('href').slice(1)))
+            .filter(Boolean);
+
+          const onScroll = () => {
+            let current = sections[0];
+            for (const s of sections) {
+              if (s.getBoundingClientRect().top - (window.innerHeight * .25) < 0) current = s;
+              else break;
+            }
+            chips.forEach(a => a.classList.toggle('active', a.getAttribute('href').slice(1) === current.id));
+          };
+
+          onScroll();
+          document.addEventListener('scroll', onScroll, { passive: true });
       });
     </script>
   </body>

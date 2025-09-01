@@ -49,7 +49,7 @@ sub _build_tt {
     ENCODING     => 'utf8',
     INCLUDE_PATH => [ "$root/tt_lib", "$root/src" ],
     OUTPUT_PATH  => "$root/docs",
-    PRE_PROCESS  => 'amazon.tt',
+    PRE_PROCESS  => ['amazon.tt', 'book.tt'],
     WRAPPER      => 'page.tt',
     STRICT       => 1,
   );

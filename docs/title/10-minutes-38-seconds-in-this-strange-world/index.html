@@ -1,6 +1,6 @@
 
 
-
+<!-- title/title.html.tt -->
 
 <!doctype html>
 <html lang="en">
@@ -25,6 +25,7 @@
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
           integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
           crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Literata:opsz,wght@14..72,400;600&display=swap" rel="stylesheet">
 
     <meta name="theme-color" content="#7952b3">
 
@@ -68,7 +69,7 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-light fixed-top bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">Read a Booker</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -116,24 +117,35 @@
 
 </script>
 <h1>Book: 10 Minutes 38 Seconds in This Strange World</h1>
-<table class="table">
-  <tr>
-    <td><a href="/author/elif-shafak/">Elif Shafak</a></td>
-    <td><a href="/year/2019/">2019</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/0241979463.jpg"
-       alt="'10 Minutes 38 Seconds in This Strange World' by Elif Shafak">
+
+
+<article class="book-row" id="book-303">
+  <div class="book-meta">
+
+    <p class="byline">
+      <a href="/author/elif-shafak">Elif Shafak</a>
+      <a href="/year/2019">
+      <span class="chip chip-shortlist">Shortlisted 2019</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/0241979463.jpg"
+     alt="'10 Minutes 38 Seconds in This Strange World' by Elif Shafak">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/0241979463/?tag=davblog-21"
+     data-amazon-asin="0241979463"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/0241979463/?tag=davblog-21"
-   data-amazon-asin="0241979463"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-</table>
+</div>
+
+
+</article>
 <div class="blurb">
 <p>
 "10 Minutes 38 Seconds in This Strange World" by Elif Shafak is a profoundly moving novel that delves into the complexities of memory, friendship, and the societal undercurrents of Istanbul. The book begins with the end of Leila's life, as her consciousness lingers for a brief period following her death. During these ten minutes and thirty-eight seconds, Leila's mind flickers through vivid memories that define her life, transporting readers through her tumultuous journey marked by family estrangement, exploitation, and a resilient pursuit of freedom. As each second unfolds, Leila revisits moments filled with the warmth and loyalty of the eclectic group of outcasts she calls friends, who form her true family in the vibrant, often unforgiving environment of Istanbul. Through Leila’s story, Shafak weaves a rich tapestry of the city’s beauty and darkness, offering a deeply empathetic exploration of identity and belonging in the margins of society. This poignant narrative challenges readers to reflect on the enduring impact of love and connection in the face of adversity.</p>
@@ -146,9 +158,12 @@
       </div>
 
       <!-- FOOTER -->
-      <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a></p>
+      <footer class="site-footer">
+        <div class="container py-3">
+          <p class="float-end"><a href="#">Back to top</a></p>
+          <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a> /
+          Books photo by <a href="https://unsplash.com/@brett_jordan?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Brett Jordan</a> on <a href="https://unsplash.com/photos/books-on-brown-wooden-shelf-GqENJb_wtAw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
+        </div>
       </footer>
     </main>
 
@@ -160,6 +175,23 @@
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         AmazonStore.enhanceAll({ tag: 'davblog-21' });
+
+          const chips = [...document.querySelectorAll('.index-toolbar a[href^="#"]')];
+          const sections = chips
+            .map(a => document.getElementById(a.getAttribute('href').slice(1)))
+            .filter(Boolean);
+
+          const onScroll = () => {
+            let current = sections[0];
+            for (const s of sections) {
+              if (s.getBoundingClientRect().top - (window.innerHeight * .25) < 0) current = s;
+              else break;
+            }
+            chips.forEach(a => a.classList.toggle('active', a.getAttribute('href').slice(1) === current.id));
+          };
+
+          onScroll();
+          document.addEventListener('scroll', onScroll, { passive: true });
       });
     </script>
   </body>

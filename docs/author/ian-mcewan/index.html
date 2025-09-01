@@ -1,6 +1,6 @@
 
 
-
+<!-- author/author.html.tt -->
 
 <!doctype html>
 <html lang="en">
@@ -25,6 +25,7 @@
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
           integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
           crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Literata:opsz,wght@14..72,400;600&display=swap" rel="stylesheet">
 
     <meta name="theme-color" content="#7952b3">
 
@@ -68,7 +69,7 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-light fixed-top bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">Read a Booker</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -155,89 +156,162 @@
 
 </script>
 <h1>Author: Ian McEwan</h1>
-<h2>Books</h2>
-<table class="table">
-  <tr class="table-success">
-    <td><a href="/title/amsterdam/">Amsterdam</a></td>
-    <td><a href="/year/1998/">1998</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/0099272776.jpg"
-       alt="'Amsterdam' by Ian McEwan">
+<h2 class="section-title mt-5">Books</h2>
+
+
+<article class="book-row is-winner" id="book-172">
+  <div class="book-meta">
+    <h3 class="book-title">
+      <a href="/title/amsterdam">Amsterdam</a>
+    </h3>
+
+    <p class="byline">
+      <a href="/year/1998">
+      <span class="chip chip-winner" aria-label="Booker Prize winner">Winner 1998</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/0099272776.jpg"
+     alt="'Amsterdam' by Ian McEwan">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/0099272776/?tag=davblog-21"
+     data-amazon-asin="0099272776"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/0099272776/?tag=davblog-21"
-   data-amazon-asin="0099272776"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-  <tr>
-    <td><a href="/title/atonement/">Atonement</a></td>
-    <td><a href="/year/2001/">2001</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/0099429799.jpg"
-       alt="'Atonement' by Ian McEwan">
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/0099429799/?tag=davblog-21"
-   data-amazon-asin="0099429799"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-  <tr>
-    <td><a href="/title/black-dogs/">Black Dogs</a></td>
-    <td><a href="/year/1992/">1992</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/0099277085.jpg"
-       alt="'Black Dogs' by Ian McEwan">
+
+
+</article>
+
+
+<article class="book-row" id="book-191">
+  <div class="book-meta">
+    <h3 class="book-title">
+      <a href="/title/atonement">Atonement</a>
+    </h3>
+
+    <p class="byline">
+      <a href="/year/2001">
+      <span class="chip chip-shortlist">Shortlisted 2001</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/0099429799.jpg"
+     alt="'Atonement' by Ian McEwan">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/0099429799/?tag=davblog-21"
+     data-amazon-asin="0099429799"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/0099277085/?tag=davblog-21"
-   data-amazon-asin="0099277085"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-  <tr>
-    <td><a href="/title/the-comfort-of-strangers/">The Comfort of Strangers</a></td>
-    <td><a href="/year/1981/">1981</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/0099754916.jpg"
-       alt="'The Comfort of Strangers' by Ian McEwan">
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/0099754916/?tag=davblog-21"
-   data-amazon-asin="0099754916"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-  <tr>
-    <td><a href="/title/on-chesil-beach/">On Chesil Beach</a></td>
-    <td><a href="/year/2007/">2007</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/178470556X.jpg"
-       alt="'On Chesil Beach' by Ian McEwan">
+
+
+</article>
+
+
+<article class="book-row" id="book-141">
+  <div class="book-meta">
+    <h3 class="book-title">
+      <a href="/title/black-dogs">Black Dogs</a>
+    </h3>
+
+    <p class="byline">
+      <a href="/year/1992">
+      <span class="chip chip-shortlist">Shortlisted 1992</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/0099277085.jpg"
+     alt="'Black Dogs' by Ian McEwan">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/0099277085/?tag=davblog-21"
+     data-amazon-asin="0099277085"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/178470556X/?tag=davblog-21"
-   data-amazon-asin="178470556X"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-</table>
+</div>
+
+
+</article>
+
+
+<article class="book-row" id="book-73">
+  <div class="book-meta">
+    <h3 class="book-title">
+      <a href="/title/the-comfort-of-strangers">The Comfort of Strangers</a>
+    </h3>
+
+    <p class="byline">
+      <a href="/year/1981">
+      <span class="chip chip-shortlist">Shortlisted 1981</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/0099754916.jpg"
+     alt="'The Comfort of Strangers' by Ian McEwan">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/0099754916/?tag=davblog-21"
+     data-amazon-asin="0099754916"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
+</div>
+</div>
+
+
+</article>
+
+
+<article class="book-row" id="book-230">
+  <div class="book-meta">
+    <h3 class="book-title">
+      <a href="/title/on-chesil-beach">On Chesil Beach</a>
+    </h3>
+
+    <p class="byline">
+      <a href="/year/2007">
+      <span class="chip chip-shortlist">Shortlisted 2007</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/178470556X.jpg"
+     alt="'On Chesil Beach' by Ian McEwan">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/178470556X/?tag=davblog-21"
+     data-amazon-asin="178470556X"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
+</div>
+</div>
+
+
+</article>
 <div class="biography">
 <p>
 Ian McEwan is a distinguished British author, renowned for his contribution to contemporary literature. Born on June 21, 1948, in Aldershot, England, he spent his formative years in various countries, including Libya and Singapore, due to his father's military career. McEwan's literary journey began at the University of Sussex, where he studied English literature and later pursued creative writing at the University of East Anglia.
@@ -258,9 +332,12 @@ Over the years, McEwan has received numerous accolades, establishing him as a pr
       </div>
 
       <!-- FOOTER -->
-      <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a></p>
+      <footer class="site-footer">
+        <div class="container py-3">
+          <p class="float-end"><a href="#">Back to top</a></p>
+          <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a> /
+          Books photo by <a href="https://unsplash.com/@brett_jordan?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Brett Jordan</a> on <a href="https://unsplash.com/photos/books-on-brown-wooden-shelf-GqENJb_wtAw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
+        </div>
       </footer>
     </main>
 
@@ -272,6 +349,23 @@ Over the years, McEwan has received numerous accolades, establishing him as a pr
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         AmazonStore.enhanceAll({ tag: 'davblog-21' });
+
+          const chips = [...document.querySelectorAll('.index-toolbar a[href^="#"]')];
+          const sections = chips
+            .map(a => document.getElementById(a.getAttribute('href').slice(1)))
+            .filter(Boolean);
+
+          const onScroll = () => {
+            let current = sections[0];
+            for (const s of sections) {
+              if (s.getBoundingClientRect().top - (window.innerHeight * .25) < 0) current = s;
+              else break;
+            }
+            chips.forEach(a => a.classList.toggle('active', a.getAttribute('href').slice(1) === current.id));
+          };
+
+          onScroll();
+          document.addEventListener('scroll', onScroll, { passive: true });
       });
     </script>
   </body>

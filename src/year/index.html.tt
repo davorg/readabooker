@@ -1,9 +1,9 @@
 <h1>Books by year</h1>
-<p>
+<nav class="index-toolbar" aria-label="Jump to section">
 [% FOREACH decade IN decades -%]
   <a href="#[% decade %]">[% decade %]</a>
 [% END -%]
-</p>
+</nav>
 
 [% prev_decade = '';
    FOR event IN events.sort('year').reverse;
@@ -12,10 +12,10 @@
          '</ul>';
        END -%]
 <div class="d-flex align-items-end gap-2">
-  <h2 id="[% event.decade %]">[% event.decade %]</h2>
-  <p><a href="#top" class="fs-6 fw-light">top</a></p>
+  <h2 id="[% event.decade %]" class="index-section">[% event.decade %]</h2>
+  <p><a href="#top" class="top-chip fs-6 fw-light">top</a></p>
 </div>
-<ul>
+<ul class="index-list">
 [%   END -%]
     <li><a href="/year/[% event.slug %]/">[% event.year %]</a></li>
 [% prev_decade = event.decade;

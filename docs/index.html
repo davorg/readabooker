@@ -1,6 +1,6 @@
 
 
-
+<!-- index.html.tt -->
 
 <!doctype html>
 <html lang="en">
@@ -25,6 +25,7 @@
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
           integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
           crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Literata:opsz,wght@14..72,400;600&display=swap" rel="stylesheet">
 
     <meta name="theme-color" content="#7952b3">
 
@@ -68,7 +69,7 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-light fixed-top bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">Read a Booker</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,7 +101,12 @@
         <div class="row">
           <div class="col"></div>
           <div class="col-8">
-      <h1>Read A Booker Prizewinner</h1>
+      <header class="site-hero" role="img" aria-label="Close-up of Booker-nominated paperbacks on a shelf">
+        <div class="container">
+          <h1 class="display-5 fw-semibold">Read A Booker Prizewinner</h1>
+          <p class="lead mb-0">Prizewinners, shortlists, and reading paths—beautifully organised.</p>
+        </div>
+      </header>
       <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Winner 2024"></button>
@@ -115,20 +121,20 @@
 
             <div class="container">
               <div class="carousel-caption">
-                <div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/1529922933.jpg"
-       alt="'Orbital' by Samantha Harvey">
-</div>
+                <img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/1529922933.jpg"
+     alt="'Orbital' by Samantha Harvey">
 
                 <h2>2024 winner</h2>
                 <p>The winner of the 2024 Booker Prize was <i>Orbital</i> by Samantha Harvey.</p>
-                <a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/1529922933/?tag=davblog-21"
-   data-amazon-asin="1529922933"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
+                <div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/1529922933/?tag=davblog-21"
+     data-amazon-asin="1529922933"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
+</div>
 
               </div>
             </div>
@@ -138,20 +144,20 @@
 
             <div class="container">
               <div class="carousel-caption">
-                <div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/0861546458.jpg"
-       alt="'Prophet Song' by Paul Lynch">
-</div>
+                <img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/0861546458.jpg"
+     alt="'Prophet Song' by Paul Lynch">
 
                 <h2>2023 winner</h2>
                 <p>The winner of the 2023 Booker Prize was <i>Prophet Song</i> by Paul Lynch.</p>
-                <a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/0861546458/?tag=davblog-21"
-   data-amazon-asin="0861546458"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
+                <div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/0861546458/?tag=davblog-21"
+     data-amazon-asin="0861546458"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
+</div>
 
               </div>
             </div>
@@ -161,20 +167,20 @@
 
             <div class="container">
               <div class="carousel-caption">
-                <div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/1914502078.jpg"
-       alt="'The Seven Moons of Maali Almeida' by Shehan Karunatilaka">
-</div>
+                <img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/1914502078.jpg"
+     alt="'The Seven Moons of Maali Almeida' by Shehan Karunatilaka">
 
                 <h2>2022 winner</h2>
                 <p>The winner of the 2022 Booker Prize was <i>The Seven Moons of Maali Almeida</i> by Shehan Karunatilaka.</p>
-                <a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/1914502078/?tag=davblog-21"
-   data-amazon-asin="1914502078"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
+                <div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/1914502078/?tag=davblog-21"
+     data-amazon-asin="1914502078"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
+</div>
 
               </div>
             </div>
@@ -184,20 +190,20 @@
 
             <div class="container">
               <div class="carousel-caption">
-                <div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/1784744069.jpg"
-       alt="'The Promise' by Damon Galgut">
-</div>
+                <img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/1784744069.jpg"
+     alt="'The Promise' by Damon Galgut">
 
                 <h2>2021 winner</h2>
                 <p>The winner of the 2021 Booker Prize was <i>The Promise</i> by Damon Galgut.</p>
-                <a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/1784744069/?tag=davblog-21"
-   data-amazon-asin="1784744069"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
+                <div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/1784744069/?tag=davblog-21"
+     data-amazon-asin="1784744069"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
+</div>
 
               </div>
             </div>
@@ -207,20 +213,20 @@
 
             <div class="container">
               <div class="carousel-caption">
-                <div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/152901929X.jpg"
-       alt="'Shuggie Bain' by Douglas Stuart">
-</div>
+                <img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/152901929X.jpg"
+     alt="'Shuggie Bain' by Douglas Stuart">
 
                 <h2>2020 winner</h2>
                 <p>The winner of the 2020 Booker Prize was <i>Shuggie Bain</i> by Douglas Stuart.</p>
-                <a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/152901929X/?tag=davblog-21"
-   data-amazon-asin="152901929X"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
+                <div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/152901929X/?tag=davblog-21"
+     data-amazon-asin="152901929X"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
+</div>
 
               </div>
             </div>
@@ -242,6 +248,8 @@
       <!-- Wrap the rest of the page in another container to center all the content. -->
 
       <div class="container marketing">
+
+        <h2 class="section-title mt-5">Explore the Booker archive</h2>
 
         <!-- Three columns of text below the carousel -->
         <div class="row">
@@ -269,11 +277,9 @@
 
         <!-- START THE FEATURETTES -->
 
-        <hr class="featurette-divider">
-
         <div class="row featurette">
+          <h2 class="section-title mt-5">The Booker Prize</h2>
           <div class="col-md-7">
-            <h2 class="featurette-heading">The Booker Prize</h2>
             <p>The Booker Prize is one of the richest literary prizes
               in the English-speaking world.</p>
             <p>Each year, a prize of £50,000 is awarded to the best novel
@@ -288,11 +294,9 @@
           </div>
         </div>
 
-        <hr class="featurette-divider">
-
         <div class="row featurette">
+          <h2 class="section-title mt-5">Name and sponsorship</h2>
           <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Name and sponsorship</h2>
             <p>The Booker Prize was created in 1969. It was named after Booker McConnell Ltd
               (now just known as <a href="https://www.booker.co.uk/">Booker Group</a>) its
               original sponsor.</p>
@@ -305,29 +309,26 @@
           </div>
         </div>
 
-        <hr class="featurette-divider">
-
         <div class="row featurette">
+          <h2 class="section-title mt-5">The Lost Booker</h2>
           <div class="col-md-7">
-            <h2 class="featurette-heading">The Lost Booker</h2>
             <p>In the first two years of the competition, the prize was open to books
               published the year before the prize was awarded. In 1971, this was
               changed to the same year as the prize ceremony. This effectively meant
               that books published in 1970 were not considered for an award.</p>
             <p>In 2010 a special "Lost Booker" competition was announced for books
               published in 1970. From a long list of 22 novels, the judges chose
-              <i>Troubles</i> by J. G. Farrell as the winner.</p>
+              <a href="/title/troubles/"><i>Troubles</i></a> by
+              <a href="/author/j-g-farrell/">J. G. Farrell</a> as the winner.</p>
           </div>
           <div class="col-md-5 order-md-1">
             <p><img src="/images/troubles.jpg" alt="The Troubles by J. G. Farrell" style="width: 50%"></p>
           </div>
         </div>
 
-        <hr class="featurette-divider">
-
         <div class="row featurette">
+          <h2 class="section-title mt-5"><i>Midnight's Children</i></h2>
           <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading"><i>Midnight's Children</i></h2>
             <p>There have been three special Booker Prize competitions over the years.</p>
             <ul>
               <li><b>The Booker of Bookers (1993)</b> – Awarded to the best novel from the first 25 years of the Booker Prize.</li>
@@ -354,9 +355,12 @@
       </div>
 
       <!-- FOOTER -->
-      <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a></p>
+      <footer class="site-footer">
+        <div class="container py-3">
+          <p class="float-end"><a href="#">Back to top</a></p>
+          <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a> /
+          Books photo by <a href="https://unsplash.com/@brett_jordan?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Brett Jordan</a> on <a href="https://unsplash.com/photos/books-on-brown-wooden-shelf-GqENJb_wtAw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
+        </div>
       </footer>
     </main>
 
@@ -368,6 +372,23 @@
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         AmazonStore.enhanceAll({ tag: 'davblog-21' });
+
+          const chips = [...document.querySelectorAll('.index-toolbar a[href^="#"]')];
+          const sections = chips
+            .map(a => document.getElementById(a.getAttribute('href').slice(1)))
+            .filter(Boolean);
+
+          const onScroll = () => {
+            let current = sections[0];
+            for (const s of sections) {
+              if (s.getBoundingClientRect().top - (window.innerHeight * .25) < 0) current = s;
+              else break;
+            }
+            chips.forEach(a => a.classList.toggle('active', a.getAttribute('href').slice(1) === current.id));
+          };
+
+          onScroll();
+          document.addEventListener('scroll', onScroll, { passive: true });
       });
     </script>
   </body>

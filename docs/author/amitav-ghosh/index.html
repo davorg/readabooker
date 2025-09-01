@@ -1,6 +1,6 @@
 
 
-
+<!-- author/author.html.tt -->
 
 <!doctype html>
 <html lang="en">
@@ -25,6 +25,7 @@
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
           integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
           crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Literata:opsz,wght@14..72,400;600&display=swap" rel="stylesheet">
 
     <meta name="theme-color" content="#7952b3">
 
@@ -68,7 +69,7 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-light fixed-top bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">Read a Booker</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -123,25 +124,38 @@
 
 </script>
 <h1>Author: Amitav Ghosh</h1>
-<h2>Books</h2>
-<table class="table">
-  <tr>
-    <td><a href="/title/sea-of-poppies/">Sea of Poppies</a></td>
-    <td><a href="/year/2008/">2008</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/0719568978.jpg"
-       alt="'Sea of Poppies' by Amitav Ghosh">
+<h2 class="section-title mt-5">Books</h2>
+
+
+<article class="book-row" id="book-234">
+  <div class="book-meta">
+    <h3 class="book-title">
+      <a href="/title/sea-of-poppies">Sea of Poppies</a>
+    </h3>
+
+    <p class="byline">
+      <a href="/year/2008">
+      <span class="chip chip-shortlist">Shortlisted 2008</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/0719568978.jpg"
+     alt="'Sea of Poppies' by Amitav Ghosh">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/0719568978/?tag=davblog-21"
+     data-amazon-asin="0719568978"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/0719568978/?tag=davblog-21"
-   data-amazon-asin="0719568978"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-</table>
+</div>
+
+
+</article>
 <div class="biography">
 <p>
 Amitav Ghosh, born on July 11, 1956, in Calcutta, India, is a distinguished author and academic recognized for his profound narratives and exploration of historical themes. Educated at The Doon School, Ghosh went on to earn degrees from St. Stephen's College, Delhi University, and furthered his studies at the University of Oxford, where he completed a D.Phil. in social anthropology. His literary career took off with his debut novel, "The Circle of Reason," in 1986. Ghosh's work is characterized by its intricate fusion of history, cultural anthropology, and nuanced storytelling, as seen in acclaimed novels such as "The Shadow Lines," "The Glass Palace," and the Ibis Trilogy, which delves into the opium trade of the nineteenth century. His prose often tackles complex topics like colonialism, migration, and identity, woven with rich historical detail. Ghosh has been recognized globally, receiving numerous awards for his contributions to literature. Besides writing, he has also been involved in teaching and academic pursuits across prestigious institutions worldwide. Through his research and storytelling, Ghosh continues to shed light on the interconnections of cultures and the enduring impact of history on the present.</p>
@@ -154,9 +168,12 @@ Amitav Ghosh, born on July 11, 1956, in Calcutta, India, is a distinguished auth
       </div>
 
       <!-- FOOTER -->
-      <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a></p>
+      <footer class="site-footer">
+        <div class="container py-3">
+          <p class="float-end"><a href="#">Back to top</a></p>
+          <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a> /
+          Books photo by <a href="https://unsplash.com/@brett_jordan?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Brett Jordan</a> on <a href="https://unsplash.com/photos/books-on-brown-wooden-shelf-GqENJb_wtAw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
+        </div>
       </footer>
     </main>
 
@@ -168,6 +185,23 @@ Amitav Ghosh, born on July 11, 1956, in Calcutta, India, is a distinguished auth
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         AmazonStore.enhanceAll({ tag: 'davblog-21' });
+
+          const chips = [...document.querySelectorAll('.index-toolbar a[href^="#"]')];
+          const sections = chips
+            .map(a => document.getElementById(a.getAttribute('href').slice(1)))
+            .filter(Boolean);
+
+          const onScroll = () => {
+            let current = sections[0];
+            for (const s of sections) {
+              if (s.getBoundingClientRect().top - (window.innerHeight * .25) < 0) current = s;
+              else break;
+            }
+            chips.forEach(a => a.classList.toggle('active', a.getAttribute('href').slice(1) === current.id));
+          };
+
+          onScroll();
+          document.addEventListener('scroll', onScroll, { passive: true });
       });
     </script>
   </body>

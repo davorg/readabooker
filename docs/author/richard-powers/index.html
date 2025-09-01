@@ -1,6 +1,6 @@
 
 
-
+<!-- author/author.html.tt -->
 
 <!doctype html>
 <html lang="en">
@@ -25,6 +25,7 @@
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
           integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
           crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Literata:opsz,wght@14..72,400;600&display=swap" rel="stylesheet">
 
     <meta name="theme-color" content="#7952b3">
 
@@ -68,7 +69,7 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-light fixed-top bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">Read a Booker</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -131,41 +132,69 @@
 
 </script>
 <h1>Author: Richard Powers</h1>
-<h2>Books</h2>
-<table class="table">
-  <tr>
-    <td><a href="/title/bewilderment/">Bewilderment</a></td>
-    <td><a href="/year/2021/">2021</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/1785152637.jpg"
-       alt="'Bewilderment' by Richard Powers">
+<h2 class="section-title mt-5">Books</h2>
+
+
+<article class="book-row" id="book-314">
+  <div class="book-meta">
+    <h3 class="book-title">
+      <a href="/title/bewilderment">Bewilderment</a>
+    </h3>
+
+    <p class="byline">
+      <a href="/year/2021">
+      <span class="chip chip-shortlist">Shortlisted 2021</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/1785152637.jpg"
+     alt="'Bewilderment' by Richard Powers">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/1785152637/?tag=davblog-21"
+     data-amazon-asin="1785152637"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/1785152637/?tag=davblog-21"
-   data-amazon-asin="1785152637"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-  <tr>
-    <td><a href="/title/the-overstory/">The Overstory</a></td>
-    <td><a href="/year/2018/">2018</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/1784708240.jpg"
-       alt="'The Overstory' by Richard Powers">
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/1784708240/?tag=davblog-21"
-   data-amazon-asin="1784708240"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-</table>
+
+
+</article>
+
+
+<article class="book-row" id="book-296">
+  <div class="book-meta">
+    <h3 class="book-title">
+      <a href="/title/the-overstory">The Overstory</a>
+    </h3>
+
+    <p class="byline">
+      <a href="/year/2018">
+      <span class="chip chip-shortlist">Shortlisted 2018</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/1784708240.jpg"
+     alt="'The Overstory' by Richard Powers">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/1784708240/?tag=davblog-21"
+     data-amazon-asin="1784708240"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
+</div>
+</div>
+
+
+</article>
 <div class="biography">
 <p>
 Richard Powers, born on June 18, 1957, in Evanston, Illinois, is a celebrated American author known for his intricate narratives and explorations of the intersection between science, technology, and the human experience. He was raised in both Illinois and Thailand, an experience that contributed to his broad worldview and eclectic interests. Powers initially pursued a career in physics but switched to literature when he realized his passion for storytelling.
@@ -186,9 +215,12 @@ In 2018, his novel "The Overstory," a profound narrative about the relationship 
       </div>
 
       <!-- FOOTER -->
-      <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a></p>
+      <footer class="site-footer">
+        <div class="container py-3">
+          <p class="float-end"><a href="#">Back to top</a></p>
+          <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a> /
+          Books photo by <a href="https://unsplash.com/@brett_jordan?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Brett Jordan</a> on <a href="https://unsplash.com/photos/books-on-brown-wooden-shelf-GqENJb_wtAw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
+        </div>
       </footer>
     </main>
 
@@ -200,6 +232,23 @@ In 2018, his novel "The Overstory," a profound narrative about the relationship 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         AmazonStore.enhanceAll({ tag: 'davblog-21' });
+
+          const chips = [...document.querySelectorAll('.index-toolbar a[href^="#"]')];
+          const sections = chips
+            .map(a => document.getElementById(a.getAttribute('href').slice(1)))
+            .filter(Boolean);
+
+          const onScroll = () => {
+            let current = sections[0];
+            for (const s of sections) {
+              if (s.getBoundingClientRect().top - (window.innerHeight * .25) < 0) current = s;
+              else break;
+            }
+            chips.forEach(a => a.classList.toggle('active', a.getAttribute('href').slice(1) === current.id));
+          };
+
+          onScroll();
+          document.addEventListener('scroll', onScroll, { passive: true });
       });
     </script>
   </body>

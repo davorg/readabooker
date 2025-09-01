@@ -1,9 +1,9 @@
 <h1 id="top">Books by title</h1>
-<p>
+<nav class="index-toolbar" aria-label="Jump to section">
 [% FOREACH letter IN letters -%]
   <a href="#[% IF letter == '#'; '0'; ELSE; letter; END %]">[% letter %]</a>
 [% END -%]
-</p>
+</nav>
 
 [% prev_letter = '';
    FOR book IN books;
@@ -12,10 +12,10 @@
          '</ul>';
        END -%]
 <div class="d-flex align-items-end gap-2">
-  <h2 id="[% IF book.letter == '#'; '0'; ELSE; book.letter; END %]">[% book.letter %]</h2>
-  <p><a href="#top" class="fs-6 fw-light">top</a></p>
+  <h2 id="[% IF book.letter == '#'; '0'; ELSE; book.letter; END %]" class="index-section">[% book.letter %]</h2>
+  <p><a href="#top" class="top-chip fs-6 fw-light">top</a></p>
 </div>
-<ul>
+<ul class="index-list">
 [%   END -%]
   <li><a href="/title/[% book.slug %]/">[% book.title %]</a></li>
 [% prev_letter = book.letter;

@@ -1,6 +1,6 @@
 
 
-
+<!-- title/title.html.tt -->
 
 <!doctype html>
 <html lang="en">
@@ -25,6 +25,7 @@
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
           integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
           crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Literata:opsz,wght@14..72,400;600&display=swap" rel="stylesheet">
 
     <meta name="theme-color" content="#7952b3">
 
@@ -68,7 +69,7 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-light fixed-top bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">Read a Booker</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -116,24 +117,35 @@
 
 </script>
 <h1>Book: Headlong</h1>
-<table class="table">
-  <tr>
-    <td><a href="/author/michael-frayn/">Michael Frayn</a></td>
-    <td><a href="/year/1999/">1999</a></td>
-    <td><div class="amazon">
-  <img class="img-thumbnail"
-       src="https://images.amazon.com/images/P/0571283489.jpg"
-       alt="'Headlong' by Michael Frayn">
+
+
+<article class="book-row" id="book-180">
+  <div class="book-meta">
+
+    <p class="byline">
+      <a href="/author/michael-frayn">Michael Frayn</a>
+      <a href="/year/1999">
+      <span class="chip chip-shortlist">Shortlisted 1999</span>
+      </a>
+    </p>
+  </div>
+
+<div class="book-cover">
+<img class="img-thumbnail"
+     src="https://images.amazon.com/images/P/0571283489.jpg"
+     alt="'Headlong' by Michael Frayn">
+<div class="buy-button mt2">
+  <a class="btn btn-accent btn-sm buy-button"
+     href="https://www.amazon.co.uk/dp/0571283489/?tag=davblog-21"
+     data-amazon-asin="0571283489"
+     data-amazon-tag="davblog-21"
+     data-amazon-text="Buy on Amazon"
+     target="_blank" rel="noopener"></a>
 </div>
-<a class="btn btn-primary buy-button"
-   href="https://www.amazon.co.uk/dp/0571283489/?tag=davblog-21"
-   data-amazon-asin="0571283489"
-   data-amazon-tag="davblog-21"
-   data-amazon-text="Buy on Amazon"
-   target="_blank" rel="noopener"></a>
-</td>
-  </tr>
-</table>
+</div>
+
+
+</article>
 <div class="blurb">
 <p>
 In "Headlong" by Michael Frayn, a comedic and intellectually rich narrative unfolds as Martin Clay, a disenchanted philosopher, escapes the city with his art-historian wife to their rural retreat. There, he stumbles upon what he believes is a long-lost masterpiece by the artist Pieter Bruegel the Elder in the decrepit home of a local landowner. Convinced that this discovery could transform his fortunes, Martin becomes embroiled in a chaotic quest to authenticate and acquire the painting. As he navigates a labyrinth of art history, deception, and ethical dilemmas, Martin's obsession threatens to upend his professional and personal life. Frayn weaves a tale that is as enlightening as it is entertaining, blending artful wit with insightful commentary on ambition, morality, and the pursuit of knowledge. The novel's richly detailed portrayal of art and history is matched only by its humorous exploration of human frailty, making "Headlong" a captivating read that engages both the mind and the spirit.</p>
@@ -146,9 +158,12 @@ In "Headlong" by Michael Frayn, a comedic and intellectually rich narrative unfo
       </div>
 
       <!-- FOOTER -->
-      <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a></p>
+      <footer class="site-footer">
+        <div class="container py-3">
+          <p class="float-end"><a href="#">Back to top</a></p>
+          <p>Made by <a href="https://links.davecross.co.uk/">Dave Cross</a> /
+          Books photo by <a href="https://unsplash.com/@brett_jordan?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Brett Jordan</a> on <a href="https://unsplash.com/photos/books-on-brown-wooden-shelf-GqENJb_wtAw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
+        </div>
       </footer>
     </main>
 
@@ -160,6 +175,23 @@ In "Headlong" by Michael Frayn, a comedic and intellectually rich narrative unfo
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         AmazonStore.enhanceAll({ tag: 'davblog-21' });
+
+          const chips = [...document.querySelectorAll('.index-toolbar a[href^="#"]')];
+          const sections = chips
+            .map(a => document.getElementById(a.getAttribute('href').slice(1)))
+            .filter(Boolean);
+
+          const onScroll = () => {
+            let current = sections[0];
+            for (const s of sections) {
+              if (s.getBoundingClientRect().top - (window.innerHeight * .25) < 0) current = s;
+              else break;
+            }
+            chips.forEach(a => a.classList.toggle('active', a.getAttribute('href').slice(1) === current.id));
+          };
+
+          onScroll();
+          document.addEventListener('scroll', onScroll, { passive: true });
       });
     </script>
   </body>
