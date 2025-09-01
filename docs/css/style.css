@@ -490,3 +490,34 @@ a span.chip:hover {
   margin-bottom: .75rem;   /* space between cover and button */
 }
 
+/* --- Carousel cover rescue --- */
+#myCarousel .carousel-caption{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem 1.5rem;
+  align-items: start;
+  text-align: left;
+}
+
+/* Treat the bare cover img like the old .amazon block */
+#myCarousel .carousel-caption > img.img-thumbnail{
+  grid-column: 1;
+  grid-row: 1 / span 3;   /* cover spans heading + blurb + button */
+  width: clamp(160px,26vw,240px);
+  height: auto;
+  border-radius: 8px;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #e8ebf3;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  justify-self: start;
+}
+
+/* Buy button sits under blurb on the right */
+#myCarousel .carousel-caption .buy-button{
+  grid-column: 2;
+  grid-row: 3;
+  justify-self: start;
+  margin-top: .5rem;
+}
+
