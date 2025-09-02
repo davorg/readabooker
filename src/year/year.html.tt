@@ -1,6 +1,6 @@
 <h1>Year: [% object.year %]</h1>
 
-[% FOR book IN object.books;
+[% FOR book IN object.books_rs.sorted_books;
      display_book(book);
    END -%]
 
