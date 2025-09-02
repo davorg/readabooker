@@ -51,7 +51,7 @@ sub _build_tt {
     OUTPUT_PATH  => "$root/docs",
     PRE_PROCESS  => ['amazon.tt', 'book.tt'],
     WRAPPER      => 'page.tt',
-    STRICT       => 1,
+    STRICT       => 0,
   );
 }
 

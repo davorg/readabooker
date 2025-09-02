@@ -140,6 +140,22 @@ sub decade {
   return substr($self->year, 0, 3) . "0s";
 }
 
+sub chair_of_judges {
+  my $self = shift;
+
+  my ($judge) = $self->judges->search({ is_chair => 1});
+
+  return unless $judge;
+  return $judge->person;
+}
+
+sub other_judges {
+  my $self = shift;
+
+  return sort { $a->sort_name cmp $b->sort_name }
+         map { $_->person } $self->judges->search({ is_chair => 0});
+}
+
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
 __PACKAGE__->meta->make_immutable;
 1;
