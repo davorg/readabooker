@@ -108,8 +108,6 @@ sub sort_col { 'year' }
 
 sub type { 'year' }
 
-sub slug { return shift->year }
-
 sub title { return 'Read a Booker - Event: ' . shift->year }
 
 sub description {

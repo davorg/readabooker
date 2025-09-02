@@ -17,7 +17,7 @@
 </div>
 <ul class="index-list">
 [%   END -%]
-  <li><a href="/title/[% book.slug %]/">[% book.title %]</a></li>
+  <li><a href="[% book.url_path %]/">[% book.title %]</a></li>
 [% prev_letter = book.letter;
    END -%]
 </ul>

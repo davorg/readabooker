@@ -186,8 +186,6 @@ sub json_ld_fields {
 
 sub type { 'title' }
 
-sub slug { return shift->title }
-
 sub seo_title { return 'Read a Booker - Title: ' . shift->title }
 
 sub description {

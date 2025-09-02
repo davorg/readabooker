@@ -5,18 +5,18 @@
   <div class="book-meta">
 [% IF NOT template.name.match('^title') -%]
     <h3 class="book-title">
-      <a href="/title/[% book.slug %]">[% book.title %]</a>
+      <a href="[% book.url_path %]">[% book.title %]</a>
     </h3>
 [% END -%]
 
 [% IF NOT template.name.match('^author') -%]
     <p class="byline">
-      <a href="/author/[% book.author.slug %]">[% book.author.name %]</a>
+      <a href="[% book.author.url_path %]">[% book.author.name %]</a>
     </p>
 [% END -%]
 [% IF NOT template.name.match('^year');
      text = ' ' _ book.event.year;
-     link = '/year/' _ book.event.year;
+     link = book.event.url_path;
    ELSE;
      text = '';
      link = '';
