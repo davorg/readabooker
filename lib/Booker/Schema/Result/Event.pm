@@ -102,7 +102,9 @@ __PACKAGE__->has_many(
 # Created by DBIx::Class::Schema::Loader v0.07052 @ 2025-03-11 12:05:28
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:qfBC+mUJkbOQNP8cPrtBRQ
 
-with 'Booker::Role::SEO';
+with 'Booker::Role::SEO', 'Booker::Role::PrevNext';
+
+sub sort_col { 'year' }
 
 sub type { 'year' }
 

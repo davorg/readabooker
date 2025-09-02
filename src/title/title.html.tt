@@ -1,4 +1,5 @@
 [% object.json_ld_wrapped -%]
+[% prev_next(object, 'title') %]
 <h1>Book: [% object.title %]</h1>
 [% display_book(object);
    IF object.has_blurb -%]

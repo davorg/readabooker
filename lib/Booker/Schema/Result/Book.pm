@@ -119,21 +119,6 @@ __PACKAGE__->set_primary_key("id");
 
 =head1 RELATIONS
 
-=head2 author
-
-Type: belongs_to
-
-Related object: L<Booker::Schema::Result::Person>
-
-=cut
-
-__PACKAGE__->belongs_to(
-  "author",
-  "Booker::Schema::Result::Person",
-  { id => "author_id" },
-  { is_deferrable => 0, on_delete => "NO ACTION", on_update => "NO ACTION" },
-);
-
 =head2 event
 
 Type: belongs_to
@@ -149,12 +134,36 @@ __PACKAGE__->belongs_to(
   { is_deferrable => 0, on_delete => "NO ACTION", on_update => "NO ACTION" },
 );
 
+=head2 person
 
-# Created by DBIx::Class::Schema::Loader v0.07053 @ 2025-06-04 10:00:47
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:wfdSXHrtCPv/QCwLs0zOkw
+Type: belongs_to
 
-with 'MooX::Role::JSON_LD', 'Booker::Role::SEO';
+Related object: L<Booker::Schema::Result::Person>
+
+=cut
+
+__PACKAGE__->belongs_to(
+  "person",
+  "Booker::Schema::Result::Person",
+  { id => "author_id" },
+  { is_deferrable => 0, on_delete => "NO ACTION", on_update => "NO ACTION" },
+);
+
+
+# Created by DBIx::Class::Schema::Loader v0.07053 @ 2025-09-02 15:18:20
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:4amxnebtAlxA9MyWa7NUcA
+
+with 'MooX::Role::JSON_LD', 'Booker::Role::SEO', 'Booker::Role::PrevNext';
 use Text::Unidecode;
+
+__PACKAGE__->belongs_to(
+  "author",
+  "Booker::Schema::Result::Author",
+  { id => "author_id" },
+  { is_deferrable => 0, on_delete => "NO ACTION", on_update => "NO ACTION" },
+);
+
+sub sort_col { 'sort_title' }
 
 sub json_ld_type { 'Book' }
 

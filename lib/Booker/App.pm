@@ -32,7 +32,7 @@ has rs => (
 sub _build_rs {
   my $self = shift;
 
-  my %rs = map { lc $_ => $self->schema->resultset($_) } qw[Person Event Book];
+  my %rs = map { lc $_ => $self->schema->resultset($_) } qw[Author Event Book];
 
   return \%rs;
 }
@@ -49,7 +49,7 @@ sub _build_tt {
     ENCODING     => 'utf8',
     INCLUDE_PATH => [ "$root/tt_lib", "$root/src" ],
     OUTPUT_PATH  => "$root/docs",
-    PRE_PROCESS  => ['amazon.tt', 'book.tt'],
+    PRE_PROCESS  => ['amazon.tt', 'book.tt', 'prev_next.tt'],
     WRAPPER      => 'page.tt',
     STRICT       => 0,
   );
@@ -129,8 +129,8 @@ sub build {
       or die $tt->error;
   }
 
-  my @authors = $rs->{person}->authors->sorted_people->all;
-  my $author_letters = $rs->{person}->author_letters;
+  my @authors = $rs->{author}->all;
+  my $author_letters = $rs->{author}->author_letters;
 
   warn "Building authors...\n";
   warn "  index...\n";

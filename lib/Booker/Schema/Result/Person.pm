@@ -116,7 +116,7 @@ __PACKAGE__->has_many(
 # Created by DBIx::Class::Schema::Loader v0.07053 @ 2025-06-04 11:51:18
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:duxzeoe2XCV2mo4/Ah6WDg
 
-with 'MooX::Role::JSON_LD', 'Booker::Role::SEO';
+with 'MooX::Role::JSON_LD';
 
 # MooX::Role::JSON_LD requires these two methods, but when using
 # json_ld_date(), they aren't used
@@ -149,30 +149,6 @@ sub json_ld_data {
   };
 }
 
-with 'Booker::Role::SEO';
-
-sub type { 'author' }
-
-sub slug { return lc shift->name }
-
-sub title { return 'Read a Booker - Author: ' . shift->name }
-
-sub description {
-  return 'Explore Booker Prize-shortlisted novels by ' . shift->name . '. ' .
-         'Learn more about their work and discover which titles earned a ' .
-         'place on the list.';
-}
-
-sub url_path {
-  my $self = shift;
-
-  my $url = '/';
-  $url .= $self->type . '/' if $self->type;
-  $url .= $self->slug . '/' if $self->slug;
-
-  return $url;
-}
-
 sub is_author {
   my $self = shift;
 
@@ -192,5 +168,5 @@ sub letter {
 }
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
-__PACKAGE__->meta->make_immutable;
+__PACKAGE__->meta->make_immutable(inline_constructor => 0);
 1;

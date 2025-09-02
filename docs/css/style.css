@@ -579,3 +579,48 @@ a span.chip:hover {
 /* (Optional) tiny smoothness if something else still changes height */
 #myCarousel .carousel-item .container{ transition: min-height .2s ease; }
 
+/* Prev/Next navigation at the top of detail pages */
+.prev_next {
+  display: flex;
+  justify-content: space-between;  /* left + right edges */
+  align-items: center;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+
+.prev_next .prev,
+.prev_next .next {
+  flex: 1;                /* take equal horizontal space */
+}
+
+.prev_next .prev {
+  text-align: left;
+}
+.prev_next .next {
+  text-align: right;
+}
+
+.prev_next a {
+  color: var(--ink, #1f2a44);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: #f0f2f7;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.prev_next a:hover {
+  background: var(--accent, #c3a766);
+  color: #fff;
+}
+
+.prev_next .prev a::before {
+  content: "← ";
+  opacity: 0.7;
+}
+.prev_next .next a::after {
+  content: " →";
+  opacity: 0.7;
+}
+
