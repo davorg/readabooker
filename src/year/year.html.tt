@@ -5,9 +5,13 @@
 <h2 class="section-title mt-5">Judges</h2>
 <ul>
 [%   judge = object.chair_of_judges;
-     IF judge -%]
+     IF judge;
+       IF judge.is_author -%]
+  <li><a href="[% judge.url_path %]">[% judge.name %]</a> (chair)</li>
+[%     ELSE -%]
   <li>[% judge.name %] (chair)</li>
-[%   END -%]
+[%     END;
+     END -%]
 [%   FOR judge IN object.other_judges;
        IF judge.is_author -%]
   <li><a href="[% judge.url_path %]">[% judge.name %]</a></li>
@@ -20,7 +24,11 @@
 
 <h2 class="section-title mt-5">Books</h2>
 
-[% FOR book IN object.books_rs.sorted_books;
-     display_book(book);
-   END -%]
+[% IF object.books.size;
+     FOR book IN object.books_rs.sorted_books;
+       display_book(book);
+     END;
+   ELSE -%]
+  <p>Shortlist not announced yet.</p>
+[% END -%]
 

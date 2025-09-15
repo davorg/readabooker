@@ -63,7 +63,7 @@ has carousel_books => (
 sub _build_carousel_books {
   my $self = shift;
 
-  my @events = $self->rs->{event}->sorted_events;
+  my @events = grep { defined $_->get_winner } $self->rs->{event}->sorted_events;
   $#events = 4;
   my @books = map { $_->get_winner } @events;
 

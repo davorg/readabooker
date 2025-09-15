@@ -53,7 +53,7 @@ sub describe_person {
   });
 
   my $text = $res->res->json->{choices}[0]{message}{content};
-  $text = encode('UTF-8', $text);
+  # $text = encode('UTF-8', $text);
 
   say $text if $debug;
 

@@ -167,6 +167,13 @@ sub letter {
   return uc substr $self->sort_name, 0, 1;
 }
 
+# TODO: Fix this horrible hack
+sub url_path {
+  my $self = shift;
+
+  return '/author/' . $self->slug;
+}
+
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
 __PACKAGE__->meta->make_immutable(inline_constructor => 0);
 1;
