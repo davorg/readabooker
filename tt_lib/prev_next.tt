@@ -1,0 +1,14 @@
+[% MACRO prev_next(object, display_col) BLOCK;
+   prev = object.prev;
+   next = object.next;
+     IF prev OR next -%]
+<div class="prev_next">
+[%     IF prev -%]
+  <span class="prev"><a href="[% prev.url_path %]">[% prev.$display_col %]</a></span>
+[%     END -%]
+[%     IF next -%]
+  <span class="next"><a href="[% next.url_path %]">[% next.$display_col %]</a></span>
+[%     END -%]
+</div>
+[%   END;
+   END -%]
