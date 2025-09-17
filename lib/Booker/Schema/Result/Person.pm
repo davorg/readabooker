@@ -171,7 +171,7 @@ sub letter {
 sub url_path {
   my $self = shift;
 
-  return '/author/' . $self->slug;
+  return '/author/' . $self->slug . '/';
 }
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
