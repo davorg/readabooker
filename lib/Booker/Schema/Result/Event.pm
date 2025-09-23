@@ -102,15 +102,15 @@ __PACKAGE__->has_many(
 # Created by DBIx::Class::Schema::Loader v0.07052 @ 2025-03-11 12:05:28
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:qfBC+mUJkbOQNP8cPrtBRQ
 
-with 'Booker::Role::SEO', 'Booker::Role::PrevNext';
+with 'Booker::Role::Defaults', 'Booker::Role::PrevNext';
 
 sub sort_col { 'year' }
 
 sub type { 'year' }
 
-sub title { return 'Read a Booker - Event: ' . shift->year }
+sub og_title { return 'Read a Booker - Event: ' . shift->year }
 
-sub description {
+sub og_description {
   return 'Discover all the Booker Prize-shortlisted novels from ' .
          shift->year . '. Explore the full list and find a standout read ' .
          'from the year’s selection.';

@@ -33,7 +33,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="canonical" href="https://readabooker.com[% object.seo_url %]">
+    <link rel="canonical" href="[% object.og_url %]">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet"
@@ -45,17 +45,17 @@
     <meta name="theme-color" content="#7952b3">
 
     <!-- [% template.name _ ' / ' _ entity _ ' / ' _ instance %] -->
-    <meta name="description" content="[% object.seo_description %]">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="[% object.seo_title %]">
-    <meta property="og:url" content="https://readabooker.com[% object.seo_url %]">
-    <meta property="og:description" content="[% object.seo_description %]">
-    <meta property="og:image" content="[% object.seo_image %]">
+    <meta name="description" content="[% object.og_description %]">
+    <meta property="og:type" content="[% object.og_type %]">
+    <meta property="og:title" content="[% object.og_title %]">
+    <meta property="og:url" content="[% object.og_url %]">
+    <meta property="og:description" content="[% object.og_description %]">
+    <meta property="og:image" content="[% object.og_image %]">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="[% object.seo_title %]">
-    <meta name="twitter:description" content="[% object.seo_description %]">
-    <meta name="twitter:image" content="[% object.seo_image %]">
+    <meta name="twitter:title" content="[% object.og_title %]">
+    <meta name="twitter:description" content="[% object.og_description %]">
+    <meta name="twitter:image" content="[% object.og_image %]">
 
     <style>
       .bd-placeholder-img {
@@ -81,7 +81,7 @@
     <!-- Custom styles for this template -->
     <link href="/css/style.css?v=[% date.format(file.mtime, '%Y%m%d%H%M%S') %]" rel="stylesheet">
 
-    <title>[% object.seo_title %]</title>
+    <title>[% object.og_title %]</title>
   </head>
   <body>
 

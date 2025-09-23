@@ -153,7 +153,7 @@ __PACKAGE__->belongs_to(
 # Created by DBIx::Class::Schema::Loader v0.07053 @ 2025-09-02 15:18:20
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:4amxnebtAlxA9MyWa7NUcA
 
-with 'MooX::Role::JSON_LD', 'Booker::Role::SEO', 'Booker::Role::PrevNext';
+with 'MooX::Role::JSON_LD', 'Booker::Role::Defaults', 'Booker::Role::PrevNext';
 use Text::Unidecode;
 
 __PACKAGE__->belongs_to(
@@ -186,9 +186,9 @@ sub json_ld_fields {
 
 sub type { 'title' }
 
-sub seo_title { return 'Read a Booker - Title: ' . shift->title }
+sub og_title { return 'Read a Booker - Title: ' . shift->title }
 
-sub description {
+sub og_description {
   my ($min, $max) = (110, 160);
 
   my $desc = 'Learn more about ‘' . shift->title . '’, a Booker ' .

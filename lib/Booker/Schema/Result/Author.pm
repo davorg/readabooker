@@ -89,7 +89,7 @@ __PACKAGE__->has_many(
   { cascade_copy => 0, cascade_delete => 0 },
 );
 
-with 'MooX::Role::JSON_LD', 'Booker::Role::SEO', 'Booker::Role::PrevNext';
+with 'MooX::Role::JSON_LD', 'Booker::Role::Defaults', 'Booker::Role::PrevNext';
 
 sub sort_col { 'sort_name' }
 
@@ -128,9 +128,9 @@ sub json_ld_data {
 
 sub is_author { return 1 }
 
-sub title { return 'Read a Booker - Author: ' . shift->name }
+sub og_title { return 'Read a Booker - Author: ' . shift->name }
 
-sub description {
+sub og_description {
   return 'Explore Booker Prize-shortlisted novels by ' . shift->name . '. ' .
          'Learn more about their work and discover which titles earned a ' .
          'place on the list.';
