@@ -52,11 +52,7 @@ while (<$fh>) {
     sort_title => $sort_title,
     author_id  => $author->id,
     asin       => 'XXXXXX',
-  });
-
-  $book->add_to_entries({
-    event_id  => $event->id,
-    is_winner => $data{Winner},
+    event_id   => $event->id,
   });
 
   if ($data{Chair}) {
