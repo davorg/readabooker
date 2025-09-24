@@ -1,20 +1,4 @@
 <!-- [% template.name %] -->
-[%- bits = template.name.split('[/\.]');
-    entity = bits.0;
-    instance = bits.1;
-    desc = 'ReadABooker: Choose a Booker Prize shortlisted novel to read';
-    thing = '';
-    IF entity != 'index';
-      desc = desc _ ' by ' _ entity;
-      IF instance == 'title';
-       thing = ' - Title: ' _ object.title;
-      ELSIF instance == 'year';
-        thing = ' - Event: ' _ object.year;
-      ELSIF instance == 'author';
-        thing = ' - Author: ' _ object.name;
-      END;
-    END;
-    desc = desc _ thing _ '.' -%]
 [% INCLUDE amazon.tt -%]
 [% INCLUDE book.tt -%]
 <!doctype html>
@@ -33,7 +17,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="canonical" href="[% object.og_url %]">
+[% object.canonical_tag %]
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet"
@@ -43,19 +27,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Literata:opsz,wght@14..72,400;600&display=swap" rel="stylesheet">
 
     <meta name="theme-color" content="#7952b3">
+[% object.description_tag %]
+[% object.og_tags %]
 
-    <!-- [% template.name _ ' / ' _ entity _ ' / ' _ instance %] -->
-    <meta name="description" content="[% object.og_description %]">
-    <meta property="og:type" content="[% object.og_type %]">
-    <meta property="og:title" content="[% object.og_title %]">
-    <meta property="og:url" content="[% object.og_url %]">
-    <meta property="og:description" content="[% object.og_description %]">
-    <meta property="og:image" content="[% object.og_image %]">
-
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="[% object.og_title %]">
-    <meta name="twitter:description" content="[% object.og_description %]">
-    <meta name="twitter:image" content="[% object.og_image %]">
+[% object.twitter_tags %]
 
     <style>
       .bd-placeholder-img {
@@ -81,7 +56,7 @@
     <!-- Custom styles for this template -->
     <link href="/css/style.css?v=[% date.format(file.mtime, '%Y%m%d%H%M%S') %]" rel="stylesheet">
 
-    <title>[% object.og_title %]</title>
+[% object.title_tag %]
   </head>
   <body>
 

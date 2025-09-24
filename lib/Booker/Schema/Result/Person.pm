@@ -116,10 +116,11 @@ __PACKAGE__->has_many(
 # Created by DBIx::Class::Schema::Loader v0.07053 @ 2025-06-04 11:51:18
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:duxzeoe2XCV2mo4/Ah6WDg
 
-with 'MooX::Role::JSON_LD', 'Booker::Role::Defaults';
+with 'MooX::Role::JSON_LD', 'MooX::Role::SEOTags',
+     'Booker::Role::Defaults';
 
 # MooX::Role::JSON_LD requires these two methods, but when using
-# json_ld_date(), they aren't used
+# json_ld_data(), they aren't used
 sub json_ld_fields {}
 sub json_ld_type {}
 

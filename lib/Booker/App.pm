@@ -170,7 +170,7 @@ sub build {
     type => 'title',
     slug => '',
     description => 'Find Booker Prize-shortlisted novels by title. From ' .
-                   'iconic classics to hidden gems – pick your next read ' .
+                   'iconic classics to hidden gems - pick your next read ' .
                    'from decades of great literature.',
   );
   push @{ $self->urls }, $titles_page->url_path;

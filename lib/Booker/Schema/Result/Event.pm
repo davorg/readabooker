@@ -102,7 +102,12 @@ __PACKAGE__->has_many(
 # Created by DBIx::Class::Schema::Loader v0.07052 @ 2025-03-11 12:05:28
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:qfBC+mUJkbOQNP8cPrtBRQ
 
-with 'Booker::Role::Defaults', 'Booker::Role::PrevNext';
+with 'MooX::Role::JSON_LD', 'MooX::Role::SEOTags',
+      'Booker::Role::Defaults', 'Booker::Role::PrevNext';
+
+# TODO:
+sub json_ld_fields {}
+sub json_ld_type {}
 
 sub sort_col { 'year' }
 

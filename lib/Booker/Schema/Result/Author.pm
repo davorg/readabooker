@@ -89,7 +89,8 @@ __PACKAGE__->has_many(
   { cascade_copy => 0, cascade_delete => 0 },
 );
 
-with 'MooX::Role::JSON_LD', 'Booker::Role::Defaults', 'Booker::Role::PrevNext';
+with 'MooX::Role::JSON_LD', 'MooX::Role::SEOTags',
+     'Booker::Role::Defaults', 'Booker::Role::PrevNext';
 
 sub sort_col { 'sort_name' }
 

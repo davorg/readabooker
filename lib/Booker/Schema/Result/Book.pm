@@ -153,7 +153,9 @@ __PACKAGE__->belongs_to(
 # Created by DBIx::Class::Schema::Loader v0.07053 @ 2025-09-02 15:18:20
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:4amxnebtAlxA9MyWa7NUcA
 
-with 'MooX::Role::JSON_LD', 'Booker::Role::Defaults', 'Booker::Role::PrevNext';
+with 'MooX::Role::JSON_LD', 'MooX::Role::SEOTags',
+      'Booker::Role::Defaults', 'Booker::Role::PrevNext';
+
 use Text::Unidecode;
 
 __PACKAGE__->belongs_to(
