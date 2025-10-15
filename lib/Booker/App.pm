@@ -70,6 +70,23 @@ sub _build_carousel_books {
   return \@books;
 }
 
+has redirects => (
+  is => 'lazy',
+  isa => ArrayRef[HashRef],
+);
+
+sub _build_redirects {
+  my $self = shift;
+
+  return [{
+    from => '/author/colm-t-ib-n/',
+    to   => '/author/colm-toibin/',
+  },{
+    from => '/author/mich-le-roberts/',
+    to   => '/author/michele-roberts/',
+  }];
+}
+
 has urls => (
   isa => ArrayRef[Str], # TODO: URI
   is => 'rw',
@@ -188,6 +205,17 @@ sub build {
       object => $_,
     }, 'title/' . $_->slug . '/index.html', {binmode => ':utf8'})
       or die $tt->error;
+  }
+
+  warn "Redirects...\n";
+  for my $redirect (@{ $self->redirects }) {
+    if ($redirect->{from} =~ m[/$]) {
+      $redirect->{from} .= 'index.html';
+    }
+
+    $tt->process('redirect.tt', {
+      redirect => $redirect,
+    }, $redirect->{from});
   }
 
   my $date = localtime->ymd;

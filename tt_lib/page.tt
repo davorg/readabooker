@@ -1,3 +1,4 @@
+[% IF no_wrapper OR template.no_wrapper; content; ELSE -%]
 <!-- [% template.name %] -->
 [% INCLUDE amazon.tt -%]
 [% INCLUDE book.tt -%]
@@ -138,3 +139,4 @@
     </script>
   </body>
 </html>
+[% END -%]
