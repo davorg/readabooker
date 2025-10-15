@@ -11,12 +11,7 @@ sub domain_url ($self) {
 }
 
 sub og_url_path ($self) {
-
-  my $url = '/';
-  $url .= $self->type . '/' if $self->type;
-  $url .= $self->slug . '/' if $self->slug;
-
-  return $url;
+  return $self->url_path;
 }
 
 sub og_url ($self) {
@@ -50,6 +45,10 @@ sub og_image ($self) {
 
 sub og_type {
   return 'website';
+}
+
+sub no_index {
+  return 0;
 }
 
 1;

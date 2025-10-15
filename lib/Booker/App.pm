@@ -92,6 +92,23 @@ has urls => (
   default => sub { [] },  
 );
 
+sub write_page ($self, $template, $output, $vars) {
+  my $tt = $self->tt;
+
+  die "No 'object' passed to write_page\n"
+    unless exists $vars->{object};
+
+  if ($output =~ m{/$}) {
+    $output .= 'index.html';
+  }
+
+  $tt->process($template, $vars, $output, {binmode => ':utf8'})
+    or die $tt->error;
+
+  push @{ $self->urls }, $vars->{object}->url_path
+    unless $vars->{object}->no_index;
+}
+
 sub mk_index_page ($self) {
   my $tt = $self->tt;
 
@@ -107,17 +124,14 @@ sub mk_index_page ($self) {
                    'start exploring literary excellence.',
   );
 
-  $tt->process('index.html.tt', {
+  $self->write_page('index.html.tt', $index_page->url_path, {
     carousel_books => $self->carousel_books,
     object => $index_page,
-  }, 'index.html', {binmode => ':utf8'})
-    or die $tt->error;
-
-  push @{ $self->urls }, $index_page->url_path;
+  });
 }
 
 sub mk_years_pages($self) {
-  
+
   my $tt = $self->tt;
   my $rs = $self->rs->{event};
 
@@ -132,21 +146,18 @@ sub mk_years_pages($self) {
                    'Trace literary trends over time and pick ' .
                    'a prize-worthy read from any year since 1969.',
   );
-  $tt->process('year/index.html.tt', {
+
+  $self->write_page('year/index.html.tt', $years_page->url_path, {
     events => [ $rs->sorted_events->all ],
     decades => $rs->decades,
     object => $years_page,
-  }, 'year/index.html', {binmode => ':utf8'})
-    or die $tt->error;
-  push @{ $self->urls }, $years_page->url_path;
+  });
 
   warn "  years...\n";
   for ($rs->sorted_events->all) {
-    $tt->process('year/year.html.tt', {
+    $self->write_page('year/year.html.tt', $_->url_path . 'index.html', {
       object => $_,
-    }, 'year/' . $_->slug . '/index.html', {binmode => ':utf8'})
-      or die $tt->error;
-    push @{ $self->urls }, $_->url_path;
+    });
   }
 }
 
@@ -166,21 +177,18 @@ sub mk_authors_pages($self) {
                    'Discover new voices and established names - every writer ' .
                    'with a place on the shortlist.',
   );
-  $tt->process('author/index.html.tt', {
+
+  $self->write_page('author/index.html.tt', $authors_page->url_path, {
     authors => \@authors,
     letters => $author_letters,
     object => $authors_page,
-  }, 'author/index.html', {binmode => ':utf8'})
-    or die $tt->error;
-  push @{ $self->urls }, $authors_page->url_path;
+  });
 
   warn "  authors...\n";
   for (@authors) {
-    $tt->process('author/author.html.tt', {
+    $self->write_page('author/author.html.tt', $_->url_path . 'index.html', {
       object => $_,
-    }, 'author/' . $_->slug . '/index.html', {binmode => ':utf8'})
-      or die $tt->error;
-    push @{ $self->urls }, $_->url_path;
+    });
   }
 }
 
@@ -200,21 +208,18 @@ sub mk_titles_pages($self) {
                    'iconic classics to hidden gems - pick your next read ' .
                    'from decades of great literature.',
   );
-  $tt->process('title/index.html.tt', {
+
+  $self->write_page('title/index.html.tt', $titles_page->url_path, {
     books => [ $rs->sorted_books->all ],
     letters => $letters,
     object => $titles_page,
-  }, 'title/index.html', {binmode => ':utf8'})
-    or die $tt->error;
-  push @{ $self->urls }, $titles_page->url_path;
+  });
 
   warn "  titles...\n";
   for ($rs->sorted_books->all) {
-    $tt->process('title/title.html.tt', {
+    $self->write_page('title/title.html.tt', $_->url_path . 'index.html', {
       object => $_,
-    }, 'title/' . $_->slug . '/index.html', {binmode => ':utf8'})
-      or die $tt->error;
-    push @{ $self->urls }, $_->url_path;
+    });
   }
 }
 
@@ -227,10 +232,17 @@ sub mk_redirects($self) {
       $redirect->{from} .= 'index.html';
     }
 
-    $tt->process('redirect.tt', {
+    $self->write_page('redirect.tt', $redirect->{from}, {
       redirect => $redirect,
-    }, $redirect->{from}, {binmode => ':utf8'})
-      or die $tt->error;
+      object => Booker::Page->new(
+        title => 'Redirecting...',
+        url_path => $redirect->{from},
+        type => '',
+        slug => '',
+        description => 'This page has moved.',
+        no_index => 1,
+      ),
+    });
   }
 }
 

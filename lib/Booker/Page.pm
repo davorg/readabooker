@@ -36,6 +36,11 @@ has image => (
   is => 'ro',
 );
 
+has no_index => (
+  is => 'ro',
+  default => 0,
+);
+
 sub og_type { return 'website' }
 sub og_title { return shift->title }
 sub og_description { return shift->description }
