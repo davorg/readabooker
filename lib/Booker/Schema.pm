@@ -19,13 +19,14 @@ __PACKAGE__->load_namespaces;
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
 
+use strict;
+use warnings;
+use v5.20;
+use experimental 'signatures';
+
 use DBD::SQLite::Constants ':dbd_sqlite_string_mode';
 
-sub get_schema {
-  my $class = shift;
-
-  my $db = shift || 'booker.db';
-
+sub get_schema ($class, $db = 'booker.db') {
   my $schema =  $class->connect("dbi:SQLite:$db");
 
   my $dbh = $schema->storage->dbh;

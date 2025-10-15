@@ -102,6 +102,9 @@ __PACKAGE__->has_many(
 # Created by DBIx::Class::Schema::Loader v0.07052 @ 2025-03-11 12:05:28
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:qfBC+mUJkbOQNP8cPrtBRQ
 
+use v5.20;
+use experimental 'signatures';
+
 with 'MooX::Role::JSON_LD', 'MooX::Role::SEOTags',
       'Booker::Role::Defaults', 'Booker::Role::PrevNext';
 
@@ -121,9 +124,7 @@ sub og_description {
          'from the year’s selection.';
 }
 
-sub url_path {
-  my $self = shift;
-
+sub url_path ($self) {
   my $url = '/';
   $url .= $self->type . '/' if $self->type;
   $url .= $self->slug . '/' if $self->slug;
@@ -131,32 +132,24 @@ sub url_path {
   return $url;
 }
 
-sub get_winner {
-  my $self = shift;
-
+sub get_winner ($self) {
   my $winner = $self->books->search({ is_winner => 1 })->first;
 
   return $winner;
 }
 
-sub decade {
-  my $self = shift;
-
+sub decade ($self) {
   return substr($self->year, 0, 3) . "0s";
 }
 
-sub chair_of_judges {
-  my $self = shift;
-
+sub chair_of_judges ($self) {
   my ($judge) = $self->judges->search({ is_chair => 1 });
 
   return unless $judge;
   return $judge->person;
 }
 
-sub other_judges {
-  my $self = shift;
-
+sub other_judges ($self) {
   return sort { $a->sort_name cmp $b->sort_name }
          map { $_->person } $self->judges->search({ is_chair => 0 });
 }

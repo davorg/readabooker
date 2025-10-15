@@ -1,5 +1,6 @@
 package Booker::Role::PrevNext;
 
+use v5.20;
 use experimental 'signatures';
 use Moo::Role;
 

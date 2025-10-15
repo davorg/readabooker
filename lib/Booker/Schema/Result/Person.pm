@@ -116,6 +116,9 @@ __PACKAGE__->has_many(
 # Created by DBIx::Class::Schema::Loader v0.07053 @ 2025-06-04 11:51:18
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:duxzeoe2XCV2mo4/Ah6WDg
 
+use v5.20;
+use experimental 'signatures';
+
 with 'MooX::Role::JSON_LD', 'MooX::Role::SEOTags',
      'Booker::Role::Defaults';
 
@@ -153,28 +156,20 @@ sub json_ld_data {
 # TODO: Bit of a hack.
 sub type { 'author' }
 
-sub is_author {
-  my $self = shift;
-
+sub is_author ($self) {
   return $self->books->count;
 }
 
-sub has_biography {
-  my $self = shift;
-
+sub has_biography ($self) {
   return defined $self->biography;
 }
 
-sub letter {
-  my $self = shift;
-
+sub letter ($self) {
   return uc substr $self->sort_name, 0, 1;
 }
 
 # TODO: Fix this horrible hack
-sub url_path {
-  my $self = shift;
-
+sub url_path ($self) {
   return '/author/' . $self->slug . '/';
 }
 

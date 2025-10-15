@@ -153,6 +153,9 @@ __PACKAGE__->belongs_to(
 # Created by DBIx::Class::Schema::Loader v0.07053 @ 2025-09-02 15:18:20
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:4amxnebtAlxA9MyWa7NUcA
 
+use v5.20;
+use experimental 'signatures';
+
 with 'MooX::Role::JSON_LD', 'MooX::Role::SEOTags',
       'Booker::Role::Defaults', 'Booker::Role::PrevNext';
 
@@ -188,12 +191,12 @@ sub json_ld_fields {
 
 sub type { 'title' }
 
-sub og_title { return 'Read a Booker - Title: ' . shift->title }
+sub og_title ($self) { return 'Read a Booker - Title: ' . $self->title }
 
-sub og_description {
+sub og_description($self) {
   my ($min, $max) = (110, 160);
 
-  my $desc = 'Learn more about ‘' . shift->title . '’, a Booker ' .
+  my $desc = 'Learn more about ‘' . $self->title . '’, a Booker ' .
     'Prize-shortlisted novel.';
 
   my $padding = ' See why it made the list and explore other titles from the ' .
@@ -206,9 +209,7 @@ sub og_description {
   return $desc;
 }
 
-sub url_path {
-  my $self = shift;
-
+sub url_path ($self) {
   my $url = '/';
   $url .= $self->type . '/' if $self->type;
   $url .= $self->slug . '/' if $self->slug;
@@ -216,23 +217,17 @@ sub url_path {
   return $url;
 }
 
-sub has_blurb {
-  my $self = shift;
-
+sub has_blurb($self) {
   return defined $self->blurb;
 }
 
-sub letter {
-  my $self = shift;
-
+sub letter ($self) {
   my $letter = uc substr $self->sort_title, 0, 1;
 
   return $letter =~ /[A-Z]/ ? $letter : '#';
 }
 
-sub image {
-  my $self = shift;
-
+sub image ($self) {
   return 'https://images.amazon.com/images/P/' .$self->asin . '.jpg';
 }
 

@@ -79,6 +79,9 @@ __PACKAGE__->add_columns(
 # Created by DBIx::Class::Schema::Loader v0.07053 @ 2025-09-02 14:49:50
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:c4FHHnNvh5iBFtF93/ve3w
 
+use v5.20;
+use experimental 'signatures';
+
 __PACKAGE__->result_source_instance->is_virtual(0);
 __PACKAGE__->resultset_class('Booker::Schema::ResultSet::Author');
 
@@ -101,8 +104,7 @@ sub type { 'author' }
 sub json_ld_fields {}
 sub json_ld_type {}
 
-sub json_ld_data {
-  my $self = shift;
+sub json_ld_data ($self) {
   my $url = 'https://readabooker.com';
   my $author_url = $url . $self->url_path;
 
@@ -137,9 +139,7 @@ sub og_description {
          'place on the list.';
 }
 
-sub url_path {
-  my $self = shift;
-
+sub url_path ($self) {
   my $url = '/';
   $url .= $self->type . '/' if $self->type;
   $url .= $self->slug . '/' if $self->slug;
@@ -147,15 +147,11 @@ sub url_path {
   return $url;
 }
 
-sub has_biography {
-  my $self = shift;
-
+sub has_biography ($self) {
   return defined $self->biography;
 }
 
-sub letter {
-  my $self = shift;
-
+sub letter ($self) {
   return uc substr $self->sort_name, 0, 1;
 }
 

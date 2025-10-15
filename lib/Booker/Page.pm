@@ -1,7 +1,9 @@
 package Booker::Page;
 
+use v5.20;
 use strict;
 use warnings;
+use experimental 'signatures';
 
 use Moo;
 
@@ -37,15 +39,13 @@ has image => (
 sub og_type { return 'website' }
 sub og_title { return shift->title }
 sub og_description { return shift->description }
-sub og_image {
-  my $self = shift;
+sub og_image ($self) {
   my $url = $self->domain_url;
 
   return $url . ($self->image // '/images/booker2024-short.jpg');
 }
 
-sub og_url {
-  my $self = shift;
+sub og_url ($self) {
   return $self->domain_url . $self->url_path;
 }
 

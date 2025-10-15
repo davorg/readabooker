@@ -4,17 +4,16 @@ use Moose;
 extends 'DBIx::Class::ResultSet';
 use namespace::autoclean;
 
+use v5.20;
+use experimental 'signatures';
+
 sub BUILDARGS { $_[2] }
 
-sub sorted_people {
-  my $self = shift;
-
+sub sorted_people ($self) {
   return $self->search(undef, { order_by => 'sort_name' });
 }
 
-sub authors {
-  my $self = shift;
-
+sub authors ($self) {
   return $self->search(
     undef,
     {
@@ -28,9 +27,7 @@ sub authors {
   );
 }
 
-sub author_letters {
-  my $self = shift;
-
+sub author_letters ($self) {
   my %letters;
 
   for ($self->authors->all) {

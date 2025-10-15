@@ -5,17 +5,16 @@ use MooseX::NonMoose;
 
 extends 'DBIx::Class::ResultSet';
 
+use v5.20;
+use experimental 'signatures';
+
 sub BUILDARGS { $_[2] }
 
-sub sorted_books {
-  my $self = shift;
-
+sub sorted_books ($self) {
   return $self->search(undef, { order_by => 'sort_title' });
 }
 
-sub letters {
-  my $self = shift;
-
+sub letters ($self) {
   my %letters;
 
   for ($self->all) {

@@ -1,5 +1,6 @@
 package Booker::Role::Defaults;
 
+use v5.20;
 use experimental 'signatures';
 use Moo::Role;
 
@@ -22,21 +23,15 @@ sub og_url ($self) {
   return $self->domain_url . $self->og_url_path;
 } 
 
-sub og_title {
-  my $self = shift;
-
+sub og_title ($self) {
   return 'Read a Booker';
 }
 
-sub og_description {
-  my $self = shift;
-
+sub og_description ($self) {
   return 'No description!';
 }
 
-sub og_image {
-  my $self = shift;
-
+sub og_image ($self) {
   my $url = $self->domain_url;
   my $image;
 

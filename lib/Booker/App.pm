@@ -1,5 +1,10 @@
 package Booker::App;
 
+use strict;
+use warnings;
+use v5.20;
+use experimental 'signatures';
+
 use Moo;
 use Types::Standard qw[Str HashRef ArrayRef InstanceOf];
 use Time::Piece;
@@ -29,9 +34,7 @@ has rs => (
   isa => HashRef[InstanceOf['DBIx::Class::ResultSet']],
 );
 
-sub _build_rs {
-  my $self = shift;
-
+sub _build_rs($self) {
   my %rs = map { lc $_ => $self->schema->resultset($_) } qw[Author Event Book];
 
   return \%rs;
@@ -42,8 +45,8 @@ has tt => (
   isa => InstanceOf['Template'],
 );
 
-sub _build_tt {
-  my $root = $_[0]->root;
+sub _build_tt($self) {
+  my $root = $self->root;
 
   return Template->new(
     ENCODING     => 'utf8',
@@ -60,9 +63,7 @@ has carousel_books => (
   isa => ArrayRef[InstanceOf['Booker::Schema::Result::Book']],
 );
 
-sub _build_carousel_books {
-  my $self = shift;
-
+sub _build_carousel_books($self) {
   my @events = grep { defined $_->get_winner } $self->rs->{event}->sorted_events;
   $#events = 4;
   my @books = map { $_->get_winner } @events;
@@ -75,9 +76,7 @@ has redirects => (
   isa => ArrayRef[HashRef],
 );
 
-sub _build_redirects {
-  my $self = shift;
-
+sub _build_redirects($self) {
   return [{
     from => '/author/colm-t-ib-n/',
     to   => '/author/colm-toibin/',
@@ -93,13 +92,11 @@ has urls => (
   default => sub { [] },  
 );
 
-sub build {
-  my $self = shift;
-
+sub mk_index_page ($self) {
   my $tt = $self->tt;
-  my $rs = $self->rs;
 
   warn "Building index...\n";
+
   my $index_page = Booker::Page->new(
     title => 'Read a Booker',
     url_path => '/',
@@ -109,7 +106,6 @@ sub build {
                    'novel to read - filter by year, author, or title and ' .
                    'start exploring literary excellence.',
   );
-  push @{ $self->urls }, $index_page->url_path;
 
   $tt->process('index.html.tt', {
     carousel_books => $self->carousel_books,
@@ -117,37 +113,47 @@ sub build {
   }, 'index.html', {binmode => ':utf8'})
     or die $tt->error;
 
+  push @{ $self->urls }, $index_page->url_path;
+}
+
+sub mk_years_pages($self) {
+  
+  my $tt = $self->tt;
+  my $rs = $self->rs->{event};
+
   warn "Building years...\n";
   warn "  index...\n";
-
   my $years_page = Booker::Page->new(
     title => 'ReadABooker by year',
     url_path => '/year/',
     type => 'year',
     slug => '',
-    description => 'Explore Booker Prize-shortlisted novels by year. Trace ' .
-                   'literary trends over time and pick a prize-worthy read ' .
-                   'from any year since 1969.',
+    description => 'Explore Booker Prize-shortlisted novels by year. ' .
+                   'Trace literary trends over time and pick ' .
+                   'a prize-worthy read from any year since 1969.',
   );
-  push @{ $self->urls }, $years_page->url_path;
   $tt->process('year/index.html.tt', {
-    decades => $rs->{event}->decades,
-    events => [ $rs->{event}->all ],
+    events => [ $rs->sorted_events->all ],
+    decades => $rs->decades,
     object => $years_page,
   }, 'year/index.html', {binmode => ':utf8'})
     or die $tt->error;
+  push @{ $self->urls }, $years_page->url_path;
 
   warn "  years...\n";
-  for ($rs->{event}->all) {
-    push @{ $self->urls }, $_->url_path;
+  for ($rs->sorted_events->all) {
     $tt->process('year/year.html.tt', {
       object => $_,
     }, 'year/' . $_->slug . '/index.html', {binmode => ':utf8'})
       or die $tt->error;
+    push @{ $self->urls }, $_->url_path;
   }
+}
 
-  my @authors = $rs->{author}->all;
-  my $author_letters = $rs->{author}->author_letters;
+sub mk_authors_pages($self) {
+  my $tt = $self->tt;
+  my @authors = $self->rs->{author}->all;
+  my $author_letters = $self->rs->{author}->author_letters;
 
   warn "Building authors...\n";
   warn "  index...\n";
@@ -160,24 +166,28 @@ sub build {
                    'Discover new voices and established names - every writer ' .
                    'with a place on the shortlist.',
   );
-  push @{ $self->urls }, $authors_page->url_path;
   $tt->process('author/index.html.tt', {
     authors => \@authors,
     letters => $author_letters,
     object => $authors_page,
   }, 'author/index.html', {binmode => ':utf8'})
     or die $tt->error;
+  push @{ $self->urls }, $authors_page->url_path;
 
   warn "  authors...\n";
   for (@authors) {
-    push @{ $self->urls }, $_->url_path;
     $tt->process('author/author.html.tt', {
       object => $_,
     }, 'author/' . $_->slug . '/index.html', {binmode => ':utf8'})
       or die $tt->error;
+    push @{ $self->urls }, $_->url_path;
   }
+}
 
-  my $letters = $rs->{book}->letters;
+sub mk_titles_pages($self) {
+  my $tt = $self->tt;
+  my $rs = $self->rs->{book};
+  my $letters = $rs->letters;
 
   warn "Building titles...\n";
   warn "  index...\n";
@@ -190,34 +200,42 @@ sub build {
                    'iconic classics to hidden gems - pick your next read ' .
                    'from decades of great literature.',
   );
-  push @{ $self->urls }, $titles_page->url_path;
   $tt->process('title/index.html.tt', {
-    books => [ $rs->{book}->sorted_books->all ],
+    books => [ $rs->sorted_books->all ],
     letters => $letters,
     object => $titles_page,
   }, 'title/index.html', {binmode => ':utf8'})
     or die $tt->error;
+  push @{ $self->urls }, $titles_page->url_path;
 
   warn "  titles...\n";
-  for ($rs->{book}->sorted_books->all) {
-    push @{ $self->urls }, $_->url_path;
+  for ($rs->sorted_books->all) {
     $tt->process('title/title.html.tt', {
       object => $_,
     }, 'title/' . $_->slug . '/index.html', {binmode => ':utf8'})
       or die $tt->error;
+    push @{ $self->urls }, $_->url_path;
   }
+}
+
+sub mk_redirects($self) {
+  my $tt = $self->tt;
 
   warn "Redirects...\n";
   for my $redirect (@{ $self->redirects }) {
-    if ($redirect->{from} =~ m[/$]) {
+    if ($redirect->{from} =~ m{/$}) {
       $redirect->{from} .= 'index.html';
     }
 
     $tt->process('redirect.tt', {
       redirect => $redirect,
-    }, $redirect->{from});
+    }, $redirect->{from}, {binmode => ':utf8'})
+      or die $tt->error;
   }
+}
 
+sub mk_sitemap($self) {
+  warn "Building sitemap...\n";
   my $date = localtime->ymd;
 
   my $sitemap = $self->root . '/docs/sitemap.xml';
@@ -238,7 +256,18 @@ EOF_URL
   }
 
   print $sitemap_fh "</urlset>\n";
+}
 
+sub build($self) {
+  my $tt = $self->tt;
+  my $rs = $self->rs;
+
+  $self->mk_index_page;
+  $self->mk_years_pages;
+  $self->mk_authors_pages;
+  $self->mk_titles_pages;
+  $self->mk_redirects;
+  $self->mk_sitemap;
 }
 
 1;
