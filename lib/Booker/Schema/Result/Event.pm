@@ -154,6 +154,12 @@ sub other_judges ($self) {
          map { $_->person } $self->judges->search({ is_chair => 0 });
 }
 
+sub list ($self) {
+  for ($self->books) {
+    print '* [', $_->id, '] ', $_->title, ' (', $_->author->name, ")\n";
+  }
+}
+
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
 __PACKAGE__->meta->make_immutable;
 1;
