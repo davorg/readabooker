@@ -10,7 +10,7 @@
 [% END -%]
 
 [% IF NOT template.name.match('^author') -%]
-    <p class="byline">
+    <p class="byline ps-2">
       <a href="[% book.author.url_path %]">[% book.author.name %]</a>
     </p>
 [% END -%]
@@ -42,7 +42,7 @@
     </p>
   </div>
 
-[% amazon(book, 'davblog-21') %]
+[% book_display(book, 'davblog-21', 16772) %]
 
 </article>
 [% END -%]

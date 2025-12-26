@@ -52,7 +52,7 @@ sub _build_tt($self) {
     ENCODING     => 'utf8',
     INCLUDE_PATH => [ "$root/tt_lib", "$root/src" ],
     OUTPUT_PATH  => "$root/docs",
-    PRE_PROCESS  => ['amazon.tt', 'book.tt', 'prev_next.tt'],
+    PRE_PROCESS  => ['book_widgets.tt', 'book.tt', 'prev_next.tt'],
     WRAPPER      => 'page.tt',
     STRICT       => 0,
   );

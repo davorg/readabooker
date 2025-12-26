@@ -77,6 +77,16 @@ __PACKAGE__->table("book");
   data_type: 'text'
   is_nullable: 1
 
+=head2 isbn13
+
+  data_type: 'text'
+  is_nullable: 1
+
+=head2 isbn_source
+
+  data_type: 'text'
+  is_nullable: 1
+
 =cut
 
 __PACKAGE__->add_columns(
@@ -102,6 +112,10 @@ __PACKAGE__->add_columns(
   "is_winner",
   { data_type => "boolean", default_value => \"false", is_nullable => 0 },
   "blurb",
+  { data_type => "text", is_nullable => 1 },
+  "isbn13",
+  { data_type => "text", is_nullable => 1 },
+  "isbn_source",
   { data_type => "text", is_nullable => 1 },
 );
 
@@ -150,8 +164,8 @@ __PACKAGE__->belongs_to(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07053 @ 2025-09-02 15:18:20
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:4amxnebtAlxA9MyWa7NUcA
+# Created by DBIx::Class::Schema::Loader v0.07053 @ 2025-12-26 13:37:09
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:Ojtnk6E1/IoAs8vGzW9OVQ
 
 use v5.20;
 use experimental 'signatures';

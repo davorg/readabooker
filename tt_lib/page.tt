@@ -1,6 +1,6 @@
 [% IF no_wrapper OR template.no_wrapper; content; ELSE -%]
 <!-- [% template.name %] -->
-[% INCLUDE amazon.tt -%]
+[% INCLUDE book_widgets.tt -%]
 [% INCLUDE book.tt -%]
 <!doctype html>
 <html lang="en">
