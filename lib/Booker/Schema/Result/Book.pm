@@ -242,7 +242,7 @@ sub letter ($self) {
 }
 
 sub image ($self) {
-  return 'https://images.amazon.com/images/P/' .$self->asin . '.jpg';
+  return 'https://covers.openlibrary.org/b/isbn/' . $self->isbn13 . '-L.jpg';
 }
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

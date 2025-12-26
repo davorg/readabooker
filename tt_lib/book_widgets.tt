@@ -8,7 +8,7 @@
 
 [% MACRO book_cover(book) BLOCK -%]
 <img class="img-thumbnail"
-     src="https://covers.openlibrary.org/b/isbn/[% book.isbn13 %]-L.jpg"
+     src="[% book.image %]"
      onerror="this.onerror=null;this.src='https://images.amazon.com/images/P/[% book.asin %].jpg';"
      alt="'[% book.title %]' by [% book.author.name %]">
 [% END -%]
