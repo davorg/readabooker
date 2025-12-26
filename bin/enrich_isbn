@@ -1,0 +1,173 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use feature qw(say);
+
+use Getopt::Long qw(GetOptions);
+use URI::Escape qw(uri_escape_utf8);
+use HTTP::Tiny;
+use JSON::MaybeXS qw(decode_json);
+
+use FindBin qw($Bin);
+use lib "$Bin/../lib";
+
+use Booker::Schema; # adjust if your schema package name differs
+
+my $db_path;
+my $dry_run = 0;
+my $limit;
+my $sleep = 0.2; # be polite to Open Library
+
+GetOptions(
+  'db=s'     => \$db_path,
+  'dry-run!' => \$dry_run,
+  'limit=i'  => \$limit,
+  'sleep=f'  => \$sleep,
+) or die "Usage: $0 [--db path] [--dry-run] [--limit N] [--sleep seconds]\n";
+
+my $schema = Booker::Schema->get_schema($db_path // ());
+
+my $http   = HTTP::Tiny->new(
+  agent      => 'readabooker-isbn-enricher/0.1',
+  timeout    => 20,
+  verify_SSL => 1,
+);
+
+open my $review_fh, '>:encoding(UTF-8)', 'isbn_needs_review.tsv'
+  or die "Can't write isbn_needs_review.tsv: $!";
+
+say $review_fh join "\t", qw(book_id title author asin reason candidates_json);
+
+my $rs = $schema->resultset('Book')->search(
+  { isbn13 => undef },
+  { prefetch => 'author', order_by => 'me.id' },
+);
+
+my $n = 0;
+while (my $book = $rs->next) {
+  last if defined($limit) && $n >= $limit;
+  $n++;
+
+  my $asin   = _norm($book->asin // '');
+  my $title  = $book->title // '';
+  my $author = $book->author ? ($book->author->name // '') : '';
+
+  # 1) ASIN is ISBN-10?
+  if (_is_valid_isbn10($asin)) {
+    my $isbn13 = _isbn10_to_isbn13($asin);
+    _update_book($book, $isbn13, 'asin', $dry_run);
+    next;
+  }
+
+  # 2) ASIN is already ISBN-13?
+  if (_is_valid_isbn13($asin)) {
+    _update_book($book, $asin, 'asin', $dry_run);
+    next;
+  }
+
+  # 3) Fallback: Open Library Search API
+  my $candidate = _openlibrary_best_isbn13($http, $title, $author);
+  if ($candidate && _is_valid_isbn13($candidate)) {
+    _update_book($book, $candidate, 'openlibrary', $dry_run);
+    select(undef, undef, undef, $sleep);
+    next;
+  }
+
+  # 4) Needs review
+  print $review_fh join("\t",
+    $book->id, $title, $author, ($asin // ''),
+    'no_isbn_from_asin_or_openlibrary', ($candidate // '')
+  ), "\n";
+  select(undef, undef, undef, $sleep);
+}
+
+close $review_fh;
+say "Done. Updated $n row(s). Review file: isbn_needs_review.tsv";
+
+sub _update_book {
+  my ($book, $isbn13, $source, $dry) = @_;
+  say sprintf "%s: %s -> %s (%s)%s",
+    $book->id,
+    ($book->asin // ''),
+    $isbn13,
+    $source,
+    ($dry ? " [DRY RUN]" : "");
+
+  return if $dry;
+  $book->update({ isbn13 => $isbn13, isbn_source => $source });
+}
+
+sub _openlibrary_best_isbn13 {
+  my ($http, $title, $author) = @_;
+  return undef unless length($title) && length($author);
+
+  my $url = 'https://openlibrary.org/search.json?'
+          . 'title='  . uri_escape_utf8($title)
+          . '&author=' . uri_escape_utf8($author)
+          . '&limit=5';
+
+  my $res = $http->get($url);
+  return undef unless $res->{success};
+
+  my $data = eval { decode_json($res->{content}) } || {};
+  my $docs = $data->{docs} || [];
+  for my $doc (@$docs) {
+    my $isbns = $doc->{isbn} || [];
+    for my $i (@$isbns) {
+      my $norm = _norm($i);
+      return $norm if _is_valid_isbn13($norm);
+    }
+  }
+  return undef;
+}
+
+sub _norm {
+  my ($s) = @_;
+  $s //= '';
+  $s =~ s/[^0-9Xx]//g;
+  $s =~ tr/x/X/;
+  return $s;
+}
+
+sub _is_valid_isbn10 {
+  my ($isbn) = @_;
+  return 0 unless defined $isbn && $isbn =~ /\A\d{9}[\dX]\z/;
+
+  my $sum = 0;
+  for my $pos (0..9) {
+    my $ch = substr($isbn, $pos, 1);
+    my $d  = ($ch eq 'X') ? 10 : $ch;
+    $sum += $d * (10 - $pos);
+  }
+  return ($sum % 11) == 0;
+}
+
+sub _isbn10_to_isbn13 {
+  my ($isbn10) = @_;
+  die "Not valid ISBN-10: $isbn10" unless _is_valid_isbn10($isbn10);
+
+  my $core = substr($isbn10, 0, 9);          # drop ISBN-10 check digit
+  my $base = "978$core";                     # 12 digits
+
+  my $sum = 0;
+  for my $pos (0..11) {
+    my $d = substr($base, $pos, 1);
+    $sum += $d * (($pos % 2) ? 3 : 1);
+  }
+  my $check = (10 - ($sum % 10)) % 10;
+  return $base . $check;
+}
+
+sub _is_valid_isbn13 {
+  my ($isbn) = @_;
+  return 0 unless defined $isbn && $isbn =~ /\A\d{13}\z/;
+
+  my $sum = 0;
+  for my $pos (0..11) {
+    my $d = substr($isbn, $pos, 1);
+    $sum += $d * (($pos % 2) ? 3 : 1);
+  }
+  my $check = (10 - ($sum % 10)) % 10;
+  return $check == substr($isbn, 12, 1);
+}
+
