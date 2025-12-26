@@ -18,10 +18,10 @@
 
             <div class="container">
               <div class="carousel-caption">
-                [% amazon_cover(book, 'davblog-21') %]
+                [% book_cover(book) %]
                 <h2>[% book.event.year %] winner</h2>
                 <p>The winner of the [% book.event.year %] Booker Prize was <i>[% book.title %]</i> by [% book.author.name %].</p>
-                [% amazon_button(book, 'davblog-21') %]
+                [% bookshop_button(book, 16772) %]
               </div>
             </div>
           </div>

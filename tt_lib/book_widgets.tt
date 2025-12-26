@@ -8,7 +8,8 @@
 
 [% MACRO book_cover(book) BLOCK -%]
 <img class="img-thumbnail"
-     src="[% book.image %]"
+     src="[% book.image %]?default=false"
+     onload="if(this.naturalWidth<=1 && this.naturalHeight<=1){ this.src='https://images.amazon.com/images/P/[% book.asin %].jpg'; }"
      onerror="this.onerror=null;this.src='https://images.amazon.com/images/P/[% book.asin %].jpg';"
      alt="'[% book.title %]' by [% book.author.name %]">
 [% END -%]
