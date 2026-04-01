@@ -58,6 +58,10 @@
     <link href="/css/style.css?v=[% date.format(file.mtime, '%Y%m%d%H%M%S') %]" rel="stylesheet">
 
 [% object.title_tag %]
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1486883079150066"
+            crossorigin="anonymous"></script>
+
   </head>
   <body>
 
