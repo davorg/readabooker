@@ -1,0 +1,19 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use Booker::Schema;
+
+my $sch = Booker::Schema->get_schema;
+my $rs  = $sch->resultset('Event');
+
+my $event;
+
+if (@ARGV) {
+  $event = $rs->search({ year => shift })->first;
+} else {
+  $event = $rs->search({}, { order_by => { -desc => 'year' } })->first;
+}
+
+$event->list;
