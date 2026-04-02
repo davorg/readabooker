@@ -624,3 +624,27 @@ a span.chip:hover {
   opacity: 0.7;
 }
 
+.contact-form-wrap {
+  width: 100%;
+  background: #f6f1e7;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(31,42,68,.08);
+  box-shadow: 0 10px 24px rgba(31,42,68,.10);
+  margin: 1.5rem 0;
+}
+
+.contact-form-frame {
+  display: block;
+  width: 100%;
+  height: 1150px;   /* tweak once and forget */
+  border: 0;
+  background: transparent;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .contact-form-frame {
+    height: 1250px;
+  }
+}

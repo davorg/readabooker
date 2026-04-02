@@ -130,6 +130,60 @@ sub mk_index_page ($self) {
   });
 }
 
+sub mk_about_page ($self) {
+  my $tt = $self->tt;
+
+  warn "Building about...\n";
+
+  my $about_page = Booker::Page->new(
+    title => 'About ReadABooker',
+    url_path => '/about/',
+    type => '',
+    slug => 'about',
+    description => 'About this site',
+  );
+
+  $self->write_page('about/index.html.tt', $about_page->url_path, {
+    object => $about_page,
+  });
+}
+
+sub mk_contact_page ($self) {
+  my $tt = $self->tt;
+
+  warn "Building contact...\n";
+
+  my $contact_page = Booker::Page->new(
+    title => 'Contact',
+    url_path => '/contact/',
+    type => '',
+    slug => 'contact',
+    description => 'Get in touch about this site',
+  );
+
+  $self->write_page('contact/index.html.tt', $contact_page->url_path, {
+    object => $contact_page,
+  });
+}
+
+sub mk_privacy_page ($self) {
+  my $tt = $self->tt;
+
+  warn "Building privacy...\n";
+
+  my $privacy_page = Booker::Page->new(
+    title => 'Privacy Policy',
+    url_path => '/privacy/',
+    type => '',
+    slug => 'privacy',
+    description => 'Our privacy policy',
+  );
+
+  $self->write_page('privacy/index.html.tt', $privacy_page->url_path, {
+    object => $privacy_page,
+  });
+}
+
 sub mk_years_pages($self) {
 
   my $tt = $self->tt;
@@ -275,6 +329,9 @@ sub build($self) {
   my $rs = $self->rs;
 
   $self->mk_index_page;
+  $self->mk_about_page;
+  $self->mk_contact_page;
+  $self->mk_privacy_page;
   $self->mk_years_pages;
   $self->mk_authors_pages;
   $self->mk_titles_pages;
