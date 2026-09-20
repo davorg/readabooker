@@ -8,6 +8,10 @@ use experimental 'signatures';
 use Moo;
 use Types::Standard qw[Str HashRef ArrayRef InstanceOf];
 use Time::Piece;
+use File::Copy qw(copy);
+use File::Find qw(find);
+use File::Path qw(make_path);
+use File::Spec;
 
 use Template;
 
@@ -47,6 +51,8 @@ has tt => (
 
 sub _build_tt($self) {
   my $root = $self->root;
+  my $stylesheet = "$root/static/css/style.css";
+  my @stat = stat $stylesheet or die "Cannot stat $stylesheet: $!\n";
 
   return Template->new(
     ENCODING     => 'utf8',
@@ -55,6 +61,9 @@ sub _build_tt($self) {
     PRE_PROCESS  => ['book_widgets.tt', 'book.tt', 'prev_next.tt'],
     WRAPPER      => 'page.tt',
     STRICT       => 0,
+    VARIABLES    => {
+      stylesheet_version => localtime($stat[9])->strftime('%Y%m%d%H%M%S'),
+    },
   );
 }
 
@@ -324,7 +333,35 @@ EOF_URL
   print $sitemap_fh "</urlset>\n";
 }
 
+sub copy_static($self) {
+  my $source = $self->root . '/static';
+  my $output = $self->root . '/docs';
+
+  die "Missing static asset directory: $source\n" unless -d $source;
+  warn "Copying static assets...\n";
+
+  find({
+    no_chdir => 1,
+    wanted => sub {
+      my $path = $File::Find::name;
+      my $target = File::Spec->catfile(
+        $output, File::Spec->abs2rel($path, $source),
+      );
+
+      if (-d $path) {
+        make_path($target);
+      } elsif (-f $path) {
+        my @stat = stat $path or die "Cannot stat $path: $!\n";
+        copy($path, $target) or die "Cannot copy $path to $target: $!\n";
+        utime($stat[8], $stat[9], $target)
+          or die "Cannot preserve timestamp for $target: $!\n";
+      }
+    },
+  }, $source);
+}
+
 sub build($self) {
+  $self->copy_static;
   my $tt = $self->tt;
   my $rs = $self->rs;
 

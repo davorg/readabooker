@@ -23,7 +23,9 @@ refer to the implementation; data counts are a snapshot, not build requirements.
 | [`lib/Booker/Role/`](lib/Booker/Role/) | Shared site defaults and previous/next navigation. |
 | [`src/`](src/) | Page-specific Template Toolkit templates (`.html.tt`). |
 | [`tt_lib/`](tt_lib/) | Shared layout, macros, and redirect template. |
-| [`docs/`](docs/) | Generated pages **and** maintained static assets and hosting files. |
+| [`static/`](static/) | Editable CSS, images, and hosting files, copied into the output during builds. |
+| [`docs/`](docs/) | Generated site: rendered pages, sitemap, and copies of static assets. |
+| [`t/build_static.t`](t/build_static.t) | Regression test for a fresh build and asset updates. |
 | [`bin/`](bin/) | Import, inspection, and data-maintenance scripts as well as the builder. |
 | `Booker*.csv` | Historical import data and annual shortlist files. Not read during a build. |
 | [`booker.sql`](booker.sql) | Current schema definition for creating an empty database, without catalogue data. |
@@ -45,8 +47,8 @@ images, fonts, and embeds remain active in a local preview.
 
 The working directory matters. Although `bin/build` locates `lib/` and the app's
 root relative to its own path, the default database name is `booker.db` relative
-to the working directory. The layout also reads `docs/css/style.css` relative to
-that directory to obtain its modification time.
+to the working directory. Static asset paths and the stylesheet timestamp are
+resolved relative to the application's root.
 
 ### Dependencies
 
@@ -75,14 +77,16 @@ dependencies described below and are excluded from the ordinary build install.
 
 1. `bin/build` adds the local `lib/` directory to Perl's module search path,
    constructs `Booker::App` with the repository root, and calls `build`.
-2. The app lazily connects through `Booker::Schema->get_schema`. This uses
+2. The app copies the contents of `static/` into `docs/`, preserving relative
+   paths and file timestamps, including hidden hosting files such as `.nojekyll`.
+3. The app lazily connects through `Booker::Schema->get_schema`. This uses
    `dbi:SQLite:booker.db` and SQLite's Unicode fallback string mode.
-3. It obtains `Author`, `Event`, and `Book` resultsets and creates a Template
+4. It obtains `Author`, `Event`, and `Book` resultsets and creates a Template
    Toolkit instance with `tt_lib/` and `src/` as include paths and `docs/` as
    the output directory.
-4. It builds the home, about, contact, and privacy pages, then the year, author,
+5. It builds the home, about, contact, and privacy pages, then the year, author,
    and title indexes and their individual detail pages.
-5. It writes two legacy author redirects and finally `docs/sitemap.xml`.
+6. It writes two legacy author redirects and finally `docs/sitemap.xml`.
 
 Each call to `write_page` requires an `object` for metadata. A path ending in `/`
 gets `index.html` appended. Template output is UTF-8; template failures abort
@@ -91,14 +95,15 @@ Every sitemap entry gets the build's local date as `lastmod`, regardless of
 whether that page's content changed.
 
 This is a full render, with no incremental build or cleanup stage. It overwrites
-pages at their current paths but leaves obsolete files behind if records or
-slugs change. Output is written in place, so a failed build can leave a mixture
+pages and assets at their current paths but leaves obsolete files behind if
+records, slugs, or source assets change or disappear. Output is written in place,
+so a failed build can leave a mixture
 of old and newly rendered pages.
 
-**Do not delete `docs/` to obtain a clean build.** Its CSS, images, and hosting
-files have no asset-copy step that would restore them. For an isolated build,
-copy the repository, including these assets and the database, to a temporary
-directory and run the builder there.
+`docs/` can be recreated from scratch: all maintained assets now live in
+`static/`. For an isolated build, copy the repository's source files, `static/`,
+and database to a temporary directory and run the builder there. Existing
+`docs/` contents are not required.
 
 ## Data model
 
@@ -209,10 +214,13 @@ The two redirects are hard-coded in `Booker::App`: `/author/colm-t-ib-n/` to
 
 ### Static assets and browser services
 
-Edit [`docs/css/style.css`](docs/css/style.css) directly for styling. Its
-modification time becomes the stylesheet query-string version during a build.
-Images live in `docs/images/` and `docs/assets/img/`; the hero image is referenced
-from CSS. There is no CSS compilation, JavaScript bundling, or image processing.
+Edit [`static/css/style.css`](static/css/style.css) for styling. Its source
+modification time becomes the stylesheet query-string version during a build,
+so versioning works even when the output directory does not yet exist.
+Images live in `static/images/` and `static/assets/img/`; the hero image is
+referenced from CSS. `copy_static` uses core Perl file utilities to copy the
+entire tree, preserving paths, bytes, and timestamps. There is no CSS
+compilation, JavaScript bundling, or image processing.
 
 The layout loads Bootstrap 5.3.7, Bootstrap Icons, Google Fonts, Google Analytics,
 Google AdSense, and an external Amazon-store enhancement script. Inline
@@ -220,9 +228,10 @@ JavaScript initializes Amazon buttons with tag `davblog-21` and highlights the
 current letter/decade navigation link while scrolling. These services run in
 the browser; ordinary builds do not fetch their content.
 
-`docs/CNAME` contains `readabooker.com`, and `docs/.nojekyll` disables Jekyll
-processing on GitHub Pages. `docs/ads.txt` contains the advertising publisher
-entry. Generated output is tracked in Git. These files support static hosting,
+`static/CNAME` contains `readabooker.com`, and `static/.nojekyll` disables Jekyll
+processing on GitHub Pages when copied into `docs/`. `static/ads.txt` contains
+the advertising publisher entry. Generated output, including copies of these
+files, is tracked in Git. These files support static hosting,
 but there is no checked-in build/deployment workflow; hosting configuration
 outside this repository was not inspected.
 
@@ -262,7 +271,7 @@ when known. Rebuild after database changes; the published site never reads
 | Home/about/contact/privacy text | Corresponding template in `src/`. |
 | Shared page layout, navigation, scripts, or footer | `tt_lib/page.tt`. |
 | Book rows, covers, or retailer links | `tt_lib/book.tt` and `tt_lib/book_widgets.tt`. |
-| Styling and local images | Assets directly under `docs/`. |
+| Styling, local images, and hosting files | Source assets under `static/`, then rebuild to copy them into `docs/`. |
 | A new page or legacy URL redirect | `lib/Booker/App.pm` plus its template as needed. |
 | Record URL or metadata behavior | Relevant model under `lib/Booker/Schema/Result/`, or shared roles. |
 | Sort/group query behavior | Relevant resultset under `lib/Booker/Schema/ResultSet/`. |
@@ -298,6 +307,9 @@ under Perl 5.42.3. The output contained 639 HTML files and 637 sitemap entries:
 339 book pages, 233 author pages, 58 event pages, seven static/index pages, and
 two redirects excluded from the sitemap.
 
-No automated test suite was found. The successful build verifies rendering with
-the current data, not browser behavior, external services, or editorial accuracy.
-The working repository's database and generated site were left unchanged.
+The initial investigation found no automated test suite. The static-asset change
+adds `t/build_static.t`: run `prove -v t/build_static.t` to check a build without
+existing output, copied asset content and timestamps, hosting files, and a
+rebuild after a CSS change. The test uses a temporary copy of the sources and
+database. These checks verify rendering with the current data, not browser
+behavior, external services, or editorial accuracy.

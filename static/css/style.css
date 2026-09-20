@@ -1,0 +1,650 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-top: 3rem;
+  padding-bottom: 0;
+  color: #5a5a5a;
+}
+
+main {
+  padding-top: 1rem;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+/* rtl:begin:ignore */
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+/* rtl:end:ignore */
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  /* rtl:remove */
+  letter-spacing: -.05rem;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+div.amazon a:link {
+  text-decoration: none;
+}
+
+.bi {
+  font-size: 8rem;
+}
+
+img.img-thumbnail {
+  max-width: 200px;
+}
+
+h1[id], h2[id] {
+  scroll-margin-top: 70px; /* adjust as needed */
+}
+
+.blurb p:first-of-type::first-letter,
+.biography p:first-of-type::first-letter {
+  float: left;
+  font-size: 3rem;
+  line-height: 1;
+  padding-right: 0.25rem;
+  font-weight: 700;
+  font-family: 'Georgia', serif;
+}
+
+/* New carousel styling */
+/* One knob for the soft band above/below the card */
+:root { --stage-gap: clamp(8px, 1.2vw, 14px); }
+
+/* Tidy stage + grid to keep indicators below */
+#myCarousel{
+  display: grid;
+  grid-template-rows: auto auto;                      /* row 1 = slides, row 2 = indicators */
+  background: linear-gradient(180deg, #f7f9fc 0%, #eef2f7 100%);
+}
+
+/* Equal top/bottom space for the slide area */
+#myCarousel .carousel-inner{
+  grid-row: 1;
+  padding-block: var(--stage-gap);
+  overflow: hidden;
+}
+
+/* Indicators stay below with a small, consistent gap */
+#myCarousel .carousel-indicators{
+  grid-row: 2;
+  position: static !important;
+  margin: 6px 0 0 0;
+}
+
+/* Nuke the grey placeholder rectangle */
+#myCarousel .bd-placeholder-img{ display:none !important; }
+
+/* No fixed height/padding on slides anymore */
+#myCarousel .carousel-item{ padding: 0; }
+
+/* Card around your existing .container */
+#myCarousel .carousel-item .container{
+  max-width: 980px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #e8ebf3;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(20,30,60,.12);
+  padding: clamp(16px,3vw,28px);
+}
+
+/* 2-column / 2-row caption: left = cover/CTA (spans rows), right = title then blurb */
+#myCarousel .carousel-caption{
+  position: static;                                    /* stop overlay */
+  display: grid;
+  grid-template-columns: auto 1fr;                     /* left cover, right text */
+  grid-template-rows: auto 1fr;                        /* title top, blurb fills */
+  column-gap: clamp(14px,3vw,28px);
+  row-gap: 0;
+  align-items: stretch;
+  text-align: left;
+  color: #222;
+  text-shadow: none;
+}
+
+/* Left column (cover + CTA) spans both rows */
+#myCarousel .carousel-caption .amazon{
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  align-self: start;
+}
+#myCarousel .amazon img.img-thumbnail{
+  display:block;
+  width: clamp(160px,26vw,240px);
+  height:auto;
+  border-radius:8px;
+  padding:0;
+  background:#fff;
+  border:1px solid #e8ebf3;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+#myCarousel .amazon .btn{ margin-top:.6rem; }
+
+/* Right column */
+#myCarousel .carousel-caption h2{
+  grid-column: 2; grid-row: 1; align-self: start; margin: 0;
+}
+#myCarousel .carousel-caption p{
+  grid-column: 2; grid-row: 2; align-self: center; margin: 0;
+}
+
+/* Mobile: stack neatly */
+@media (max-width: 768px){
+  #myCarousel .carousel-caption{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    text-align: center;
+  }
+  #myCarousel .carousel-caption .amazon{ justify-self: center; grid-row:auto; }
+  #myCarousel .carousel-caption h2{ grid-column:auto; }
+  #myCarousel .carousel-caption p{ grid-column:auto; }
+}
+
+/* Optional polish */
+#myCarousel .carousel-indicators [data-bs-target]{ background-color:#9aa7c2; }
+#myCarousel .carousel-control-prev-icon,
+#myCarousel .carousel-control-next-icon{ filter: drop-shadow(0 2px 6px rgba(0,0,0,.25)); }
+
+/* 3-row grid on the right: title (row 1), blurb (row 2), button (row 3) */
+#myCarousel .carousel-caption{
+  grid-template-columns: auto 1fr;   /* left = cover, right = text */
+  grid-template-rows: auto 1fr auto; /* title | blurb fills | button */
+}
+
+/* Left column spans full height (defines card height) */
+#myCarousel .carousel-caption .amazon{
+  grid-column: 1;
+  grid-row: 1 / span 3;
+}
+
+/* Right column placement */
+#myCarousel .carousel-caption h2{ grid-column: 2; grid-row: 1; margin: 0; align-self: start; }
+#myCarousel .carousel-caption p { grid-column: 2; grid-row: 2; margin: 0; align-self: center; }
+#myCarousel .carousel-caption .buy-button{
+  grid-column: 2; grid-row: 3;
+  justify-self: start;
+  margin-top: .5rem;
+}
+
+
+
+/* ===== Read A Booker – visual lift pack ===== */
+:root{
+  --ink:#1f2a44; --body:#424b5a; --paper:#f7f5ef;
+  --accent:#c3a766; --accent-ink:#1c1c1c;
+  --radius:16px; --shadow:0 10px 30px rgba(31,42,68,.14);
+}
+body{ color:var(--body);
+  background:linear-gradient(180deg,#fff 0%, var(--paper) 100%);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+h1,h2,h3,.display-5,.display-6{
+  color:var(--ink);
+  font-family:"Literata", Georgia, "Times New Roman", serif;
+  letter-spacing:.1px;
+}
+.site-hero{
+  --hero-h: clamp(220px, 36vh, 380px);
+  position:relative; height:var(--hero-h); display:grid; align-items:end;
+  background:
+    linear-gradient(180deg, rgba(15,15,20,.35) 0%, rgba(15,15,20,.7) 100%),
+    url("/assets/img/hero-books.jpg") center/cover no-repeat;
+  border-bottom:1px solid rgba(0,0,0,.06); box-shadow:var(--shadow);
+  margin-bottom:clamp(18px,3.2vw,28px);
+}
+.site-hero .container{ padding-bottom:clamp(14px,2.4vw,32px); color:#fff;
+  text-shadow:0 1px 2px rgba(0,0,0,.35);
+}
+.site-hero h1{ color:#fff; } .site-hero .lead{ opacity:.95; }
+.section-title{
+  display:flex; align-items:center; gap:.6rem; color:var(--ink); font-weight:600;
+}
+.section-title::after{
+  content:""; flex:1; height:2px; background:linear-gradient(90deg,var(--accent),transparent);
+  border-radius:2px;
+}
+.card, #myCarousel .carousel-item .container{
+  border-radius:var(--radius); box-shadow:var(--shadow); border:1px solid rgba(31,42,68,.08);
+}
+.marketing .col-lg-4{ transition: transform .18s ease, box-shadow .18s ease; }
+.marketing .col-lg-4:hover{ transform: translateY(-3px); box-shadow: 0 14px 36px rgba(31,42,68,.18); }
+.bi{ font-size:6.5rem; color:var(--ink); opacity:.9; }
+.marketing .btn{ background:var(--ink); border-color:var(--ink); }
+.marketing .btn:hover{ background:var(--accent-ink); border-color:var(--accent-ink); }
+.btn-accent{
+  --bs-btn-bg:var(--accent); --bs-btn-border-color:var(--accent); --bs-btn-color:#111;
+  --bs-btn-hover-bg:#e0c884; --bs-btn-hover-border-color:#e0c884;
+  --bs-btn-active-bg:#b8954f; --bs-btn-active-border-color:#b8954f;
+  border-radius: 999px;
+  padding: .55rem 1.25rem;
+  font-weight: 500;
+  letter-spacing: .2px;
+}
+.buy-button .btn{ border-radius:999px; padding-inline:1rem; }
+#myCarousel{ background:linear-gradient(180deg,#f5f7fb 0%, #eef1f7 100%); }
+#myCarousel .carousel-indicators [data-bs-target]{ background-color:rgba(31,42,68,.35); }
+#myCarousel .carousel-control-prev-icon,
+#myCarousel .carousel-control-next-icon{ filter:drop-shadow(0 2px 6px rgba(0,0,0,.25)); }
+#myCarousel .amazon img.img-thumbnail{ width: clamp(150px, 24vw, 220px); }
+.navbar{
+  backdrop-filter:saturate(1.2) blur(6px);
+  background-color:rgba(255,255,255,.85) !important;
+  border-bottom:1px solid rgba(31,42,68,.08);
+}
+.navbar-brand{ font-family:"Literata", Georgia, serif; font-weight:600; color:var(--ink) !important; }
+footer{
+  border-top:1px solid rgba(31,42,68,.08);
+  color:#5a6478;
+  background: #f0f2f7;
+  padding: 1.5rem 0;
+  font-size: .9rem;
+}
+/* ===== end pack ===== */
+
+.card{
+  opacity:0;
+  transform: translateY(12px);
+  animation: fadeUp .6s ease forwards;
+}
+@keyframes fadeUp{
+  to{ opacity:1; transform:none; }
+}
+
+/* --- Index toolbar --- */
+.index-toolbar{
+  position: sticky;
+  top: calc(var(--rb-sticky-top, 64px));  /* adjust if your navbar height differs */
+  z-index: 30;
+  background: linear-gradient(180deg,#fff,rgba(255,255,255,.9));
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(31,42,68,.08);
+  border-radius: 14px;
+  padding: .35rem .6rem;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+  box-shadow: 0 6px 18px rgba(31,42,68,.08);
+  margin-bottom: 1rem;
+}
+
+/* turn plain links into pills */
+.index-toolbar a{
+  display: inline-block;
+  padding: .35rem .6rem;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1px solid rgba(31,42,68,.12);
+  color: var(--ink);
+  font-weight: 500;
+}
+.index-toolbar a:hover{ background: #f3f4f8; }
+.index-toolbar a.active{ background: var(--accent); border-color: var(--accent); color:#111; }
+
+
+/* --- Section heading --- */
+.index-section{
+  position: sticky;
+  top: calc(var(--rb-sticky-top, 64px) + 48px); /* sits below the toolbar */
+  background: linear-gradient(180deg,#fff,rgba(255,255,255,.92));
+  backdrop-filter: blur(4px);
+  z-index: 20;
+  padding: .25rem .4rem;
+  margin: 2rem 0 .5rem;
+  border-bottom: 1px solid rgba(31,42,68,.12);
+}
+
+/* little “top” chip */
+.top-chip{
+  float: right;
+  font-size: .85rem;
+  padding: .2rem .6rem;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid rgba(31,42,68,.12);
+  color: var(--ink);
+}
+.top-chip:hover{ background:#f3f4f8; }
+
+/* anchor focus highlight */
+:target{
+  scroll-margin-top: calc(var(--rb-sticky-top, 64px) + 68px);
+}
+.index-section:target{
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+/* base spacing */
+.index-list{ margin: 0 0 2rem; padding-left: 1rem; }
+
+/* turn into multi-columns on desktop */
+@media (min-width: 992px){
+  .index-list{
+    columns: 3;          /* authors: maybe 3 if it fits nicely */
+    column-gap: 2.5rem;
+  }
+  /* keep items intact across column breaks */
+  .index-list li{ break-inside: avoid; }
+}
+
+/* swap browser bullets for cleaner style */
+.index-list{ list-style: none; }
+.index-list li{
+  position: relative;
+  padding-left: 1rem;
+  margin: .25rem 0;
+}
+.index-list li::before{
+  content: "–";
+  position: absolute; left: 0; top: 0;
+  color: rgba(31,42,68,.55);
+}
+
+/* link treatment */
+.index-list a{
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(31,42,68,.35);
+}
+.index-list a:hover{
+  border-bottom-style: solid;
+}
+
+.index-section{ font-variant-caps: small-caps; letter-spacing:.5px; }
+.index-list li:first-child{ margin-top:.25rem; }
+
+.index-block{ content-visibility: auto; contain-intrinsic-size: 800px; }
+
+/* ----- Book rows (used on author/year/title pages) ----- */
+.book-row{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.25rem 1.5rem;
+  align-items: start;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(31,42,68,.10);
+}
+.book-row:last-child{ border-bottom: 0; }
+
+/* Cover column */
+.book-cover img{ width: 190px; max-width: 28vw; }
+@media (max-width: 576px){
+  .book-row{ grid-template-columns: 1fr; }
+  .book-cover{ order: -1; }            /* put cover above meta on mobile */
+  .book-cover img{ width: 160px; }
+}
+
+/* Title + byline */
+.book-title{ margin: 0 0 .25rem; }
+.book-title a{ text-decoration: none; border-bottom: 1px solid transparent; }
+.book-title a:hover{ border-bottom-color: rgba(31,42,68,.35); }
+.byline{ margin: 0; color: #5a6478; }
+
+/* Small status chips */
+.chip{
+  display: inline-block;
+  margin-left: .5rem;
+  padding: .15rem .5rem;
+  font-size: .75rem;
+  line-height: 1.1;
+  border-radius: 999px;
+  border: 1px solid rgba(31,42,68,.18);
+  background: #fff;
+}
+a span.chip:hover {
+  text-decoration: underline;
+}
+.chip-winner{ background: var(--accent); border-color: var(--accent); color: #111; font-weight: 600; }
+.chip-shortlist{ background: #eef1f7; color: var(--ink); }
+
+/* Winner highlight (subtle but obvious) */
+.book-row.is-winner{
+  position: relative;
+  background:
+    linear-gradient(90deg, rgba(195,167,102,.14), rgba(195,167,102,0) 55%);
+  border-left: 4px solid var(--accent);
+  padding-left: calc(1rem - 4px);  /* keep visual rhythm */
+}
+.book-row.is-winner .book-title{
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+/* Little rosette icon before the title (CSS-only SVG) */
+.book-row.is-winner .book-title::before{
+  content:"";
+  display:inline-block;
+  width: .95rem; height: .95rem;
+  margin-right: .4rem; translate: 0 .06rem;
+  background:
+    url("data:image/svg+xml;utf8,\
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231c1c1c'>\
+      <path d='M12 2a6 6 0 1 1 0 12A6 6 0 0 1 12 2zm0 14 3.5 6-3.5-2-3.5 2L12 16z'/>\
+    </svg>") center/contain no-repeat;
+  opacity: .85;
+}
+
+/* Hover lift */
+.book-row:hover{ background-color: rgba(31,42,68,.03); }
+
+/* Optional: alternate row tint for long lists */
+.book-row:nth-of-type(2n){ background: linear-gradient(90deg, rgba(31,42,68,.03), transparent 55%); }
+
+/* Keep your Amazon CTA pill style consistent */
+.buy-button .btn{ border-radius: 999px; padding-inline: .9rem; }
+
+/* Add breathing room above bio and blurb sections */
+.biography, .blurb{
+  margin-top: 2.5rem;   /* adjust to taste, 2–3rem works nicely */
+}
+
+/* Separate cover image from Amazon button */
+.book-cover img{
+  display: block;
+  margin-bottom: .75rem;   /* space between cover and button */
+}
+
+/* --- Carousel cover rescue --- */
+#myCarousel .carousel-caption{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem 1.5rem;
+  align-items: start;
+  text-align: left;
+}
+
+/* Treat the bare cover img like the old .amazon block */
+#myCarousel .carousel-caption > img.img-thumbnail{
+  grid-column: 1;
+  grid-row: 1 / span 3;   /* cover spans heading + blurb + button */
+  width: clamp(160px,26vw,240px);
+  height: auto;
+  border-radius: 8px;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #e8ebf3;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  justify-self: start;
+}
+
+/* Buy button sits under blurb on the right */
+#myCarousel .carousel-caption .buy-button{
+  grid-column: 2;
+  grid-row: 3;
+  justify-self: start;
+  margin-top: .5rem;
+}
+
+/* ----- Carousel: stack on phones & small tablets ----- */
+/* ---- Carousel: force single-column on <=768px ---- */
+@media (max-width: 768px){
+  #myCarousel .carousel-caption{
+    grid-template-columns: 1fr !important;   /* one column */
+    gap: .75rem;
+    text-align: left;                         /* left-align text */
+    justify-items: start;
+  }
+
+  /* reset all children to the same column */
+  #myCarousel .carousel-caption > *{
+    grid-column: 1 !important;
+  }
+
+  /* order: cover -> h2 -> blurb -> button */
+  #myCarousel .carousel-caption > img.img-thumbnail{
+    grid-row: 1 !important;
+    width: min(70vw, 260px);
+    height: auto;
+    margin-bottom: .25rem;
+  }
+  #myCarousel .carousel-caption h2{ grid-row: 2 !important; margin: .25rem 0 0; }
+  #myCarousel .carousel-caption p{  grid-row: 3 !important; margin: 0; }
+  #myCarousel .carousel-caption .buy-button{
+    grid-row: 4 !important;
+    justify-self: start;
+    margin-top: .5rem;
+  }
+}
+
+/* Consistent cover height inside the carousel to prevent jumping */
+#myCarousel{
+  --cover-h-d: clamp(240px, 26vw, 280px);  /* desktop/tablet */
+  --cover-h-m: clamp(200px, 56vw, 240px);  /* phones */
+}
+
+@media (min-width: 769px){
+  #myCarousel .carousel-caption > img.img-thumbnail{
+    height: var(--cover-h-d);               /* fixed height */
+    width: auto;                            /* keep aspect */
+    aspect-ratio: 2 / 3;                    /* reserve width immediately */
+    object-fit: contain;                    /* no cropping */
+  }
+}
+
+@media (max-width: 768px){
+  #myCarousel .carousel-caption > img.img-thumbnail{
+    height: var(--cover-h-m);               /* fixed height on mobile */
+    width: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: contain;
+  }
+}
+
+/* (Optional) tiny smoothness if something else still changes height */
+#myCarousel .carousel-item .container{ transition: min-height .2s ease; }
+
+/* Prev/Next navigation at the top of detail pages */
+.prev_next {
+  display: flex;
+  justify-content: space-between;  /* left + right edges */
+  align-items: center;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+
+.prev_next .prev,
+.prev_next .next {
+  flex: 1;                /* take equal horizontal space */
+}
+
+.prev_next .prev {
+  text-align: left;
+}
+.prev_next .next {
+  text-align: right;
+}
+
+.prev_next a {
+  color: var(--ink, #1f2a44);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: #f0f2f7;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.prev_next a:hover {
+  background: var(--accent, #c3a766);
+  color: #fff;
+}
+
+.prev_next .prev a::before {
+  content: "← ";
+  opacity: 0.7;
+}
+.prev_next .next a::after {
+  content: " →";
+  opacity: 0.7;
+}
+
+.contact-form-wrap {
+  width: 100%;
+  background: #f6f1e7;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(31,42,68,.08);
+  box-shadow: 0 10px 24px rgba(31,42,68,.10);
+  margin: 1.5rem 0;
+}
+
+.contact-form-frame {
+  display: block;
+  width: 100%;
+  height: 1150px;   /* tweak once and forget */
+  border: 0;
+  background: transparent;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .contact-form-frame {
+    height: 1250px;
+  }
+}

@@ -19,14 +19,18 @@ also requires a C compiler and `make` for modules such as the SQLite driver.
 The [cpanfile](cpanfile) declares build dependencies; optional data-maintenance
 tools have separate requirements described in the codebase guide.
 
-The build reads the supplied `booker.db` and writes to `docs/`. Keep the existing
-assets in `docs/` when rebuilding. To preview the output with Python 3:
+The build reads the supplied `booker.db`, renders the templates, and copies
+`static/` into `docs/`. Edit CSS, images, and hosting files in `static/`; `docs/`
+is generated output and can be recreated from scratch. To preview with Python 3:
 
 ```sh
 python3 -m http.server 8000 --directory docs
 ```
 
 Visit <http://localhost:8000/>.
+
+Run the static-asset build regression test with `prove -v t/build_static.t`.
+It builds in a temporary directory and leaves the published output unchanged.
 
 See [How ReadABooker works](CODEBASE.md) for the architecture, database model,
 build instructions, templates, and data-maintenance tools.
