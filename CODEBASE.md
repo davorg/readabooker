@@ -14,6 +14,7 @@ refer to the implementation; data counts are a snapshot, not build requirements.
 | --- | --- |
 | [`booker.db`](booker.db) | Current SQLite data and schema; the build's source of catalogue content. |
 | [`bin/build`](bin/build) | Build entry point. |
+| [`cpanfile`](cpanfile) | Perl dependencies required by the site build. |
 | [`lib/Booker/App.pm`](lib/Booker/App.pm) | Build orchestration, template configuration, page generation, redirects, and sitemap. |
 | [`lib/Booker/Page.pm`](lib/Booker/Page.pm) | Metadata object for pages that do not represent database rows. |
 | [`lib/Booker/Schema.pm`](lib/Booker/Schema.pm) | Database connection and DBIx::Class schema loading. |
@@ -49,8 +50,10 @@ that directory to obtain its modification time.
 
 ### Dependencies
 
-There is no dependency manifest or lockfile in the repository. The main build
-uses these non-core Perl modules, including their dependencies:
+The [`cpanfile`](cpanfile) declares the main build's non-core Perl dependencies.
+Install them with `cpanm --installdeps .` from the repository root. cpanminus,
+a C compiler, and `make` must be available to install and build dependencies.
+There is no dependency lockfile. The manifest covers:
 
 - `Moo`, `Moose`, `MooseX::NonMoose`, `MooseX::MarkAsMethods`,
   `Types::Standard`, and `namespace::autoclean`.
@@ -58,9 +61,15 @@ uses these non-core Perl modules, including their dependencies:
 - `Template` (Template Toolkit).
 - `MooX::Role::JSON_LD`, `MooX::Role::SEOTags`, and `Text::Unidecode`.
 
-The code uses Perl signatures and other modern language features. The build was
-verified with Perl 5.42.3; a minimum supported Perl version is not established by
-the repository. Auxiliary scripts have additional dependencies described below.
+The manifest's Perl 5.20 language baseline follows the application modules'
+`use v5.20` declarations and use of experimental signatures. The build was
+verified with Perl 5.42.3; older interpreters have not been tested, and resolved
+dependencies may require a newer Perl than that language baseline.
+`MooX::Role::SEOTags` requires version 1.2.2 or later, which fixes a missing test
+helper in the 1.2.1 CPAN archive. Other module versions are not pinned; the
+manifest does not claim experimentally established minimum versions for them.
+Auxiliary scripts have additional
+dependencies described below and are excluded from the ordinary build install.
 
 ### Build sequence
 
