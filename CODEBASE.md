@@ -202,11 +202,8 @@ values need not fail the build.
   badges, and purchase/cover widgets. It suppresses redundant fields according
   to whether the current template is a title, author, or year page.
 - `book_widgets.tt` provides cover images and Bookshop.org/Amazon buttons.
-  Covers use Open Library with `isbn13` and `default=false`. Missing ISBNs use
-  `static/images/cover-unavailable.svg` directly. Failed image requests or
-  one-pixel responses fall back to the same local placeholder in the browser;
-  fallback handlers disable themselves to avoid retry loops. There are no
-  Amazon cover-image requests. Bookshop links use affiliate ID `16772`.
+  Covers use Open Library with `isbn13`, with a browser-side Amazon image
+  fallback using `asin`. Bookshop links use affiliate ID `16772`.
 - `prev_next.tt` renders neighboring records using the shared navigation role.
 - `redirect.tt` opts out of the wrapper and emits a canonical link, meta
   refresh, JavaScript redirect, fallback link, and `noindex` tag.
