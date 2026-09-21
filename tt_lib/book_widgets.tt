@@ -2,7 +2,7 @@
 <div class="book-cover">
 [%  book_cover(book);
     bookshop_button(book, bookshop_affiliate);
-    amazon_button(book, ass_tag) -%]
+    amazon_button(book, amazon_ass_tag) -%]
 </div>
 [% END -%]
 

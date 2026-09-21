@@ -62,7 +62,7 @@ like($html, qr/class="carousel-item active".*?class="carousel-shortlist"/s,
     'newest event is the active shortlist slide');
 like($html, qr{href="/year/2025/">2025 shortlist}, 'shortlist links to its event');
 like($html, qr{href="/title/novel-2025-1/"}, 'shortlist links to book details');
-like($html, qr{href="/author/example-author/">Example Author}, 'author name and link');
+like($html, qr{alt="'Novel 2025-1' by Example Author"}, 'cover alternative text identifies book and author');
 like($html, qr{covers\.openlibrary\.org/b/isbn/9781234567897-L\.jpg}, 'cover image');
 like($html, qr{https://uk\.bookshop\.org/a/16772/9781234567897}, 'purchase link');
 ok(index($html, 'Novel 2025-1') < index($html, 'Novel 2025-6'), 'shortlist sorted by title');

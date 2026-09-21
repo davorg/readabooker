@@ -198,7 +198,11 @@ sub json_ld_fields {
         }
       }
     },
-    { isbn => 'asin' },
+    { isbn => sub {
+        my $isbn = $_[0]->isbn13;
+        return defined($isbn) && $isbn =~ /\S/ ? $isbn : undef;
+      }
+    },
     'image',
   ];
 }

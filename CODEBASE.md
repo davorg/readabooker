@@ -27,6 +27,7 @@ refer to the implementation; data counts are a snapshot, not build requirements.
 | [`docs/`](docs/) | Generated site: rendered pages, sitemap, and copies of static assets. |
 | [`t/build_static.t`](t/build_static.t) | Regression test for a fresh build and asset updates. |
 | [`t/carousel.t`](t/carousel.t) | Fixture-based tests for event selection, shortlist rendering, and winner transitions. |
+| [`t/book_metadata.t`](t/book_metadata.t) | Rendered affiliate-link and ISBN metadata checks. |
 | [`bin/`](bin/) | Import, inspection, and data-maintenance scripts as well as the builder. |
 | `Booker*.csv` | Historical import data and annual shortlist files. Not read during a build. |
 | [`booker.sql`](booker.sql) | Current schema definition for creating an empty database, without catalogue data. |
@@ -215,6 +216,10 @@ Twitter tags. Author and book templates also emit JSON-LD through
 `MooX::Role::JSON_LD`. Event JSON-LD methods are placeholders and the year
 template does not emit it.
 
+Book JSON-LD uses `isbn13` for its ISBN field and omits that field when the value
+is null, empty, or whitespace-only. Amazon links continue to use `asin`, with
+the supplied affiliate tag passed to both the URL and enhancement data attribute.
+
 The two redirects are hard-coded in `Booker::App`: `/author/colm-t-ib-n/` to
 `/author/colm-toibin/`, and `/author/mich-le-roberts/` to
 `/author/michele-roberts/`. They are excluded from the sitemap.
@@ -292,10 +297,6 @@ remove the previous page or create a redirect automatically.
 In addition to the maintenance-script limitations above, these details are
 useful when debugging the current code:
 
-- In `book_widgets.tt`, `book_display` accepts `amazon_ass_tag` but passes
-  `ass_tag` to `amazon_button`. The generated link can therefore have an empty
-  affiliate tag, although the browser enhancement is given a default tag.
-- Book JSON-LD maps its `isbn` field to `asin`, rather than `isbn13`.
 - Templates interpolate database text without a general HTML-escaping policy;
   biography and blurb output uses `html_para`. Database content therefore needs
   to be treated as publishable template input.
