@@ -67,17 +67,19 @@ sub _build_tt($self) {
   );
 }
 
-has carousel_books => (
+has carousel_events => (
   is => 'lazy',
-  isa => ArrayRef[InstanceOf['Booker::Schema::Result::Book']],
+  isa => ArrayRef[InstanceOf['Booker::Schema::Result::Event']],
 );
 
-sub _build_carousel_books($self) {
-  my @events = grep { defined $_->get_winner } $self->rs->{event}->sorted_events;
-  $#events = 4;
-  my @books = map { $_->get_winner } @events;
-
-  return \@books;
+sub _build_carousel_events($self) {
+  my @events;
+  for my $event ($self->rs->{event}->sorted_events->all) {
+    next unless $event->books->count;
+    push @events, $event;
+    last if @events == 5;
+  }
+  return \@events;
 }
 
 has redirects => (
@@ -134,7 +136,9 @@ sub mk_index_page ($self) {
   );
 
   $self->write_page('index.html.tt', $index_page->url_path, {
-    carousel_books => $self->carousel_books,
+    carousel_events => $self->carousel_events,
+    carousel_has_shortlist => scalar(grep { !defined $_->get_winner }
+      @{ $self->carousel_events }),
     object => $index_page,
   });
 }

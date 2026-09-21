@@ -26,6 +26,7 @@ refer to the implementation; data counts are a snapshot, not build requirements.
 | [`static/`](static/) | Editable CSS, images, and hosting files, copied into the output during builds. |
 | [`docs/`](docs/) | Generated site: rendered pages, sitemap, and copies of static assets. |
 | [`t/build_static.t`](t/build_static.t) | Regression test for a fresh build and asset updates. |
+| [`t/carousel.t`](t/carousel.t) | Fixture-based tests for event selection, shortlist rendering, and winner transitions. |
 | [`bin/`](bin/) | Import, inspection, and data-maintenance scripts as well as the builder. |
 | `Booker*.csv` | Historical import data and annual shortlist files. Not read during a build. |
 | [`booker.sql`](booker.sql) | Current schema definition for creating an empty database, without catalogue data. |
@@ -170,7 +171,7 @@ equal sort keys.
 
 | URL | Template under `src/` | Content |
 | --- | --- | --- |
-| `/` | `index.html.tt` | Introductory material and a carousel of recent winners. |
+| `/` | `index.html.tt` | Introductory material and a carousel of recent winners and shortlists. |
 | `/about/`, `/contact/`, `/privacy/` | Corresponding `index.html.tt` | Static editorial content; contact embeds a Google Form. |
 | `/year/` | `year/index.html.tt` | Events grouped by decade, newest first. |
 | `/year/<slug>/` | `year/year.html.tt` | Judges and books for an event, or an unannounced-shortlist message. |
@@ -179,10 +180,16 @@ equal sort keys.
 | `/title/` | `title/index.html.tt` | Books grouped alphabetically by sort title. |
 | `/title/<slug>/` | `title/title.html.tt` | Book details and optional blurb. |
 
-Detail paths come from database slugs. The home-page carousel takes the five
-most recent events with a winner, then one winning book from each. `get_winner`
-returns the first matching book, so a tied event contributes only one winner to
-the carousel; its year page can show all books marked as winners.
+Detail paths come from database slugs. The home-page carousel takes up to five
+most recent events with books, skipping events with no shortlist yet. Each event
+gets one slide: its winning book if announced, or its full shortlist with covers,
+titles, authors, and Bookshop.org links. Shortlist books are sorted by title,
+arranged in three columns on wide screens, two on smaller desktops/tablets,
+and stacked on mobile. Recording a winner
+switches the event to a winner slide on the next build; no date logic is needed.
+Autoplay is disabled when any shortlist is present to allow time to explore it.
+`get_winner` returns the first matching book, so a tied event contributes only
+one winner to the carousel; its year page can show all books marked as winners.
 
 Template Toolkit pre-processes `book_widgets.tt`, `book.tt`, and `prev_next.tt`
 to define shared macros, then wraps each page in [`tt_lib/page.tt`](tt_lib/page.tt).
@@ -285,8 +292,6 @@ remove the previous page or create a redirect automatically.
 In addition to the maintenance-script limitations above, these details are
 useful when debugging the current code:
 
-- The carousel assumes at least five events with winners; it sets the event
-  array's last index to four without guarding against a smaller dataset.
 - In `book_widgets.tt`, `book_display` accepts `amazon_ass_tag` but passes
   `ass_tag` to `amazon_button`. The generated link can therefore have an empty
   affiliate tag, although the browser enhancement is given a default tag.
@@ -311,5 +316,7 @@ The initial investigation found no automated test suite. The static-asset change
 adds `t/build_static.t`: run `prove -v t/build_static.t` to check a build without
 existing output, copied asset content and timestamps, hosting files, and a
 rebuild after a CSS change. The test uses a temporary copy of the sources and
-database. These checks verify rendering with the current data, not browser
+database. `t/carousel.t` uses an in-memory database to check event selection,
+full shortlists, winner transitions, and empty or small catalogues. Run both
+with `prove -v t`. These checks verify rendering, not browser
 behavior, external services, or editorial accuracy.

@@ -103,6 +103,7 @@ h1[id], h2[id] {
 /* Tidy stage + grid to keep indicators below */
 #myCarousel{
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto auto;                      /* row 1 = slides, row 2 = indicators */
   background: linear-gradient(180deg, #f7f9fc 0%, #eef2f7 100%);
 }
@@ -175,6 +176,51 @@ h1[id], h2[id] {
     height: clamp(200px, 56vw, 240px);
     max-width: 100%;
   }
+}
+
+/* A shortlist stays on one slide, with room to read and follow each book. */
+#myCarousel .carousel-shortlist{ padding-block: 1.25rem; }
+#myCarousel .carousel-shortlist h2{ margin: 0 0 .75rem; }
+#myCarousel .shortlist-books{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+#myCarousel .shortlist-book{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+#myCarousel .shortlist-book img{
+  display: block;
+  height: 180px;
+  width: 120px;
+  max-width: 100%;
+  object-fit: contain;
+}
+#myCarousel .shortlist-book h3{
+  font-size: 1.1rem;
+  margin: .75rem 0 .5rem;
+  overflow-wrap: anywhere;
+}
+#myCarousel .shortlist-book p{ margin: 0 0 .5rem; }
+#myCarousel .shortlist-book > .buy-button{ margin-top: auto !important; max-width: 100%; }
+#myCarousel .shortlist-book .btn{ max-width: 100%; white-space: normal; }
+
+/* Keep controls outside the book links and purchase buttons. */
+#myCarousel .carousel-indicators{ min-width: 0; min-height: 2rem; margin-inline: 2rem; }
+#myCarousel .carousel-control-prev,
+#myCarousel .carousel-control-next{ top: auto; bottom: 0; width: 2rem; height: 2rem; }
+#myCarousel .carousel-control-prev-icon,
+#myCarousel .carousel-control-next-icon{ background-color: var(--ink); border-radius: 50%; }
+
+@media (min-width: 769px) and (max-width: 1100px){
+  #myCarousel .shortlist-books{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 768px){
+  #myCarousel .shortlist-books{ grid-template-columns: minmax(0, 1fr); }
 }
 
 /* Optional polish */

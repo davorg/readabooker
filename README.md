@@ -29,8 +29,9 @@ python3 -m http.server 8000 --directory docs
 
 Visit <http://localhost:8000/>.
 
-Run the static-asset build regression test with `prove -v t/build_static.t`.
-It builds in a temporary directory and leaves the published output unchanged.
+Run the regression tests with `prove -v t`. They cover static-asset builds and
+winner/shortlist carousel selection and rendering, using temporary output and
+test databases so the catalogue and published output remain unchanged.
 
 See [How ReadABooker works](CODEBASE.md) for the architecture, database model,
 build instructions, templates, and data-maintenance tools.

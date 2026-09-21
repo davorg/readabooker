@@ -4,19 +4,22 @@
           <p class="lead mb-0">Prizewinners, shortlists, and reading paths—beautifully organised.</p>
         </div>
       </header>
-      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+[% IF carousel_events.size -%]
+      <div id="myCarousel" class="carousel slide"[% UNLESS carousel_has_shortlist %] data-bs-ride="carousel"[% END %]>
         <div class="carousel-indicators">
 [% i=0;
-   FOR book IN carousel_books -%]
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="[% i; i = i + 1 %]" [% IF loop.first %]class="active" aria-current="true" [% END %]aria-label="Winner [% book.event.year %]"></button>
+   FOR event IN carousel_events -%]
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="[% i; i = i + 1 %]" [% IF loop.first %]class="active" aria-current="true" [% END %]aria-label="[% IF event.get_winner %]Winner[% ELSE %]Shortlist[% END %] [% event.year %]"></button>
 [% END -%]
         </div>
         <div class="carousel-inner">
-[% FOR book IN carousel_books -%]
+[% FOR event IN carousel_events;
+     book = event.get_winner -%]
           <div class="carousel-item[% IF loop.first %] active[% END %]">
             <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
 
             <div class="container">
+[% IF book -%]
               <div class="carousel-caption">
                 <div class="carousel-cover">
                   [% book_cover(book) %]
@@ -27,6 +30,20 @@
                   [% bookshop_button(book, 16772) %]
                 </div>
               </div>
+[% ELSE -%]
+              <div class="carousel-shortlist">
+                <h2><a href="[% event.url_path %]">[% event.year %] shortlist</a></h2>
+                <p>Explore the shortlisted books while we wait for the winner.</p>
+                <div class="shortlist-books">
+[% FOR shortlisted_book IN event.books_rs.sorted_books -%]
+                  <article class="shortlist-book">
+                    [% book_cover(shortlisted_book) %]
+                    [% bookshop_button(shortlisted_book, 16772) %]
+                  </article>
+[% END -%]
+                </div>
+              </div>
+[% END -%]
             </div>
           </div>
 [% END -%]
@@ -40,6 +57,7 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+[% END -%]
 
 
       <!-- Marketing messaging and featurettes
