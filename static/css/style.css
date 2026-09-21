@@ -138,85 +138,49 @@ h1[id], h2[id] {
   padding: clamp(16px,3vw,28px);
 }
 
-/* 2-column / 2-row caption: left = cover/CTA (spans rows), right = title then blurb */
+/* Keep the cover beside a single, naturally flowing text column. */
 #myCarousel .carousel-caption{
-  position: static;                                    /* stop overlay */
+  position: static;
   display: grid;
-  grid-template-columns: auto 1fr;                     /* left cover, right text */
-  grid-template-rows: auto 1fr;                        /* title top, blurb fills */
-  column-gap: clamp(14px,3vw,28px);
-  row-gap: 0;
-  align-items: stretch;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.25rem 1.5rem;
+  align-items: start;
   text-align: left;
   color: #222;
   text-shadow: none;
 }
 
-/* Left column (cover + CTA) spans both rows */
-#myCarousel .carousel-caption .amazon{
-  grid-column: 1;
-  grid-row: 1 / span 2;
-  align-self: start;
-}
-#myCarousel .amazon img.img-thumbnail{
-  display:block;
-  width: clamp(160px,26vw,240px);
-  height:auto;
-  border-radius:8px;
-  padding:0;
-  background:#fff;
-  border:1px solid #e8ebf3;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
-}
-#myCarousel .amazon .btn{ margin-top:.6rem; }
-
-/* Right column */
-#myCarousel .carousel-caption h2{
-  grid-column: 2; grid-row: 1; align-self: start; margin: 0;
-}
-#myCarousel .carousel-caption p{
-  grid-column: 2; grid-row: 2; align-self: center; margin: 0;
+#myCarousel .carousel-cover img.img-thumbnail{
+  display: block;
+  height: clamp(240px, 26vw, 280px);
+  width: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
+  border-radius: 8px;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #e8ebf3;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
 
-/* Mobile: stack neatly */
+#myCarousel .carousel-details h2{ margin: 0; }
+#myCarousel .carousel-details p{ margin: .75rem 0 1rem; }
+
 @media (max-width: 768px){
   #myCarousel .carousel-caption{
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    text-align: center;
+    grid-template-columns: minmax(0, 1fr);
+    gap: .75rem;
   }
-  #myCarousel .carousel-caption .amazon{ justify-self: center; grid-row:auto; }
-  #myCarousel .carousel-caption h2{ grid-column:auto; }
-  #myCarousel .carousel-caption p{ grid-column:auto; }
+  #myCarousel .carousel-cover img.img-thumbnail{
+    height: clamp(200px, 56vw, 240px);
+    max-width: 100%;
+  }
 }
 
 /* Optional polish */
 #myCarousel .carousel-indicators [data-bs-target]{ background-color:#9aa7c2; }
 #myCarousel .carousel-control-prev-icon,
 #myCarousel .carousel-control-next-icon{ filter: drop-shadow(0 2px 6px rgba(0,0,0,.25)); }
-
-/* 3-row grid on the right: title (row 1), blurb (row 2), button (row 3) */
-#myCarousel .carousel-caption{
-  grid-template-columns: auto 1fr;   /* left = cover, right = text */
-  grid-template-rows: auto 1fr auto; /* title | blurb fills | button */
-}
-
-/* Left column spans full height (defines card height) */
-#myCarousel .carousel-caption .amazon{
-  grid-column: 1;
-  grid-row: 1 / span 3;
-}
-
-/* Right column placement */
-#myCarousel .carousel-caption h2{ grid-column: 2; grid-row: 1; margin: 0; align-self: start; }
-#myCarousel .carousel-caption p { grid-column: 2; grid-row: 2; margin: 0; align-self: center; }
-#myCarousel .carousel-caption .buy-button{
-  grid-column: 2; grid-row: 3;
-  justify-self: start;
-  margin-top: .5rem;
-}
-
-
 
 /* ===== Read A Booker – visual lift pack ===== */
 :root{
@@ -489,95 +453,6 @@ a span.chip:hover {
   display: block;
   margin-bottom: .75rem;   /* space between cover and button */
 }
-
-/* --- Carousel cover rescue --- */
-#myCarousel .carousel-caption{
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1.25rem 1.5rem;
-  align-items: start;
-  text-align: left;
-}
-
-/* Treat the bare cover img like the old .amazon block */
-#myCarousel .carousel-caption > img.img-thumbnail{
-  grid-column: 1;
-  grid-row: 1 / span 3;   /* cover spans heading + blurb + button */
-  width: clamp(160px,26vw,240px);
-  height: auto;
-  border-radius: 8px;
-  padding: 0;
-  background: #fff;
-  border: 1px solid #e8ebf3;
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
-  justify-self: start;
-}
-
-/* Buy button sits under blurb on the right */
-#myCarousel .carousel-caption .buy-button{
-  grid-column: 2;
-  grid-row: 3;
-  justify-self: start;
-  margin-top: .5rem;
-}
-
-/* ----- Carousel: stack on phones & small tablets ----- */
-/* ---- Carousel: force single-column on <=768px ---- */
-@media (max-width: 768px){
-  #myCarousel .carousel-caption{
-    grid-template-columns: 1fr !important;   /* one column */
-    gap: .75rem;
-    text-align: left;                         /* left-align text */
-    justify-items: start;
-  }
-
-  /* reset all children to the same column */
-  #myCarousel .carousel-caption > *{
-    grid-column: 1 !important;
-  }
-
-  /* order: cover -> h2 -> blurb -> button */
-  #myCarousel .carousel-caption > img.img-thumbnail{
-    grid-row: 1 !important;
-    width: min(70vw, 260px);
-    height: auto;
-    margin-bottom: .25rem;
-  }
-  #myCarousel .carousel-caption h2{ grid-row: 2 !important; margin: .25rem 0 0; }
-  #myCarousel .carousel-caption p{  grid-row: 3 !important; margin: 0; }
-  #myCarousel .carousel-caption .buy-button{
-    grid-row: 4 !important;
-    justify-self: start;
-    margin-top: .5rem;
-  }
-}
-
-/* Consistent cover height inside the carousel to prevent jumping */
-#myCarousel{
-  --cover-h-d: clamp(240px, 26vw, 280px);  /* desktop/tablet */
-  --cover-h-m: clamp(200px, 56vw, 240px);  /* phones */
-}
-
-@media (min-width: 769px){
-  #myCarousel .carousel-caption > img.img-thumbnail{
-    height: var(--cover-h-d);               /* fixed height */
-    width: auto;                            /* keep aspect */
-    aspect-ratio: 2 / 3;                    /* reserve width immediately */
-    object-fit: contain;                    /* no cropping */
-  }
-}
-
-@media (max-width: 768px){
-  #myCarousel .carousel-caption > img.img-thumbnail{
-    height: var(--cover-h-m);               /* fixed height on mobile */
-    width: auto;
-    aspect-ratio: 2 / 3;
-    object-fit: contain;
-  }
-}
-
-/* (Optional) tiny smoothness if something else still changes height */
-#myCarousel .carousel-item .container{ transition: min-height .2s ease; }
 
 /* Prev/Next navigation at the top of detail pages */
 .prev_next {
