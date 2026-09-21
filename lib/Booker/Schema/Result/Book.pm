@@ -246,7 +246,11 @@ sub letter ($self) {
 }
 
 sub image ($self) {
-  return 'https://covers.openlibrary.org/b/isbn/' . $self->isbn13 . '-L.jpg';
+  my $isbn = $self->isbn13;
+  return $self->domain_url . '/images/cover-unavailable.svg'
+    unless defined($isbn) && $isbn =~ /\S/;
+
+  return 'https://covers.openlibrary.org/b/isbn/' . $isbn . '-L.jpg?default=false';
 }
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

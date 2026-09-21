@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="270" viewBox="0 0 180 270" role="img" aria-labelledby="title desc">
+  <title id="title">Cover unavailable</title>
+  <desc id="desc">A simple book outline on a cream background.</desc>
+  <rect x="1" y="1" width="178" height="268" rx="8" fill="#f7f5ef" stroke="#c3a766" stroke-width="2"/>
+  <path d="M60 70h65v85H60a10 10 0 0 1-10-10V80a10 10 0 0 1 10-10Zm0 0v65m-10 10a10 10 0 0 1 10-10h65" fill="none" stroke="#1f2a44" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M73 88h37m-37 13h29" stroke="#c3a766" stroke-width="3" stroke-linecap="round"/>
+  <text x="90" y="194" text-anchor="middle" fill="#1f2a44" font-family="Georgia, serif" font-size="18">Cover</text>
+  <text x="90" y="218" text-anchor="middle" fill="#1f2a44" font-family="Georgia, serif" font-size="18">unavailable</text>
+</svg>
