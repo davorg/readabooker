@@ -1,0 +1,72 @@
+name: Build and deploy site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Keep an in-progress deployment running; newer main builds wait their turn.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Perl and cache dependencies
+        uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: '5.42'
+          install-modules-with: cpanm
+
+      - name: Run regression tests
+        run: prove -v t
+
+      - name: Build site
+        run: perl bin/build
+
+      - name: Check deployment files
+        run: |
+          test -s docs/index.html
+          test -s docs/sitemap.xml
+          test -s docs/css/style.css
+          test -f docs/.nojekyll
+          cmp static/CNAME docs/CNAME
+          cmp static/ads.txt docs/ads.txt
+
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

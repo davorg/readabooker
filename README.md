@@ -29,6 +29,22 @@ python3 -m http.server 8000 --directory docs
 
 Visit <http://localhost:8000/>.
 
+`docs/` is ignored by Git. Commit changes to the database, templates, Perl code,
+and `static/`; there is no need to commit a local build.
+
+The [Pages workflow](.github/workflows/pages.yml) tests and builds every push to
+`main` and every pull request targeting `main`. Successful pushes to `main`
+deploy to GitHub Pages. It can also be run manually from the Actions tab;
+manual runs deploy only when run on `main`. Dependencies are installed from
+`cpanfile` and cached, using Perl 5.42 on Ubuntu 24.04.
+
+Pages must use **GitHub Actions** as its publishing source (Settings → Pages →
+Build and deployment), rather than `main:/docs`. Keep `readabooker.com` as the
+custom domain and HTTPS enforcement enabled. With Actions deployments, the
+domain is configured in Pages settings; `static/CNAME` remains in the output
+for compatibility with other static hosting arrangements. See
+[GitHub's custom workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+
 Run the regression tests with `prove -v t`. They cover static-asset builds and
 winner/shortlist carousel selection and rendering, using temporary output and
 test databases so the catalogue and published output remain unchanged.

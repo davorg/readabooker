@@ -24,7 +24,8 @@ refer to the implementation; data counts are a snapshot, not build requirements.
 | [`src/`](src/) | Page-specific Template Toolkit templates (`.html.tt`). |
 | [`tt_lib/`](tt_lib/) | Shared layout, macros, and redirect template. |
 | [`static/`](static/) | Editable CSS, images, and hosting files, copied into the output during builds. |
-| [`docs/`](docs/) | Generated site: rendered pages, sitemap, and copies of static assets. |
+| `docs/` | Generated site, ignored by Git: rendered pages, sitemap, and copies of static assets. |
+| [`.github/workflows/pages.yml`](.github/workflows/pages.yml) | Tests and builds source changes, then deploys main to GitHub Pages. |
 | [`t/build_static.t`](t/build_static.t) | Regression test for a fresh build and asset updates. |
 | [`t/carousel.t`](t/carousel.t) | Fixture-based tests for event selection, shortlist rendering, and winner transitions. |
 | [`t/book_metadata.t`](t/book_metadata.t) | Rendered affiliate-link and ISBN metadata checks. |
@@ -240,12 +241,34 @@ JavaScript initializes Amazon buttons with tag `davblog-21` and highlights the
 current letter/decade navigation link while scrolling. These services run in
 the browser; ordinary builds do not fetch their content.
 
-`static/CNAME` contains `readabooker.com`, and `static/.nojekyll` disables Jekyll
-processing on GitHub Pages when copied into `docs/`. `static/ads.txt` contains
-the advertising publisher entry. Generated output, including copies of these
-files, is tracked in Git. These files support static hosting,
-but there is no checked-in build/deployment workflow; hosting configuration
-outside this repository was not inspected.
+`static/CNAME` contains `readabooker.com`, and `static/.nojekyll` is retained for
+static hosting compatibility. `static/ads.txt` contains the advertising publisher
+entry. The build copies these files into `docs/`, but generated output is ignored
+by Git. The Pages custom domain and HTTPS enforcement are configured in the
+repository's Pages settings; an Actions deployment does not set the domain from
+the artifact's `CNAME` file.
+
+### GitHub Actions deployment
+
+`.github/workflows/pages.yml` runs on pushes to `main`, pull requests targeting
+`main`, and manual dispatches. Its build job checks out only tracked source,
+sets up Perl 5.42 on Ubuntu 24.04, installs and caches `cpanfile` dependencies,
+runs `prove -v t`, and invokes `perl bin/build`. It checks key output files and
+uploads `docs/` as a Pages artifact. The artifact action excludes dotfiles such
+as `.nojekyll`; this workflow builds HTML itself and does not run Jekyll, so that
+file is only needed for compatibility with other publishing arrangements.
+Artifact upload and deployment only run for non-PR events on `main`.
+
+The deployment job requires a successful build and uses the `github-pages`
+environment. It has `pages: write` and `id-token: write` permissions; the build
+job only has read access to repository contents. Runs for the same ref are
+serialized so an active deployment is not cancelled by another push. The
+workflow does not commit generated files back to the repository.
+
+Pages must be configured with GitHub Actions as its publishing source instead
+of the former `main:/docs` source. A fresh checkout needs no `docs/` directory;
+the build creates the complete output from the database, templates, and static
+sources. The existing published site remains available while a new build runs.
 
 ## Data-maintenance scripts
 
@@ -288,8 +311,9 @@ when known. Rebuild after database changes; the published site never reads
 | Record URL or metadata behavior | Relevant model under `lib/Booker/Schema/Result/`, or shared roles. |
 | Sort/group query behavior | Relevant resultset under `lib/Booker/Schema/ResultSet/`. |
 
-Edit templates rather than generated HTML, then rebuild and review the `docs/`
-diff. If a slug changes, account for the old URL explicitly: a rebuild does not
+Edit templates rather than generated HTML, then rebuild and preview `docs/`
+locally. Commit the source changes; Actions rebuilds and deploys the output.
+If a slug changes, account for the old URL explicitly: a local rebuild does not
 remove the previous page or create a redirect automatically.
 
 ## Existing implementation caveats
