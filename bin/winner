@@ -1,0 +1,84 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use utf8;
+use FindBin qw($RealBin);
+use Getopt::Long qw(GetOptions);
+use lib "$RealBin/../lib";
+use Booker::Schema;
+
+binmode STDIN, ':encoding(UTF-8)';
+binmode STDOUT, ':encoding(UTF-8)';
+$| = 1;
+
+my ($year, $help);
+my $database = "$RealBin/../booker.db";
+GetOptions('year=i' => \$year, 'database=s' => \$database, 'help' => \$help)
+    or die "Use --help for usage.\n";
+die "Unexpected arguments. Use --help for usage.\n" if @ARGV;
+if ($help) {
+    print "Usage: perl bin/winner [--year YEAR] [--database PATH]\n",
+        "Select and confirm a winner from the latest shortlist (or a specified year).\n",
+        "Updates only the database; commit and push it to publish the result.\n";
+    exit 0;
+}
+die "Database does not exist: $database\n" unless -f $database;
+my $schema = Booker::Schema->get_schema($database);
+my $events = $schema->resultset('Event');
+$year = $events->get_column('year')->max unless defined $year;
+die "No events found.\n" unless defined $year;
+my @events = $events->search({ year => $year })->all;
+die "Expected exactly one event for $year.\n" unless @events == 1;
+my $event = $events[0];
+sub shortlist {
+    return [$event->books->search({}, {
+        prefetch => 'person', order_by => ['me.sort_title', 'me.id'],
+    })->all];
+}
+my $books = shortlist();
+die "No shortlist found for $year.\n" unless @$books;
+print "Booker Prize $year\n\n";
+for my $i (0 .. $#$books) {
+    my $book = $books->[$i];
+    printf "%d. %s — %s%s\n", $i + 1, $book->title, $book->person->name,
+        $book->is_winner ? ' [current winner]' : '';
+}
+print "\nWinner number (Enter to cancel): ";
+my $choice = <STDIN>;
+if (!defined $choice || $choice =~ /^\s*$/) { print "Cancelled; no changes.\n"; exit 0 }
+chomp $choice;
+die "Invalid selection; no changes.\n"
+    unless $choice =~ /^\d+$/ && $choice >= 1 && $choice <= @$books;
+my $winner = $books->[$choice - 1];
+my ($title, $author) = ($winner->title, $winner->person->name);
+my @current = grep { $_->is_winner } @$books;
+if (@current == 1 && $current[0]->id == $winner->id) {
+    print "$title is already the $year winner; no changes.\n";
+    exit 0;
+}
+print "\nThis replaces the recorded winner(s): ", join(', ', map { $_->title } @current), ".\n" if @current;
+print "Record '$title' by $author as the $year winner? [y/N] ";
+my $answer = <STDIN>;
+if (!defined $answer || $answer !~ /^y(?:es)?\s*$/i) {
+    print "Cancelled; no changes.\n";
+    exit 0;
+}
+
+# Check the displayed shortlist and update its winner in one transaction.
+$schema->txn_do(sub {
+    my $latest = shortlist();
+    die "Shortlist changed while selecting; run the command again.\n" unless @$latest == @$books;
+    for my $i (0 .. $#$books) {
+        for my $field (qw(id title author_id is_winner)) {
+            die "Shortlist changed while selecting; run the command again.\n"
+                unless $latest->[$i]->$field eq $books->[$i]->$field;
+        }
+        die "Shortlist changed while selecting; run the command again.\n"
+            unless $latest->[$i]->person->name eq $books->[$i]->person->name;
+    }
+    $event->books->update({ is_winner => 0 });
+    $winner->update({ is_winner => 1 });
+});
+print "\nRecorded $year winner: $title by $author.\n",
+    "Commit and push the database to publish the result.\n";

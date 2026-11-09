@@ -45,6 +45,38 @@ domain is configured in Pages settings; `static/CNAME` remains in the output
 for compatibility with other static hosting arrangements. See
 [GitHub's custom workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
+## Recording the winner
+
+When the result is announced, run:
+
+```sh
+perl bin/winner
+```
+
+The command displays the latest year's shortlist with numbered books and authors.
+Enter the winner's number, then confirm with `y`. Enter or EOF at the selection
+prompt, or anything other than `y`/`yes` at confirmation, cancels without changes.
+It uses the repository's `booker.db` even when run from another directory.
+Check the displayed year before confirming; `--year 2026` selects a specific year.
+An empty latest event fails rather than silently selecting an older shortlist.
+
+The update is transactional and affects only that year's winner flags. Selecting
+an existing sole winner makes no changes; selecting a different book warns that
+it will replace the recorded winner. This command records a single winner, so it
+should not be used to maintain historical joint awards.
+
+Publish the result with:
+
+```sh
+git add booker.db
+git commit -m "Record the Booker Prize winner"
+git push
+```
+
+The Actions workflow builds and deploys the updated site. To preview first, run
+`perl bin/build`. For a rehearsal, copy `booker.db` to a temporary location and
+pass `--database /path/to/copy.db`; the command never creates a missing database.
+
 Run the regression tests with `prove -v t`. They cover static-asset builds and
 winner/shortlist carousel selection and rendering, using temporary output and
 test databases so the catalogue and published output remain unchanged.
